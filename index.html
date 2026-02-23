@@ -1,0 +1,410 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Plutoscan</title>
+  <style>
+    :root {
+      --primary: #1e293b;
+      --brand: #2563eb;
+      --brand-hover: #1d4ed8;
+      --success: #16a34a;
+      --bg: #f1f5f9;
+      --surface: #ffffff;
+      --text: #334155;
+      --border: #cbd5e1;
+    }
+    body { 
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Helvetica, Arial, sans-serif; 
+      background: var(--bg); 
+      color: var(--text); 
+      margin: 0; 
+      padding: 20px; 
+      display: flex; 
+      justify-content: center; 
+      align-items: center; 
+      min-height: 100vh; 
+    }
+    .container { background: linear-gradient(var(--surface), var(--surface)) padding-box, linear-gradient(135deg, var(--brand), purple) border-box; border: 2px solid transparent; padding: 40px 30px; border-radius: 16px; box-shadow: 0 10px 25px rgba(0,0,0,0.05); width: 100%; max-width: 450px; }
+    h1 { color: var(--primary); font-size: 24px; margin: 0 0 8px 0; font-weight: 800; text-align: center; letter-spacing: -0.5px; }
+    p.subtitle { text-align: center; color: #64748b; font-size: 14px; margin-bottom: 30px; }
+    
+    .upload-area { margin-bottom: 20px; }
+    
+    /* Camera/File Button Styling */
+    .file-wrapper { position: relative; overflow: hidden; display: block; width: 100%; margin-bottom: 15px; }
+    .file-wrapper input[type="file"] { position: absolute; left: 0; top: 0; opacity: 0; cursor: pointer; height: 100%; width: 100%; }
+    .file-btn { display: flex; align-items: center; justify-content: center; gap: 10px; background: #eff6ff; color: var(--brand); border: 2px dashed #bfdbfe; padding: 20px; border-radius: 12px; font-weight: 600; font-size: 16px; transition: all 0.2s; }
+    .file-wrapper:hover .file-btn { background: #dbeafe; border-color: var(--brand); }
+    #fileName { display: block; text-align: center; font-size: 13px; color: #64748b; margin-top: -5px; margin-bottom: 15px; min-height: 15px;}
+    
+    button { font-family: inherit; font-weight: 600; font-size: 16px; padding: 16px; border-radius: 12px; border: none; cursor: pointer; transition: all 0.2s; display: block; width: 100%; }
+    #magicButton { background: var(--brand); color: white; box-shadow: 0 4px 12px rgba(37, 99, 235, 0.2); }
+    #magicButton:hover:not(:disabled) { background: var(--brand-hover); transform: translateY(-2px); }
+    #magicButton:disabled { background: #94a3b8; cursor: not-allowed; transform: none; box-shadow: none; }
+    
+    /* Sleek Loader */
+    .loader { display: none; text-align: center; margin-top: 20px; animation: fadeIn 0.3s; }
+    .spinner { display: inline-block; width: 30px; height: 30px; border: 3px solid #e2e8f0; border-top: 3px solid var(--brand); border-radius: 50%; animation: spin 1s linear infinite; margin-bottom: 10px; }
+    .loader-text { color: var(--brand); font-weight: 600; font-size: 14px; animation: pulse 1.5s infinite; }
+    
+    /* Editable Output Area */
+    #outputWrapper { display: none; margin-top: 25px; animation: slideUp 0.4s ease-out; }
+    label { display: block; font-size: 12px; font-weight: 700; color: var(--primary); margin-bottom: 8px; text-transform: uppercase; letter-spacing: 0.5px; }
+    textarea { width: 100%; padding: 16px; border: 1px solid var(--border); border-radius: 10px; font-family: inherit; font-size: 15px; color: var(--primary); background: #f8fafc; resize: vertical; min-height: 150px; box-sizing: border-box; transition: all 0.2s; margin-bottom: 15px; line-height: 1.5; }
+    textarea:focus { outline: none; border-color: var(--brand); background: white; box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.1); }
+    
+    /* Action Buttons */
+    .action-group { display: flex; gap: 10px; }
+    .btn-save { background: var(--success); color: white; flex: 2; padding: 14px; font-size: 15px; }
+    .btn-save:hover { background: #15803d; transform: translateY(-2px); }
+    .btn-copy { background: #e2e8f0; color: var(--primary); flex: 1; padding: 14px; font-size: 15px; }
+    .btn-copy:hover { background: #cbd5e1; transform: translateY(-2px); }
+
+    @keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }
+    @keyframes pulse { 0%, 100% { opacity: 1; } 50% { opacity: 0.5; } }
+    @keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
+    @keyframes slideUp { from { opacity: 0; transform: translateY(10px); } to { opacity: 1; transform: translateY(0); } }
+    @keyframes scannerShine { 0% { mask-image: linear-gradient(45deg, #000 25%, rgba(0,0,0,0.2) 50%, #000 75%); mask-size: 800%; mask-position: 0 0; } 100% { mask-image: linear-gradient(45deg, #000 25%, rgba(0,0,0,0.2) 50%, #000 75%); mask-size: 800%; mask-position: 100% 0; } }
+
+    .container.scanned h1, .container.scanned p.subtitle { display: none; }
+    .container.scanned { padding: 20px 8px; height: calc(100vh - 40px); display: flex; flex-direction: column; box-sizing: border-box; }
+    .container.scanned > img { margin-bottom: 10px !important; flex-shrink: 0; }
+    .container.scanned .upload-area { margin-bottom: 0; flex-shrink: 0; }
+    .container.scanned .file-wrapper { margin-bottom: 10px; }
+    .container.scanned .file-btn { padding: 10px; }
+    .container.scanned #outputWrapper { display: flex !important; flex-direction: column; flex-grow: 1; margin-top: 5px; }
+    .container.scanned textarea { flex-grow: 1; margin-bottom: 15px; resize: none; height: auto; }
+    .container.scanned .action-group { flex-shrink: 0; }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+   <img src="bestdocumentscanner.png" alt="E&C Courier Banner" style="max-width: 100%; height: auto; display: block; margin: 0 auto 20px; animation: scannerShine 3.4s ease-in-out forwards;">
+    <h1>Paper to Text</h1>
+    <p class="subtitle">Instantly digitize physical paperwork.</p>
+
+    <div class="upload-area">
+      <div class="file-wrapper">
+        <input type="file" id="paperwork" accept="image/*" capture="environment">
+        <div class="file-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M23 19a2 2 0 0 1-2 2H3a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h4l2-3h6l2 3h4a2 2 0 0 1 2 2z"></path><circle cx="12" cy="13" r="4"></circle></svg>
+          Tap to Scan Paperwork
+        </div>
+      </div>
+
+      <div class="file-wrapper">
+        <input type="file" id="freeformPaperwork" accept="image/*" capture="environment">
+        <div class="file-btn">
+          <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M6.13 1L6 16a2 2 0 0 0 2 2h15"></path><path d="M1 6.13L16 6a2 2 0 0 1 2 2v15"></path></svg>
+          Freeform Crop
+        </div>
+      </div>
+
+      <span id="fileName">No file selected</span>
+      
+      <div id="loader" class="loader">
+        <div class="spinner"></div>
+        <div class="loader-text">Analyzing document...</div>
+      </div>
+    </div>
+
+    <div id="outputWrapper">
+      <label for="output">Review & Edit Data</label>
+      <textarea id="output"></textarea>
+      
+      <div class="action-group">
+        <button id="copyBtn" class="btn-copy">Copy</button>
+        <button id="saveBtn" class="btn-save">Save Record</button>
+      </div>
+    </div>
+  </div>
+
+  <div id="cropOverlay" style="display: none; position: fixed; top: 0; left: 0; width: 100%; height: 100%; background: rgba(0,0,0,0.95); z-index: 9999; flex-direction: column; align-items: center; justify-content: center;">
+    <p style="color: white; margin-bottom: 15px; font-weight: bold; text-align: center; padding: 0 20px;">Tap corners of your document.<br>Tap the first point to finish & scan.</p>
+    <canvas id="cropCanvas" style="box-shadow: 0 0 20px rgba(0,0,0,0.5);"></canvas>
+    <button id="cancelCropBtn" style="margin-top: 25px; width: auto; padding: 12px 24px; background: #ef4444; color: white; border-radius: 8px;">Cancel Crop</button>
+  </div>
+
+  <script>
+    const paperwork = document.getElementById('paperwork');
+    const outputArea = document.getElementById('output');
+    const outputWrapper = document.getElementById('outputWrapper');
+    const loader = document.getElementById('loader');
+    const fileNameDisplay = document.getElementById('fileName');
+    const copyBtn = document.getElementById('copyBtn');
+    const saveBtn = document.getElementById('saveBtn');
+
+    paperwork.addEventListener('change', async (e) => {
+      if (e.target.files.length > 0) {
+        fileNameDisplay.textContent = e.target.files[0].name;
+      } else {
+        fileNameDisplay.textContent = "No file selected";
+        return;
+      }
+
+      const file = e.target.files[0];
+
+      loader.style.display = "block";
+      outputWrapper.style.display = "none";
+
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      
+      reader.onload = async () => {
+        const img = new Image();
+        img.src = reader.result;
+        img.onload = async () => {
+          const canvas = document.createElement('canvas');
+          const ctx = canvas.getContext('2d');
+          
+          let width = img.width;
+          let height = img.height;
+          const maxDim = 1200;
+          
+          if (width > height && width > maxDim) { height *= maxDim / width; width = maxDim; }
+          else if (height > maxDim) { width *= maxDim / height; height = maxDim; }
+          
+          canvas.width = width;
+          canvas.height = height;
+          ctx.drawImage(img, 0, 0, width, height);
+          
+          const compressedBase64 = canvas.toDataURL('image/jpeg', 0.6).split(',')[1];
+          
+          const bridgeUrl = "https://magicbuttonbridge2-1067680083511.us-central1.run.app";
+
+          try {
+            const response = await fetch(bridgeUrl, {
+              method: "POST",
+              headers: { "Content-Type": "application/json" },
+              body: JSON.stringify({ image: compressedBase64 })
+            });
+
+            let resultText = await response.text();
+            
+            resultText = resultText.replace(/EXTRACTED DATA:/gi, '').replace(/```[a-z]*\n/gi, '').replace(/```/gi, '').trim();
+
+            document.querySelector('.container').classList.add('scanned');
+            outputWrapper.style.display = "block";
+
+            if (!response.ok) {
+              outputArea.value = "ERROR:\n\n" + resultText;
+              outputArea.style.borderColor = "#ef4444";
+            } else {
+              outputArea.value = resultText;
+              outputArea.style.borderColor = "var(--border)";
+            }
+            
+          } catch (error) {
+            document.querySelector('.container').classList.add('scanned');
+            outputWrapper.style.display = "block";
+            outputArea.value = "Error: Could not reach the bridge. Check your internet connection.";
+            console.error(error);
+          } finally {
+            loader.style.display = "none";
+          }
+        };
+      };
+    });
+
+    copyBtn.addEventListener('click', () => {
+      outputArea.select();
+      document.execCommand('copy');
+      const originalText = copyBtn.innerText;
+      copyBtn.innerText = "Copied!";
+      setTimeout(() => { copyBtn.innerText = originalText; }, 2000);
+    });
+
+    saveBtn.addEventListener('click', () => {
+      const textToSave = outputArea.value;
+      if(!textToSave.trim()) return;
+      
+      const blob = new Blob([textToSave], { type: "text/plain" });
+      const a = document.createElement("a");
+      const url = URL.createObjectURL(blob);
+      
+      const dateStr = new Date().toISOString().split('T')[0];
+      a.href = url;
+      a.download = `Plutoscan_${dateStr}.txt`;
+      document.body.appendChild(a);
+      a.click();
+      
+      setTimeout(() => {
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(url);
+      }, 0);
+    });
+
+    // --- Freeform Crop Logic ---
+    const freeformPaperwork = document.getElementById('freeformPaperwork');
+    const cropOverlay = document.getElementById('cropOverlay');
+    const cropCanvas = document.getElementById('cropCanvas');
+    const cancelCropBtn = document.getElementById('cancelCropBtn');
+    let cropPoints = [];
+    let cropImage = new Image();
+    let displayScale = 1;
+
+    freeformPaperwork.addEventListener('change', (e) => {
+      if (e.target.files.length === 0) return;
+      fileNameDisplay.textContent = e.target.files[0].name;
+      
+      const file = e.target.files[0];
+      const reader = new FileReader();
+      reader.readAsDataURL(file);
+      reader.onload = () => {
+        cropImage.src = reader.result;
+        cropImage.onload = () => {
+          cropPoints = [];
+          cropOverlay.style.display = 'flex';
+          
+          const maxWidth = window.innerWidth * 0.9;
+          const maxHeight = window.innerHeight * 0.7;
+          
+          let w = cropImage.width;
+          let h = cropImage.height;
+          
+          if (w > maxWidth || h > maxHeight) {
+            const ratio = Math.min(maxWidth / w, maxHeight / h);
+            w *= ratio;
+            h *= ratio;
+          }
+          
+          cropCanvas.width = w;
+          cropCanvas.height = h;
+          displayScale = cropImage.width / w;
+          
+          drawCropCanvas();
+        };
+      };
+    });
+
+    cancelCropBtn.addEventListener('click', () => {
+      cropOverlay.style.display = 'none';
+      freeformPaperwork.value = '';
+      fileNameDisplay.textContent = "No file selected";
+    });
+
+    cropCanvas.addEventListener('click', (e) => {
+      const rect = cropCanvas.getBoundingClientRect();
+      const x = e.clientX - rect.left;
+      const y = e.clientY - rect.top;
+      
+      if (cropPoints.length > 2) {
+        const firstPoint = cropPoints[0];
+        const dist = Math.hypot(x - firstPoint.x, y - firstPoint.y);
+        if (dist < 25) {
+          finishCrop();
+          return;
+        }
+      }
+      
+      cropPoints.push({x, y});
+      drawCropCanvas();
+    });
+
+    function drawCropCanvas() {
+      const ctx = cropCanvas.getContext('2d');
+      ctx.clearRect(0, 0, cropCanvas.width, cropCanvas.height);
+      ctx.drawImage(cropImage, 0, 0, cropCanvas.width, cropCanvas.height);
+      
+      if (cropPoints.length > 0) {
+        ctx.strokeStyle = '#2563eb';
+        ctx.lineWidth = 3;
+        ctx.beginPath();
+        ctx.moveTo(cropPoints[0].x, cropPoints[0].y);
+        for (let i = 1; i < cropPoints.length; i++) {
+          ctx.lineTo(cropPoints[i].x, cropPoints[i].y);
+        }
+        ctx.stroke();
+        
+        ctx.fillStyle = '#ef4444';
+        for (let i = 0; i < cropPoints.length; i++) {
+          ctx.beginPath();
+          ctx.arc(cropPoints[i].x, cropPoints[i].y, i === 0 ? 8 : 5, 0, Math.PI * 2);
+          ctx.fill();
+        }
+      }
+    }
+
+    async function finishCrop() {
+      cropOverlay.style.display = 'none';
+      loader.style.display = "block";
+      outputWrapper.style.display = "none";
+      
+      let minX = cropImage.width, minY = cropImage.height, maxX = 0, maxY = 0;
+      const scaledPoints = cropPoints.map(p => {
+         const sx = p.x * displayScale;
+         const sy = p.y * displayScale;
+         if(sx < minX) minX = sx;
+         if(sy < minY) minY = sy;
+         if(sx > maxX) maxX = sx;
+         if(sy > maxY) maxY = sy;
+         return {x: sx, y: sy};
+      });
+
+      const cropW = maxX - minX;
+      const cropH = maxY - minY;
+
+      const finalCanvas = document.createElement('canvas');
+      finalCanvas.width = cropW;
+      finalCanvas.height = cropH;
+      const ctx = finalCanvas.getContext('2d');
+      
+      ctx.beginPath();
+      ctx.moveTo(scaledPoints[0].x - minX, scaledPoints[0].y - minY);
+      for (let i = 1; i < scaledPoints.length; i++) {
+        ctx.lineTo(scaledPoints[i].x - minX, scaledPoints[i].y - minY);
+      }
+      ctx.closePath();
+      ctx.clip();
+      
+      ctx.drawImage(cropImage, -minX, -minY);
+      
+      const maxDim = 1200;
+      let outW = cropW;
+      let outH = cropH;
+      if (outW > outH && outW > maxDim) { outH *= maxDim / outW; outW = maxDim; }
+      else if (outH > maxDim) { outW *= maxDim / outH; outH = maxDim; }
+      
+      const resizedCanvas = document.createElement('canvas');
+      resizedCanvas.width = outW;
+      resizedCanvas.height = outH;
+      resizedCanvas.getContext('2d').drawImage(finalCanvas, 0, 0, outW, outH);
+      
+      const compressedBase64 = resizedCanvas.toDataURL('image/jpeg', 0.6).split(',')[1];
+      const bridgeUrl = "https://magicbuttonbridge2-1067680083511.us-central1.run.app";
+      
+      try {
+        const response = await fetch(bridgeUrl, {
+          method: "POST",
+          headers: { "Content-Type": "application/json" },
+          body: JSON.stringify({ image: compressedBase64 })
+        });
+        
+        let resultText = await response.text();
+        resultText = resultText.replace(/EXTRACTED DATA:/gi, '').replace(/```[a-z]*\n/gi, '').replace(/```/gi, '').trim();
+        
+        document.querySelector('.container').classList.add('scanned');
+        outputWrapper.style.display = "block";
+        if (!response.ok) {
+          outputArea.value = "ERROR:\n\n" + resultText;
+          outputArea.style.borderColor = "#ef4444";
+        } else {
+          outputArea.value = resultText;
+          outputArea.style.borderColor = "var(--border)";
+        }
+      } catch (error) {
+        document.querySelector('.container').classList.add('scanned');
+        outputWrapper.style.display = "block";
+        outputArea.value = "Error: Could not reach the bridge. Check your internet connection.";
+        console.error(error);
+      } finally {
+        loader.style.display = "none";
+      }
+    }
+  </script>
+
+</body>
+</html>
