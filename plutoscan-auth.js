@@ -69,6 +69,11 @@
     await auth.signOut();
   }
 
+  // Emails the user a Firebase-hosted link to choose a new password.
+  async function sendPasswordReset(email) {
+    await auth.sendPasswordResetEmail(email);
+  }
+
   // Reads this user's own paid flag directly from the database.
   // Convenient for UI decisions (e.g. "Go to course" vs "Buy now"),
   // but NOT the real security boundary - the Cloud Functions re-check
@@ -94,6 +99,13 @@
     if (!currentUser) return null;
     const snap = await db.ref('users/' + currentUser.uid + '/progress').once('value');
     return snap.exists() ? snap.val() : null;
+  }
+
+  // Saves the end-of-course rating/review under this user's record so real
+  // reviews can be collected (requires the users/$uid/review write rule).
+  async function saveReview(review) {
+    if (!currentUser) return;
+    await db.ref('users/' + currentUser.uid + '/review').set(review);
   }
 
   // Starts a Stripe Checkout session and redirects the browser there.
@@ -141,9 +153,11 @@
     logIn,
     signInWithGoogle,
     logOut,
+    sendPasswordReset,
     isPaid,
     saveProgress,
     loadProgress,
+    saveReview,
     startCheckout,
     fetchModuleContent,
     getCurrentUser: function () { return currentUser; },

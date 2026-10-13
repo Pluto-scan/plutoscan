@@ -2,3217 +2,1091 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=yes" />
-    <title>PlutoScan — From Zero to Confident Crypto Investor</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlutoScan — Learn Crypto Without Getting Wrecked</title>
+    <meta name="description" content="A beginner crypto course built around one goal: don't get wrecked. 18 plain-English lessons on wallets, scams and market data, plus a live 12-point Research Scanner. One-time $16.99, lifetime access." />
+    <link rel="canonical" href="https://plutoscan.com/" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
-    <meta name="description" content="Learn crypto from zero with 18 structured modules and the PlutoScan Research Scanner — a live tool that scores any coin's research readiness." />
-    <meta property="og:title" content="PlutoScan — From Zero to Confident Crypto Investor" />
-    <meta property="og:description" content="Learn crypto from zero with 18 structured modules and the PlutoScan Research Scanner — a live tool that scores any coin's research readiness." />
-    <meta property="og:type" content="website" />
-    <meta property="og:url" content="https://www.plutoscan.com" />
+    <meta name="theme-color" content="#0b0b16" />
 
-    <!-- Font & Icons -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://plutoscan.com/" />
+    <meta property="og:title" content="PlutoScan — Learn Crypto Without Getting Wrecked" />
+    <meta property="og:description" content="18 plain-English lessons on wallets, scams and market data, plus a live 12-point Research Scanner. One-time $16.99, lifetime access." />
+    <meta property="og:image" content="https://plutoscan.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PlutoScan — Learn Crypto Without Getting Wrecked" />
+    <meta name="twitter:description" content="18 plain-English lessons plus a live 12-point Research Scanner. One-time $16.99." />
+    <meta name="twitter:image" content="https://plutoscan.com/og-image.png" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "PlutoScan: Learn Crypto Without Getting Wrecked",
+        "description": "A beginner cryptocurrency course covering blockchain basics, wallet security, scam prevention and how to read market data, with a live 12-point Research Scanner.",
+        "provider": { "@type": "Organization", "name": "PlutoScan", "url": "https://plutoscan.com" },
+        "offers": { "@type": "Offer", "category": "Paid", "price": "16.99", "priceCurrency": "USD", "url": "https://plutoscan.com/" },
+        "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online" }
+    }
+    </script>
+
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
 
     <style>
-        /* ===== RESET & BASE ===== */
-        *,
-        *::before,
-        *::after {
-            box-sizing: border-box;
-            margin: 0;
-            padding: 0;
-        }
+        /* ===== TOKENS ===== */
         :root {
             --purple: #6C3CE1;
+            --purple-light: #a78bfa;
             --blue: #1E90FF;
-            --white: #FFFFFF;
-            --gray: #1a1a2e;
-            --dark: #0f0f1a;
-            --card-bg: rgba(255, 255, 255, 0.04);
-            --border: rgba(255, 255, 255, 0.08);
-            --shadow: 0 8px 32px rgba(0, 0, 0, 0.5);
-            --radius: 16px;
-            --transition: 0.3s cubic-bezier(0.4, 0, 0.2, 1);
-            --font: 'Inter', system-ui, -apple-system, sans-serif;
-            --highlight-glow: 0 0 16px rgba(108, 60, 225, 0.4);
+            --blue-light: #7cc0ff;
             --gold: #ffb020;
+            --green: #34d399;
+            --amber: #fbbf24;
+            --red: #f87171;
+            --bg: #0b0b16;
+            --bg-2: #10101f;
+            --surface: rgba(255, 255, 255, 0.035);
+            --surface-2: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.14);
+            --text: #f4f4fb;
+            --text-2: rgba(232, 232, 250, 0.74);
+            --text-3: rgba(232, 232, 250, 0.52);
+            --grad: linear-gradient(135deg, var(--purple), var(--blue));
+            --radius: 16px;
+            --radius-lg: 22px;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --font: 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
         }
-        html {
-            scroll-behavior: smooth;
-        }
+
+        /* ===== BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
         body {
             font-family: var(--font);
-            background: var(--dark);
-            color: var(--white);
+            background: var(--bg);
+            color: var(--text);
             line-height: 1.6;
-            min-height: 100vh;
+            -webkit-font-smoothing: antialiased;
             overflow-x: hidden;
         }
-        a {
-            color: var(--blue);
-            text-decoration: none;
-        }
-        button {
-            font-family: var(--font);
-            cursor: pointer;
-            border: none;
-            outline: none;
-            background: none;
-            color: inherit;
-        }
-        input,
-        select {
-            font-family: var(--font);
-            outline: none;
-            border: none;
-            background: rgba(255, 255, 255, 0.06);
-            color: var(--white);
-            padding: 10px 14px;
-            border-radius: 10px;
-            font-size: 0.95rem;
-            width: 100%;
-            border: 1px solid var(--border);
-            transition: var(--transition);
-        }
-        input:focus,
-        select:focus {
-            border-color: var(--purple);
-            box-shadow: 0 0 0 3px rgba(108, 60, 225, 0.25);
-        }
-        input::placeholder {
-            color: rgba(255, 255, 255, 0.35);
-        }
-        ::-webkit-scrollbar {
-            width: 6px;
-            height: 6px;
-        }
-        ::-webkit-scrollbar-track {
-            background: var(--dark);
-        }
-        ::-webkit-scrollbar-thumb {
-            background: var(--purple);
-            border-radius: 8px;
-        }
+        a { color: var(--blue-light); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+        img, svg { display: block; max-width: 100%; }
+        :focus-visible { outline: 2px solid var(--purple-light); outline-offset: 3px; border-radius: 6px; }
+        ::selection { background: rgba(108, 60, 225, 0.45); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: rgba(108, 60, 225, 0.6); border-radius: 8px; }
+        .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+        .hidden { display: none !important; }
+        .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        .text-gradient { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
 
-        /* ===== UTILITY ===== */
-        .container {
-            max-width: 1240px;
-            margin: 0 auto;
-            padding: 0 20px;
-        }
-        .btn-primary {
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            color: #fff;
-            padding: 14px 36px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            box-shadow: 0 4px 20px rgba(108, 60, 225, 0.35);
-        }
-        .btn-primary:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 30px rgba(108, 60, 225, 0.5);
-        }
-        .btn-secondary {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid var(--border);
-            padding: 12px 28px;
-            border-radius: 50px;
-            font-weight: 600;
-            transition: var(--transition);
-        }
-        .btn-secondary:hover {
-            background: rgba(255, 255, 255, 0.12);
-        }
-        .hidden {
-            display: none !important;
-        }
-        .text-gradient {
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .glow-pulse {
-            animation: glowPulse 2s ease-in-out infinite;
-        }
-        @keyframes glowPulse {
-            0%,
-            100% {
-                box-shadow: 0 0 20px rgba(108, 60, 225, 0.2);
-            }
-            50% {
-                box-shadow: 0 0 40px rgba(108, 60, 225, 0.5);
-            }
-        }
-        @keyframes float {
-            0%,
-            100% {
-                transform: translateY(0px);
-            }
-            50% {
-                transform: translateY(-8px);
-            }
-        }
-
-        /* ===== PAGE TRANSITION LOADER ===== */
-        #pageLoader {
-            position: fixed;
-            inset: 0;
-            z-index: 99999;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            flex-direction: column;
-            gap: 18px;
-            background: radial-gradient(ellipse at 30% 20%, rgba(108, 60, 225, 0.15), transparent 60%),
-                radial-gradient(ellipse at 70% 80%, rgba(30, 144, 255, 0.12), transparent 55%),
-                var(--dark);
-            opacity: 0;
-            transition: opacity 0.25s ease;
-        }
-        #pageLoader.active {
-            display: flex;
-        }
-        #pageLoader.visible {
-            opacity: 1;
-        }
-        #pageLoader .loader-ring {
-            width: 54px;
-            height: 54px;
-            border-radius: 50%;
-            border: 4px solid rgba(255, 255, 255, 0.08);
-            border-top-color: var(--purple);
-            border-right-color: var(--blue);
-            animation: loaderSpin 0.85s linear infinite;
-        }
-        #pageLoader .loader-text {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.6);
-            letter-spacing: 0.02em;
-        }
-        @keyframes loaderSpin {
-            to { transform: rotate(360deg); }
-        }
-
-        /* ===== TOP-RIGHT LOGIN BUTTON ===== */
-        #topLoginBtn {
-            position: fixed;
-            top: 20px;
-            right: 20px;
-            z-index: 400;
-            padding: 9px 22px;
-            font-size: 0.88rem;
-        }
-        @media (max-width: 640px) {
-            #topLoginBtn {
-                top: 14px;
-                right: 14px;
-                padding: 8px 16px;
-                font-size: 0.82rem;
-            }
-        }
-
-        /* ===== LANDING PAGE ===== */
-        #landing {
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: center;
-            padding: 40px 20px;
-            background: radial-gradient(ellipse at 20% 50%, rgba(108, 60, 225, 0.15), transparent 60%),
-                radial-gradient(ellipse at 80% 50%, rgba(30, 144, 255, 0.10), transparent 60%),
-                var(--dark);
-            position: relative;
-            overflow: hidden;
-        }
-        #landing .stars-bg {
-            position: absolute;
-            inset: 0;
-            pointer-events: none;
-            overflow: hidden;
-        }
-        #landing .stars-bg span {
-            position: absolute;
-            width: 3px;
-            height: 3px;
-            background: #fff;
-            border-radius: 50%;
-            opacity: 0.2;
-            animation: twinkle 4s infinite alternate;
-        }
-        @keyframes twinkle {
-            0% {
-                opacity: 0.1;
-            }
-            100% {
-                opacity: 0.6;
-            }
-        }
-        .landing-content {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            max-width: 780px;
-        }
-        .landing-content .logo {
-            font-size: 2.8rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            margin-bottom: 8px;
-        }
-        .landing-content .logo span {
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .landing-content .tagline {
-            font-size: 1.55rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 32px;
-            letter-spacing: -0.01em;
-        }
-        .landing-content h1 {
-            font-size: 3.2rem;
-            font-weight: 800;
-            line-height: 1.2;
-            margin-bottom: 16px;
-        }
-        .landing-content .price {
-            font-size: 2rem;
-            font-weight: 700;
-            color: var(--white);
-            margin: 20px 0 8px;
-        }
-        .landing-content .price small {
-            font-size: 1rem;
-            font-weight: 400;
-            color: rgba(255, 255, 255, 0.5);
-        }
-        .price-amt {
-            color: var(--gold);
-        }
-        .landing-content .badges {
-            display: flex;
-            flex-wrap: wrap;
-            justify-content: center;
-            gap: 16px;
-            margin: 20px 0 32px;
-        }
-        .landing-content .badges .badge {
-            background: rgba(255, 255, 255, 0.06);
-            border: 1px solid var(--border);
-            padding: 8px 18px;
-            border-radius: 50px;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.7);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-        }
-        .landing-content .badges .badge i {
-            color: var(--purple);
-        }
-        .landing-content .social-proof {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.5);
-            margin-top: 16px;
-        }
-
-        /* constellation preview */
-        .constellation-preview {
-            width: 100%;
-            max-width: 600px;
-            margin: 30px auto 20px;
-            aspect-ratio: 16/9;
-            background: radial-gradient(circle at 30% 40%, rgba(108, 60, 225, 0.15), transparent 60%),
-                radial-gradient(circle at 70% 60%, rgba(30, 144, 255, 0.10), transparent 50%),
-                rgba(255, 255, 255, 0.02);
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            position: relative;
-            overflow: hidden;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-        }
-        .constellation-preview .phase-label {
-            position: absolute;
-            font-size: 0.6rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: rgba(255, 255, 255, 0.25);
-            font-weight: 600;
-        }
-        .constellation-preview .star-dot {
-            position: absolute;
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: var(--purple);
-            box-shadow: 0 0 12px rgba(108, 60, 225, 0.4);
-        }
-        .constellation-preview .star-dot.dim {
-            background: rgba(255, 255, 255, 0.1);
-            box-shadow: none;
-        }
-        .constellation-preview .star-dot.big {
-            width: 16px;
-            height: 16px;
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            box-shadow: 0 0 30px rgba(108, 60, 225, 0.6);
-        }
-
-        /* ===== LANDING: EXTRA SECTIONS ===== */
-        .lp-section {
-            position: relative;
-            z-index: 2;
-            width: 100%;
-            max-width: 1080px;
-            margin: 0 auto;
-            padding: 70px 20px;
-        }
-        .lp-section.tight {
-            padding: 50px 20px;
-        }
-        .lp-eyebrow {
-            text-align: center;
-            font-size: 0.72rem;
-            text-transform: uppercase;
-            letter-spacing: 0.18em;
-            color: var(--purple);
-            font-weight: 700;
-            margin-bottom: 10px;
-        }
-        .lp-heading {
-            text-align: center;
-            font-size: clamp(1.5rem, 4vw, 2.2rem);
-            font-weight: 800;
-            letter-spacing: -0.01em;
-            margin-bottom: 12px;
-        }
-        .lp-subheading {
-            text-align: center;
-            color: rgba(255, 255, 255, 0.55);
-            font-size: 1rem;
-            max-width: 620px;
-            margin: 0 auto 44px;
-            line-height: 1.6;
-        }
-        .lp-divider {
-            width: 100%;
-            max-width: 1080px;
-            margin: 0 auto;
-            height: 1px;
-            background: linear-gradient(90deg, transparent, var(--border), transparent);
-        }
-        /* feature grid */
-        .lp-feature-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(230px, 1fr));
-            gap: 20px;
-        }
-        .lp-feature-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 26px 22px;
-            transition: var(--transition);
-        }
-        .lp-feature-card:hover {
-            border-color: rgba(108, 60, 225, 0.4);
-            transform: translateY(-3px);
-            box-shadow: var(--shadow);
-        }
-        .lp-feature-card .icon {
-            width: 44px;
-            height: 44px;
-            border-radius: 12px;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            background: linear-gradient(135deg, rgba(108, 60, 225, 0.25), rgba(30, 144, 255, 0.2));
-            color: var(--white);
-            font-size: 1.15rem;
-            margin-bottom: 16px;
-        }
-        .lp-feature-card h3 {
-            font-size: 1rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .lp-feature-card p {
-            font-size: 0.87rem;
-            color: rgba(255, 255, 255, 0.55);
-            line-height: 1.55;
-        }
-        /* pillar showcase */
-        .lp-pillar-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-        .lp-pillar-card {
-            background: linear-gradient(160deg, rgba(255, 255, 255, 0.04), rgba(255, 255, 255, 0.01));
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px 24px;
-            position: relative;
-            overflow: hidden;
-        }
-        .lp-pillar-card .num {
-            position: absolute;
-            top: -10px;
-            right: 4px;
-            font-size: 4.5rem;
-            font-weight: 800;
-            color: rgba(255, 255, 255, 0.04);
-            line-height: 1;
-        }
-        .lp-pillar-card .weight-tag {
-            display: inline-block;
-            font-size: 0.65rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            font-weight: 700;
-            padding: 4px 10px;
-            border-radius: 50px;
-            margin-bottom: 12px;
-        }
-        .lp-pillar-card .weight-tag.high {
-            background: rgba(108, 60, 225, 0.2);
-            color: #b79bff;
-        }
-        .lp-pillar-card .weight-tag.med {
-            background: rgba(30, 144, 255, 0.18);
-            color: #8fc4ff;
-        }
-        .lp-pillar-card .weight-tag.low {
-            background: rgba(255, 255, 255, 0.08);
-            color: rgba(255, 255, 255, 0.55);
-        }
-        .lp-pillar-card h3 {
-            font-size: 1.05rem;
-            font-weight: 700;
-            margin-bottom: 8px;
-        }
-        .lp-pillar-card p {
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.55);
-            line-height: 1.55;
-        }
-        /* scanner preview mock */
-        .lp-scanner-mock {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 28px;
-            max-width: 480px;
-            margin: 40px auto 0;
-            box-shadow: var(--shadow);
-        }
-        .lp-scanner-mock .sm-row {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 10px 0;
-            border-bottom: 1px solid var(--border);
-            font-size: 0.85rem;
-        }
-        .lp-scanner-mock .sm-row:last-child {
-            border-bottom: none;
-        }
-        .lp-scanner-mock .sm-label {
-            color: rgba(255, 255, 255, 0.6);
-        }
-        .lp-scanner-mock .sm-good {
-            color: #2ecc71;
-            font-weight: 700;
-        }
-        .lp-scanner-mock .sm-score {
-            text-align: center;
-            padding-top: 18px;
-            margin-top: 10px;
-        }
-        .lp-scanner-mock .sm-score .big-num {
-            font-size: 2.6rem;
-            font-weight: 800;
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .lp-scanner-mock .sm-score .verdict-tag {
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.5);
-            margin-top: 4px;
-        }
-        /* testimonials */
-        .lp-testimonial-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-            gap: 20px;
-        }
-        .lp-testimonial-card {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 24px;
-        }
-        .lp-testimonial-card .stars {
-            color: #ffb020;
-            font-size: 0.85rem;
-            margin-bottom: 12px;
-        }
-        .lp-testimonial-card p.quote {
-            font-size: 0.88rem;
-            color: rgba(255, 255, 255, 0.75);
-            line-height: 1.6;
-            margin-bottom: 16px;
-            font-style: italic;
-        }
-        .lp-testimonial-card .author {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-        }
-        .lp-testimonial-card .avatar {
-            width: 34px;
-            height: 34px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-weight: 700;
-            font-size: 0.8rem;
-        }
-        .lp-testimonial-card .author-name {
-            font-size: 0.82rem;
-            font-weight: 600;
-        }
-        .lp-testimonial-card .author-sub {
-            font-size: 0.72rem;
-            color: rgba(255, 255, 255, 0.4);
-        }
-        /* FAQ */
-        .lp-faq {
-            max-width: 720px;
-            margin: 0 auto;
-        }
-        .lp-faq details {
-            background: var(--card-bg);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            margin-bottom: 12px;
-            overflow: hidden;
-        }
-        .lp-faq summary {
-            cursor: pointer;
-            list-style: none;
-            padding: 16px 20px;
-            font-weight: 600;
-            font-size: 0.92rem;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-        }
-        .lp-faq summary::-webkit-details-marker {
-            display: none;
-        }
-        .lp-faq summary::after {
-            content: '+';
-            font-size: 1.3rem;
-            color: var(--purple);
-            transition: var(--transition);
-            flex-shrink: 0;
-            margin-left: 12px;
-        }
-        .lp-faq details[open] summary::after {
-            transform: rotate(45deg);
-        }
-        .lp-faq .faq-a {
-            padding: 0 20px 18px;
-            color: rgba(255, 255, 255, 0.55);
-            font-size: 0.87rem;
-            line-height: 1.6;
-        }
-        /* final CTA */
-        .lp-final-cta {
-            text-align: center;
-            background: radial-gradient(ellipse at center, rgba(108, 60, 225, 0.18), transparent 70%);
-            border-radius: 24px;
-            border: 1px solid var(--border);
-            padding: 56px 24px;
-        }
-        .lp-final-cta h2 {
-            font-size: clamp(1.4rem, 3.5vw, 2rem);
-            font-weight: 800;
-            margin-bottom: 14px;
-        }
-        .lp-final-cta p {
-            color: rgba(255, 255, 255, 0.55);
-            max-width: 480px;
-            margin: 0 auto 24px;
-            font-size: 0.95rem;
-        }
-        /* footer */
-        .lp-footer {
-            position: relative;
-            z-index: 2;
-            text-align: center;
-            padding: 40px 20px 30px;
-            border-top: 1px solid var(--border);
-            margin-top: 20px;
-        }
-        .lp-footer .footer-logo {
-            font-weight: 800;
-            font-size: 1.1rem;
-            margin-bottom: 10px;
-        }
-        .lp-footer .footer-logo span {
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .lp-footer p {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.3);
-            max-width: 560px;
-            margin: 6px auto;
-            line-height: 1.6;
-        }
-        .lp-footer .footer-domain {
-            color: rgba(255, 255, 255, 0.45);
-            font-size: 0.8rem;
-            margin-top: 14px;
-            letter-spacing: 0.02em;
-        }
-        @media (max-width: 640px) {
-            .lp-section { padding: 50px 16px; }
-            .lp-subheading { margin-bottom: 30px; }
-        }
-
-        /* ===== DASHBOARD ===== */
-        #dashboard {
-            display: none;
-            min-height: 100vh;
-            padding: 20px 0 100px;
-            background: radial-gradient(ellipse at 30% 20%, rgba(108, 60, 225, 0.08), transparent 60%),
-                radial-gradient(ellipse at 70% 80%, rgba(30, 144, 255, 0.06), transparent 50%),
-                var(--dark);
-        }
-        #dashboard .dash-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            flex-wrap: wrap;
-            gap: 16px;
-            margin-bottom: 16px;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border);
-        }
-        #dashboard .dash-header .logo-small {
-            font-size: 1.6rem;
-            font-weight: 800;
-            letter-spacing: -0.02em;
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        #dashboard .dash-header .logo-small:hover {
-            opacity: 0.7;
-        }
-        #dashboard .dash-header .logo-small span {
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        #dashboard .dash-header .progress-text {
-            font-size: 0.95rem;
-            color: rgba(255, 255, 255, 0.6);
-            background: rgba(255, 255, 255, 0.04);
-            padding: 8px 18px;
-            border-radius: 50px;
-            border: 1px solid var(--border);
-        }
-        #dashboard .dash-header .progress-text strong {
-            color: var(--white);
-        }
-        .dash-actions {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-        .dash-actions .icon-btn {
-            width: 42px;
-            height: 42px;
-            border-radius: 50%;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            color: rgba(255, 255, 255, 0.6);
-        }
-        .dash-actions .icon-btn:hover {
-            background: rgba(255, 255, 255, 0.10);
-            color: var(--white);
-        }
-        .dash-actions .icon-btn.active {
-            border-color: var(--purple);
-            color: var(--purple);
-        }
-        /* checklist button in header - styled like module button */
-        .dash-actions .checklist-header-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 8px 18px;
-            border-radius: 50px;
-            background: rgba(108, 60, 225, 0.12);
-            border: 1px solid rgba(108, 60, 225, 0.25);
-            color: var(--white);
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: var(--transition);
-            cursor: pointer;
-        }
-        .dash-actions .checklist-header-btn:hover {
-            background: rgba(108, 60, 225, 0.25);
-            border-color: var(--purple);
-            transform: translateY(-1px);
-        }
-        .dash-actions .checklist-header-btn i {
-            color: var(--purple);
-        }
-
-        /* ===== INTRO BLURB ===== */
-        .intro-blurb {
-            background: linear-gradient(135deg, rgba(108, 60, 225, 0.08), rgba(30, 144, 255, 0.05));
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 24px 28px;
-            margin: 10px 0 24px;
-            position: relative;
-            overflow: hidden;
-            backdrop-filter: blur(8px);
-            box-shadow: 0 4px 30px rgba(108, 60, 225, 0.06);
-        }
-        .intro-blurb::before {
-            content: '✦ ✦ ✦';
-            position: absolute;
-            right: 24px;
-            top: 12px;
-            font-size: 1.2rem;
-            opacity: 0.08;
-            color: var(--purple);
-            letter-spacing: 8px;
-        }
-        .intro-blurb::after {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background: radial-gradient(circle at 80% 20%, rgba(108, 60, 225, 0.04), transparent 50%);
-            pointer-events: none;
-        }
-        .intro-blurb .blurb-content {
-            position: relative;
-            z-index: 1;
-        }
-        .intro-blurb h2 {
-            font-size: 1.3rem;
-            font-weight: 700;
-            margin-bottom: 6px;
-            color: var(--white);
-        }
-        .intro-blurb h2 span {
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            -webkit-background-clip: text;
-            -webkit-text-fill-color: transparent;
-            background-clip: text;
-        }
-        .intro-blurb .typewriter-wrap {
-            min-height: 4.2em;
-        }
-        .intro-blurb .typewriter-wrap p {
-            color: rgba(255, 255, 255, 0.7);
-            font-size: 0.95rem;
-            max-width: 720px;
-            line-height: 1.7;
-            margin: 0;
-        }
-        .intro-blurb .typewriter-wrap .cursor {
-            display: inline-block;
-            width: 2px;
-            height: 1.1em;
-            background: var(--purple);
-            margin-left: 2px;
-            vertical-align: text-bottom;
-            animation: blink 0.8s step-end infinite;
-        }
-        @keyframes blink {
-            0%,
-            100% {
-                opacity: 1;
-            }
-            50% {
-                opacity: 0;
-            }
-        }
-        .intro-blurb .highlight-stats {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 20px 36px;
-            margin-top: 14px;
-            font-size: 0.82rem;
-            color: rgba(255, 255, 255, 0.35);
-            position: relative;
-            z-index: 1;
-        }
-        .intro-blurb .highlight-stats span {
-            display: flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .intro-blurb .highlight-stats i {
-            color: var(--purple);
-            font-size: 0.8rem;
-        }
-
-        /* ===== CONSTELLATION MAP (DESKTOP) ===== */
-        #constellation-map {
-            display: none;
-            position: relative;
-            padding: 10px 0 20px;
-            min-height: 600px;
-        }
-        @media (min-width: 992px) {
-            #constellation-map {
-                display: block;
-            }
-            #phase-list-mobile {
-                display: none;
-            }
-        }
-        .constellation-container {
-            position: relative;
-            width: 100%;
-            min-height: 700px;
-            display: flex;
-            flex-direction: column;
-            gap: 40px;
-        }
-        .phase-orbit {
-            position: relative;
-            padding: 20px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.04);
-        }
-        .phase-orbit:last-child {
-            border-bottom: none;
-        }
-        .phase-orbit .phase-name {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.15em;
-            color: rgba(255, 255, 255, 0.3);
-            font-weight: 600;
-            margin-bottom: 16px;
-        }
-        .phase-orbit .stars-row {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px 40px;
-            align-items: center;
-            justify-content: flex-start;
-        }
-        .star-node {
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            gap: 6px;
-            cursor: default;
-            transition: var(--transition);
-            position: relative;
-            min-width: 70px;
-        }
-        .star-node .star-circle {
-            width: 48px;
-            height: 48px;
-            border-radius: 50%;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.1rem;
-            transition: var(--transition);
-            background: rgba(255, 255, 255, 0.04);
-            border: 2px solid rgba(255, 255, 255, 0.06);
-            color: rgba(255, 255, 255, 0.15);
-            position: relative;
-        }
-        .star-node .star-circle .lock-icon {
-            font-size: 0.7rem;
-            opacity: 0.5;
-        }
-        .star-node .star-label {
-            font-size: 0.65rem;
-            text-align: center;
-            color: rgba(255, 255, 255, 0.3);
-            max-width: 80px;
-            line-height: 1.3;
-            font-weight: 500;
-        }
-        /* states */
-        .star-node.locked .star-circle {
-            background: rgba(255, 255, 255, 0.02);
-            border-color: rgba(255, 255, 255, 0.04);
-            color: rgba(255, 255, 255, 0.1);
-        }
-        .star-node.locked .star-label {
-            color: rgba(255, 255, 255, 0.15);
-        }
-        .star-node.unlocked .star-circle {
-            background: rgba(108, 60, 225, 0.15);
-            border-color: var(--purple);
-            color: var(--white);
-            animation: glowPulse 2.5s ease-in-out infinite;
-            cursor: pointer;
-        }
-        .star-node.unlocked .star-label {
-            color: rgba(255, 255, 255, 0.6);
-        }
-        .star-node.unlocked:hover .star-circle {
-            transform: scale(1.08);
-            border-color: var(--blue);
-        }
-        .star-node.completed .star-circle {
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            border-color: var(--purple);
-            color: var(--white);
-            box-shadow: 0 0 30px rgba(108, 60, 225, 0.4);
-        }
-        .star-node.completed .star-label {
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .star-node .checkmark {
-            position: absolute;
-            top: -4px;
-            right: -4px;
-            font-size: 0.7rem;
-            background: var(--dark);
-            border-radius: 50%;
-            padding: 2px;
-            color: var(--blue);
-        }
-        .star-node .glow-ring {
-            position: absolute;
-            inset: -6px;
-            border-radius: 50%;
-            border: 2px solid var(--purple);
-            opacity: 0;
-            pointer-events: none;
-            transition: opacity 0.3s;
-        }
-        .star-node .glow-ring.active {
-            opacity: 1;
-            animation: ringPulse 1.2s ease-out 2;
-        }
-        @keyframes ringPulse {
-            0% {
-                transform: scale(0.8);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1.6);
-                opacity: 0;
-            }
-        }
-        .star-node.checklist-tool.locked .star-circle {
-            background: rgba(255, 255, 255, 0.02);
-            border-color: rgba(255, 255, 255, 0.04);
-            color: rgba(255, 255, 255, 0.1);
-            animation: none;
-            box-shadow: none;
-        }
-        .star-node.checklist-tool.locked .star-label {
-            color: rgba(255, 255, 255, 0.15);
-        }
-        .star-node.checklist-tool.unlocked .star-circle {
-            background: rgba(108, 60, 225, 0.15);
-            border-color: var(--purple);
-            color: var(--white);
-            animation: glowPulse 2.5s ease-in-out infinite;
-            cursor: pointer;
-            box-shadow: 0 0 20px rgba(108, 60, 225, 0.2);
-        }
-        .star-node.checklist-tool.unlocked .star-label {
-            color: rgba(255, 255, 255, 0.6);
-        }
-        .star-node.checklist-tool.unlocked:hover .star-circle {
-            transform: scale(1.08);
-            border-color: var(--blue);
-        }
-
-        /* ===== MOBILE PHASE LIST ===== */
-        #phase-list-mobile {
-            display: block;
-            padding: 10px 0;
-        }
-        @media (min-width: 992px) {
-            #phase-list-mobile {
-                display: none;
-            }
-        }
-        .phase-collapsible {
-            border-bottom: 1px solid var(--border);
-            margin-bottom: 4px;
-        }
-        .phase-collapsible .phase-header {
-            padding: 16px 12px;
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            cursor: pointer;
-            transition: var(--transition);
-            border-radius: 8px;
-            background: rgba(255, 255, 255, 0.02);
-        }
-        .phase-collapsible .phase-header:hover {
-            background: rgba(255, 255, 255, 0.04);
-        }
-        .phase-collapsible .phase-header .ph-title {
-            font-weight: 600;
-            font-size: 0.95rem;
-        }
-        .phase-collapsible .phase-header .ph-arrow {
-            transition: var(--transition);
-            color: rgba(255, 255, 255, 0.3);
-        }
-        .phase-collapsible .phase-header .ph-arrow.open {
-            transform: rotate(180deg);
-        }
-        .phase-collapsible .phase-body {
-            max-height: 0;
-            overflow: hidden;
-            transition: max-height 0.4s ease, padding 0.3s ease;
-            padding: 0 12px;
-        }
-        .phase-collapsible .phase-body.open {
-            max-height: 800px;
-            padding: 8px 12px 20px;
-        }
-        .phase-collapsible .phase-body .module-item {
-            display: flex;
-            align-items: center;
-            gap: 14px;
-            padding: 12px 14px;
-            border-radius: 10px;
-            background: rgba(255, 255, 255, 0.02);
-            margin-bottom: 6px;
-            transition: var(--transition);
-            cursor: default;
-            border-left: 3px solid transparent;
-        }
-        .phase-collapsible .phase-body .module-item.locked {
-            opacity: 0.35;
-            cursor: default;
-        }
-        .phase-collapsible .phase-body .module-item.unlocked {
-            cursor: pointer;
-            border-left-color: var(--purple);
-        }
-        .phase-collapsible .phase-body .module-item.unlocked:hover {
-            background: rgba(108, 60, 225, 0.08);
-        }
-        .phase-collapsible .phase-body .module-item.completed {
-            border-left-color: var(--blue);
-            background: rgba(30, 144, 255, 0.05);
-        }
-        .phase-collapsible .phase-body .module-item .m-status {
-            font-size: 1rem;
-            min-width: 24px;
-        }
-        .phase-collapsible .phase-body .module-item .m-title {
-            font-size: 0.9rem;
-            font-weight: 500;
-            flex: 1;
-        }
-        .phase-collapsible .phase-body .module-item .m-badge {
-            font-size: 0.65rem;
-            background: rgba(255, 255, 255, 0.04);
-            padding: 2px 10px;
-            border-radius: 20px;
-            color: rgba(255, 255, 255, 0.3);
-        }
-        .phase-collapsible .phase-body .module-item.flash {
-            animation: flashGlow 1.2s ease 2;
-        }
-        @keyframes flashGlow {
-            0%,
-            100% {
-                background: rgba(255, 255, 255, 0.02);
-            }
-            50% {
-                background: rgba(108, 60, 225, 0.20);
-                box-shadow: 0 0 20px rgba(108, 60, 225, 0.15);
-            }
-        }
-        .mobile-progress-bar {
-            width: 100%;
-            height: 4px;
-            background: rgba(255, 255, 255, 0.06);
-            border-radius: 4px;
-            margin: 8px 0 16px;
-            overflow: hidden;
-        }
-        .mobile-progress-bar .fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--purple), var(--blue));
-            border-radius: 4px;
-            transition: width 0.5s ease;
-            width: 0%;
-        }
-
-        /* ===== MODULE OVERLAY ===== */
-        #module-overlay {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 1000;
-            background: var(--dark);
-            overflow: hidden;
-            flex-direction: column;
-        }
-        #module-overlay.open {
-            display: flex;
-        }
-        .overlay-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 16px 24px;
-            border-bottom: 1px solid var(--border);
-            flex-shrink: 0;
-            background: rgba(15, 15, 26, 0.95);
-            backdrop-filter: blur(12px);
-        }
-        .overlay-header .back-btn {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.6);
-            transition: var(--transition);
-            font-size: 0.95rem;
-        }
-        .overlay-header .back-btn:hover {
-            color: var(--white);
-        }
-        .overlay-header .module-title-small {
-            font-size: 0.85rem;
-            font-weight: 500;
-            color: rgba(255, 255, 255, 0.4);
-        }
-        .overlay-body {
-            flex: 1;
-            overflow-y: auto;
-            display: flex;
-            flex-direction: column;
-        }
-        @media (min-width: 768px) {
-            .overlay-body {
-                flex-direction: column;
-            }
-        }
-        .overlay-body .video-col {
-            flex: 1;
-            padding: 20px 24px 12px;
-            display: none;
-            flex-direction: column;
-            background: radial-gradient(ellipse at center, rgba(108, 60, 225, 0.04), transparent 70%);
-            position: relative;
-            min-height: 300px;
-            animation: videoColIn 0.5s ease;
-        }
-        .overlay-body.video-unlocked .video-col {
-            display: flex;
-        }
-        @keyframes videoColIn {
-            from { opacity: 0; transform: translateY(10px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .video-panel {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            padding: 16px;
-            display: flex;
-            flex-direction: column;
-            gap: 12px;
-            width: 100%;
-        }
-        .video-panel-header {
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            padding: 2px 4px 4px;
-        }
-        .video-panel-header .vp-dot {
-            width: 8px;
-            height: 8px;
-            border-radius: 50%;
-            background: #2ecc71;
-            box-shadow: 0 0 8px rgba(46, 204, 113, 0.7);
-        }
-        .video-panel-header .vp-label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.55);
-            letter-spacing: 0.02em;
-            text-transform: uppercase;
-            flex: 1;
-        }
-        .video-panel-header .vp-badge {
-            font-size: 0.7rem;
-            font-weight: 700;
-            color: var(--dark);
-            background: var(--gold);
-            padding: 2px 10px;
-            border-radius: 20px;
-        }
-        .overlay-body .video-col::before {
-            content: '';
-            position: absolute;
-            inset: 0;
-            background-image: url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 200 200" opacity="0.04"><circle cx="20" cy="20" r="1.5" fill="%23fff"/><circle cx="60" cy="40" r="2" fill="%23fff"/><circle cx="100" cy="10" r="1" fill="%23fff"/><circle cx="140" cy="30" r="2.5" fill="%23fff"/><circle cx="180" cy="20" r="1.5" fill="%23fff"/><circle cx="30" cy="80" r="1" fill="%23fff"/><circle cx="70" cy="70" r="2" fill="%23fff"/><circle cx="120" cy="90" r="1.5" fill="%23fff"/><circle cx="160" cy="80" r="2" fill="%23fff"/><circle cx="40" cy="130" r="1.5" fill="%23fff"/><circle cx="90" cy="150" r="2" fill="%23fff"/><circle cx="150" cy="140" r="1" fill="%23fff"/><circle cx="180" cy="170" r="2" fill="%23fff"/></svg>');
-            background-repeat: repeat;
-            background-size: 200px 200px;
-            pointer-events: none;
-            opacity: 0.3;
-        }
-        .overlay-body .video-col .video-wrapper {
-            position: relative;
-            aspect-ratio: 16/9;
-            background: rgba(0, 0, 0, 0.5);
-            border-radius: 10px;
-            overflow: hidden;
-            border: 1px solid var(--border);
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            flex-shrink: 0;
-            z-index: 1;
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.45);
-        }
-        .video-wrapper .placeholder {
-            text-align: center;
-            padding: 20px;
-        }
-        .video-wrapper .placeholder img {
-            max-width: 100px;
-            opacity: 0.3;
-            margin-bottom: 12px;
-        }
-        .video-wrapper .placeholder .mod-title {
-            font-size: 1.1rem;
-            font-weight: 700;
-            color: rgba(255, 255, 255, 0.5);
-            margin-bottom: 12px;
-        }
-        .video-wrapper .placeholder .play-btn-big {
-            font-size: 3rem;
-            color: var(--purple);
-            cursor: pointer;
-            transition: var(--transition);
-            display: inline-block;
-        }
-        .video-wrapper .placeholder .play-btn-big:hover {
-            transform: scale(1.1);
-            color: var(--blue);
-        }
-        .video-wrapper .video-player {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            display: none;
-        }
-        .video-wrapper .video-player.active {
-            display: block;
-        }
-        .video-wrapper .test-bypass {
-            margin-top: 10px;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.2);
-            background: rgba(255, 255, 255, 0.03);
-            padding: 4px 14px;
-            border-radius: 20px;
-            border: 1px dashed rgba(255, 255, 255, 0.05);
-            cursor: pointer;
-            transition: var(--transition);
-            z-index: 2;
-        }
-        .video-wrapper .test-bypass:hover {
-            color: rgba(255, 255, 255, 0.5);
-            border-color: rgba(255, 255, 255, 0.1);
-        }
-        .video-status {
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.25);
-            margin-top: 8px;
-            text-align: center;
-            z-index: 1;
-        }
-        .video-status .done {
-            color: var(--blue);
-        }
-        .video-wrapper.locked .placeholder .play-btn-big {
-            opacity: 0.25;
-            cursor: not-allowed;
-            pointer-events: none;
-        }
-        .video-wrapper.locked .placeholder .play-btn-big:hover {
-            transform: none;
-            color: var(--purple);
-        }
-        .video-wrapper.locked .placeholder::after {
-            content: '🔒';
-            display: block;
-            font-size: 1.4rem;
-            margin-top: 10px;
-        }
-
-        .overlay-body .text-col {
-            flex: 1.2;
-            padding: 20px 24px 40px;
-            overflow-y: auto;
-            position: relative;
-            z-index: 1;
-            border-top: 1px solid var(--border);
-        }
-        @media (min-width: 768px) {
-            .overlay-body .text-col {
-                border-top: none;
-                border-left: 1px solid var(--border);
-                padding: 20px 28px 40px;
-            }
-        }
-        @media (min-width: 900px) {
-            .overlay-body.video-unlocked {
-                flex-direction: row;
-                align-items: flex-start;
-            }
-            .overlay-body.video-unlocked .text-col {
-                flex: 0 0 50%;
-                max-width: 50%;
-                min-width: 0;
-                border-left: none;
-                border-right: 1px solid var(--border);
-            }
-            .overlay-body.video-unlocked .video-col {
-                flex: 0 0 50%;
-                max-width: 50%;
-                min-width: 0;
-                position: sticky;
-                top: 0;
-                align-self: flex-start;
-                justify-content: center;
-                padding: 32px;
-            }
-        }
-        .text-col .guide-content h2 {
-            font-size: 1.2rem;
-            font-weight: 700;
-            margin: 20px 0 8px;
-            color: var(--white);
-        }
-        .text-col .guide-content h2:first-child {
-            margin-top: 0;
-        }
-        .text-col .guide-content p {
-            color: rgba(255, 255, 255, 0.7);
-            margin-bottom: 12px;
-            font-size: 0.95rem;
-        }
-        .text-col .guide-content ul {
-            color: rgba(255, 255, 255, 0.7);
-            padding-left: 20px;
-            margin-bottom: 12px;
-        }
-        .text-col .guide-content ul li {
-            margin-bottom: 4px;
-        }
-        .text-col .guide-content .callout {
-            background: rgba(108, 60, 225, 0.08);
-            border-left: 4px solid var(--purple);
-            padding: 14px 18px;
-            border-radius: 0 10px 10px 0;
-            margin: 16px 0;
-        }
-        .text-col .guide-content .callout strong {
-            color: var(--white);
-        }
-        .text-col .guide-content .summary-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 16px 20px;
-            margin: 16px 0;
-        }
-        .text-col .guide-content .summary-card h4 {
-            color: var(--blue);
-            margin-bottom: 4px;
-        }
-        .text-col .guide-content .example-box {
-            background: rgba(30, 144, 255, 0.07);
-            border-left: 4px solid var(--blue);
-            padding: 14px 18px;
-            border-radius: 0 10px 10px 0;
-            margin: 16px 0;
-        }
-        .text-col .guide-content .example-box strong {
-            color: var(--blue);
-        }
-        .text-col .guide-content .try-box {
-            background: rgba(46, 204, 113, 0.07);
-            border-left: 4px solid #2ecc71;
-            padding: 14px 18px;
-            border-radius: 0 10px 10px 0;
-            margin: 16px 0;
-        }
-        .text-col .guide-content .try-box strong {
-            color: #2ecc71;
-        }
-        .text-col .guide-content .warn-box {
-            background: rgba(255, 159, 28, 0.08);
-            border-left: 4px solid #ff9f1c;
-            padding: 14px 18px;
-            border-radius: 0 10px 10px 0;
-            margin: 16px 0;
-        }
-        .text-col .guide-content .warn-box strong {
-            color: #ff9f1c;
-        }
-        .text-col .guide-content mark {
-            background: linear-gradient(135deg, rgba(108, 60, 225, 0.35), rgba(30, 144, 255, 0.35));
-            color: #fff;
-            padding: 1px 6px;
-            border-radius: 4px;
-            font-weight: 600;
-        }
-        .text-col .guide-content .quiz-box {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            margin: 20px 0;
-            overflow: hidden;
-        }
-        .text-col .guide-content .quiz-box summary {
-            cursor: pointer;
-            list-style: none;
-            padding: 14px 18px;
-            font-weight: 700;
-            font-size: 0.9rem;
-            color: var(--white);
-            display: flex;
-            align-items: center;
-            gap: 8px;
-            user-select: none;
-        }
-        .text-col .guide-content .quiz-box summary::-webkit-details-marker {
-            display: none;
-        }
-        .text-col .guide-content .quiz-box summary::before {
-            content: '🧠';
-        }
-        .text-col .guide-content .quiz-box .quiz-q {
-            padding: 0 18px 6px;
-            color: rgba(255, 255, 255, 0.75);
-            font-size: 0.88rem;
-        }
-        .text-col .guide-content .quiz-box .quiz-a {
-            padding: 12px 18px 16px;
-            border-top: 1px dashed var(--border);
-            margin-top: 4px;
-            font-size: 0.88rem;
-            color: #2ecc71;
-        }
-        .text-col .guide-content .quiz-box .quiz-a strong {
-            color: #2ecc71;
-        }
-        .text-col .guide-content .module-part {
-            animation: partFadeIn 0.4s ease;
-        }
-        @keyframes partFadeIn {
-            from { opacity: 0; transform: translateY(8px); }
-            to { opacity: 1; transform: translateY(0); }
-        }
-        .text-col .guide-content .part-quiz-done {
-            background: rgba(46, 204, 113, 0.08);
-            border: 1px solid rgba(46, 204, 113, 0.3);
-            color: #2ecc71;
-            font-weight: 700;
-            font-size: 0.85rem;
-            padding: 10px 16px;
-            border-radius: var(--radius);
-            margin: 10px 0 20px;
-        }
-        .text-col .guide-content .quiz-gate {
-            background: rgba(108, 60, 225, 0.06);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 18px 20px;
-            margin: 16px 0 24px;
-        }
-        .text-col .guide-content .quiz-gate-label {
-            font-size: 0.75rem;
-            font-weight: 800;
-            letter-spacing: 0.04em;
-            text-transform: uppercase;
-            color: var(--purple);
-            margin-bottom: 8px;
-        }
-        .text-col .guide-content .quiz-gate-q {
-            font-size: 0.95rem;
-            font-weight: 700;
-            color: var(--white);
-            margin-bottom: 14px;
-        }
-        .text-col .guide-content .quiz-gate-opts {
-            display: flex;
-            flex-direction: column;
-            gap: 8px;
-        }
-        .text-col .guide-content .quiz-opt-btn {
-            display: block;
-            width: 100%;
-            text-align: left;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            color: rgba(255, 255, 255, 0.85);
-            font-size: 0.86rem;
-            padding: 10px 14px;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: border-color 0.15s, background 0.15s;
-        }
-        .text-col .guide-content .quiz-opt-btn:hover:not(:disabled) {
-            border-color: var(--purple);
-            background: rgba(108, 60, 225, 0.1);
-        }
-        .text-col .guide-content .quiz-opt-btn:disabled {
-            cursor: default;
-        }
-        .text-col .guide-content .quiz-opt-btn.correct {
-            border-color: #2ecc71;
-            background: rgba(46, 204, 113, 0.15);
-            color: #2ecc71;
-        }
-        .text-col .guide-content .quiz-opt-btn.incorrect {
-            border-color: #ff5555;
-            background: rgba(255, 85, 85, 0.12);
-            color: #ff8080;
-        }
-        .text-col .guide-content .quiz-gate-feedback {
-            margin-top: 10px;
-            font-size: 0.85rem;
-            font-weight: 700;
-            min-height: 1.2em;
-        }
-        .text-col .guide-content .feedback-correct {
-            color: #2ecc71;
-        }
-        .text-col .guide-content .feedback-incorrect {
-            color: #ff8080;
-        }
-        .text-col .guide-content .quiz-gate-complete {
-            color: #2ecc71;
-            font-weight: 700;
-            margin-bottom: 12px;
-        }
-        .text-col .guide-content .unlock-next-btn {
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            color: #fff;
-            border: none;
-            font-weight: 800;
-            font-size: 0.88rem;
-            padding: 12px 20px;
-            border-radius: 10px;
-            cursor: pointer;
-            width: 100%;
-        }
-        .text-col .guide-content .unlock-next-btn:hover {
-            filter: brightness(1.1);
-        }
-        .text-col .glossary-mini {
-            margin-top: 30px;
-            padding-top: 20px;
-            border-top: 1px solid var(--border);
-        }
-        .text-col .glossary-mini h4 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: rgba(255, 255, 255, 0.25);
-            margin-bottom: 10px;
-        }
-        .text-col .glossary-mini .term {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.03);
-            padding: 2px 12px;
-            border-radius: 20px;
-            margin: 3px 4px 3px 0;
-            font-size: 0.8rem;
-            color: rgba(255, 255, 255, 0.5);
-            border: 1px solid var(--border);
-            cursor: help;
-        }
-        .text-col .glossary-mini .term:hover {
-            border-color: var(--purple);
-            color: var(--white);
-        }
-
-        .overlay-footer {
-            padding: 16px 24px;
-            border-top: 1px solid var(--border);
-            display: flex;
-            justify-content: flex-end;
-            gap: 16px;
-            flex-shrink: 0;
-            background: rgba(15, 15, 26, 0.95);
-            backdrop-filter: blur(12px);
-        }
-        .overlay-footer .complete-btn {
-            padding: 12px 32px;
-            border-radius: 50px;
-            font-weight: 700;
-            font-size: 0.95rem;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            color: rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-            cursor: not-allowed;
-        }
-        .overlay-footer .complete-btn.active {
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            color: #fff;
-            cursor: pointer;
-            box-shadow: 0 4px 24px rgba(108, 60, 225, 0.35);
-        }
-        .overlay-footer .complete-btn.active:hover {
-            transform: translateY(-2px);
-            box-shadow: 0 8px 32px rgba(108, 60, 225, 0.5);
-        }
-
-        /* ===== COMPLETION ANIMATION OVERLAY ===== */
-        #completion-anim {
-            position: fixed;
-            inset: 0;
-            z-index: 2000;
-            pointer-events: none;
-            display: none;
-            align-items: center;
-            justify-content: center;
-            background: rgba(15, 15, 26, 0.6);
-            backdrop-filter: blur(4px);
-        }
-        #completion-anim.active {
-            display: flex;
-            pointer-events: auto;
-        }
-        #completion-anim .anim-container {
-            position: relative;
-            width: 300px;
-            height: 300px;
-        }
-        #completion-anim .anim-container .sparkle {
-            position: absolute;
-            width: 6px;
-            height: 6px;
-            border-radius: 50%;
-            background: var(--white);
-            animation: sparkleFade 1.5s ease-out forwards;
-            opacity: 0;
-        }
-        @keyframes sparkleFade {
-            0% {
-                transform: scale(0) rotate(0deg);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1.5) rotate(720deg) translateY(-60px);
-                opacity: 0;
-            }
-        }
-        #completion-anim .anim-container .star-burst {
-            position: absolute;
-            inset: 0;
-            border-radius: 50%;
-            border: 2px solid var(--purple);
-            animation: burstOut 1.5s ease-out forwards;
-            opacity: 0;
-        }
-        @keyframes burstOut {
-            0% {
-                transform: scale(0.2);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(2.5);
-                opacity: 0;
-            }
-        }
-        #completion-anim .anim-container .check-big {
-            position: absolute;
-            inset: 0;
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 4rem;
-            color: var(--white);
-            text-shadow: 0 0 60px rgba(108, 60, 225, 0.6);
-            animation: popIn 0.6s ease 0.3s both;
-        }
-        @keyframes popIn {
-            0% {
-                transform: scale(0);
-                opacity: 0;
-            }
-            60% {
-                transform: scale(1.2);
-                opacity: 1;
-            }
-            100% {
-                transform: scale(1);
-            }
-        }
-
-        /* ===== COURSE COMPLETE / TESTIMONIAL MODAL ===== */
-        #courseCompleteModal {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 2000;
-            background: rgba(5, 5, 12, 0.75);
-            backdrop-filter: blur(8px);
-            align-items: center;
-            justify-content: center;
-            padding: 20px;
-        }
-        #courseCompleteModal.open {
-            display: flex;
-        }
-        .cc-modal-card {
-            position: relative;
-            background: var(--gray);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            box-shadow: var(--shadow);
-            width: 100%;
-            max-width: 440px;
-            max-height: 90vh;
-            overflow-y: auto;
-            padding: 36px 30px 30px;
-            text-align: center;
-            animation: ccPop 0.35s cubic-bezier(0.34, 1.56, 0.64, 1);
-        }
-        @keyframes ccPop {
-            from {
-                transform: scale(0.9);
-                opacity: 0;
-            }
-            to {
-                transform: scale(1);
-                opacity: 1;
-            }
-        }
-        .cc-close {
-            position: absolute;
-            top: 14px;
-            right: 14px;
-            color: rgba(255, 255, 255, 0.4);
-            font-size: 1.1rem;
-            transition: var(--transition);
-        }
-        .cc-close:hover {
-            color: var(--white);
-        }
-        .cc-modal-card .cc-icon {
-            font-size: 2.6rem;
-            margin-bottom: 6px;
-        }
-        .cc-modal-card h2 {
-            font-size: 1.35rem;
-            font-weight: 800;
-            margin-bottom: 8px;
-        }
-        .cc-modal-card h3 {
-            font-size: 1.2rem;
-            font-weight: 800;
-            margin-bottom: 6px;
-        }
-        .cc-sub {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-            line-height: 1.5;
-            margin-bottom: 22px;
-        }
-        .cc-stars {
-            display: flex;
-            justify-content: center;
-            gap: 10px;
-            font-size: 2.1rem;
-            margin-bottom: 8px;
-        }
-        .cc-stars i {
-            color: rgba(255, 255, 255, 0.18);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        .cc-stars i.filled {
-            color: var(--gold);
-            text-shadow: 0 0 14px rgba(255, 176, 32, 0.5);
-        }
-        .cc-stars i:hover {
-            transform: scale(1.12);
-        }
-        .cc-rating-label {
-            font-size: 0.8rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.4);
-            margin-bottom: 20px;
-            min-height: 1.1em;
-        }
-        .cc-modal-card textarea,
-        .cc-modal-card input[type="text"] {
-            margin-bottom: 12px;
-            resize: vertical;
-        }
-        .cc-submit {
-            width: 100%;
-            justify-content: center;
-            margin-top: 4px;
-        }
-        .cc-submit:disabled {
-            opacity: 0.5;
-            cursor: not-allowed;
-        }
-        .cc-skip {
-            display: block;
-            width: 100%;
-            text-align: center;
-            margin-top: 10px;
-            font-size: 0.82rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.35);
-            padding: 6px;
-        }
-        .cc-skip:hover {
-            color: rgba(255, 255, 255, 0.6);
-        }
-        .cc-thankyou {
-            display: none;
-        }
-        .cc-thankyou.show {
-            display: block;
-        }
-        .cc-thankyou p {
-            color: rgba(255, 255, 255, 0.6);
-            font-size: 0.9rem;
-            margin-bottom: 14px;
-        }
-        .cc-thankyou-stars {
-            font-size: 1.6rem;
-            color: var(--gold);
-            letter-spacing: 4px;
-        }
-
-        /* ===== WIDGET ===== */
-        #widget-icon {
-            position: fixed;
-            bottom: 28px;
-            right: 28px;
-            z-index: 500;
-            width: 56px;
-            height: 56px;
-            border-radius: 50%;
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            display: flex;
-            align-items: center;
-            justify-content: center;
-            font-size: 1.6rem;
-            color: #fff;
-            box-shadow: 0 4px 24px rgba(108, 60, 225, 0.4);
-            cursor: pointer;
-            transition: var(--transition);
-            border: none;
-            animation: glowPulse 2.5s ease-in-out infinite;
-        }
-        #widget-icon:hover {
-            transform: scale(1.08);
-        }
-        #widget-drawer {
-            position: fixed;
-            top: 0;
-            right: -420px;
-            width: 400px;
-            max-width: 92vw;
-            height: 100%;
-            z-index: 600;
-            background: var(--dark);
-            border-left: 1px solid var(--border);
-            box-shadow: -8px 0 40px rgba(0, 0, 0, 0.6);
-            transition: right 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-            display: flex;
-            flex-direction: column;
-            padding: 20px;
-            overflow-y: auto;
-        }
-        #widget-drawer.open {
-            right: 0;
-        }
-        #widget-drawer .drawer-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 16px;
-        }
-        #widget-drawer .drawer-header h3 {
-            font-weight: 700;
-            font-size: 1.2rem;
-        }
-        #widget-drawer .drawer-header .close-btn {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        #widget-drawer .drawer-header .close-btn:hover {
-            color: var(--white);
-            transform: rotate(90deg);
-        }
-        #widget-drawer .search-wrap {
-            position: relative;
-            margin-bottom: 16px;
-        }
-        #widget-drawer .search-wrap input {
-            padding-right: 40px;
-        }
-        #widget-drawer .search-wrap .clear-search {
-            position: absolute;
-            right: 12px;
-            top: 50%;
-            transform: translateY(-50%);
-            color: rgba(255, 255, 255, 0.2);
-            cursor: pointer;
-            font-size: 0.8rem;
-        }
-        #widget-drawer .autocomplete-list {
-            position: absolute;
-            top: 100%;
-            left: 0;
-            right: 0;
-            background: var(--dark);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            max-height: 200px;
-            overflow-y: auto;
-            z-index: 10;
-            display: none;
-            margin-top: 4px;
-        }
-        #widget-drawer .autocomplete-list.show {
-            display: block;
-        }
-        #widget-drawer .autocomplete-list .item {
-            padding: 10px 14px;
-            cursor: pointer;
-            transition: var(--transition);
-            font-size: 0.9rem;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-        }
-        #widget-drawer .autocomplete-list .item:hover {
-            background: rgba(108, 60, 225, 0.10);
-        }
-        #widget-drawer .data-card {
-            background: rgba(255, 255, 255, 0.03);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 16px 18px;
-            margin-bottom: 16px;
-        }
-        #widget-drawer .data-card .coin-name {
-            font-weight: 700;
-            font-size: 1.1rem;
-            margin-bottom: 6px;
-        }
-        #widget-drawer .data-card .coin-price {
-            font-size: 1.6rem;
-            font-weight: 800;
-        }
-        #widget-drawer .data-card .coin-change {
-            font-size: 0.95rem;
-            font-weight: 600;
-        }
-        #widget-drawer .data-card .coin-change.positive {
-            color: #4ade80;
-        }
-        #widget-drawer .data-card .coin-change.negative {
-            color: #f87171;
-        }
-        #widget-drawer .data-card .detail-grid {
-            display: grid;
-            grid-template-columns: 1fr 1fr;
-            gap: 6px 16px;
-            margin-top: 12px;
-            font-size: 0.85rem;
-            color: rgba(255, 255, 255, 0.5);
-        }
-        #widget-drawer .data-card .detail-grid span strong {
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 500;
-        }
-        #widget-drawer .data-card .checklist-data {
-            margin-top: 14px;
-            padding-top: 14px;
-            border-top: 1px solid var(--border);
-            font-size: 0.82rem;
-            color: rgba(255, 255, 255, 0.5);
-        }
-        #widget-drawer .data-card .checklist-data .cl-row {
-            display: flex;
-            justify-content: space-between;
-            padding: 3px 0;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.02);
-        }
-        #widget-drawer .data-card .checklist-data .cl-row .cl-label {
-            color: rgba(255, 255, 255, 0.4);
-        }
-        #widget-drawer .data-card .checklist-data .cl-row .cl-value {
-            color: rgba(255, 255, 255, 0.7);
-            font-weight: 500;
-        }
-        #widget-drawer .data-card .checklist-data .cl-row .cl-value.good {
-            color: #4ade80;
-        }
-        #widget-drawer .data-card .checklist-data .cl-row .cl-value.warn {
-            color: #fbbf24;
-        }
-        #widget-drawer .data-card .checklist-data .cl-row .cl-value.bad {
-            color: #f87171;
-        }
-        #widget-drawer .data-card .bookmark-btn {
-            margin-top: 12px;
-            padding: 8px 16px;
-            border-radius: 50px;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            font-weight: 600;
-            font-size: 0.85rem;
-            transition: var(--transition);
-            display: inline-flex;
-            align-items: center;
-            gap: 8px;
-            color: rgba(255, 255, 255, 0.5);
-        }
-        #widget-drawer .data-card .bookmark-btn:hover {
-            background: rgba(255, 255, 255, 0.08);
-        }
-        #widget-drawer .data-card .bookmark-btn.bookmarked {
-            color: var(--purple);
-            border-color: var(--purple);
-        }
-        #widget-drawer .watchlist-section {
-            margin-top: 8px;
-        }
-        #widget-drawer .watchlist-section h4 {
-            font-size: 0.8rem;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
-            color: rgba(255, 255, 255, 0.2);
-            margin-bottom: 8px;
-        }
-        #widget-drawer .watchlist-section .wl-item {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding: 8px 12px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 8px;
-            margin-bottom: 4px;
-            font-size: 0.85rem;
-            border: 1px solid transparent;
-            transition: var(--transition);
-        }
-        #widget-drawer .watchlist-section .wl-item:hover {
-            border-color: var(--border);
-        }
-        #widget-drawer .watchlist-section .wl-item .wl-info {
-            display: flex;
-            gap: 12px;
-            align-items: center;
-        }
-        #widget-drawer .watchlist-section .wl-item .wl-info .wl-price {
-            color: rgba(255, 255, 255, 0.5);
-        }
-        #widget-drawer .watchlist-section .wl-item .wl-info .wl-change {
-            font-weight: 600;
-            font-size: 0.8rem;
-        }
-        #widget-drawer .watchlist-section .wl-item .wl-info .wl-change.pos {
-            color: #4ade80;
-        }
-        #widget-drawer .watchlist-section .wl-item .wl-info .wl-change.neg {
-            color: #f87171;
-        }
-        #widget-drawer .watchlist-section .wl-item .wl-remove {
-            color: rgba(255, 255, 255, 0.15);
-            cursor: pointer;
-            transition: var(--transition);
-            padding: 0 4px;
-        }
-        #widget-drawer .watchlist-section .wl-item .wl-remove:hover {
-            color: #f87171;
-        }
-        .widget-loading {
-            text-align: center;
-            padding: 20px;
-            color: rgba(255, 255, 255, 0.3);
-        }
-
-        /* ===== CHECKLIST TOOL (two-column with branding) ===== */
-        #checklist-tool {
-            display: none;
-            position: fixed;
-            inset: 0;
-            z-index: 800;
-            background: radial-gradient(ellipse at 20% 30%, rgba(108, 60, 225, 0.06), transparent 60%),
-                radial-gradient(ellipse at 80% 70%, rgba(30, 144, 255, 0.04), transparent 50%),
-                var(--dark);
-            overflow-y: auto;
-            padding: 24px;
-            flex-direction: column;
-        }
-        #checklist-tool.open {
-            display: flex;
-        }
-        #checklist-tool .cl-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            padding-bottom: 16px;
-            border-bottom: 1px solid var(--border);
-            flex-wrap: wrap;
-            gap: 12px;
-            position: relative;
-        }
-        #checklist-tool .cl-header h2 {
-            font-weight: 700;
-            font-size: 1.4rem;
-        }
-        #checklist-tool .cl-header h2 i {
-            color: var(--purple);
-        }
-        #checklist-tool .cl-header .cl-close {
-            font-size: 1.4rem;
-            color: rgba(255, 255, 255, 0.3);
-            cursor: pointer;
-            transition: var(--transition);
-        }
-        #checklist-tool .cl-header .cl-close:hover {
-            color: var(--white);
-            transform: rotate(90deg);
-        }
-        /* constellation background overlay for checklist */
-        #checklist-tool .cl-stars {
-            position: fixed;
-            inset: 0;
-            pointer-events: none;
-            z-index: 0;
-            overflow: hidden;
-            opacity: 0.3;
-        }
-        #checklist-tool .cl-stars span {
-            position: absolute;
-            width: 2px;
-            height: 2px;
-            background: #fff;
-            border-radius: 50%;
-            animation: twinkle 5s infinite alternate;
-        }
-        #checklist-tool .cl-body {
-            flex: 1;
-            padding: 20px 0;
-            max-width: 1100px;
-            margin: 0 auto;
-            width: 100%;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 24px;
-            position: relative;
-            z-index: 1;
-        }
-        .cl-left {
-            flex: 1 1 55%;
-            min-width: 300px;
-        }
-        .cl-right {
-            flex: 1 1 38%;
-            min-width: 260px;
-            max-height: 80vh;
-            overflow-y: auto;
-            position: sticky;
-            top: 20px;
-            align-self: flex-start;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: var(--radius);
-            border: 1px solid var(--border);
-            padding: 16px;
-        }
-        @media (max-width: 768px) {
-            .cl-left,
-            .cl-right {
-                flex: 1 1 100%;
-                min-width: unset;
-                position: static;
-                max-height: none;
-            }
-            .cl-right {
-                order: -1;
-                margin-bottom: 12px;
-            }
-        }
-
-        .cl-body .coin-selector {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin-bottom: 16px;
-        }
-        .cl-body .coin-selector select,
-        .cl-body .coin-selector input {
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            border-radius: 10px;
-            padding: 10px 14px;
-            color: var(--white);
-            font-size: 0.9rem;
-            width: 100%;
-        }
-        .cl-body .coin-selector select option {
-            background: var(--dark);
-        }
-        .cl-body .coin-selector .custom-entry-row {
-            display: flex;
-            gap: 8px;
-            align-items: center;
-        }
-        .cl-body .coin-selector .custom-entry-row input {
-            flex: 1;
-        }
-        .cl-body .coin-selector .custom-entry-row .remove-custom {
-            color: rgba(255, 255, 255, 0.15);
-            cursor: pointer;
-            padding: 8px;
-            font-size: 1rem;
-            transition: var(--transition);
-        }
-        .cl-body .coin-selector .custom-entry-row .remove-custom:hover {
-            color: #f87171;
-        }
-
-        /* ---- widget preview inside checklist (right column) ---- */
-        .cl-body .cl-widget-preview {
-            width: 100%;
-        }
-        .cl-body .cl-widget-preview .wp-header {
-            display: flex;
-            justify-content: space-between;
-            align-items: center;
-            margin-bottom: 8px;
-            font-size: 0.7rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
-            color: rgba(255, 255, 255, 0.2);
-            border-bottom: 1px solid var(--border);
-            padding-bottom: 8px;
-        }
-        .cl-body .cl-widget-preview .wp-header .wp-close {
-            cursor: pointer;
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.2);
-            transition: var(--transition);
-        }
-        .cl-body .cl-widget-preview .wp-header .wp-close:hover {
-            color: var(--white);
-        }
-        .cl-body .cl-widget-preview .wp-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 2px;
-            font-size: 0.75rem;
-            color: rgba(255, 255, 255, 0.5);
-            max-height: 70vh;
-            overflow-y: auto;
-            padding-right: 4px;
-        }
-        .cl-body .cl-widget-preview .wp-grid .wp-item {
-            display: flex;
-            justify-content: space-between;
-            padding: 4px 6px;
-            border-bottom: 1px solid rgba(255, 255, 255, 0.03);
-            border-radius: 4px;
-            transition: background 0.2s, box-shadow 0.2s;
-            cursor: default;
-            font-size: 0.72rem;
-            align-items: flex-start;
-            gap: 8px;
-        }
-        .cl-body .cl-widget-preview .wp-grid .wp-item .wp-label {
-            color: rgba(255, 255, 255, 0.3);
-            font-size: 0.7rem;
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            font-weight: 700; border-radius: 999px; transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
             white-space: nowrap;
-            flex-shrink: 0;
-            min-width: 70px;
         }
-        .cl-body .cl-widget-preview .wp-grid .wp-item .wp-value {
-            color: rgba(255, 255, 255, 0.75);
-            font-weight: 500;
-            font-size: 0.72rem;
-            text-align: right;
-            word-break: break-word;
-            flex: 1;
+        .btn-primary { background: var(--grad); color: #fff; padding: 15px 30px; font-size: 1.02rem; box-shadow: 0 6px 24px rgba(108, 60, 225, 0.4); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 34px rgba(108, 60, 225, 0.55); text-decoration: none; }
+        .btn-primary:disabled { opacity: .6; cursor: wait; transform: none; }
+        .btn-ghost { background: var(--surface-2); border: 1px solid var(--border-strong); color: var(--text); padding: 14px 26px; font-size: 1rem; }
+        .btn-ghost:hover { background: rgba(255, 255, 255, 0.1); text-decoration: none; }
+        .btn-sm { padding: 9px 18px; font-size: .88rem; }
+        .btn-block { width: 100%; }
+
+        /* ===== NAV ===== */
+        .nav {
+            position: sticky; top: 0; z-index: 400;
+            background: rgba(11, 11, 22, 0.72);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s var(--ease), background .3s var(--ease);
         }
-        .cl-body .cl-widget-preview .wp-grid .wp-item .wp-value.good {
-            color: #4ade80;
+        .nav.scrolled { border-bottom-color: var(--border); background: rgba(11, 11, 22, 0.9); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+        .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--text); }
+        .brand:hover { text-decoration: none; }
+        .brand-mark {
+            width: 30px; height: 30px; border-radius: 50%; background: var(--grad); position: relative;
+            box-shadow: 0 0 18px rgba(108, 60, 225, 0.55);
         }
-        .cl-body .cl-widget-preview .wp-grid .wp-item .wp-value.warn {
-            color: #fbbf24;
+        .brand-mark::after {
+            content: ''; position: absolute; inset: 11px -6px; border: 2px solid rgba(255, 255, 255, 0.75); border-radius: 50%; transform: rotate(-20deg);
         }
-        .cl-body .cl-widget-preview .wp-grid .wp-item .wp-value.bad {
-            color: #f87171;
+        .nav-links { display: flex; gap: 28px; font-size: .92rem; font-weight: 500; }
+        .nav-links a { color: var(--text-2); }
+        .nav-links a:hover { color: var(--text); text-decoration: none; }
+        .nav-actions { display: flex; align-items: center; gap: 10px; }
+        .nav-user { font-size: .82rem; color: var(--text-3); max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .link-btn { color: var(--text-2); font-weight: 600; font-size: .9rem; padding: 8px 10px; }
+        .link-btn:hover { color: var(--text); }
+        @media (max-width: 880px) {
+            .nav-links { display: none; }
+            .nav-user { display: none; }
         }
-        .cl-body .cl-widget-preview .wp-grid .wp-item .wp-value.muted {
-            color: rgba(255, 255, 255, 0.3);
-        }
-        .cl-body .cl-widget-preview .wp-grid .wp-item .wp-value a {
-            color: var(--blue);
-            text-decoration: underline;
-            word-break: break-all;
-        }
-        .cl-body .cl-widget-preview .wp-grid .wp-item .wp-value .team-member {
-            display: inline-block;
-            background: rgba(255, 255, 255, 0.04);
-            padding: 2px 8px;
-            border-radius: 12px;
-            margin: 1px 2px;
-            font-size: 0.65rem;
-            border: 1px solid rgba(255, 255, 255, 0.04);
-        }
-        .cl-body .cl-widget-preview .wp-grid .wp-item .wp-value .team-member .reputable {
-            color: #4ade80;
-        }
-        .cl-body .cl-widget-preview .wp-grid .wp-item .wp-value .team-member .unknown {
-            color: #fbbf24;
-        }
-        .cl-body .cl-widget-preview .wp-grid .wp-item.highlight {
-            background: rgba(108, 60, 225, 0.15);
-            box-shadow: 0 0 12px rgba(108, 60, 225, 0.15);
-            border-radius: 4px;
-        }
-        .cl-body .cl-widget-preview .wp-grid .wp-item .wp-value .desc-full {
-            font-size: 0.7rem;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.6);
-            text-align: left;
-            max-width: 100%;
-            word-wrap: break-word;
+        @media (max-width: 420px) {
+            .nav-cta-price { display: none; }
         }
 
-        .cl-body .questions-grid {
-            display: flex;
-            flex-direction: column;
-            gap: 6px;
-            margin: 12px 0;
+        /* ===== NOTICE BANNER ===== */
+        .notice {
+            display: flex; align-items: flex-start; gap: 12px;
+            margin: 16px auto 0; max-width: 760px; padding: 14px 18px;
+            border-radius: 12px; border: 1px solid var(--border-strong); background: var(--surface-2);
+            font-size: .92rem; color: var(--text-2);
         }
-        .cl-body .questions-grid .q-item {
-            display: flex;
-            align-items: center;
-            gap: 10px;
-            padding: 6px 10px;
-            background: rgba(255, 255, 255, 0.02);
-            border-radius: 8px;
-            border: 1px solid var(--border);
-            transition: var(--transition);
-            cursor: default;
+        .notice i { margin-top: 3px; }
+        .notice.info i { color: var(--blue-light); }
+        .notice.warn { border-color: rgba(251, 191, 36, 0.35); background: rgba(251, 191, 36, 0.07); }
+        .notice.warn i { color: var(--amber); }
+        .notice .notice-close { margin-left: auto; color: var(--text-3); padding: 0 4px; }
+
+        /* ===== HERO ===== */
+        .hero { position: relative; overflow: hidden; padding: 64px 0 80px; }
+        .hero-bg {
+            position: absolute; inset: 0; pointer-events: none;
+            background:
+                radial-gradient(ellipse 60% 50% at 15% 30%, rgba(108, 60, 225, 0.22), transparent 70%),
+                radial-gradient(ellipse 50% 45% at 85% 60%, rgba(30, 144, 255, 0.14), transparent 70%);
         }
-        .cl-body .questions-grid .q-item:hover {
-            background: rgba(108, 60, 225, 0.06);
-            border-color: var(--purple);
+        .stars { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+        .stars span { position: absolute; background: #fff; border-radius: 50%; animation: twinkle 4s infinite alternate; }
+        @keyframes twinkle { from { opacity: .08; } to { opacity: .55; } }
+        .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+            color: var(--purple-light); background: rgba(108, 60, 225, 0.12); border: 1px solid rgba(108, 60, 225, 0.3);
+            padding: 6px 14px; border-radius: 999px; margin-bottom: 22px;
         }
-        .cl-body .questions-grid .q-item input[type="checkbox"] {
-            width: 16px;
-            height: 16px;
-            accent-color: var(--purple);
-            cursor: pointer;
-            flex-shrink: 0;
+        .hero h1 { font-size: clamp(2.3rem, 5.4vw, 3.9rem); line-height: 1.06; font-weight: 800; letter-spacing: -0.035em; margin-bottom: 22px; }
+        .hero-sub { font-size: clamp(1.02rem, 1.6vw, 1.18rem); color: var(--text-2); max-width: 560px; margin-bottom: 32px; }
+        .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px; }
+        .hero-trust { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: .86rem; color: var(--text-3); }
+        .hero-trust span { display: inline-flex; align-items: center; gap: 8px; }
+        .hero-trust i { color: var(--green); }
+
+        /* hero product preview */
+        .preview {
+            position: relative; background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+            border: 1px solid var(--border-strong); border-radius: var(--radius-lg); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(108, 60, 225, 0.1);
+            padding: 18px; animation: float 7s ease-in-out infinite;
         }
-        .cl-body .questions-grid .q-item label {
-            font-size: 0.85rem;
-            cursor: pointer;
-            flex: 1;
-            color: rgba(255, 255, 255, 0.8);
-        }
-        .cl-body .score-section {
-            background: rgba(255, 255, 255, 0.02);
-            border: 1px solid var(--border);
-            border-radius: var(--radius);
-            padding: 16px;
-            margin: 16px 0;
-        }
-        .cl-body .score-section .meter-wrap {
-            width: 100%;
-            height: 10px;
-            background: rgba(255, 255, 255, 0.04);
-            border-radius: 20px;
-            overflow: hidden;
-            margin: 6px 0 10px;
-        }
-        .cl-body .score-section .meter-wrap .meter-fill {
-            height: 100%;
-            background: linear-gradient(90deg, var(--purple), var(--blue));
-            border-radius: 20px;
-            transition: width 0.6s ease;
-            width: 0%;
-        }
-        .cl-body .score-section .score-value {
-            font-size: 1.6rem;
-            font-weight: 800;
-            display: flex;
-            align-items: baseline;
-            gap: 8px;
-        }
-        .cl-body .score-section .score-value .verdict {
-            font-size: 0.9rem;
-            font-weight: 600;
-            color: rgba(255, 255, 255, 0.5);
-        }
-        .cl-body .score-section .score-value .verdict.high {
-            color: #4ade80;
-        }
-        .cl-body .score-section .score-value .verdict.medium {
-            color: #fbbf24;
-        }
-        .cl-body .score-section .research-disclaimer {
-            font-size: 0.72rem;
-            color: rgba(255, 255, 255, 0.35);
-            text-align: center;
-            margin-top: 10px;
-            line-height: 1.4;
-        }
-        .cl-body .score-section .score-value .verdict.low {
-            color: #f87171;
-        }
-        .cl-body .rows-section {
-            display: flex;
-            flex-direction: column;
-            gap: 10px;
-            margin: 12px 0;
-        }
-        .cl-body .rows-section .row-box {
-            padding: 12px 16px;
-            border-radius: 8px;
-            border-left: 4px solid var(--border);
-            background: rgba(255, 255, 255, 0.02);
-            font-size: 0.85rem;
-            line-height: 1.5;
-            color: rgba(255, 255, 255, 0.7);
-        }
-        .cl-body .rows-section .row-box strong {
-            color: var(--white);
-        }
-        .cl-body .rows-section .row-box.green {
-            border-left-color: #4ade80;
-        }
-        .cl-body .rows-section .row-box.yellow {
-            border-left-color: #fbbf24;
-        }
-        .cl-body .rows-section .row-box.blue {
-            border-left-color: var(--blue);
-        }
-        .cl-body .cl-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 10px;
-            margin-top: 12px;
-            padding-top: 12px;
-            border-top: 1px solid var(--border);
-        }
-        .cl-body .cl-actions .cl-btn {
-            padding: 8px 20px;
-            border-radius: 50px;
-            font-weight: 600;
-            font-size: 0.85rem;
-            background: rgba(255, 255, 255, 0.04);
-            border: 1px solid var(--border);
-            transition: var(--transition);
-            color: rgba(255, 255, 255, 0.6);
-            display: inline-flex;
-            align-items: center;
-            gap: 6px;
-        }
-        .cl-body .cl-actions .cl-btn:hover {
-            background: rgba(255, 255, 255, 0.08);
-            color: var(--white);
-        }
-        .cl-body .cl-actions .cl-btn.primary {
-            background: linear-gradient(135deg, var(--purple), var(--blue));
-            border: none;
-            color: #fff;
-        }
-        .cl-body .cl-actions .cl-btn.primary:hover {
-            box-shadow: 0 4px 20px rgba(108, 60, 225, 0.3);
-        }
-        .cl-body .cl-actions .cl-btn.danger:hover {
-            border-color: #f87171;
-            color: #f87171;
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .preview-bar { display: flex; align-items: center; gap: 6px; margin-bottom: 16px; }
+        .preview-bar span { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.14); }
+        .preview-bar b { margin-left: 10px; font-size: .75rem; font-weight: 600; color: var(--text-3); letter-spacing: .04em; }
+        .pv-score { display: flex; align-items: center; gap: 18px; padding: 14px; border-radius: 14px; background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border); margin-bottom: 12px; }
+        .ring { --p: 0; width: 84px; height: 84px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center;
+            background: conic-gradient(var(--purple-light) calc(var(--p) * 1%), rgba(255, 255, 255, 0.08) 0); position: relative; }
+        .ring::before { content: ''; position: absolute; inset: 8px; border-radius: 50%; background: #13132a; }
+        .ring strong { position: relative; font-size: 1.3rem; font-weight: 800; }
+        .pv-score .pv-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--text-3); font-weight: 700; }
+        .pv-score .pv-verdict { font-weight: 700; color: var(--green); font-size: .98rem; margin: 2px 0 4px; }
+        .pv-score .pv-coin { font-size: .82rem; color: var(--text-3); }
+        .pv-rows { display: grid; gap: 6px; }
+        .pv-row { display: flex; justify-content: space-between; align-items: center; font-size: .84rem; padding: 9px 12px; border-radius: 10px; background: rgba(255, 255, 255, 0.03); }
+        .pv-row span:first-child { color: var(--text-2); }
+        .pv-row .ok { color: var(--green); font-weight: 700; }
+        .pv-row .bad { color: var(--amber); font-weight: 700; }
+        .pv-tag { position: absolute; top: -12px; right: 18px; background: var(--gold); color: #1a1205; font-size: .7rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; letter-spacing: .04em; }
+
+        @media (max-width: 960px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+            .hero { padding-top: 40px; }
+            .preview { max-width: 480px; margin: 0 auto; width: 100%; }
         }
 
-        /* ===== TOAST ===== */
-        #toast {
-            position: fixed;
-            bottom: 100px;
-            left: 50%;
-            transform: translateX(-50%) translateY(20px);
-            z-index: 3000;
-            background: rgba(15, 15, 26, 0.95);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 12px 28px;
-            font-weight: 500;
-            font-size: 0.95rem;
-            backdrop-filter: blur(12px);
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.5);
-            opacity: 0;
-            transition: opacity 0.4s ease, transform 0.4s ease;
-            pointer-events: none;
-            color: var(--white);
-        }
-        #toast.show {
-            opacity: 1;
-            transform: translateX(-50%) translateY(0);
-            pointer-events: auto;
+        /* ===== STATS STRIP ===== */
+        .strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-2); }
+        .strip-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .strip-item { padding: 26px 16px; text-align: center; border-right: 1px solid var(--border); }
+        .strip-item:last-child { border-right: none; }
+        .strip-item strong { display: block; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; }
+        .strip-item span { font-size: .85rem; color: var(--text-3); }
+        @media (max-width: 720px) {
+            .strip-grid { grid-template-columns: repeat(2, 1fr); }
+            .strip-item:nth-child(2) { border-right: none; }
+            .strip-item:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
         }
 
-        /* ===== GLOSSARY POPOVER ===== */
-        #glossary-popover {
-            position: fixed;
-            z-index: 1500;
-            background: var(--dark);
-            border: 1px solid var(--border);
-            border-radius: 12px;
-            padding: 16px 20px;
-            max-width: 320px;
-            box-shadow: 0 8px 40px rgba(0, 0, 0, 0.6);
-            display: none;
-            backdrop-filter: blur(12px);
-        }
-        #glossary-popover .popover-term {
-            font-weight: 700;
-            font-size: 1rem;
-            color: var(--purple);
-            margin-bottom: 4px;
-        }
-        #glossary-popover .popover-def {
-            font-size: 0.9rem;
-            color: rgba(255, 255, 255, 0.7);
-        }
+        /* ===== SECTIONS ===== */
+        .section { padding: 96px 0; position: relative; }
+        .section.alt { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .section-head { text-align: center; max-width: 700px; margin: 0 auto 52px; }
+        .section-head .eyebrow { margin-bottom: 16px; }
+        .section-head h2 { font-size: clamp(1.75rem, 3.6vw, 2.6rem); line-height: 1.15; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 14px; }
+        .section-head p { color: var(--text-2); font-size: 1.05rem; }
+        @media (max-width: 640px) { .section { padding: 68px 0; } .section-head { margin-bottom: 36px; } }
 
-        /* ===== RESPONSIVE ===== */
-        @media (max-width: 767px) {
-            .landing-content h1 {
-                font-size: 2rem;
-            }
-            .landing-content .logo {
-                font-size: 2rem;
-            }
-            .landing-content .price {
-                font-size: 1.5rem;
-            }
-            .overlay-header .module-title-small {
-                display: none;
-            }
-            .overlay-body .video-col {
-                padding: 12px 16px;
-                min-height: 200px;
-            }
-            .overlay-body .text-col {
-                padding: 16px;
-            }
-            .overlay-footer {
-                padding: 12px 16px;
-                flex-wrap: wrap;
-                justify-content: center;
-            }
-            .overlay-footer .complete-btn {
-                width: 100%;
-                text-align: center;
-            }
-            #widget-drawer {
-                width: 100%;
-                max-width: 100%;
-                right: -100%;
-            }
-            #widget-drawer.open {
-                right: 0;
-            }
-            #widget-icon {
-                bottom: 16px;
-                right: 16px;
-                width: 48px;
-                height: 48px;
-                font-size: 1.3rem;
-            }
-            #checklist-tool {
-                padding: 16px;
-            }
-            .cl-body .questions-grid .q-item {
-                padding: 6px 10px;
-            }
-            .cl-body .score-section .score-value {
-                font-size: 1.5rem;
-            }
-            .cl-body .cl-widget-preview .wp-grid {
-                max-height: 50vh;
-            }
-            .cl-body .cl-widget-preview .wp-grid .wp-item .wp-value .desc-full {
-                font-size: 0.65rem;
-            }
-            .intro-blurb p {
-                font-size: 0.85rem;
-            }
-            .intro-blurb .highlight-stats {
-                gap: 10px 20px;
-                font-size: 0.75rem;
-            }
-            .dash-actions .checklist-header-btn {
-                font-size: 0.7rem;
-                padding: 6px 12px;
-            }
-            .dash-actions .checklist-header-btn span {
-                display: none;
-            }
-            .dash-actions .checklist-header-btn i {
-                font-size: 0.9rem;
-            }
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; transition: border-color .25s var(--ease), transform .25s var(--ease), background .25s var(--ease); }
+        .card:hover { border-color: rgba(108, 60, 225, 0.4); background: rgba(255, 255, 255, 0.05); }
+        .icon-tile { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; font-size: 1.15rem; margin-bottom: 18px;
+            background: linear-gradient(135deg, rgba(108, 60, 225, 0.3), rgba(30, 144, 255, 0.22)); color: #fff; }
+        .card h3 { font-size: 1.08rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+        .card p { font-size: .93rem; color: var(--text-2); }
+
+        /* ===== PROBLEM ===== */
+        .stat-callout {
+            display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center;
+            max-width: 820px; margin: 0 auto 44px; padding: 26px 30px; border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(248, 113, 113, 0.09), rgba(108, 60, 225, 0.06)); border: 1px solid rgba(248, 113, 113, 0.25);
         }
-        @media (max-width: 480px) {
-            .landing-content .badges {
-                flex-direction: column;
-                align-items: center;
-            }
-            .dash-actions .icon-btn {
-                width: 36px;
-                height: 36px;
-                font-size: 0.9rem;
-            }
-            #dashboard .dash-header .logo-small {
-                font-size: 1.2rem;
-            }
-            #dashboard .dash-header .progress-text {
-                font-size: 0.75rem;
-                padding: 4px 12px;
-            }
+        .stat-callout .big { font-size: clamp(2.4rem, 6vw, 3.4rem); font-weight: 800; letter-spacing: -0.03em; color: #fca5a5; line-height: 1; }
+        .stat-callout p { color: var(--text-2); font-size: .98rem; }
+        .stat-callout cite { display: block; margin-top: 6px; font-size: .78rem; font-style: normal; color: var(--text-3); }
+        @media (max-width: 600px) { .stat-callout { grid-template-columns: 1fr; text-align: center; gap: 10px; padding: 22px; } }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+        .threat .threat-fix { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--border-strong); font-size: .88rem; color: var(--text-2); }
+        .threat .threat-fix strong { color: var(--green); }
+        .threat .icon-tile.red { background: linear-gradient(135deg, rgba(248, 113, 113, 0.3), rgba(108, 60, 225, 0.2)); }
+
+        /* ===== CURRICULUM ===== */
+        .phases { display: grid; gap: 14px; max-width: 900px; margin: 0 auto; }
+        .phase { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+        .phase summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 18px; padding: 20px 22px; }
+        .phase summary::-webkit-details-marker { display: none; }
+        .phase-num { width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; display: grid; place-items: center; font-weight: 800; background: var(--grad); font-size: .95rem; }
+        .phase-title { flex: 1; }
+        .phase-title strong { display: block; font-size: 1.05rem; }
+        .phase-title span { font-size: .87rem; color: var(--text-3); }
+        .phase-count { font-size: .8rem; color: var(--text-3); white-space: nowrap; }
+        .phase-chev { color: var(--text-3); transition: transform .25s var(--ease); }
+        .phase[open] .phase-chev { transform: rotate(180deg); }
+        .phase ol { list-style: none; padding: 0 22px 18px 82px; display: grid; gap: 4px; counter-reset: none; }
+        .phase li { display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 10px 0; border-top: 1px solid var(--border); font-size: .94rem; }
+        .phase li b { color: var(--purple-light); font-weight: 700; font-size: .85rem; padding-top: 1px; }
+        .phase li em { display: block; font-style: normal; color: var(--text-3); font-size: .85rem; margin-top: 2px; }
+        @media (max-width: 600px) {
+            .phase summary { padding: 16px; gap: 12px; }
+            .phase ol { padding: 0 16px 14px 16px; }
+            .phase-count { display: none; }
+        }
+        .curr-foot { text-align: center; margin-top: 26px; font-size: .9rem; color: var(--text-3); }
+
+        /* ===== SCANNER DEMO ===== */
+        .demo { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: start; }
+        @media (max-width: 900px) { .demo { grid-template-columns: 1fr; } }
+        .demo-checks { display: grid; gap: 16px; }
+        .pillar-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+        .pillar-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; gap: 10px; }
+        .pillar-head h3 { font-size: 1rem; font-weight: 700; }
+        .pillar-head .w { font-size: .72rem; font-weight: 800; padding: 3px 10px; border-radius: 999px; letter-spacing: .06em; text-transform: uppercase; }
+        .w.high { background: rgba(108, 60, 225, 0.22); color: #c4b5fd; }
+        .w.med { background: rgba(30, 144, 255, 0.18); color: #93c5fd; }
+        .w.low { background: rgba(255, 255, 255, 0.08); color: var(--text-3); }
+        .check { display: flex; align-items: center; gap: 12px; padding: 9px 10px; border-radius: 10px; cursor: pointer; font-size: .9rem; color: var(--text-2); transition: background .2s; }
+        .check:hover { background: rgba(255, 255, 255, 0.04); }
+        .check input { appearance: none; -webkit-appearance: none; width: 20px; height: 20px; flex-shrink: 0; border-radius: 6px; border: 2px solid var(--border-strong); display: grid; place-items: center; transition: all .15s; cursor: pointer; }
+        .check input:checked { background: var(--grad); border-color: transparent; }
+        .check input:checked::after { content: '✓'; color: #fff; font-size: .75rem; font-weight: 800; }
+        .check input:checked + span { color: var(--text); }
+        .demo-result { position: sticky; top: 92px; background: linear-gradient(160deg, rgba(108, 60, 225, 0.12), rgba(30, 144, 255, 0.05)); border: 1px solid rgba(108, 60, 225, 0.3); border-radius: var(--radius-lg); padding: 28px; text-align: center; }
+        .demo-result .ring { width: 150px; height: 150px; margin: 6px auto 16px; transition: background .4s; }
+        .demo-result .ring::before { inset: 12px; background: #15132c; }
+        .demo-result .ring strong { font-size: 2.2rem; }
+        .demo-verdict { font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; min-height: 1.6em; }
+        .demo-verdict.high { color: var(--green); } .demo-verdict.medium { color: var(--amber); } .demo-verdict.low { color: var(--red); }
+        .demo-math { font-size: .84rem; color: var(--text-3); margin-bottom: 18px; }
+        .demo-bars { display: grid; gap: 10px; text-align: left; margin-bottom: 20px; }
+        .demo-bar label { display: flex; justify-content: space-between; font-size: .8rem; color: var(--text-2); margin-bottom: 4px; }
+        .demo-bar .track { height: 7px; border-radius: 99px; background: rgba(255, 255, 255, 0.07); overflow: hidden; }
+        .demo-bar .fill { height: 100%; border-radius: 99px; background: var(--grad); transition: width .4s var(--ease); }
+        .demo-note { font-size: .78rem; color: var(--text-3); line-height: 1.5; }
+
+        /* ===== FREE LESSON ===== */
+        .rules { max-width: 860px; margin: 0 auto; display: grid; gap: 14px; counter-reset: rule; }
+        .rule { display: grid; grid-template-columns: 56px 1fr; gap: 18px; align-items: start; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+        .rule::before { counter-increment: rule; content: counter(rule); width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; font-weight: 800; font-size: 1.25rem; background: rgba(52, 211, 153, 0.12); color: var(--green); border: 1px solid rgba(52, 211, 153, 0.3); }
+        .rule h3 { font-size: 1.06rem; margin-bottom: 6px; }
+        .rule p { color: var(--text-2); font-size: .94rem; }
+        .rules-cta { text-align: center; margin-top: 32px; color: var(--text-2); }
+        .rules-cta p { margin-bottom: 18px; }
+        @media (max-width: 560px) { .rule { grid-template-columns: 1fr; gap: 12px; padding: 18px; } }
+
+        /* ===== FIT ===== */
+        .fit { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 920px; margin: 0 auto; }
+        @media (max-width: 760px) { .fit { grid-template-columns: 1fr; } }
+        .fit ul { list-style: none; display: grid; gap: 12px; margin-top: 14px; }
+        .fit li { display: flex; gap: 12px; font-size: .95rem; color: var(--text-2); }
+        .fit li i { margin-top: 4px; }
+        .fit .yes i { color: var(--green); }
+        .fit .no i { color: var(--red); }
+
+        /* ===== PRICING ===== */
+        .price-card {
+            max-width: 520px; margin: 0 auto; position: relative; border-radius: 26px; padding: 2px;
+            background: linear-gradient(135deg, rgba(108, 60, 225, 0.9), rgba(30, 144, 255, 0.7));
+            box-shadow: 0 30px 90px rgba(108, 60, 225, 0.25);
+        }
+        .price-inner { background: #11112a; border-radius: 24px; padding: 38px 34px; text-align: center; }
+        .price-inner .label { font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; color: var(--purple-light); }
+        .price-inner .amount { font-size: 4rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin: 12px 0 4px; }
+        .price-inner .amount small { font-size: 1rem; font-weight: 600; color: var(--text-3); letter-spacing: 0; }
+        .price-inner .once { color: var(--text-3); font-size: .9rem; margin-bottom: 26px; }
+        .price-inner ul { list-style: none; text-align: left; display: grid; gap: 12px; margin: 0 auto 28px; max-width: 380px; }
+        .price-inner li { display: flex; gap: 12px; font-size: .95rem; color: var(--text-2); }
+        .price-inner li i { color: var(--green); margin-top: 4px; }
+        .price-secure { margin-top: 16px; font-size: .8rem; color: var(--text-3); display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; }
+
+        /* ===== FAQ ===== */
+        .faq { max-width: 780px; margin: 0 auto; display: grid; gap: 12px; }
+        .faq details { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color .2s; }
+        .faq details[open] { border-color: rgba(108, 60, 225, 0.35); }
+        .faq summary { list-style: none; cursor: pointer; padding: 18px 22px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: '+'; font-size: 1.4rem; line-height: 1; color: var(--purple-light); transition: transform .25s var(--ease); flex-shrink: 0; }
+        .faq details[open] summary::after { transform: rotate(45deg); }
+        .faq .a { padding: 0 22px 20px; color: var(--text-2); font-size: .95rem; }
+
+        /* ===== FINAL CTA ===== */
+        .final { text-align: center; border-radius: 28px; padding: 64px 28px; border: 1px solid var(--border-strong);
+            background: radial-gradient(ellipse at 50% 0%, rgba(108, 60, 225, 0.28), transparent 70%), var(--bg-2); }
+        .final h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 16px; }
+        .final p { color: var(--text-2); max-width: 540px; margin: 0 auto 30px; font-size: 1.05rem; }
+
+        /* ===== FOOTER ===== */
+        footer { border-top: 1px solid var(--border); padding: 44px 0 36px; margin-top: 40px; }
+        .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: flex-start; }
+        .foot p { font-size: .8rem; color: var(--text-3); max-width: 620px; line-height: 1.65; }
+        .foot .copy { margin-top: 10px; }
+        .foot-links { display: flex; gap: 20px; font-size: .88rem; }
+        .foot-links a { color: var(--text-2); }
+
+        /* ===== MODAL (auth) ===== */
+        .modal { position: fixed; inset: 0; z-index: 9000; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(4, 4, 12, 0.72); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+        .modal.open { display: flex; }
+        .modal-card { position: relative; width: 100%; max-width: 410px; background: #12122a; border: 1px solid var(--border-strong); border-radius: 20px; padding: 32px 28px 26px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6); animation: pop .3s cubic-bezier(.34, 1.56, .64, 1); max-height: calc(100vh - 40px); overflow-y: auto; }
+        @keyframes pop { from { transform: scale(.94); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .modal-close { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; color: var(--text-3); font-size: 1.1rem; }
+        .modal-close:hover { background: var(--surface-2); color: var(--text); }
+        .modal-card h3 { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+        .modal-card .sub { color: var(--text-2); font-size: .92rem; margin-bottom: 22px; }
+        .google-btn { width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border-radius: 12px; background: #fff; color: #1f1f1f; font-weight: 600; font-size: .95rem; transition: background .15s; }
+        .google-btn:hover { background: #ececec; }
+        .google-btn:disabled { opacity: .6; cursor: wait; }
+        .google-btn svg { width: 18px; height: 18px; }
+        .divider { display: flex; align-items: center; gap: 12px; margin: 18px 0; color: var(--text-3); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
+        .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border-strong); }
+        .field { margin-bottom: 12px; }
+        .field label { display: block; font-size: .8rem; font-weight: 600; color: var(--text-2); margin-bottom: 6px; }
+        .field input { width: 100%; font: inherit; font-size: .95rem; color: var(--text); background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-strong); border-radius: 12px; padding: 12px 14px; transition: border-color .15s, box-shadow .15s; }
+        .field input:focus { outline: none; border-color: var(--purple-light); box-shadow: 0 0 0 3px rgba(108, 60, 225, 0.28); }
+        .auth-row { display: flex; justify-content: flex-end; margin: -2px 0 10px; }
+        .auth-row button { font-size: .82rem; color: var(--blue-light); font-weight: 600; }
+        .auth-msg { min-height: 20px; font-size: .86rem; margin-bottom: 10px; }
+        .auth-msg.error { color: #fca5a5; }
+        .auth-msg.success { color: var(--green); }
+        .auth-toggle { text-align: center; margin-top: 16px; font-size: .88rem; color: var(--text-2); }
+        .auth-toggle button { color: var(--blue-light); font-weight: 700; }
+        .auth-legal { margin-top: 14px; text-align: center; font-size: .74rem; color: var(--text-3); }
+
+        /* ===== LOADER ===== */
+        #pageLoader { position: fixed; inset: 0; z-index: 99999; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 18px; background: radial-gradient(ellipse at 30% 20%, rgba(108, 60, 225, 0.18), transparent 60%), var(--bg); opacity: 0; transition: opacity .25s; }
+        #pageLoader.active { display: flex; }
+        #pageLoader.visible { opacity: 1; }
+        .loader-ring { width: 52px; height: 52px; border-radius: 50%; border: 4px solid rgba(255, 255, 255, 0.08); border-top-color: var(--purple); border-right-color: var(--blue); animation: spin .85s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loader-text { font-size: .92rem; font-weight: 600; color: var(--text-2); }
+
+        /* ===== REVEAL ===== */
+        .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+        .reveal.in { opacity: 1; transform: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+            .reveal { opacity: 1; transform: none; }
         }
     </style>
+
     <!-- Firebase (Auth + Realtime Database) -->
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
-    <script src="plutoscan-auth.js?v=2"></script>
-    <style>
-        #authModal {
-            display: none;
-            position: fixed; inset: 0; z-index: 9999;
-            background: rgba(6,8,20,0.75);
-            align-items: center; justify-content: center;
-        }
-        #authModal.open { display: flex; }
-        #authModal .auth-card {
-            background: #12142b; border: 1px solid rgba(255,255,255,0.1);
-            border-radius: 14px; padding: 32px; width: 90%; max-width: 380px;
-            box-shadow: 0 20px 60px rgba(0,0,0,0.5);
-        }
-        #authModal h3 { color: #fff; margin: 0 0 6px; font-size: 1.3rem; }
-        #authModal p.sub { color: rgba(255,255,255,0.55); font-size: 0.9rem; margin: 0 0 20px; }
-        #authModal input {
-            width: 100%; box-sizing: border-box; padding: 12px 14px; margin-bottom: 12px;
-            border-radius: 8px; border: 1px solid rgba(255,255,255,0.15);
-            background: rgba(255,255,255,0.05); color: #fff; font-size: 0.95rem;
-        }
-        #authModal .auth-error { color: #ff6b6b; font-size: 0.85rem; min-height: 18px; margin-bottom: 8px; }
-        #authModal .auth-submit-btn {
-            width: 100%; padding: 12px; border: none; border-radius: 8px; cursor: pointer;
-            background: linear-gradient(135deg, #6c3ce1, #1e90ff); color: #fff; font-weight: 600; font-size: 0.95rem;
-        }
-        #authModal .auth-submit-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-        #authModal .auth-toggle { text-align: center; margin-top: 16px; font-size: 0.85rem; color: rgba(255,255,255,0.6); }
-        #authModal .auth-toggle a { color: #8ab4ff; cursor: pointer; text-decoration: underline; }
-        #authModal .auth-close { position: absolute; top: 16px; right: 20px; color: rgba(255,255,255,0.5); cursor: pointer; font-size: 1.3rem; }
-        #authModal .auth-divider { display: flex; align-items: center; gap: 12px; margin: 18px 0 14px; }
-        #authModal .auth-divider::before,
-        #authModal .auth-divider::after { content: ''; flex: 1; height: 1px; background: rgba(255,255,255,0.12); }
-        #authModal .auth-divider span { color: rgba(255,255,255,0.4); font-size: 0.78rem; text-transform: uppercase; letter-spacing: 0.05em; }
-        #authModal .google-btn {
-            width: 100%; padding: 11px; border-radius: 8px; cursor: pointer;
-            background: #fff; color: #1f1f1f; font-weight: 600; font-size: 0.92rem;
-            border: 1px solid rgba(0,0,0,0.1); display: flex; align-items: center;
-            justify-content: center; gap: 10px; transition: background 0.15s;
-        }
-        #authModal .google-btn:hover { background: #f2f2f2; }
-        #authModal .google-btn:disabled { opacity: 0.6; cursor: not-allowed; }
-        #authModal .google-btn svg { width: 18px; height: 18px; flex-shrink: 0; }
-    </style>
+    <script src="plutoscan-auth.js?v=3"></script>
 </head>
 <body>
 
-    <!-- ===== PAGE TRANSITION LOADER ===== -->
-    <div id="pageLoader">
+    <div id="pageLoader" role="status" aria-live="polite">
         <div class="loader-ring"></div>
         <div class="loader-text" id="pageLoaderText">Loading…</div>
     </div>
 
-    <!-- ===== TOP-RIGHT LOGIN BUTTON ===== -->
-    <button type="button" class="btn-secondary" id="topLoginBtn">
-        <i class="fas fa-user"></i> Log in
-    </button>
+    <!-- ===== NAV ===== -->
+    <header class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="#top" class="brand" aria-label="PlutoScan home"><span class="brand-mark" aria-hidden="true"></span>PlutoScan</a>
+            <nav class="nav-links" aria-label="Sections">
+                <a href="#curriculum">Curriculum</a>
+                <a href="#scanner">Scanner</a>
+                <a href="#free-lesson">Free Lesson</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="nav-actions">
+                <span class="nav-user hidden" id="navUser"></span>
+                <button type="button" class="link-btn" id="navLogin">Log in</button>
+                <button type="button" class="link-btn hidden" id="navLogout">Log out</button>
+                <button type="button" class="btn btn-primary btn-sm js-buy" id="navCta">Get Access<span class="nav-cta-price">&nbsp;· $16.99</span></button>
+            </div>
+        </div>
+    </header>
 
-    <!-- Login / signup modal shown before checkout -->
-    <div id="authModal">
-        <div class="auth-card" style="position:relative;">
-            <span class="auth-close" id="authClose">&times;</span>
+    <div class="container" id="noticeWrap"></div>
+
+    <main id="top">
+        <!-- ===== HERO ===== -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="stars" id="stars"></div>
+            <div class="container hero-grid">
+                <div>
+                    <span class="eyebrow"><i class="fas fa-shield-halved"></i> Crypto education for beginners</span>
+                    <h1>Learn crypto <span class="text-gradient">without getting wrecked.</span></h1>
+                    <p class="hero-sub">Most beginners lose money to the same few mistakes: scams, bad sends and hype. PlutoScan teaches you to avoid every one of them, then gives you a live 12-point Research Scanner to judge any coin before you risk a dollar.</p>
+                    <div class="hero-ctas">
+                        <button type="button" class="btn btn-primary js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Start Learning — $16.99</span></button>
+                        <a href="#curriculum" class="btn btn-ghost">See what's inside</a>
+                    </div>
+                    <div class="hero-trust">
+                        <span><i class="fas fa-check-circle"></i> One-time payment</span>
+                        <span><i class="fas fa-check-circle"></i> Lifetime access</span>
+                        <span><i class="fas fa-check-circle"></i> Secure checkout by Stripe</span>
+                    </div>
+                </div>
+
+                <div class="preview" aria-label="Example of the PlutoScan Research Scanner">
+                    <span class="pv-tag">LIVE SCANNER</span>
+                    <div class="preview-bar"><span></span><span></span><span></span><b>PlutoScan Research Scanner</b></div>
+                    <div class="pv-score">
+                        <div class="ring" style="--p:82"><strong>82%</strong></div>
+                        <div>
+                            <div class="pv-label">Research readiness</div>
+                            <div class="pv-verdict">Well-Researched</div>
+                            <div class="pv-coin">Example analysis · illustrative data</div>
+                        </div>
+                    </div>
+                    <div class="pv-rows">
+                        <div class="pv-row"><span>💰 Market cap over $1B</span><span class="ok">✓ Pass</span></div>
+                        <div class="pv-row"><span>🧮 FDV within 3× market cap</span><span class="ok">✓ 1.4×</span></div>
+                        <div class="pv-row"><span>🏛️ Listed on 5+ exchanges</span><span class="ok">✓ Pass</span></div>
+                        <div class="pv-row"><span>👤 Team verified</span><span class="bad">⚠ Research</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STRIP ===== -->
+        <div class="strip">
+            <div class="container strip-grid">
+                <div class="strip-item"><strong>18</strong><span>focused lessons</span></div>
+                <div class="strip-item"><strong>5</strong><span>step-by-step phases</span></div>
+                <div class="strip-item"><strong>12-point</strong><span>live Research Scanner</span></div>
+                <div class="strip-item"><strong>120+</strong><span>term built-in glossary</span></div>
+            </div>
+        </div>
+
+        <!-- ===== PROBLEM ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-triangle-exclamation"></i> The reality</span>
+                    <h2>Crypto doesn't forgive beginner mistakes.</h2>
+                    <p>There's no bank to call and no "undo" button. Most people who get burned make one of three mistakes. Each one is avoidable once you know what to look for.</p>
+                </div>
+                <div class="stat-callout reveal">
+                    <div class="big">$9.3B</div>
+                    <div>
+                        <p>in cryptocurrency-related fraud losses reported by Americans in 2024 alone.</p>
+                        <cite>Source: <a href="https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf" target="_blank" rel="noopener">FBI Internet Crime Complaint Center, 2024 Internet Crime Report</a></cite>
+                    </div>
+                </div>
+                <div class="grid-3">
+                    <div class="card threat reveal">
+                        <div class="icon-tile red"><i class="fas fa-user-secret"></i></div>
+                        <h3>Falling for a scam</h3>
+                        <p>Fake support DMs, cloned wallet sites, "double your crypto" giveaways and slow-burn investment scams that look like real trading platforms.</p>
+                        <div class="threat-fix"><strong>You'll learn:</strong> the exact scripts scammers use, and the red flags that expose them.</div>
+                    </div>
+                    <div class="card threat reveal">
+                        <div class="icon-tile red"><i class="fas fa-key"></i></div>
+                        <h3>Losing access or funds</h3>
+                        <p>A screenshotted seed phrase, a send on the wrong network, a look-alike address copied from history. One slip and it's gone for good.</p>
+                        <div class="threat-fix"><strong>You'll learn:</strong> bulletproof wallet setup, seed backup and a pre-send checklist.</div>
+                    </div>
+                    <div class="card threat reveal">
+                        <div class="icon-tile red"><i class="fas fa-fire"></i></div>
+                        <h3>Buying the hype</h3>
+                        <p>FOMO buys at the top, "cheap" coins with huge hidden supply, and markets so thin you can't sell when you need to.</p>
+                        <div class="threat-fix"><strong>You'll learn:</strong> to read market cap, FDV, volume and supply like a researcher.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHAT'S INSIDE ===== -->
+        <section class="section alt">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-box-open"></i> What you get</span>
+                    <h2>A course and a research tool, <span class="text-gradient">working together</span></h2>
+                    <p>Learn a concept, prove you understand it, then apply it to real, live market data.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card reveal"><div class="icon-tile"><i class="fas fa-route"></i></div><h3>18 step-by-step lessons</h3><p>Five phases, from "what is a blockchain?" to analysing a real coin. Each lesson unlocks the next, so you build knowledge in the right order and never get lost.</p></div>
+                    <div class="card reveal"><div class="icon-tile"><i class="fas fa-film"></i></div><h3>Video + written guides</h3><p>Every lesson pairs a short video with a plain-English guide full of real-world examples, beginner mistakes to avoid and survival rules.</p></div>
+                    <div class="card reveal"><div class="icon-tile"><i class="fas fa-brain"></i></div><h3>Knowledge checks</h3><p>Short scenario quizzes after each section, with explanations, so you know you've actually got it before moving on.</p></div>
+                    <div class="card reveal"><div class="icon-tile"><i class="fas fa-satellite-dish"></i></div><h3>Live Research Scanner</h3><p>Pull live data for any coin and score it against 12 objective checks across 3 weighted pillars. Your structured second opinion before every decision.</p></div>
+                    <div class="card reveal"><div class="icon-tile"><i class="fas fa-star"></i></div><h3>Watchlist + data widget</h3><p>Search CoinGecko's coin list, check live numbers and bookmark coins you're researching, all without leaving your dashboard.</p></div>
+                    <div class="card reveal"><div class="icon-tile"><i class="fas fa-book-open"></i></div><h3>Built-in glossary</h3><p>Every technical term is tappable, right where you read it. No more nodding along to "FDV," "slippage" or "gwei."</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CURRICULUM ===== -->
+        <section class="section" id="curriculum">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-map"></i> The curriculum</span>
+                    <h2>From zero to confident, in five phases</h2>
+                    <p>Every lesson has one job: give you a skill that protects your money.</p>
+                </div>
+                <div class="phases reveal" id="phases"></div>
+                <p class="curr-foot">Complete all 18 lessons to unlock the full Research Scanner.</p>
+            </div>
+        </section>
+
+        <!-- ===== SCANNER DEMO ===== -->
+        <section class="section alt" id="scanner">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-satellite-dish"></i> Try the framework</span>
+                    <h2>The 12-point PlutoScan <span class="text-gradient">Research Framework</span></h2>
+                    <p>This is the exact scoring system inside the Scanner. Tick the checks a coin passes and watch the weighted score change. Inside the course, Auto-Fill does the data checks for you with live numbers.</p>
+                </div>
+                <div class="demo reveal">
+                    <div class="demo-checks" id="demoChecks"></div>
+                    <div class="demo-result" aria-live="polite">
+                        <div class="ring" id="demoRing" style="--p:0"><strong id="demoPct">0%</strong></div>
+                        <div class="demo-verdict" id="demoVerdict">Tick a check to start</div>
+                        <div class="demo-math" id="demoMath">0 of 14 weighted points</div>
+                        <div class="demo-bars" id="demoBars"></div>
+                        <p class="demo-note">Educational research-readiness score only. Not financial advice and never a buy or sell signal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FREE LESSON ===== -->
+        <section class="section" id="free-lesson">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-gift"></i> Free mini-lesson</span>
+                    <h2>5 survival rules every beginner needs</h2>
+                    <p>Before you buy anything, from anyone, learn these. They're free. The full course shows you how to apply them.</p>
+                </div>
+                <div class="rules">
+                    <div class="rule reveal"><div><h3>Your seed phrase is the money. Never share it, never digitise it.</h3><p>Whoever has your 12 or 24 recovery words controls your funds. No real support team, exchange or wallet will ever ask for them. Write them on paper, store them offline, and never type them into a website, a chat or a "wallet sync" tool.</p></div></div>
+                    <div class="rule reveal"><div><h3>Check the whole address, then send a test first.</h3><p>Scammers create look-alike addresses that match the first and last characters of ones you use, then plant them in your history ("address poisoning"). Never copy addresses from your history. Check the middle characters too, and send a small test before any large transfer.</p></div></div>
+                    <div class="rule reveal"><div><h3>"Send first, get double back" is always a scam.</h3><p>No legitimate giveaway, celebrity or exchange will ever ask you to send crypto to receive more. Urgency, secrecy and guaranteed returns together are the signature of a scam, every time.</p></div></div>
+                    <div class="rule reveal"><div><h3>Compare market caps, not prices.</h3><p>A $0.001 coin isn't cheap and a $50 coin isn't expensive. Price × supply = market cap, and that's the real size. Before believing "this coin will hit $1," multiply $1 by the supply and see if the answer is even possible.</p></div></div>
+                    <div class="rule reveal"><div><h3>Only invest what you can afford to lose, and never in the same hour as FOMO.</h3><p>Even the largest coins have fallen 75% or more from their peaks, more than once. Size your positions so a drop like that can't hurt your rent, bills or savings, and treat strong emotion as a signal to pause.</p></div></div>
+                </div>
+                <div class="rules-cta reveal">
+                    <p>That's 5 rules. The course gives you the full system: 18 lessons and a live Scanner.</p>
+                    <button type="button" class="btn btn-primary js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Get the Full Course — $16.99</span></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FIT ===== -->
+        <section class="section alt">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-compass"></i> Is it right for you?</span>
+                    <h2>Built for careful beginners</h2>
+                </div>
+                <div class="fit">
+                    <div class="card yes reveal">
+                        <h3>PlutoScan is for you if…</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i>You're new to crypto, or you've bought some without really knowing what you own.</li>
+                            <li><i class="fas fa-check"></i>You want to set up a wallet and send funds without making a costly mistake.</li>
+                            <li><i class="fas fa-check"></i>You want to recognise scams before they reach you.</li>
+                            <li><i class="fas fa-check"></i>You want a repeatable way to research a coin instead of trusting influencers.</li>
+                        </ul>
+                    </div>
+                    <div class="card no reveal">
+                        <h3>It's not for you if…</h3>
+                        <ul>
+                            <li><i class="fas fa-xmark"></i>You want trading signals or "coins to buy." We don't give financial advice.</li>
+                            <li><i class="fas fa-xmark"></i>You're looking for get-rich-quick strategies or leverage trading.</li>
+                            <li><i class="fas fa-xmark"></i>You're already an experienced on-chain researcher.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real customer reviews can go here once collected (end-of-course reviews are saved to Firebase under users/{uid}/review). -->
+
+        <!-- ===== PRICING ===== -->
+        <section class="section" id="pricing">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-tag"></i> Simple pricing</span>
+                    <h2>One payment. Lifetime access.</h2>
+                    <p>No subscription, no upsells, no recurring charges.</p>
+                </div>
+                <div class="price-card reveal">
+                    <div class="price-inner">
+                        <div class="label">PlutoScan Full Access</div>
+                        <div class="amount">$16.99 <small>USD</small></div>
+                        <div class="once">One-time payment · lifetime access</div>
+                        <ul>
+                            <li><i class="fas fa-check"></i>All 18 lessons: video + written guides</li>
+                            <li><i class="fas fa-check"></i>Knowledge checks with explanations</li>
+                            <li><i class="fas fa-check"></i>Live 12-point Research Scanner</li>
+                            <li><i class="fas fa-check"></i>Live data widget + personal watchlist</li>
+                            <li><i class="fas fa-check"></i>Built-in glossary of 120+ terms</li>
+                            <li><i class="fas fa-check"></i>Progress saved to your account</li>
+                            <li><i class="fas fa-check"></i>All future course and Scanner updates</li>
+                        </ul>
+                        <button type="button" class="btn btn-primary btn-block js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Start Learning — $16.99</span></button>
+                        <div class="price-secure"><span><i class="fas fa-lock"></i>&nbsp; Payments processed securely by Stripe. We never see your card details.</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section class="section alt" id="faq">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-circle-question"></i> Questions</span>
+                    <h2>Frequently asked questions</h2>
+                </div>
+                <div class="faq reveal">
+                    <details open><summary>Do I need any crypto experience?</summary><div class="a">None. Lesson 1 starts from zero and each lesson unlocks only after the one before it, so you learn everything in the right order.</div></details>
+                    <details><summary>Do I need to buy crypto to take the course?</summary><div class="a">No. You can complete every lesson and use the Research Scanner without owning any crypto. The course is designed so you learn the safety habits <em>before</em> you put money in.</div></details>
+                    <details><summary>Is this financial advice? Will you tell me what to buy?</summary><div class="a">No. PlutoScan is education. We never recommend coins or give buy/sell signals. The Scanner produces a research-readiness score from public data. It's a structured starting point for your own research, not a recommendation.</div></details>
+                    <details><summary>How is this different from just using CoinGecko?</summary><div class="a">CoinGecko gives you raw numbers. PlutoScan teaches you what those numbers mean, which ones are red flags, and how to check them consistently, then automates the data checks with the Scanner so your research becomes a repeatable habit.</div></details>
+                    <details><summary>How long does it take?</summary><div class="a">It's fully self-paced. Lessons are short and focused, so you can do one in a coffee break or several in an evening. Your progress is saved to your account.</div></details>
+                    <details><summary>What does "lifetime access" include?</summary><div class="a">One payment gives you permanent access to all lessons, the Research Scanner, the data widget, the glossary and any future updates to the course or Scanner. No subscriptions, no recurring charges.</div></details>
+                    <details><summary>Can I use it on my phone?</summary><div class="a">Yes. PlutoScan works in any modern browser on desktop, tablet and mobile. Log in on any device to pick up where you left off.</div></details>
+                    <details><summary>Is checkout secure?</summary><div class="a">Yes. Payments are handled by Stripe's secure checkout. PlutoScan never sees or stores your card details. You'll create a free account first so your purchase is tied to you.</div></details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FINAL CTA ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="final reveal">
+                    <h2>Stop guessing. <span class="text-gradient">Start scanning.</span></h2>
+                    <p>18 lessons, one live research tool, lifetime access, for less than the cost of one impulsive trade.</p>
+                    <button type="button" class="btn btn-primary js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Start Learning — $16.99</span></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container foot">
+            <div>
+                <a href="#top" class="brand"><span class="brand-mark" aria-hidden="true"></span>PlutoScan</a>
+                <p style="margin-top:14px;">PlutoScan is an educational platform. Course content and the Research Scanner are provided for informational purposes only and do not constitute financial, investment, tax or legal advice. Cryptocurrency is highly volatile and you can lose some or all of your money. Always do your own research. Market data is provided by CoinGecko and may be delayed or inaccurate.</p>
+                <p class="copy">© <span id="year"></span> PlutoScan · plutoscan.com</p>
+            </div>
+            <div class="foot-links">
+                <a href="#curriculum">Curriculum</a>
+                <a href="#faq">FAQ</a>
+                <button type="button" class="link-btn" id="footLogin" style="padding:0;font-size:.88rem;">Log in</button>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== AUTH MODAL ===== -->
+    <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+        <div class="modal-card">
+            <button type="button" class="modal-close" id="authClose" aria-label="Close"><i class="fas fa-xmark"></i></button>
             <h3 id="authTitle">Log in</h3>
-            <p class="sub" id="authSub">Log in to continue to checkout.</p>
+            <p class="sub" id="authSub">Welcome back.</p>
 
             <button type="button" class="google-btn" id="googleAuthBtn">
-                <svg viewBox="0 0 48 48"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+                <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
                 Continue with Google
             </button>
-            <div class="auth-divider"><span>or</span></div>
+            <div class="divider">or with email</div>
 
-            <input type="email" id="authEmail" placeholder="Email" autocomplete="email" />
-            <input type="password" id="authPassword" placeholder="Password" autocomplete="current-password" />
-            <div class="auth-error" id="authError"></div>
-            <button class="auth-submit-btn" id="authSubmitBtn">Log in</button>
-            <div class="auth-toggle">
-                <span id="authToggleText">Don't have an account? <a id="authToggleLink">Sign up</a></span>
-            </div>
+            <form id="authForm" novalidate>
+                <div class="field"><label for="authEmail">Email</label><input type="email" id="authEmail" autocomplete="email" required /></div>
+                <div class="field" id="passwordField"><label for="authPassword">Password</label><input type="password" id="authPassword" autocomplete="current-password" minlength="6" required /></div>
+                <div class="auth-row" id="forgotRow"><button type="button" id="forgotBtn">Forgot password?</button></div>
+                <div class="auth-msg" id="authMsg" role="alert"></div>
+                <button type="submit" class="btn btn-primary btn-block" id="authSubmitBtn">Log in</button>
+            </form>
+            <div class="auth-toggle" id="authToggle"></div>
+            <p class="auth-legal">Your account keeps your purchase and progress safe across devices.</p>
         </div>
     </div>
 
-
-    <section id="landing">
-        <div class="stars-bg" id="landingStars"></div>
-        <div class="landing-content">
-            <div class="logo"><span>PlutoScan</span></div>
-            <div class="tagline">Navigate the cosmos of crypto with confidence.</div>
-
-            <div class="constellation-preview">
-                <div class="phase-label" style="top:8%;left:10%;">The Launchpad</div>
-                <div class="phase-label" style="top:25%;right:8%;">Navigating the Nebula</div>
-                <div class="phase-label" style="bottom:30%;left:6%;">Gravity Wells</div>
-                <div class="phase-label" style="bottom:10%;right:15%;">The Atlas</div>
-                <div class="phase-label" style="top:41%;left:50%;transform:translate(-50%,-50%);">Mission Control</div>
-                <div class="star-dot" style="top:12%;left:22%;"></div>
-                <div class="star-dot" style="top:8%;left:35%;"></div>
-                <div class="star-dot" style="top:18%;left:48%;"></div>
-                <div class="star-dot dim" style="top:28%;right:20%;"></div>
-                <div class="star-dot dim" style="top:20%;right:32%;"></div>
-                <div class="star-dot" style="top:40%;right:18%;"></div>
-                <div class="star-dot dim" style="bottom:40%;left:18%;"></div>
-                <div class="star-dot" style="bottom:32%;left:30%;"></div>
-                <div class="star-dot dim" style="bottom:20%;left:45%;"></div>
-                <div class="star-dot" style="bottom:15%;right:25%;"></div>
-                <div class="star-dot dim" style="bottom:8%;right:38%;"></div>
-                <div class="star-dot big" style="top:48%;left:48%;"></div>
-            </div>
-
-            <h1>Your Guide to becoming a <span class="text-gradient">Confident Crypto Investor</span></h1>
-            <p style="color:rgba(255,255,255,0.55);font-size:1.02rem;max-width:520px;margin:14px auto 0;line-height:1.6;">18 structured modules to help you learn step by step, plus the <mark style="background:linear-gradient(135deg, rgba(108,60,225,0.35), rgba(30,144,255,0.35));color:#fff;padding:1px 6px;border-radius:4px;">PlutoScan Research Scanner</mark> — a live, data-driven tool that scores any coin's research readiness in seconds.</p>
-            <div class="price"><span class="price-amt">$16.99</span> <small>— Lifetime Access</small></div>
-            <button class="btn-primary" id="launchBtn">
-                <i class="fas fa-rocket"></i> Launch Your Journey
-            </button>
-        </div>
-    </section>
-
-    <!-- ===== LANDING: WHAT'S INSIDE ===== -->
-    <section class="lp-section" style="background:var(--dark);">
-        <div class="lp-eyebrow">What's Inside</div>
-        <h2 class="lp-heading">Everything a beginner needs to <span class="text-gradient">Learn Crypto</span></h2>
-        <div class="lp-feature-grid">
-            <div class="lp-feature-card">
-                <div class="icon"><i class="fas fa-route"></i></div>
-                <h3>18 Structured Modules</h3>
-                <p>Five phases, from blockchain basics to wallet security to reading real market data — each one unlocks after the last, so nothing gets skipped.</p>
-            </div>
-            <div class="lp-feature-card">
-                <div class="icon"><i class="fas fa-satellite-dish"></i></div>
-                <h3>Live Research Scanner</h3>
-                <p>Pull real-time data on any coin and auto-score it against 12 objective checks across 3 weighted pillars — in seconds, not hours of tab-switching.</p>
-            </div>
-            <div class="lp-feature-card">
-                <div class="icon"><i class="fas fa-book-open"></i></div>
-                <h3>Built-In Glossary</h3>
-                <p>Every technical term is clickable, right where you need it — no leaving the lesson to Google what "slippage" or "FDV" means.</p>
-            </div>
-            <div class="lp-feature-card">
-                <div class="icon"><i class="fas fa-star"></i></div>
-                <h3>Personal Watchlist</h3>
-                <p>Bookmark coins as you research them and track live price, volume, and score changes in one place — a real research workflow, not just a course.</p>
-            </div>
-            <div class="lp-feature-card">
-                <div class="icon"><i class="fas fa-shield-halved"></i></div>
-                <h3>Scam & Security Training</h3>
-                <p>Dedicated modules on phishing, rug pulls, and giveaway scams so the first project you research isn't the one that costs you everything.</p>
-            </div>
-            <div class="lp-feature-card">
-                <div class="icon"><i class="fas fa-infinity"></i></div>
-                <h3>Lifetime Access & Updates</h3>
-                <p>One payment. As crypto evolves and we refine the Scanner's methodology, your access and updates come along for free — forever.</p>
-            </div>
-        </div>
-    </section>
-
-    <div class="lp-divider"></div>
-
-    <!-- ===== LANDING: THE FRAMEWORK ===== -->
-    <section class="lp-section">
-        <div class="lp-eyebrow">The Method</div>
-        <h2 class="lp-heading">The PlutoScan <span class="text-gradient">Research Framework</span></h2>
-        <p class="lp-subheading">This is the exact 3-pillar, 12-point system you'll learn to apply — and the same one that powers the Scanner tool inside your dashboard.</p>
-        <div class="lp-pillar-grid">
-            <div class="lp-pillar-card">
-                <div class="num">01</div>
-                <span class="weight-tag high">Weighted Highest</span>
-                <h3>🛡️ Security &amp; Stability</h3>
-                <p>Market cap, trading volume, supply clarity, FDV-to-market-cap ratio, and exchange listings. The structural checks that protect you from catastrophic, hard-to-reverse mistakes.</p>
-            </div>
-            <div class="lp-pillar-card">
-                <div class="num">02</div>
-                <span class="weight-tag med">Weighted Medium</span>
-                <h3>🏗️ Fundamentals</h3>
-                <p>Use case clarity, active development, a real roadmap, team credibility, and market rank. Is there substance behind the token, or just a website and a Discord?</p>
-            </div>
-            <div class="lp-pillar-card">
-                <div class="num">03</div>
-                <span class="weight-tag low">Weighted Lightest</span>
-                <h3>👥 Community &amp; Momentum</h3>
-                <p>Social engagement and price stability. Useful context — but weighted lowest deliberately, since hype is the easiest signal in crypto to fake.</p>
-            </div>
-        </div>
-        <div class="lp-scanner-mock">
-            <div class="sm-row"><span class="sm-label">💰 Market Cap &gt; $1B</span><span class="sm-good">✅ Yes</span></div>
-            <div class="sm-row"><span class="sm-label">🧮 FDV / Mcap Ratio</span><span class="sm-good">1.4× ✅</span></div>
-            <div class="sm-row"><span class="sm-label">💻 Active Development</span><span class="sm-good">⭐ 4,200 · 🍴 1,100 ✅</span></div>
-            <div class="sm-row"><span class="sm-label">🏅 Market Cap Rank</span><span class="sm-good">#12 ✅</span></div>
-            <div class="sm-score">
-                <div class="big-num">87%</div>
-                <div class="verdict-tag">Well-Researched — Strong Across the Board</div>
-            </div>
-        </div>
-    </section>
-
-    <div class="lp-divider"></div>
-
-    <!-- ===== LANDING: TESTIMONIALS ===== -->
-    <section class="lp-section">
-        <div class="lp-eyebrow">Trusted By Beginners</div>
-        <h2 class="lp-heading">People who started exactly <span class="text-gradient">where you are</span></h2>
-        <p class="lp-subheading">Real feedback from beginners who went from overwhelmed to confident using the course and Scanner tool.</p>
-        <div class="lp-testimonial-grid">
-            <div class="lp-testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="quote">"I'd bought crypto twice before and had no idea what I actually owned. The Scanner made me realize I'd skipped every red flag it checks for."</p>
-                <div class="author">
-                    <div class="avatar">JM</div>
-                    <div><div class="author-name">Jordan M.</div><div class="author-sub">Beginner, 3 months in</div></div>
-                </div>
-            </div>
-            <div class="lp-testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="quote">"The glossary alone was worth it. I stopped nodding along in Discord servers pretending to understand 'FDV' and actually understood it."</p>
-                <div class="author">
-                    <div class="avatar">RT</div>
-                    <div><div class="author-name">Riley T.</div><div class="author-sub">Beginner, 6 weeks in</div></div>
-                </div>
-            </div>
-            <div class="lp-testimonial-card">
-                <div class="stars">★★★★★</div>
-                <p class="quote">"Module 10 on scams probably saved me from a fake giveaway DM the following week. Recognized it instantly."</p>
-                <div class="author">
-                    <div class="avatar">AK</div>
-                    <div><div class="author-name">Avery K.</div><div class="author-sub">Beginner, 2 months in</div></div>
-                </div>
-            </div>
-        </div>
-    </section>
-
-    <div class="lp-divider"></div>
-
-    <!-- ===== LANDING: FAQ ===== -->
-    <section class="lp-section tight">
-        <div class="lp-eyebrow">Questions</div>
-        <h2 class="lp-heading">Frequently Asked <span class="text-gradient">Questions</span></h2>
-        <p class="lp-subheading">Still deciding? Here's what people usually ask before starting.</p>
-        <div class="lp-faq">
-            <details open>
-                <summary>Do I need any prior crypto knowledge?</summary>
-                <div class="faq-a">None at all. Module 1 assumes you're starting from zero and builds up in order — each module unlocks only after the previous one, so you can't accidentally skip ahead and get lost.</div>
-            </details>
-            <details>
-                <summary>Is the Research Scanner giving me financial advice?</summary>
-                <div class="faq-a">No. The Scanner produces an educational research-readiness score based on objective, publicly available data — it is not investment advice and never issues a "buy" or "sell" signal. It's a research tool to help you ask better questions, not a substitute for your own judgment.</div>
-            </details>
-            <details>
-                <summary>What does "lifetime access" actually include?</summary>
-                <div class="faq-a">One payment gets you permanent access to all 18 modules, the Scanner tool, the glossary, and any future updates we make to the course content or scoring methodology — no subscriptions, no recurring charges.</div>
-            </details>
-            <details>
-                <summary>How is this different from just reading CoinGecko myself?</summary>
-                <div class="faq-a">CoinGecko gives you raw data. PlutoScan teaches you what that data actually means, then automates the process of checking it against a consistent, weighted framework — turning an hour of scattered research into a structured, repeatable habit.</div>
-            </details>
-        </div>
-    </section>
-
-    <!-- ===== LANDING: FINAL CTA ===== -->
-    <section class="lp-section">
-        <div class="lp-final-cta">
-            <h2>Stop guessing. Start <span class="text-gradient">scanning</span>.</h2>
-            <p>Eighteen modules, one live research tool, lifetime access — for less than the price of one impulsive trade.</p>
-            <button class="btn-primary" id="launchBtnBottom">
-                <i class="fas fa-rocket"></i> Launch Your Journey — <span class="price-amt">$16.99</span>
-            </button>
-        </div>
-    </section>
-
-    <footer class="lp-footer">
-        <div class="footer-logo"><span>PlutoScan</span></div>
-        <p>PlutoScan is an educational platform. Content and the Research Scanner tool are provided for informational purposes only and do not constitute financial, investment, or legal advice. Cryptocurrency investing carries significant risk, including the potential loss of principal. Always do your own research before making financial decisions.</p>
-        <div class="footer-domain">plutoscan.com</div>
-    </footer>
-
-
     <script>
-        (function() {
+        (function () {
             'use strict';
 
-            // ---- Page transition loader ----
-            const pageLoader = document.getElementById('pageLoader');
+            const PRICE = '$16.99';
+            const $ = (id) => document.getElementById(id);
+
+            // Public curriculum outline (titles only — lesson content is served after purchase).
+            const CURRICULUM = [
+                { name: 'The Launchpad', desc: 'How crypto actually works', modules: [
+                    ['What is a Blockchain?', 'Why it can\'t be quietly edited, and why its mistakes are permanent.'],
+                    ['What is Cryptocurrency?', 'Coins vs. tokens, stablecoins, memecoins, and the "cheap price" trap.'],
+                    ['How Transactions Work', 'From signature to confirmation, and how to track yours.'] ] },
+                { name: 'Navigating the Nebula', desc: 'Wallets & self-custody', modules: [
+                    ['Public Keys vs. Private Keys', 'What to share, what never to share, and "not your keys, not your coins."'],
+                    ['What is a Seed Phrase?', 'Back it up properly and spot every seed-phrase scam.'],
+                    ['Hot Wallets vs. Cold Wallets', 'Exchange, hot or hardware: where your crypto should live.'],
+                    ['How to Set Up Your First Hot Wallet', 'Install safely and read approvals before you sign.'],
+                    ['How to Send and Receive Crypto', 'Networks, memos, address poisoning and the test-send habit.'] ] },
+                { name: 'Gravity Wells', desc: 'The forces that wreck beginners', modules: [
+                    ['Volatility and Market Cycles', 'Why prices swing so hard, and a plan to keep emotion out.'],
+                    ['Common Scams to Avoid', 'Phishing, wallet drainers, rug pulls, fake giveaways, pig butchering.'],
+                    ['Gas Fees and Network Congestion', 'Why fees spike, how to fix stuck transactions, and the gas-coin trap.'] ] },
+                { name: 'The Atlas', desc: 'Reading market data', modules: [
+                    ['How to Read a CoinGecko Page', 'Read a coin page like a researcher and verify the real token.'],
+                    ['Market Cap vs. Fully Diluted Valuation', 'Why low price isn\'t cheap, and how hidden supply hurts you.'],
+                    ['Trading Volume and Liquidity', 'Can you actually sell? Spotting thin and fake volume.'],
+                    ['Circulating Supply vs. Max Supply', 'Dilution, emissions, halvings and holder concentration.'] ] },
+                { name: 'Mission Control', desc: 'Your research system', modules: [
+                    ['The PlutoScan Research Framework', '3 pillars, 12 checks, and exactly how the score works.'],
+                    ['How to Pull Live Data from the Widget', 'Find, verify and bookmark coins with live data.'],
+                    ['Applying the Framework to Your First Coin', 'A complete analysis plus the pre-buy survival checklist.'] ] },
+            ];
+
+            // Same checks and weights as the Scanner inside the course.
+            const PILLARS = [
+                { key: 'safety', name: '🛡️ Security & Stability', weight: 1.5, tag: 'high', label: '×1.5 weight', checks: ['Market cap over $1B', '24h volume over $50M', 'Max supply known', 'Listed on more than 5 exchanges', 'FDV within 3× of market cap'] },
+                { key: 'fundamental', name: '🏗️ Fundamentals', weight: 1.0, tag: 'med', label: '×1.0 weight', checks: ['Clear, real use case', 'Active open-source development', 'Published roadmap', 'Identifiable, credible team', 'Top 250 by market cap'] },
+                { key: 'sentiment', name: '👥 Community & Momentum', weight: 0.75, tag: 'low', label: '×0.75 weight', checks: ['Active community', '30-day price move under 40%'] },
+            ];
+            const DEMO_DEFAULT = { safety: [0, 1, 2, 3], fundamental: [0, 1, 4], sentiment: [0] };
+
+            // ---------- Loader ----------
+            const pageLoader = $('pageLoader');
             function showPageLoader(msg) {
-                if (!pageLoader) return;
-                const txt = document.getElementById('pageLoaderText');
-                if (txt) txt.textContent = msg || 'Loading…';
+                $('pageLoaderText').textContent = msg || 'Loading…';
                 pageLoader.classList.add('active');
-                requestAnimationFrame(function() { pageLoader.classList.add('visible'); });
+                requestAnimationFrame(() => pageLoader.classList.add('visible'));
             }
             function hidePageLoader() {
-                if (!pageLoader) return;
                 pageLoader.classList.remove('visible');
-                setTimeout(function() { pageLoader.classList.remove('active'); }, 250);
+                setTimeout(() => pageLoader.classList.remove('active'), 250);
+            }
+            // Restore the page if the browser brings it back from the back/forward cache.
+            window.addEventListener('pageshow', (e) => { if (e.persisted) hidePageLoader(); });
+
+            // ---------- Notices from redirects ----------
+            function showNotice(type, html) {
+                const wrap = $('noticeWrap');
+                const el = document.createElement('div');
+                el.className = 'notice ' + type;
+                el.innerHTML = `<i class="fas ${type === 'warn' ? 'fa-circle-exclamation' : 'fa-circle-info'}"></i><div>${html}</div><button type="button" class="notice-close" aria-label="Dismiss"><i class="fas fa-xmark"></i></button>`;
+                el.querySelector('.notice-close').addEventListener('click', () => el.remove());
+                wrap.appendChild(el);
             }
 
-            function goToCourse() {
-                showPageLoader('Loading your dashboard…');
-                window.location.href = 'plutoscan-modules.html';
-            }
+            // ---------- Auth modal ----------
+            let authMode = 'login';   // 'login' | 'signup' | 'reset'
+            let authIntent = 'login'; // 'login' | 'checkout'
+            const authModal = $('authModal');
+            const authEmail = $('authEmail');
+            const authPassword = $('authPassword');
+            const authMsg = $('authMsg');
+            const authSubmitBtn = $('authSubmitBtn');
+            let lastFocus = null;
 
-            // ---- Auth modal state ----
-            let authMode = 'login'; // 'login' | 'signup'
-            const authModal = document.getElementById('authModal');
-            const authTitle = document.getElementById('authTitle');
-            const authSub = document.getElementById('authSub');
-            const authEmail = document.getElementById('authEmail');
-            const authPassword = document.getElementById('authPassword');
-            const authError = document.getElementById('authError');
-            const authSubmitBtn = document.getElementById('authSubmitBtn');
-            const authToggleText = document.getElementById('authToggleText');
-            const authToggleLink = document.getElementById('authToggleLink');
-            const authClose = document.getElementById('authClose');
+            function setMsg(text, kind) { authMsg.textContent = text || ''; authMsg.className = 'auth-msg' + (kind ? ' ' + kind : ''); }
 
             function setAuthMode(mode) {
                 authMode = mode;
-                authError.textContent = '';
+                setMsg('');
+                const checkout = authIntent === 'checkout';
+                $('passwordField').classList.toggle('hidden', mode === 'reset');
+                $('forgotRow').classList.toggle('hidden', mode !== 'login');
+                $('googleAuthBtn').classList.toggle('hidden', mode === 'reset');
+                document.querySelector('.divider').classList.toggle('hidden', mode === 'reset');
+                authPassword.setAttribute('autocomplete', mode === 'signup' ? 'new-password' : 'current-password');
+                const toggle = $('authToggle');
                 if (mode === 'login') {
-                    authTitle.textContent = 'Log in';
-                    authSub.textContent = 'Log in to continue to checkout.';
-                    authSubmitBtn.textContent = 'Log in';
-                    authToggleText.innerHTML = "Don't have an account? <a id=\"authToggleLink\">Sign up</a>";
+                    $('authTitle').textContent = 'Log in';
+                    $('authSub').textContent = checkout ? 'Log in to continue to secure checkout.' : 'Welcome back. Pick up where you left off.';
+                    authSubmitBtn.textContent = checkout ? 'Log in & continue' : 'Log in';
+                    toggle.innerHTML = 'New to PlutoScan? <button type="button" data-mode="signup">Create an account</button>';
+                } else if (mode === 'signup') {
+                    $('authTitle').textContent = 'Create your account';
+                    $('authSub').textContent = checkout ? 'One quick step, then straight to secure checkout.' : 'Create a free account to get started.';
+                    authSubmitBtn.textContent = checkout ? 'Create account & continue' : 'Create account';
+                    toggle.innerHTML = 'Already have an account? <button type="button" data-mode="login">Log in</button>';
                 } else {
-                    authTitle.textContent = 'Create your account';
-                    authSub.textContent = 'One quick account, then straight to checkout.';
-                    authSubmitBtn.textContent = 'Sign up';
-                    authToggleText.innerHTML = "Already have an account? <a id=\"authToggleLink\">Log in</a>";
+                    $('authTitle').textContent = 'Reset your password';
+                    $('authSub').textContent = 'Enter your account email and we\'ll send you a reset link.';
+                    authSubmitBtn.textContent = 'Send reset link';
+                    toggle.innerHTML = '<button type="button" data-mode="login">Back to log in</button>';
                 }
-                document.getElementById('authToggleLink').addEventListener('click', function() {
-                    setAuthMode(authMode === 'login' ? 'signup' : 'login');
-                });
+                toggle.querySelector('button').addEventListener('click', (e) => setAuthMode(e.currentTarget.dataset.mode));
             }
 
-            function openAuthModal() {
-                authEmail.value = '';
+            function openAuthModal(intent, mode) {
+                authIntent = intent || 'login';
+                lastFocus = document.activeElement;
                 authPassword.value = '';
-                setAuthMode('login');
+                setAuthMode(mode || (authIntent === 'checkout' ? 'signup' : 'login'));
                 authModal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => authEmail.focus(), 50);
             }
             function closeAuthModal() {
                 authModal.classList.remove('open');
+                document.body.style.overflow = '';
+                if (lastFocus && lastFocus.focus) lastFocus.focus();
             }
-            authClose.addEventListener('click', closeAuthModal);
-
-            async function handleAuthSubmit() {
-                const email = authEmail.value.trim();
-                const password = authPassword.value;
-                authError.textContent = '';
-                if (!email || !password) {
-                    authError.textContent = 'Enter an email and password.';
-                    return;
-                }
-                authSubmitBtn.disabled = true;
-                authSubmitBtn.textContent = authMode === 'login' ? 'Logging in…' : 'Creating account…';
-                try {
-                    if (authMode === 'login') {
-                        await window.plutoscanAuth.logIn(email, password);
-                    } else {
-                        await window.plutoscanAuth.signUp(email, password);
-                    }
-                    closeAuthModal();
-                    await proceedToCheckoutOrCourse();
-                } catch (err) {
-                    authError.textContent = friendlyAuthError(err);
-                } finally {
-                    authSubmitBtn.disabled = false;
-                    authSubmitBtn.textContent = authMode === 'login' ? 'Log in' : 'Sign up';
-                }
-            }
+            $('authClose').addEventListener('click', closeAuthModal);
+            authModal.addEventListener('click', (e) => { if (e.target === authModal) closeAuthModal(); });
+            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && authModal.classList.contains('open')) closeAuthModal(); });
+            $('forgotBtn').addEventListener('click', () => setAuthMode('reset'));
 
             function friendlyAuthError(err) {
-                const code = err && err.code || '';
-                if (code.includes('email-already-in-use')) return 'That email already has an account — try logging in instead.';
-                if (code.includes('wrong-password') || code.includes('invalid-credential')) return 'Incorrect email or password.';
+                const code = (err && err.code) || '';
+                if (code.includes('email-already-in-use')) return 'That email already has an account. Try logging in instead.';
+                if (code.includes('wrong-password') || code.includes('invalid-credential') || code.includes('invalid-login')) return 'Incorrect email or password.';
                 if (code.includes('user-not-found')) return 'No account found with that email.';
-                if (code.includes('weak-password')) return 'Password should be at least 6 characters.';
+                if (code.includes('weak-password')) return 'Use a password with at least 6 characters.';
                 if (code.includes('invalid-email')) return 'That email address doesn\'t look right.';
-                if (code.includes('account-exists-with-different-credential')) return 'That email is already registered with a password — log in with your password instead.';
-                if (code.includes('popup-blocked')) return 'Your browser blocked the Google sign-in popup. Please allow popups and try again.';
+                if (code.includes('too-many-requests')) return 'Too many attempts. Please wait a moment and try again.';
+                if (code.includes('network-request-failed')) return 'Network error. Check your connection and try again.';
+                if (code.includes('account-exists-with-different-credential')) return 'That email is registered with a password. Log in with your password instead.';
+                if (code.includes('popup-blocked')) return 'Your browser blocked the Google sign-in popup. Allow popups and try again.';
                 return 'Something went wrong. Please try again.';
             }
 
-            authSubmitBtn.addEventListener('click', handleAuthSubmit);
-            authPassword.addEventListener('keydown', function(e) {
-                if (e.key === 'Enter') handleAuthSubmit();
+            $('authForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = authEmail.value.trim();
+                const password = authPassword.value;
+                setMsg('');
+                if (!email) { setMsg('Enter your email address.', 'error'); authEmail.focus(); return; }
+                if (authMode !== 'reset' && !password) { setMsg('Enter your password.', 'error'); authPassword.focus(); return; }
+                const original = authSubmitBtn.textContent;
+                authSubmitBtn.disabled = true;
+                authSubmitBtn.textContent = authMode === 'reset' ? 'Sending…' : (authMode === 'login' ? 'Logging in…' : 'Creating account…');
+                try {
+                    if (authMode === 'reset') {
+                        await window.plutoscanAuth.sendPasswordReset(email);
+                        setMsg('If an account exists for that email, a reset link is on its way. Check your inbox (and spam).', 'success');
+                    } else {
+                        if (authMode === 'login') await window.plutoscanAuth.logIn(email, password);
+                        else await window.plutoscanAuth.signUp(email, password);
+                        closeAuthModal();
+                        await afterSignIn();
+                    }
+                } catch (err) {
+                    // Don't reveal whether an email is registered when resetting.
+                    if (authMode === 'reset' && String(err && err.code).includes('user-not-found')) {
+                        setMsg('If an account exists for that email, a reset link is on its way. Check your inbox (and spam).', 'success');
+                    } else {
+                        setMsg(friendlyAuthError(err), 'error');
+                    }
+                } finally {
+                    authSubmitBtn.disabled = false;
+                    authSubmitBtn.textContent = original;
+                }
             });
 
-            const googleAuthBtn = document.getElementById('googleAuthBtn');
-            async function handleGoogleAuth() {
-                authError.textContent = '';
-                googleAuthBtn.disabled = true;
+            $('googleAuthBtn').addEventListener('click', async function () {
+                setMsg('');
+                this.disabled = true;
                 try {
                     await window.plutoscanAuth.signInWithGoogle();
                     closeAuthModal();
-                    await proceedToCheckoutOrCourse();
+                    await afterSignIn();
                 } catch (err) {
-                    // User closing the popup shouldn't show a scary error.
-                    if (err && (err.code === 'auth/popup-closed-by-user' || err.code === 'auth/cancelled-popup-request')) {
-                        return;
-                    }
-                    authError.textContent = friendlyAuthError(err);
+                    if (err && (err.code === 'auth/popup-closed-by-user' || err.code === 'auth/cancelled-popup-request')) return;
+                    setMsg(friendlyAuthError(err), 'error');
                 } finally {
-                    googleAuthBtn.disabled = false;
+                    this.disabled = false;
                 }
-            }
-            googleAuthBtn.addEventListener('click', handleGoogleAuth);
+            });
 
-            // After login/signup succeeds, either send an already-paid user
-            // straight to the course, or start Stripe Checkout for a new buyer.
-            async function proceedToCheckoutOrCourse() {
-                const paid = await window.plutoscanAuth.isPaid();
-                if (paid) {
-                    goToCourse();
-                    return;
-                }
+            // ---------- Purchase flow ----------
+            let paidCache = null;
+
+            function goToCourse() {
+                showPageLoader('Opening your course…');
+                window.location.href = 'plutoscan-modules.html';
+            }
+
+            async function startCheckout() {
                 showPageLoader('Redirecting to secure checkout…');
                 try {
                     await window.plutoscanAuth.startCheckout(); // redirects to Stripe
                 } catch (err) {
                     console.error(err);
                     hidePageLoader();
-                    alert('Could not start checkout. Please try again in a moment.');
+                    showNotice('warn', 'We couldn\'t start checkout. Please try again in a moment.');
+                    window.scrollTo({ top: 0, behavior: 'smooth' });
                 }
+            }
+
+            async function afterSignIn() {
+                paidCache = await window.plutoscanAuth.isPaid();
+                updateNavForUser(window.plutoscanAuth.getCurrentUser(), paidCache);
+                if (paidCache) { goToCourse(); return; }
+                if (authIntent === 'checkout') { await startCheckout(); return; }
+                showNotice('info', 'You\'re logged in. Get lifetime access to unlock all 18 lessons and the Research Scanner.');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
             async function handleBuyClick() {
                 const user = window.plutoscanAuth.getCurrentUser();
-                if (!user) {
-                    openAuthModal();
-                    return;
+                if (!user) { openAuthModal('checkout'); return; }
+                if (paidCache === null) paidCache = await window.plutoscanAuth.isPaid();
+                if (paidCache) goToCourse(); else await startCheckout();
+            }
+
+            function updateNavForUser(user, paid) {
+                const loggedIn = !!user;
+                $('navLogin').classList.toggle('hidden', loggedIn);
+                $('footLogin').classList.toggle('hidden', loggedIn);
+                $('navLogout').classList.toggle('hidden', !loggedIn);
+                $('navUser').classList.toggle('hidden', !loggedIn);
+                $('navUser').textContent = loggedIn && user.email ? user.email : '';
+                const navCta = $('navCta');
+                if (paid) {
+                    navCta.innerHTML = '<i class="fas fa-play"></i> My Course';
+                    document.querySelectorAll('.js-cta-label').forEach((el) => { el.textContent = 'Continue Learning'; });
                 }
-                await proceedToCheckoutOrCourse();
+            }
+
+            // ---------- Render: curriculum ----------
+            function renderCurriculum() {
+                let n = 0;
+                $('phases').innerHTML = CURRICULUM.map((phase, i) => {
+                    const items = phase.modules.map(([title, desc]) => { n++; return `<li><b>${String(n).padStart(2, '0')}</b><div>${title}<em>${desc}</em></div></li>`; }).join('');
+                    return `<details class="phase" ${i === 0 ? 'open' : ''}>
+                        <summary>
+                            <span class="phase-num">${i + 1}</span>
+                            <span class="phase-title"><strong>${phase.name}</strong><span>${phase.desc}</span></span>
+                            <span class="phase-count">${phase.modules.length} lessons</span>
+                            <i class="fas fa-chevron-down phase-chev"></i>
+                        </summary>
+                        <ol>${items}</ol>
+                    </details>`;
+                }).join('');
+            }
+
+            // ---------- Render: scanner demo ----------
+            function renderDemo() {
+                $('demoChecks').innerHTML = PILLARS.map((p) => `
+                    <div class="pillar-group">
+                        <div class="pillar-head"><h3>${p.name}</h3><span class="w ${p.tag}">${p.label}</span></div>
+                        ${p.checks.map((c, i) => `<label class="check"><input type="checkbox" data-pillar="${p.key}" data-i="${i}" ${DEMO_DEFAULT[p.key].includes(i) ? 'checked' : ''}><span>${c}</span></label>`).join('')}
+                    </div>`).join('');
+                $('demoChecks').addEventListener('change', updateDemo);
+                updateDemo();
+            }
+            function updateDemo() {
+                let total = 0, max = 0;
+                const bars = PILLARS.map((p) => {
+                    const ticked = document.querySelectorAll(`#demoChecks input[data-pillar="${p.key}"]:checked`).length;
+                    total += ticked * p.weight;
+                    max += p.checks.length * p.weight;
+                    const pct = Math.round((ticked / p.checks.length) * 100);
+                    return `<div class="demo-bar"><label><span>${p.name}</span><span>${ticked}/${p.checks.length}</span></label><div class="track"><div class="fill" style="width:${pct}%"></div></div></div>`;
+                }).join('');
+                const pct = max ? Math.round((total / max) * 100) : 0;
+                $('demoRing').style.setProperty('--p', pct);
+                $('demoPct').textContent = pct + '%';
+                $('demoMath').textContent = `${+total.toFixed(2)} of ${max} weighted points`;
+                const v = $('demoVerdict');
+                if (total === 0) { v.textContent = 'Tick a check to start'; v.className = 'demo-verdict'; }
+                else if (pct >= 80) { v.textContent = 'Well-Researched'; v.className = 'demo-verdict high'; }
+                else if (pct >= 60) { v.textContent = 'Partially Researched'; v.className = 'demo-verdict medium'; }
+                else { v.textContent = 'Early-Stage Research'; v.className = 'demo-verdict low'; }
+                $('demoBars').innerHTML = bars;
+            }
+
+            // ---------- Decor ----------
+            function makeStars() {
+                const box = $('stars');
+                const count = window.innerWidth < 640 ? 35 : 70;
+                for (let i = 0; i < count; i++) {
+                    const s = document.createElement('span');
+                    const size = 1 + Math.random() * 2.2;
+                    s.style.cssText = `left:${Math.random() * 100}%;top:${Math.random() * 100}%;width:${size}px;height:${size}px;animation-delay:${Math.random() * 6}s`;
+                    box.appendChild(s);
+                }
+            }
+            function setupReveal() {
+                const els = document.querySelectorAll('.reveal');
+                if (!('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('in')); return; }
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+                }, { rootMargin: '0px 0px -40px 0px' });
+                els.forEach((el) => io.observe(el));
             }
 
             function init() {
-                // Twinkling star background
-                const starsContainer = document.getElementById('landingStars');
-                if (starsContainer) {
-                    for (let i = 0; i < 60; i++) {
-                        const span = document.createElement('span');
-                        span.style.left = Math.random() * 100 + '%';
-                        span.style.top = Math.random() * 100 + '%';
-                        span.style.width = (1 + Math.random() * 3) + 'px';
-                        span.style.height = span.style.width;
-                        span.style.animationDelay = (Math.random() * 6) + 's';
-                        span.style.opacity = 0.1 + Math.random() * 0.3;
-                        starsContainer.appendChild(span);
+                $('year').textContent = new Date().getFullYear();
+                renderCurriculum();
+                renderDemo();
+                makeStars();
+                setupReveal();
+                const nav = $('nav');
+                window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
+
+                document.querySelectorAll('.js-buy').forEach((b) => b.addEventListener('click', handleBuyClick));
+                $('navLogin').addEventListener('click', () => openAuthModal('login'));
+                $('footLogin').addEventListener('click', () => openAuthModal('login'));
+                $('navLogout').addEventListener('click', async () => {
+                    await window.plutoscanAuth.logOut();
+                    window.location.href = 'index.html';
+                });
+
+                // Messages from redirects (course page, Stripe cancel).
+                const params = new URLSearchParams(window.location.search);
+                if (params.get('purchase') === 'cancelled') showNotice('info', 'Checkout was cancelled and you haven\'t been charged. You can start again whenever you\'re ready.');
+                if (params.get('purchase') === 'required') showNotice('info', 'Your account doesn\'t have course access yet. Get lifetime access below to unlock everything.');
+                if (params.get('purchase') === 'pending') showNotice('info', 'We\'re still confirming your payment with Stripe. This usually takes a few seconds. <a href="plutoscan-modules.html?purchase=success">Try opening your course again</a>.');
+                if (params.get('error') === 'content_load_failed') showNotice('warn', 'We couldn\'t load your course just now. Please refresh, or try again in a minute.');
+                if (params.toString()) history.replaceState(null, '', window.location.pathname + window.location.hash);
+
+                if (!window.plutoscanAuth) { console.error('plutoscan-auth.js failed to load'); return; }
+                window.plutoscanAuth.onReady(async (user) => {
+                    if (!user) {
+                        if (params.get('login') === 'required') openAuthModal('login');
+                        return;
                     }
-                }
-
-                const launchBtn = document.getElementById('launchBtn');
-                if (launchBtn) launchBtn.addEventListener('click', handleBuyClick);
-
-                const launchBtnBottom = document.getElementById('launchBtnBottom');
-                if (launchBtnBottom) launchBtnBottom.addEventListener('click', handleBuyClick);
-
-                const topLoginBtn = document.getElementById('topLoginBtn');
-                if (topLoginBtn) topLoginBtn.addEventListener('click', openAuthModal);
-
-                // If a logged-in, already-paid user lands back here, skip straight to the course.
-                window.plutoscanAuth.onReady(async function(user) {
-                    if (user) {
-                        if (topLoginBtn) topLoginBtn.style.display = 'none';
-                        const paid = await window.plutoscanAuth.isPaid();
-                        if (paid) goToCourse();
-                    }
+                    paidCache = await window.plutoscanAuth.isPaid();
+                    updateNavForUser(user, paidCache);
+                    if (paidCache && params.get('login') === 'required') goToCourse();
                 });
             }
 
             document.addEventListener('DOMContentLoaded', init);
         })();
     </script>
-
 </body>
 </html>
