@@ -1,0 +1,5 @@
+User-agent: *
+Allow: /
+Disallow: /plutoscan-modules.html
+
+Sitemap: https://plutoscan.com/sitemap.xml
