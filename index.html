@@ -415,7 +415,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
-    <script src="plutoscan-auth.js?v=3"></script>
+    <script src="plutoscan-auth.js?v=4"></script>
 </head>
 <body>
 
@@ -903,6 +903,7 @@
                         await afterSignIn();
                     }
                 } catch (err) {
+                    window.plutoscanAuth.report('failed', { email: email, code: err && err.code, action: authMode, method: 'password' });
                     // Don't reveal whether an email is registered when resetting.
                     if (authMode === 'reset' && String(err && err.code).includes('user-not-found')) {
                         setMsg('If an account exists for that email, a reset link is on its way. Check your inbox (and spam).', 'success');
@@ -924,6 +925,7 @@
                     await afterSignIn();
                 } catch (err) {
                     if (err && (err.code === 'auth/popup-closed-by-user' || err.code === 'auth/cancelled-popup-request')) return;
+                    window.plutoscanAuth.report('failed', { email: err && err.customData && err.customData.email, code: err && err.code, action: 'google', method: 'google' });
                     setMsg(friendlyAuthError(err), 'error');
                 } finally {
                     this.disabled = false;
@@ -940,10 +942,12 @@
 
             async function startCheckout() {
                 showPageLoader('Redirecting to secure checkout…');
+                await window.plutoscanAuth.report('checkout', { step: 'started' });
                 try {
                     await window.plutoscanAuth.startCheckout(); // redirects to Stripe
                 } catch (err) {
                     console.error(err);
+                    window.plutoscanAuth.report('checkout', { step: 'failed', reason: err && err.message });
                     hidePageLoader();
                     showNotice('warn', 'We couldn\'t start checkout. Please try again in a moment.');
                     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -1075,6 +1079,10 @@
 
                 if (!window.plutoscanAuth) { console.error('plutoscan-auth.js failed to load'); return; }
                 window.plutoscanAuth.onReady(async (user) => {
+                    window.plutoscanAuth.report('visit', { referrer: document.referrer });
+                    if (params.get('purchase') === 'cancelled' || params.get('purchase') === 'pending') {
+                        window.plutoscanAuth.report('checkout', { step: params.get('purchase') });
+                    }
                     if (!user) {
                         if (params.get('login') === 'required') openAuthModal('login');
                         return;
