@@ -453,7 +453,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
-    <script src="plutoscan-auth.js?v=3"></script>
+    <script src="plutoscan-auth.js?v=4"></script>
 </head>
 <body class="locked">
 
@@ -1992,13 +1992,15 @@
                     return;
                 }
                 window.plutoscanAuth.onReady(async (user) => {
-                    if (!user) { window.location.href = 'index.html?login=required'; return; }
+                    const audit = window.plutoscanAuth.report;
+                    if (!user) { await audit('denied', { reason: 'not_signed_in', referrer: document.referrer }); window.location.href = 'index.html?login=required'; return; }
                     const params = new URLSearchParams(window.location.search);
                     const justPaid = params.get('purchase') === 'success';
+                    if (justPaid) audit('checkout', { step: 'returned' });
                     try {
                         const content = await loadContentWithRetry(justPaid);
-                        if (content === 'unauthorized') { window.location.href = 'index.html?login=required'; return; }
-                        if (content === 'payment_required') { window.location.href = 'index.html?purchase=' + (justPaid ? 'pending' : 'required'); return; }
+                        if (content === 'unauthorized') { await audit('denied', { reason: 'unauthorized' }); window.location.href = 'index.html?login=required'; return; }
+                        if (content === 'payment_required') { await audit('denied', { reason: justPaid ? 'payment_not_confirmed' : 'payment_required' }); window.location.href = 'index.html?purchase=' + (justPaid ? 'pending' : 'required'); return; }
                         if (!content || !Array.isArray(content.modules) || !content.modules.length) { window.location.href = 'index.html?error=content_load_failed'; return; }
 
                         // Server confirmed this account is paid.
@@ -2020,6 +2022,7 @@
                             lsSet('modules', all);
                         }
                         if (justPaid) history.replaceState(null, '', window.location.pathname);
+                        audit('visit', { referrer: document.referrer });
                         initApp(user, justPaid);
                     } catch (err) {
                         console.error('Failed to load protected content', err);

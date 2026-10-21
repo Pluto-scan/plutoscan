@@ -23,6 +23,11 @@
   const PROJECT_ID = 'plutoscan';
   const FUNCTIONS_BASE = `https://${REGION}-${PROJECT_ID}.cloudfunctions.net`;
 
+  // Security log (auditPlutoReport, in the usage repo's plutoscan-audit/): failed sign-ins,
+  // the course turning someone away, checkout steps and page visits. Firebase runs no server
+  // code for these, so the page reports them. Never throws and never holds up the page.
+  const AUDIT_URL = FUNCTIONS_BASE + '/auditPlutoReport';
+
   firebase.initializeApp(FIREBASE_CONFIG);
   const auth = firebase.auth();
   const db = firebase.database();
@@ -147,6 +152,23 @@
     }
   }
 
+  // kind: 'failed' | 'denied' | 'checkout' | 'visit'. details: { email, code, action, method,
+  // reason, step, referrer }. Signed-in reports carry the ID token so the server knows who it was.
+  async function report(kind, details) {
+    try {
+      const body = Object.assign({ kind: kind, at: Date.now(), page: window.location.pathname }, details || {});
+      if (currentUser) {
+        try { body.idToken = await currentUser.getIdToken(); } catch (e) { /* sent without it */ }
+      }
+      const text = JSON.stringify(body);
+      // sendBeacon survives the page navigating away (to Stripe, or a redirect).
+      if (navigator.sendBeacon && navigator.sendBeacon(AUDIT_URL, new Blob([text], { type: 'text/plain' }))) return;
+      fetch(AUDIT_URL, { method: 'POST', body: text, keepalive: true, headers: { 'Content-Type': 'text/plain' } }).catch(function () {});
+    } catch (e) {
+      // Reporting must never break the page.
+    }
+  }
+
   window.plutoscanAuth = {
     onReady,
     signUp,
@@ -160,6 +182,7 @@
     saveReview,
     startCheckout,
     fetchModuleContent,
+    report,
     getCurrentUser: function () { return currentUser; },
     STRIPE_PUBLISHABLE_KEY,
   };
