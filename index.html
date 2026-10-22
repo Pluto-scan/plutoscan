@@ -347,12 +347,6 @@
         .amount .side { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 10px; }
         .amount .cents { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; color: #ffd34d; }
         .amount .per { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); }
-        /* Starburst seal next to the price */
-        .seal-burst { flex-shrink: 0; width: 92px; height: 92px; display: grid; place-items: center; text-align: center; transform: rotate(-12deg); background: linear-gradient(145deg, #ffe27a, #ffb020 60%, #f59e0b); color: #1a1205; clip-path: polygon(50.0% 0.0%, 57.5% 7.7%, 67.1% 3.0%, 71.5% 12.8%, 82.1% 11.7%, 82.9% 22.4%, 93.3% 25.0%, 90.4% 35.3%, 99.2% 41.3%, 93.0% 50.0%, 99.2% 58.7%, 90.4% 64.7%, 93.3% 75.0%, 82.9% 77.6%, 82.1% 88.3%, 71.5% 87.2%, 67.1% 97.0%, 57.5% 92.3%, 50.0% 100.0%, 42.5% 92.3%, 32.9% 97.0%, 28.5% 87.2%, 17.9% 88.3%, 17.1% 77.6%, 6.7% 75.0%, 9.6% 64.7%, 0.8% 58.7%, 7.0% 50.0%, 0.8% 41.3%, 9.6% 35.3%, 6.7% 25.0%, 17.1% 22.4%, 17.9% 11.7%, 28.5% 12.8%, 32.9% 3.0%, 42.5% 7.7%); font-weight: 800; line-height: 1.05; filter: drop-shadow(0 6px 16px rgba(255, 176, 32, 0.45)); animation: burst-pop 3.5s ease-in-out infinite; }
-        .seal-burst span { display: block; font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; }
-        .seal-burst strong { display: block; font-size: 1.02rem; letter-spacing: -0.01em; margin: 1px 0; }
-        @media (prefers-reduced-motion: reduce) { .seal-burst { animation: none; } }
-        @keyframes burst-pop { 0%, 100% { transform: rotate(-12deg) scale(1); } 50% { transform: rotate(-8deg) scale(1.06); } }
         .value-line { font-size: .98rem; color: var(--text-2); margin: 4px 0 14px; }
         .value-line mark { background: linear-gradient(transparent 55%, rgba(255, 211, 77, 0.38) 55%); color: var(--text); font-weight: 800; padding: 0 2px; }
         .price-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0 0 10px; }
@@ -367,17 +361,11 @@
             .price-stage { gap: 10px; }
             .amount .whole { font-size: 4.4rem; }
             .amount .cur, .amount .cents { font-size: 1.5rem; }
-            .seal-burst { width: 74px; height: 74px; }
-            .seal-burst span { font-size: .5rem; }
-            .seal-burst strong { font-size: .84rem; }
         }
         @media (max-width: 360px) {
             .btn-primary:not(.btn-sm) { padding: 14px 18px; font-size: .96rem; }
             .amount .whole { font-size: 3.7rem; }
             .amount .per { font-size: .6rem; }
-            .seal-burst { width: 64px; height: 64px; }
-            .seal-burst span { font-size: .44rem; }
-            .seal-burst strong { font-size: .74rem; }
         }
 
         /* Gold price tag inside buy buttons: a retail tag with a punched hole */
@@ -730,7 +718,6 @@
                                 <span class="cur" aria-hidden="true">$</span><span class="whole" aria-hidden="true">16</span>
                                 <span class="side" aria-hidden="true"><span class="cents">.99</span><span class="per">USD · once</span></span>
                             </div>
-                            <div class="seal-burst" aria-hidden="true"><div><span>Pay once</span><strong>OWN IT</strong><span>forever</span></div></div>
                         </div>
                         <p class="value-line">That's <mark>less than $1 a lesson</mark> for all 18.</p>
                         <div class="price-pills"><span><i class="fas fa-check"></i>No subscription</span><span><i class="fas fa-check"></i>No upsells</span><span><i class="fas fa-check"></i>All future updates</span></div>
