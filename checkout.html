@@ -85,7 +85,7 @@
 
         /* ===== LAYOUT ===== */
         .layout { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 40px; align-items: start; padding: 24px 0 90px; }
-        @media (max-width: 960px) { .layout { grid-template-columns: 1fr; gap: 28px; } .summary-col { order: -1; } }
+        @media (max-width: 960px) { .layout { grid-template-columns: 1fr; gap: 28px; padding-bottom: 48px; } .summary-col { order: -1; } }
 
         .hero-copy { margin-bottom: 36px; }
         .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--purple-light); background: rgba(108, 60, 225, 0.12); border: 1px solid rgba(108, 60, 225, 0.3); padding: 6px 14px; border-radius: 999px; margin-bottom: 18px; }
@@ -106,12 +106,12 @@
         .get li { font-size: .76rem; font-weight: 600; color: var(--text-2); padding: 4px 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); }
 
         /* phases */
-        .phases { display: grid; grid-template-columns: repeat(5, 1fr); gap: 10px; }
+        .phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
         .ph { padding: 16px 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); }
         .ph b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--grad); font-size: .85rem; margin-bottom: 10px; }
         .ph strong { display: block; font-size: .9rem; line-height: 1.3; margin-bottom: 4px; }
         .ph span { font-size: .78rem; color: var(--text-3); }
-        @media (max-width: 760px) { .phases { grid-template-columns: repeat(2, 1fr); } }
+        @media (max-width: 760px) { .phases { grid-template-columns: repeat(2, 1fr); } .phases > :last-child { grid-column: 1 / -1; } }
 
         /* scanner preview */
         .scan-preview { display: grid; grid-template-columns: 120px 1fr; gap: 22px; align-items: center; padding: 22px; border-radius: var(--radius-lg); background: linear-gradient(160deg, rgba(108, 60, 225, 0.12), rgba(30, 144, 255, 0.05)); border: 1px solid rgba(108, 60, 225, 0.3); }
@@ -159,18 +159,18 @@
         .order h2 { font-size: 1.3rem; letter-spacing: -0.02em; margin: 4px 0 14px; }
         .amount { display: flex; align-items: flex-start; gap: 4px; line-height: 1; font-variant-numeric: tabular-nums; }
         .amount .cur { font-size: 1.6rem; font-weight: 800; color: #ffd34d; margin-top: 8px; }
-        .amount .whole { font-size: 4.4rem; font-weight: 800; letter-spacing: -0.05em; background: linear-gradient(180deg, #fff6d6 8%, #ffd34d 48%, #ffa31a 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgba(255, 176, 32, 0.35)); }
-        .amount .side { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
+        .amount .whole { font-size: 4.4rem; font-weight: 800; letter-spacing: -0.05em; padding-right: .06em; background: linear-gradient(180deg, #fff6d6 8%, #ffd34d 48%, #ffa31a 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgba(255, 176, 32, 0.35)); }
+        .amount .side { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; margin-left: 4px; }
         .amount .cents { font-size: 1.6rem; font-weight: 800; color: #ffd34d; }
         .amount .per { font-size: .66rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); }
         .order .once { font-size: .86rem; color: var(--text-3); margin: 10px 0 18px; }
-        .order .once strong { color: var(--green); }
+        .order .once strong { color: var(--green); white-space: nowrap; }
         .lines { list-style: none; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0; margin-bottom: 14px; display: grid; gap: 9px; }
         .lines li { display: flex; justify-content: space-between; gap: 12px; font-size: .9rem; color: var(--text-2); }
         .lines li span:last-child { color: var(--text); font-weight: 600; white-space: nowrap; }
         .lines li .incl { color: var(--green); }
-        .total { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 18px; }
-        .total span { font-weight: 700; }
+        .total { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 18px; }
+        .total span { font-weight: 700; white-space: nowrap; }
         .total strong { font-size: 1.2rem; font-variant-numeric: tabular-nums; }
         .total small { display: block; font-size: .74rem; color: var(--text-3); font-weight: 500; text-align: right; }
         .order .fine { margin-top: 12px; font-size: .78rem; color: var(--text-3); text-align: center; }

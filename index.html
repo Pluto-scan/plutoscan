@@ -201,7 +201,7 @@
         .pv-row { display: flex; justify-content: space-between; align-items: center; font-size: .84rem; padding: 9px 12px; border-radius: 10px; background: rgba(255, 255, 255, 0.03); }
         .pv-row span:first-child { color: var(--text-2); }
         .pv-ico { width: 18px; margin-right: 8px; text-align: center; color: var(--purple-light); }
-        .pillar-head h3 i { margin-right: 8px; color: var(--purple-light); }
+        .pillar-head h3 i { color: var(--purple-light); margin-top: 3px; }
         .pv-row .ok { color: var(--green); font-weight: 700; }
         .pv-row .bad { color: var(--amber); font-weight: 700; }
         .pv-tag { position: absolute; top: -12px; right: 18px; background: var(--gold); color: #1a1205; font-size: .7rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; letter-spacing: .04em; }
@@ -285,9 +285,9 @@
         @media (max-width: 900px) { .demo { grid-template-columns: 1fr; } }
         .demo-checks { display: grid; gap: 16px; }
         .pillar-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
-        .pillar-head { display: flex; justify-content: space-between; align-items: baseline; margin-bottom: 10px; gap: 10px; }
-        .pillar-head h3 { font-size: 1rem; font-weight: 700; }
-        .pillar-head .w { font-size: .72rem; font-weight: 800; padding: 3px 10px; border-radius: 999px; letter-spacing: .06em; text-transform: uppercase; }
+        .pillar-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; gap: 10px; }
+        .pillar-head h3 { display: flex; gap: 8px; font-size: 1rem; font-weight: 700; line-height: 1.35; }
+        .pillar-head .w { flex-shrink: 0; white-space: nowrap; font-size: .72rem; font-weight: 800; padding: 3px 10px; border-radius: 999px; letter-spacing: .06em; text-transform: uppercase; }
         .w.high { background: rgba(108, 60, 225, 0.22); color: #c4b5fd; }
         .w.med { background: rgba(30, 144, 255, 0.18); color: #93c5fd; }
         .w.low { background: rgba(255, 255, 255, 0.08); color: var(--text-3); }
@@ -343,8 +343,8 @@
         .price-stage { position: relative; display: flex; justify-content: center; align-items: center; gap: 18px; margin: 16px 0 8px; }
         .amount { display: inline-flex; align-items: flex-start; justify-content: center; gap: 4px; font-variant-numeric: tabular-nums; line-height: 1; }
         .amount .cur { font-size: 1.9rem; font-weight: 800; color: #ffd34d; margin-top: 10px; }
-        .amount .whole { font-size: 5.6rem; font-weight: 800; letter-spacing: -0.05em; background: linear-gradient(180deg, #fff6d6 8%, #ffd34d 48%, #ffa31a 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgba(255, 176, 32, 0.35)); }
-        .amount .side { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 10px; }
+        .amount .whole { font-size: 5.6rem; font-weight: 800; letter-spacing: -0.05em; padding-right: .06em; background: linear-gradient(180deg, #fff6d6 8%, #ffd34d 48%, #ffa31a 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgba(255, 176, 32, 0.35)); }
+        .amount .side { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 10px; margin-left: 4px; }
         .amount .cents { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; color: #ffd34d; }
         .amount .per { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); }
         .value-line { font-size: .98rem; color: var(--text-2); margin: 4px 0 14px; }
@@ -353,7 +353,7 @@
         .price-pills span { font-size: .78rem; font-weight: 600; color: var(--text-2); padding: 5px 12px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border-strong); }
         .price-pills i { color: #ffd34d; margin-right: 5px; }
         .price-inner .once { color: var(--text-3); font-size: .86rem; margin-bottom: 26px; }
-        .price-inner .once strong { color: var(--green); font-weight: 700; }
+        .price-inner .once strong { color: var(--green); font-weight: 700; white-space: nowrap; }
         .price-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border-strong), transparent); margin: 0 0 24px; }
         @media (max-width: 480px) {
             .price-inner { padding: 0 20px 26px; }

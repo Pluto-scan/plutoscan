@@ -138,7 +138,7 @@
         .phase-head { display: flex; align-items: center; gap: 14px; margin-bottom: 14px; }
         .phase-badge { width: 40px; height: 40px; border-radius: 12px; display: grid; place-items: center; font-weight: 800; background: var(--grad); flex-shrink: 0; }
         .phase-badge.done { background: rgba(52, 211, 153, 0.15); color: var(--green); border: 1px solid rgba(52, 211, 153, 0.35); }
-        .phase-head h2 { font-size: 1.12rem; letter-spacing: -0.01em; }
+        .phase-head h2 { font-size: 1.12rem; line-height: 1.3; letter-spacing: -0.01em; margin-bottom: 2px; }
         .phase-head p { font-size: .84rem; color: var(--text-3); }
         .phase-head .phase-prog { margin-left: auto; font-size: .8rem; color: var(--text-3); white-space: nowrap; }
         .mod-grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(260px, 1fr)); gap: 14px; }
@@ -986,6 +986,7 @@
                 const done = Math.min(s.textPartIndex, parts.length) + (s.videoComplete ? 1 : 0);
                 return Math.round((done / steps) * 100);
             }
+            function checkCount(id) { return partsOf(id).reduce((a, p) => a + p.quiz.length, 0); }
             function readMinutes(id) {
                 const words = partsOf(id).reduce((a, p) => a + stripHtml(p.html).split(/\s+/).length, 0);
                 return Math.max(2, Math.round(words / 200));
@@ -1050,7 +1051,7 @@
                             <div class="mod-top"><span class="mod-num">Lesson ${m.id}</span>${chip}</div>
                             <h3>${esc(m.title)}</h3>
                             <p>${esc(m.outcome)}</p>
-                            <div class="mod-meta"><span><i class="far fa-clock"></i>${readMinutes(m.id)} min read</span><span><i class="fas fa-film"></i>Video</span><span><i class="fas fa-brain"></i>${partsOf(m.id).reduce((a, p) => a + p.quiz.length, 0)} checks</span></div>
+                            <div class="mod-meta"><span><i class="far fa-clock"></i>${readMinutes(m.id)} min read</span><span><i class="fas fa-film"></i>Video</span><span><i class="fas fa-brain"></i>${checkCount(m.id)} ${checkCount(m.id) === 1 ? 'check' : 'checks'}</span></div>
                             ${unlocked && !complete && prog > 0 ? `<div class="mod-bar"><span style="width:${prog}%"></span></div>` : ''}
                         </button>`;
                     }).join('');
