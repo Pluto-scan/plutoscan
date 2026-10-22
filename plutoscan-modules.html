@@ -7,6 +7,9 @@
     <meta name="robots" content="noindex" />
     <meta name="theme-color" content="#0b0b16" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="icons/logo.svg" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
@@ -84,8 +87,7 @@
         .topbar { position: sticky; top: 0; z-index: 300; height: var(--topbar-h); background: rgba(11, 11, 22, 0.86); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
         .topbar-inner { height: 100%; display: flex; align-items: center; gap: 14px; }
         .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.15rem; letter-spacing: -0.02em; color: var(--text); }
-        .brand-mark { width: 28px; height: 28px; border-radius: 50%; background: var(--grad); position: relative; box-shadow: 0 0 16px rgba(108, 60, 225, 0.55); flex-shrink: 0; }
-        .brand-mark::after { content: ''; position: absolute; inset: 10px -6px; border: 2px solid rgba(255, 255, 255, 0.75); border-radius: 50%; transform: rotate(-20deg); }
+        .brand-mark { width: 32px; height: 32px; flex-shrink: 0; background: url(icons/logo.svg) center / contain no-repeat; filter: drop-shadow(0 0 9px rgba(108, 60, 225, 0.55)); }
         .top-progress { flex: 1; max-width: 320px; margin-left: 18px; display: flex; align-items: center; gap: 12px; font-size: .82rem; color: var(--text-3); }
         .top-progress .bar { flex: 1; height: 6px; background: rgba(255, 255, 255, 0.08); border-radius: 99px; overflow: hidden; }
         .top-progress .bar span { display: block; height: 100%; width: 0; background: var(--grad); border-radius: 99px; transition: width .6s var(--ease); }
@@ -97,8 +99,8 @@
         .menu { position: absolute; right: 0; top: calc(100% + 10px); min-width: 240px; background: var(--panel); border: 1px solid var(--border-strong); border-radius: 14px; box-shadow: var(--shadow); padding: 8px; display: none; }
         .menu.open { display: block; }
         .menu .menu-email { padding: 10px 12px; font-size: .82rem; color: var(--text-3); border-bottom: 1px solid var(--border); margin-bottom: 6px; word-break: break-all; }
-        .menu button { width: 100%; text-align: left; padding: 10px 12px; border-radius: 10px; font-size: .9rem; display: flex; gap: 10px; align-items: center; color: var(--text-2); }
-        .menu button:hover { background: var(--surface-2); color: var(--text); }
+        .menu button, .menu a { width: 100%; text-align: left; padding: 10px 12px; border-radius: 10px; font-size: .9rem; display: flex; gap: 10px; align-items: center; color: var(--text-2); text-decoration: none; }
+        .menu button:hover, .menu a:hover { background: var(--surface-2); color: var(--text); }
         @media (max-width: 760px) {
             .top-progress { display: none; }
             .top-actions .btn span { display: none; }
@@ -357,6 +359,7 @@
         .pillar { border-radius: var(--radius); border: 1px solid var(--border); background: var(--surface); margin-bottom: 14px; overflow: hidden; }
         .pillar-head { display: flex; align-items: center; justify-content: space-between; gap: 10px; padding: 14px 16px; border-bottom: 1px solid var(--border); }
         .pillar-head h3 { font-size: .98rem; }
+        .pillar-head h3 i, .pbar label i { color: var(--purple-light); margin-right: 4px; }
         .w { font-size: .7rem; font-weight: 800; padding: 3px 10px; border-radius: 999px; letter-spacing: .06em; text-transform: uppercase; white-space: nowrap; }
         .w.high { background: rgba(108, 60, 225, 0.22); color: #c4b5fd; }
         .w.med { background: rgba(30, 144, 255, 0.18); color: #93c5fd; }
@@ -413,6 +416,8 @@
         .modal-card h2 { font-size: 1.4rem; letter-spacing: -0.02em; margin-bottom: 8px; }
         .modal-card .sub { color: var(--text-2); font-size: .94rem; margin-bottom: 22px; }
         .modal-actions { display: grid; gap: 10px; }
+        .modal-actions.row { grid-template-columns: 1fr 1fr; }
+        .confirm-icon { width: 56px; height: 56px; margin: 0 auto 14px; border-radius: 50%; display: grid; place-items: center; font-size: 1.3rem; color: var(--amber); background: rgba(251, 191, 36, 0.1); border: 1px solid rgba(251, 191, 36, 0.3); }
         .burst { width: 96px; height: 96px; margin: 0 auto 16px; border-radius: 50%; display: grid; place-items: center; font-size: 2.4rem; background: radial-gradient(circle, rgba(52, 211, 153, 0.25), transparent 70%); position: relative; }
         .burst::before, .burst::after { content: ''; position: absolute; inset: 0; border-radius: 50%; border: 2px solid var(--purple-light); animation: burst 1.6s ease-out infinite; }
         .burst::after { animation-delay: .5s; border-color: var(--blue-light); }
@@ -478,6 +483,10 @@
                     <div class="menu" id="userMenu" role="menu">
                         <div class="menu-email" id="menuEmail"></div>
                         <button type="button" role="menuitem" id="menuHome"><i class="fas fa-house"></i> PlutoScan home page</button>
+                        <a role="menuitem" href="mailto:support@plutoscan.com"><i class="fas fa-envelope"></i> Contact support</a>
+                        <a role="menuitem" href="refunds.html"><i class="fas fa-rotate-left"></i> Refund Policy</a>
+                        <a role="menuitem" href="terms.html"><i class="fas fa-file-contract"></i> Terms of Use</a>
+                        <a role="menuitem" href="privacy.html"><i class="fas fa-shield-halved"></i> Privacy Policy</a>
                         <button type="button" role="menuitem" id="menuLogout"><i class="fas fa-arrow-right-from-bracket"></i> Log out</button>
                     </div>
                 </div>
@@ -671,7 +680,7 @@
                 <h2 id="reviewTitle">You finished the course!</h2>
                 <p class="sub">All 18 lessons complete, and the Research Scanner is now unlocked. How was your experience?</p>
                 <div class="stars-rate" id="rateStars" role="radiogroup" aria-label="Rating">
-                    <button type="button" data-v="1" aria-label="1 star">★</button><button type="button" data-v="2" aria-label="2 stars">★</button><button type="button" data-v="3" aria-label="3 stars">★</button><button type="button" data-v="4" aria-label="4 stars">★</button><button type="button" data-v="5" aria-label="5 stars">★</button>
+                    <button type="button" role="radio" aria-checked="false" data-v="1" aria-label="1 star">★</button><button type="button" role="radio" aria-checked="false" data-v="2" aria-label="2 stars">★</button><button type="button" role="radio" aria-checked="false" data-v="3" aria-label="3 stars">★</button><button type="button" role="radio" aria-checked="false" data-v="4" aria-label="4 stars">★</button><button type="button" role="radio" aria-checked="false" data-v="5" aria-label="5 stars">★</button>
                 </div>
                 <div class="rate-label" id="rateLabel">Tap a star to rate</div>
                 <textarea id="reviewText" rows="4" maxlength="1500" placeholder="What helped most? Would you recommend PlutoScan to a beginner?"></textarea>
@@ -689,6 +698,19 @@
                 <div class="modal-actions">
                     <button type="button" class="btn btn-primary btn-lg" id="reviewToScanner"><i class="fas fa-satellite-dish"></i> Open the Research Scanner</button>
                 </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- ===== CONFIRM MODAL ===== -->
+    <div class="modal" id="confirmModal" role="alertdialog" aria-modal="true" aria-labelledby="confirmTitle" aria-describedby="confirmText">
+        <div class="modal-card">
+            <div class="confirm-icon" aria-hidden="true"><i class="fas fa-rotate-left"></i></div>
+            <h2 id="confirmTitle"></h2>
+            <p class="sub" id="confirmText"></p>
+            <div class="modal-actions row">
+                <button type="button" class="btn btn-ghost" id="confirmNo">Cancel</button>
+                <button type="button" class="btn btn-primary" id="confirmYes"></button>
             </div>
         </div>
     </div>
@@ -1342,7 +1364,27 @@
             //  MODALS
             // ============================================================
             function openModal(id) { $('toast').classList.remove('show'); $(id).classList.add('open'); updateBodyLock(); const f = $(id).querySelector('button.btn-primary, button'); if (f) setTimeout(() => f.focus(), 50); }
-            function closeModal(id) { $(id).classList.remove('open'); updateBodyLock(); }
+            function closeModal(id) {
+                $(id).classList.remove('open'); updateBodyLock();
+                if (id === 'confirmModal' && confirmResolve) { confirmResolve(false); confirmResolve = null; }
+            }
+
+            // In-page replacement for window.confirm(). Resolves true only on the confirm button.
+            let confirmResolve = null;
+            function askConfirm(title, text, yesLabel) {
+                $('confirmTitle').textContent = title;
+                $('confirmText').textContent = text;
+                $('confirmYes').textContent = yesLabel;
+                return new Promise((resolve) => {
+                    confirmResolve = resolve;
+                    $('toast').classList.remove('show');
+                    $('confirmModal').classList.add('open'); updateBodyLock();
+                    setTimeout(() => $('confirmNo').focus(), 50);
+                });
+            }
+            $('confirmNo').addEventListener('click', () => closeModal('confirmModal'));
+            $('confirmYes').addEventListener('click', () => { const r = confirmResolve; confirmResolve = null; closeModal('confirmModal'); if (r) r(true); });
+            $('confirmModal').addEventListener('click', (e) => { if (e.target === $('confirmModal')) closeModal('confirmModal'); });
 
             // Review modal
             let rating = 0;
@@ -1350,11 +1392,15 @@
             function paintStars(v) { document.querySelectorAll('#rateStars button').forEach((b) => b.classList.toggle('on', +b.dataset.v <= v)); }
             document.querySelectorAll('#rateStars button').forEach((b) => {
                 b.addEventListener('mouseenter', () => paintStars(+b.dataset.v));
-                b.addEventListener('click', () => { rating = +b.dataset.v; paintStars(rating); $('rateLabel').textContent = RATE_LABELS[rating]; });
+                b.addEventListener('click', () => {
+                    rating = +b.dataset.v; paintStars(rating); $('rateLabel').textContent = RATE_LABELS[rating];
+                    document.querySelectorAll('#rateStars button').forEach((x) => x.setAttribute('aria-checked', String(+x.dataset.v === rating)));
+                });
             });
             $('rateStars').addEventListener('mouseleave', () => paintStars(rating));
             function openReview() {
                 rating = 0; paintStars(0);
+                document.querySelectorAll('#rateStars button').forEach((x) => x.setAttribute('aria-checked', 'false'));
                 $('rateLabel').textContent = RATE_LABELS[0];
                 $('reviewText').value = ''; $('reviewName').value = ''; $('reviewConsent').checked = false;
                 $('reviewForm').classList.remove('hidden'); $('reviewThanks').classList.add('hidden');
@@ -1632,9 +1678,9 @@
             //  RESEARCH SCANNER
             // ============================================================
             const PILLARS = {
-                safety: { name: '🛡️ Security & Stability', short: 'Security & Stability', weight: 1.5, tag: 'high' },
-                fundamental: { name: '🏗️ Fundamentals', short: 'Fundamentals', weight: 1.0, tag: 'med' },
-                sentiment: { name: '👥 Community & Momentum', short: 'Community & Momentum', weight: 0.75, tag: 'low' },
+                safety: { name: '<i class="fas fa-shield-halved" aria-hidden="true"></i> Security & Stability', short: 'Security & Stability', weight: 1.5, tag: 'high' },
+                fundamental: { name: '<i class="fas fa-cubes" aria-hidden="true"></i> Fundamentals', short: 'Fundamentals', weight: 1.0, tag: 'med' },
+                sentiment: { name: '<i class="fas fa-users" aria-hidden="true"></i> Community & Momentum', short: 'Community & Momentum', weight: 0.75, tag: 'low' },
             };
             // ids q1–q12 are kept stable so saved analyses keep working.
             const CHECKS = [
@@ -1869,10 +1915,10 @@
                 renderScanner();
             });
             $('customCoin').addEventListener('keydown', (e) => { if (e.key === 'Enter') $('addCustomBtn').click(); });
-            $('resetBtn').addEventListener('click', () => {
+            $('resetBtn').addEventListener('click', async () => {
                 const coin = state.scanCoin;
                 if (!coin) { toast('Select a coin first.'); return; }
-                if (!confirm('Reset all checks for this coin?')) return;
+                if (!(await askConfirm('Reset this coin?', 'This clears every check you\'ve ticked for this coin. Your watchlist stays as it is.', 'Reset checks'))) return;
                 saveScan(coin, []);
                 renderScanner();
                 toast('Checks reset.');
@@ -1954,6 +2000,18 @@
                     if (document.querySelector('.drawer.open')) { closeDrawers(); return; }
                     if ($('lessonView').classList.contains('open')) { closeLesson(); return; }
                     if ($('scannerView').classList.contains('open')) closeScanner();
+                });
+                // Keep Tab inside whichever layer is on top: a modal, then a drawer, then a full-screen view.
+                document.addEventListener('keydown', (e) => {
+                    if (e.key !== 'Tab') return;
+                    const layer = document.querySelector('.modal.open') || document.querySelector('.drawer.open') || document.querySelector('#scannerView.open') || document.querySelector('#lessonView.open');
+                    if (!layer) return;
+                    const focusable = Array.from(layer.querySelectorAll('button, input, select, textarea, a[href], video[controls]')).filter((el) => !el.disabled && el.offsetParent !== null);
+                    if (!focusable.length) return;
+                    const first = focusable[0], last = focusable[focusable.length - 1];
+                    if (!layer.contains(document.activeElement)) { e.preventDefault(); first.focus(); return; }
+                    if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                    else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
                 });
                 // Keyboard answers (1–4 / A–D) for the active knowledge check.
                 document.addEventListener('keydown', (e) => {

@@ -7,6 +7,9 @@
     <meta name="description" content="A beginner crypto course built around one goal: don't get wrecked. 18 plain-English lessons on wallets, scams and market data, plus a live 12-point Research Scanner. One-time $16.99, lifetime access." />
     <link rel="canonical" href="https://plutoscan.com/" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="icons/logo.svg" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
     <meta name="theme-color" content="#0b0b16" />
 
     <meta property="og:type" content="website" />
@@ -117,13 +120,7 @@
         .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
         .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--text); }
         .brand:hover { text-decoration: none; }
-        .brand-mark {
-            width: 30px; height: 30px; border-radius: 50%; background: var(--grad); position: relative;
-            box-shadow: 0 0 18px rgba(108, 60, 225, 0.55);
-        }
-        .brand-mark::after {
-            content: ''; position: absolute; inset: 11px -6px; border: 2px solid rgba(255, 255, 255, 0.75); border-radius: 50%; transform: rotate(-20deg);
-        }
+        .brand-mark { width: 34px; height: 34px; flex-shrink: 0; background: url(icons/logo.svg) center / contain no-repeat; filter: drop-shadow(0 0 10px rgba(108, 60, 225, 0.55)); }
         .nav-links { display: flex; gap: 28px; font-size: .92rem; font-weight: 500; }
         .nav-links a { color: var(--text-2); }
         .nav-links a:hover { color: var(--text); text-decoration: none; }
@@ -198,6 +195,8 @@
         .pv-rows { display: grid; gap: 6px; }
         .pv-row { display: flex; justify-content: space-between; align-items: center; font-size: .84rem; padding: 9px 12px; border-radius: 10px; background: rgba(255, 255, 255, 0.03); }
         .pv-row span:first-child { color: var(--text-2); }
+        .pv-ico { width: 18px; margin-right: 8px; text-align: center; color: var(--purple-light); }
+        .pillar-head h3 i { margin-right: 8px; color: var(--purple-light); }
         .pv-row .ok { color: var(--green); font-weight: 700; }
         .pv-row .bad { color: var(--amber); font-weight: 700; }
         .pv-tag { position: absolute; top: -12px; right: 18px; background: var(--gold); color: #1a1205; font-size: .7rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; letter-spacing: .04em; }
@@ -331,15 +330,47 @@
             background: linear-gradient(135deg, rgba(108, 60, 225, 0.9), rgba(30, 144, 255, 0.7));
             box-shadow: 0 30px 90px rgba(108, 60, 225, 0.25);
         }
-        .price-inner { background: #11112a; border-radius: 24px; padding: 38px 34px; text-align: center; }
+        .price-inner { position: relative; overflow: hidden; background: radial-gradient(ellipse 80% 45% at 50% 0%, rgba(108, 60, 225, 0.22), transparent 70%), #11112a; border-radius: 24px; padding: 44px 34px 34px; text-align: center; }
+        .price-ribbon { position: absolute; top: 18px; right: -38px; transform: rotate(35deg); width: 150px; padding: 5px 0; background: var(--gold); color: #1a1205; font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; box-shadow: 0 4px 14px rgba(255, 176, 32, 0.35); }
         .price-inner .label { font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; color: var(--purple-light); }
-        .price-inner .amount { font-size: 4rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin: 12px 0 4px; }
-        .price-inner .amount small { font-size: 1rem; font-weight: 600; color: var(--text-3); letter-spacing: 0; }
-        .price-inner .once { color: var(--text-3); font-size: .9rem; margin-bottom: 26px; }
+        .amount { display: inline-flex; align-items: flex-start; justify-content: center; gap: 4px; margin: 18px 0 6px; font-variant-numeric: tabular-nums; line-height: 1; }
+        .amount .cur { font-size: 1.9rem; font-weight: 700; color: var(--text-2); margin-top: 10px; }
+        .amount .whole { font-size: 5.4rem; font-weight: 800; letter-spacing: -0.05em; background: linear-gradient(180deg, #ffffff 30%, #c9c3ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .amount .side { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 10px; }
+        .amount .cents { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; }
+        .amount .per { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); }
+        .price-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 10px 0 8px; }
+        .price-pills span { font-size: .78rem; font-weight: 600; color: var(--text-2); padding: 5px 12px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border-strong); }
+        .price-inner .once { color: var(--text-3); font-size: .86rem; margin-bottom: 26px; }
+        .price-inner .once strong { color: var(--green); font-weight: 700; }
+        .price-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border-strong), transparent); margin: 0 0 24px; }
+
+        /* Price tag inside buttons */
+        .price-tag { display: inline-flex; align-items: flex-start; margin-left: 2px; padding: 4px 11px 4px 9px; border-radius: 999px; background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.28); font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+        .price-tag .c { font-size: .66em; margin-top: .12em; }
+        .btn-sm .price-tag { padding: 2px 9px 2px 7px; }
+        .is-paid .price-tag { display: none; }
         .price-inner ul { list-style: none; text-align: left; display: grid; gap: 12px; margin: 0 auto 28px; max-width: 380px; }
         .price-inner li { display: flex; gap: 12px; font-size: .95rem; color: var(--text-2); }
         .price-inner li i { color: var(--green); margin-top: 4px; }
-        .price-secure { margin-top: 16px; font-size: .8rem; color: var(--text-3); display: flex; justify-content: center; align-items: center; gap: 8px; flex-wrap: wrap; }
+        .price-secure { margin-top: 16px; font-size: .8rem; color: var(--text-3); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; }
+
+        /* ===== GUARANTEE ===== */
+        .guarantee { max-width: 520px; margin: 22px auto 0; display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; padding: 18px 22px; border-radius: var(--radius); border: 1px solid rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.06); }
+        .guarantee .seal { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 1.3rem; color: var(--green); background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.35); }
+        .guarantee strong { display: block; font-size: 1rem; margin-bottom: 2px; }
+        .guarantee p { font-size: .88rem; color: var(--text-2); }
+
+        /* ===== MOBILE CTA BAR ===== */
+        .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 390; display: none; align-items: center; gap: 12px; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(11, 11, 22, 0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid var(--border-strong); transform: translateY(110%); transition: transform .3s var(--ease); }
+        .mobile-cta.show { transform: none; }
+        .mobile-cta .mc-price { display: flex; align-items: flex-start; flex-wrap: wrap; width: 74px; font-size: 1.6rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+        .mobile-cta .mc-price .c { font-size: .55em; margin-top: .14em; letter-spacing: 0; }
+        .mobile-cta .mc-price small { flex-basis: 100%; font-size: .6rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-3); margin-top: 4px; }
+        .mobile-cta .mc-text { flex: 1; min-width: 0; font-size: .8rem; color: var(--text-3); line-height: 1.35; padding-left: 12px; border-left: 1px solid var(--border-strong); }
+        .mobile-cta .mc-text strong { display: block; color: var(--text); font-size: .95rem; }
+        .mobile-cta .btn { padding: 11px 20px; font-size: .92rem; }
+        @media (max-width: 720px) { .mobile-cta { display: flex; } footer { padding-bottom: 96px; } }
 
         /* ===== FAQ ===== */
         .faq { max-width: 780px; margin: 0 auto; display: grid; gap: 12px; }
@@ -362,7 +393,10 @@
         .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: flex-start; }
         .foot p { font-size: .8rem; color: var(--text-3); max-width: 620px; line-height: 1.65; }
         .foot .copy { margin-top: 10px; }
-        .foot-links { display: flex; gap: 20px; font-size: .88rem; }
+        .foot-links { display: flex; flex-wrap: wrap; gap: 12px 20px; font-size: .88rem; }
+        .foot-cols { display: flex; flex-wrap: wrap; gap: 28px 48px; }
+        .foot-col h4 { font-size: .74rem; text-transform: uppercase; letter-spacing: .1em; color: var(--text-3); margin-bottom: 10px; }
+        .foot-col .foot-links { flex-direction: column; gap: 8px; }
         .foot-links a { color: var(--text-2); }
 
         /* ===== MODAL (auth) ===== */
@@ -438,7 +472,7 @@
                 <span class="nav-user hidden" id="navUser"></span>
                 <button type="button" class="link-btn" id="navLogin">Log in</button>
                 <button type="button" class="link-btn hidden" id="navLogout">Log out</button>
-                <button type="button" class="btn btn-primary btn-sm js-buy" id="navCta">Get Access<span class="nav-cta-price">&nbsp;· $16.99</span></button>
+                <button type="button" class="btn btn-primary btn-sm js-buy" id="navCta">Get Access<span class="price-tag nav-cta-price"><span class="c">$</span>16<span class="c">.99</span></span></button>
             </div>
         </div>
     </header>
@@ -456,12 +490,13 @@
                     <h1>Learn crypto <span class="text-gradient">without getting wrecked.</span></h1>
                     <p class="hero-sub">Most beginners lose money to the same few mistakes: scams, bad sends and hype. PlutoScan teaches you to avoid every one of them, then gives you a live 12-point Research Scanner to judge any coin before you risk a dollar.</p>
                     <div class="hero-ctas">
-                        <button type="button" class="btn btn-primary js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Start Learning — $16.99</span></button>
+                        <button type="button" class="btn btn-primary js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Start Learning</span> <span class="price-tag" aria-label="$16.99"><span class="c">$</span>16<span class="c">.99</span></span></button>
                         <a href="#curriculum" class="btn btn-ghost">See what's inside</a>
                     </div>
                     <div class="hero-trust">
                         <span><i class="fas fa-check-circle"></i> One-time payment</span>
                         <span><i class="fas fa-check-circle"></i> Lifetime access</span>
+                        <span><i class="fas fa-check-circle"></i> 14-day refund</span>
                         <span><i class="fas fa-check-circle"></i> Secure checkout by Stripe</span>
                     </div>
                 </div>
@@ -478,10 +513,10 @@
                         </div>
                     </div>
                     <div class="pv-rows">
-                        <div class="pv-row"><span>💰 Market cap over $1B</span><span class="ok">✓ Pass</span></div>
-                        <div class="pv-row"><span>🧮 FDV within 3× market cap</span><span class="ok">✓ 1.4×</span></div>
-                        <div class="pv-row"><span>🏛️ Listed on 5+ exchanges</span><span class="ok">✓ Pass</span></div>
-                        <div class="pv-row"><span>👤 Team verified</span><span class="bad">⚠ Research</span></div>
+                        <div class="pv-row"><span><i class="fas fa-sack-dollar pv-ico" aria-hidden="true"></i>Market cap over $1B</span><span class="ok">✓ Pass</span></div>
+                        <div class="pv-row"><span><i class="fas fa-calculator pv-ico" aria-hidden="true"></i>FDV within 3× market cap</span><span class="ok">✓ 1.4×</span></div>
+                        <div class="pv-row"><span><i class="fas fa-building-columns pv-ico" aria-hidden="true"></i>Listed on 5+ exchanges</span><span class="ok">✓ Pass</span></div>
+                        <div class="pv-row"><span><i class="fas fa-user-check pv-ico" aria-hidden="true"></i>Team verified</span><span class="bad">⚠ Research</span></div>
                     </div>
                 </div>
             </div>
@@ -506,10 +541,10 @@
                     <p>There's no bank to call and no "undo" button. Most people who get burned make one of three mistakes. Each one is avoidable once you know what to look for.</p>
                 </div>
                 <div class="stat-callout reveal">
-                    <div class="big">$9.3B</div>
+                    <div class="big">$11.4B</div>
                     <div>
-                        <p>in cryptocurrency-related fraud losses reported by Americans in 2024 alone.</p>
-                        <cite>Source: <a href="https://www.ic3.gov/AnnualReport/Reports/2024_IC3Report.pdf" target="_blank" rel="noopener">FBI Internet Crime Complaint Center, 2024 Internet Crime Report</a></cite>
+                        <p>in cryptocurrency-related losses reported to the FBI in 2025 alone, more than any other category in the report.</p>
+                        <cite>Source: <a href="https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" target="_blank" rel="noopener">FBI Internet Crime Complaint Center, 2025 Internet Crime Report</a> ($11.37 billion)</cite>
                     </div>
                 </div>
                 <div class="grid-3">
@@ -605,7 +640,7 @@
                 </div>
                 <div class="rules-cta reveal">
                     <p>That's 5 rules. The course gives you the full system: 18 lessons and a live Scanner.</p>
-                    <button type="button" class="btn btn-primary js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Get the Full Course — $16.99</span></button>
+                    <button type="button" class="btn btn-primary js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Get the Full Course</span> <span class="price-tag" aria-label="$16.99"><span class="c">$</span>16<span class="c">.99</span></span></button>
                 </div>
             </div>
         </section>
@@ -651,9 +686,15 @@
                 </div>
                 <div class="price-card reveal">
                     <div class="price-inner">
+                        <span class="price-ribbon" aria-hidden="true">Lifetime</span>
                         <div class="label">PlutoScan Full Access</div>
-                        <div class="amount">$16.99 <small>USD</small></div>
-                        <div class="once">One-time payment · lifetime access</div>
+                        <div class="amount" role="img" aria-label="$16.99 US dollars, paid once">
+                            <span class="cur" aria-hidden="true">$</span><span class="whole" aria-hidden="true">16</span>
+                            <span class="side" aria-hidden="true"><span class="cents">.99</span><span class="per">USD · once</span></span>
+                        </div>
+                        <div class="price-pills"><span>No subscription</span><span>Lifetime access</span><span>About $0.94 a lesson</span></div>
+                        <div class="once">Pay once, keep it forever. <strong>14-day refund</strong> if it's not for you.</div>
+                        <div class="price-divider"></div>
                         <ul>
                             <li><i class="fas fa-check"></i>All 18 lessons: video + written guides</li>
                             <li><i class="fas fa-check"></i>Knowledge checks with explanations</li>
@@ -663,8 +704,15 @@
                             <li><i class="fas fa-check"></i>Progress saved to your account</li>
                             <li><i class="fas fa-check"></i>All future course and Scanner updates</li>
                         </ul>
-                        <button type="button" class="btn btn-primary btn-block js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Start Learning — $16.99</span></button>
+                        <button type="button" class="btn btn-primary btn-block js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Start Learning</span> <span class="price-tag" aria-label="$16.99"><span class="c">$</span>16<span class="c">.99</span></span></button>
                         <div class="price-secure"><span><i class="fas fa-lock"></i>&nbsp; Payments processed securely by Stripe. We never see your card details.</span></div>
+                    </div>
+                </div>
+                <div class="guarantee reveal">
+                    <div class="seal" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
+                    <div>
+                        <strong>Try it for 14 days, risk-free</strong>
+                        <p>Not for you? Email us within 14 days of buying. If you've completed fewer than 5 of the 18 lessons, you get a full refund. <a href="refunds.html">Refund Policy</a></p>
                     </div>
                 </div>
             </div>
@@ -685,7 +733,8 @@
                     <details><summary>How long does it take?</summary><div class="a">It's fully self-paced. Lessons are short and focused, so you can do one in a coffee break or several in an evening. Your progress is saved to your account.</div></details>
                     <details><summary>What does "lifetime access" include?</summary><div class="a">One payment gives you permanent access to all lessons, the Research Scanner, the data widget, the glossary and any future updates to the course or Scanner. No subscriptions, no recurring charges.</div></details>
                     <details><summary>Can I use it on my phone?</summary><div class="a">Yes. PlutoScan works in any modern browser on desktop, tablet and mobile. Log in on any device to pick up where you left off.</div></details>
-                    <details><summary>Is checkout secure?</summary><div class="a">Yes. Payments are handled by Stripe's secure checkout. PlutoScan never sees or stores your card details. You'll create a free account first so your purchase is tied to you.</div></details>
+                    <details><summary>Can I get a refund?</summary><div class="a">Yes. If you've completed fewer than 25% of the course (4 or fewer of the 18 lessons), email <a href="mailto:support@plutoscan.com?subject=Refund%20request">support@plutoscan.com</a> within 14 days of purchase for a full refund. See the <a href="refunds.html">Refund Policy</a> for details.</div></details>
+                    <details><summary>Is checkout secure?</summary><div class="a">Yes. Payments are handled by Stripe's secure checkout. PlutoScan never sees or stores your card details. You'll review your order and create a free account first so your purchase is tied to you.</div></details>
                 </div>
             </div>
         </section>
@@ -696,7 +745,7 @@
                 <div class="final reveal">
                     <h2>Stop guessing. <span class="text-gradient">Start scanning.</span></h2>
                     <p>18 lessons, one live research tool, lifetime access, for less than the cost of one impulsive trade.</p>
-                    <button type="button" class="btn btn-primary js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Start Learning — $16.99</span></button>
+                    <button type="button" class="btn btn-primary js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Start Learning</span> <span class="price-tag" aria-label="$16.99"><span class="c">$</span>16<span class="c">.99</span></span></button>
                 </div>
             </div>
         </section>
@@ -706,16 +755,38 @@
         <div class="container foot">
             <div>
                 <a href="#top" class="brand"><span class="brand-mark" aria-hidden="true"></span>PlutoScan</a>
-                <p style="margin-top:14px;">PlutoScan is an educational platform. Course content and the Research Scanner are provided for informational purposes only and do not constitute financial, investment, tax or legal advice. Cryptocurrency is highly volatile and you can lose some or all of your money. Always do your own research. Market data is provided by CoinGecko and may be delayed or inaccurate.</p>
+                <p style="margin-top:14px;">PlutoScan is an educational platform. Course content and the Research Scanner are provided for informational purposes only and do not constitute financial, investment, tax or legal advice. Cryptocurrency is highly volatile and you can lose some or all of your money. Always do your own research. Market data is provided by <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a> and may be delayed or inaccurate.</p>
                 <p class="copy">© <span id="year"></span> PlutoScan · plutoscan.com</p>
             </div>
-            <div class="foot-links">
-                <a href="#curriculum">Curriculum</a>
-                <a href="#faq">FAQ</a>
-                <button type="button" class="link-btn" id="footLogin" style="padding:0;font-size:.88rem;">Log in</button>
+            <div class="foot-cols">
+                <nav class="foot-col" aria-label="Course">
+                    <h4>Course</h4>
+                    <div class="foot-links">
+                        <a href="#curriculum">Curriculum</a>
+                        <a href="#scanner">Scanner</a>
+                        <a href="#faq">FAQ</a>
+                        <button type="button" class="link-btn" id="footLogin" style="padding:0;font-size:.88rem;text-align:left;">Log in</button>
+                    </div>
+                </nav>
+                <nav class="foot-col" aria-label="Support and policies">
+                    <h4>Support</h4>
+                    <div class="foot-links">
+                        <a href="mailto:support@plutoscan.com">support@plutoscan.com</a>
+                        <a href="refunds.html">Refund Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                    </div>
+                </nav>
             </div>
         </div>
     </footer>
+
+    <!-- ===== MOBILE CTA BAR ===== -->
+    <div class="mobile-cta" id="mobileCta" aria-hidden="true">
+        <div class="mc-price" aria-label="$16.99, paid once"><span class="c">$</span>16<span class="c">.99</span><small>once · lifetime</small></div>
+        <div class="mc-text"><strong>Full Access</strong>14-day refund</div>
+        <button type="button" class="btn btn-primary js-buy" tabindex="-1"><span class="js-cta-label">Get Access</span></button>
+    </div>
 
     <!-- ===== AUTH MODAL ===== -->
     <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
@@ -738,7 +809,7 @@
                 <button type="submit" class="btn btn-primary btn-block" id="authSubmitBtn">Log in</button>
             </form>
             <div class="auth-toggle" id="authToggle"></div>
-            <p class="auth-legal">Your account keeps your purchase and progress safe across devices.</p>
+            <p class="auth-legal">Your account keeps your purchase and progress safe across devices. By continuing you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>
         </div>
     </div>
 
@@ -778,9 +849,9 @@
 
             // Same checks and weights as the Scanner inside the course.
             const PILLARS = [
-                { key: 'safety', name: '🛡️ Security & Stability', weight: 1.5, tag: 'high', label: '×1.5 weight', checks: ['Market cap over $1B', '24h volume over $50M', 'Max supply known', 'Listed on more than 5 exchanges', 'FDV within 3× of market cap'] },
-                { key: 'fundamental', name: '🏗️ Fundamentals', weight: 1.0, tag: 'med', label: '×1.0 weight', checks: ['Clear, real use case', 'Active open-source development', 'Published roadmap', 'Identifiable, credible team', 'Top 250 by market cap'] },
-                { key: 'sentiment', name: '👥 Community & Momentum', weight: 0.75, tag: 'low', label: '×0.75 weight', checks: ['Active community', '30-day price move under 40%'] },
+                { key: 'safety', name: 'Security & Stability', icon: 'fa-shield-halved', weight: 1.5, tag: 'high', label: '×1.5 weight', checks: ['Market cap over $1B', '24h volume over $50M', 'Max supply known', 'Listed on more than 5 exchanges', 'FDV within 3× of market cap'] },
+                { key: 'fundamental', name: 'Fundamentals', icon: 'fa-cubes', weight: 1.0, tag: 'med', label: '×1.0 weight', checks: ['Clear, real use case', 'Active open-source development', 'Published roadmap', 'Identifiable, credible team', 'Top 250 by market cap'] },
+                { key: 'sentiment', name: 'Community & Momentum', icon: 'fa-users', weight: 0.75, tag: 'low', label: '×0.75 weight', checks: ['Active community', '30-day price move under 40%'] },
             ];
             const DEMO_DEFAULT = { safety: [0, 1, 2, 3], fundamental: [0, 1, 4], sentiment: [0] };
 
@@ -865,7 +936,17 @@
             }
             $('authClose').addEventListener('click', closeAuthModal);
             authModal.addEventListener('click', (e) => { if (e.target === authModal) closeAuthModal(); });
-            document.addEventListener('keydown', (e) => { if (e.key === 'Escape' && authModal.classList.contains('open')) closeAuthModal(); });
+            document.addEventListener('keydown', (e) => {
+                if (!authModal.classList.contains('open')) return;
+                if (e.key === 'Escape') { closeAuthModal(); return; }
+                // Keep Tab inside the dialog while it's open.
+                if (e.key !== 'Tab') return;
+                const focusable = Array.from(authModal.querySelectorAll('button, input, a[href]')).filter((el) => !el.disabled && el.offsetParent !== null);
+                if (!focusable.length) return;
+                const first = focusable[0], last = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            });
             $('forgotBtn').addEventListener('click', () => setAuthMode('reset'));
 
             function friendlyAuthError(err) {
@@ -940,34 +1021,26 @@
                 window.location.href = 'plutoscan-modules.html';
             }
 
-            async function startCheckout() {
-                showPageLoader('Redirecting to secure checkout…');
-                await window.plutoscanAuth.report('checkout', { step: 'started' });
-                try {
-                    await window.plutoscanAuth.startCheckout(); // redirects to Stripe
-                } catch (err) {
-                    console.error(err);
-                    window.plutoscanAuth.report('checkout', { step: 'failed', reason: err && err.message });
-                    hidePageLoader();
-                    showNotice('warn', 'We couldn\'t start checkout. Please try again in a moment.');
-                    window.scrollTo({ top: 0, behavior: 'smooth' });
-                }
+            // Buyers review the order on checkout.html before going to Stripe.
+            function goToCheckoutPage() {
+                showPageLoader('Opening checkout…');
+                window.location.href = 'checkout.html';
             }
 
             async function afterSignIn() {
                 paidCache = await window.plutoscanAuth.isPaid();
                 updateNavForUser(window.plutoscanAuth.getCurrentUser(), paidCache);
                 if (paidCache) { goToCourse(); return; }
-                if (authIntent === 'checkout') { await startCheckout(); return; }
+                if (authIntent === 'checkout') { goToCheckoutPage(); return; }
                 showNotice('info', 'You\'re logged in. Get lifetime access to unlock all 18 lessons and the Research Scanner.');
                 window.scrollTo({ top: 0, behavior: 'smooth' });
             }
 
             async function handleBuyClick() {
                 const user = window.plutoscanAuth.getCurrentUser();
-                if (!user) { openAuthModal('checkout'); return; }
+                if (!user) { goToCheckoutPage(); return; }
                 if (paidCache === null) paidCache = await window.plutoscanAuth.isPaid();
-                if (paidCache) goToCourse(); else await startCheckout();
+                if (paidCache) goToCourse(); else goToCheckoutPage();
             }
 
             function updateNavForUser(user, paid) {
@@ -980,7 +1053,9 @@
                 const navCta = $('navCta');
                 if (paid) {
                     navCta.innerHTML = '<i class="fas fa-play"></i> My Course';
+                    document.body.classList.add('is-paid');
                     document.querySelectorAll('.js-cta-label').forEach((el) => { el.textContent = 'Continue Learning'; });
+                    $('mobileCta').classList.add('hidden');
                 }
             }
 
@@ -1005,7 +1080,7 @@
             function renderDemo() {
                 $('demoChecks').innerHTML = PILLARS.map((p) => `
                     <div class="pillar-group">
-                        <div class="pillar-head"><h3>${p.name}</h3><span class="w ${p.tag}">${p.label}</span></div>
+                        <div class="pillar-head"><h3><i class="fas ${p.icon}" aria-hidden="true"></i>${p.name}</h3><span class="w ${p.tag}">${p.label}</span></div>
                         ${p.checks.map((c, i) => `<label class="check"><input type="checkbox" data-pillar="${p.key}" data-i="${i}" ${DEMO_DEFAULT[p.key].includes(i) ? 'checked' : ''}><span>${c}</span></label>`).join('')}
                     </div>`).join('');
                 $('demoChecks').addEventListener('change', updateDemo);
@@ -1043,6 +1118,17 @@
                     box.appendChild(s);
                 }
             }
+            // Phone-only buy bar: shows once the hero is scrolled past, hides again over pricing and the final CTA.
+            function setupMobileCta() {
+                const bar = $('mobileCta');
+                if (!('IntersectionObserver' in window)) return;
+                const visible = new Set();
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach((en) => { if (en.isIntersecting) visible.add(en.target); else visible.delete(en.target); });
+                    bar.classList.toggle('show', visible.size === 0);
+                });
+                document.querySelectorAll('.hero, #pricing, .final').forEach((el) => io.observe(el));
+            }
             function setupReveal() {
                 const els = document.querySelectorAll('.reveal');
                 if (!('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('in')); return; }
@@ -1058,6 +1144,7 @@
                 renderDemo();
                 makeStars();
                 setupReveal();
+                setupMobileCta();
                 const nav = $('nav');
                 window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
 
