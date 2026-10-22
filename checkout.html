@@ -62,8 +62,6 @@
         .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 34px rgba(108, 60, 225, 0.55); color: #fff; }
         .btn-primary:disabled { opacity: .65; cursor: wait; transform: none; }
         .btn-block { width: 100%; }
-        .price-tag { display: inline-flex; align-items: flex-start; padding: 4px 11px 4px 9px; border-radius: 999px; background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.28); font-weight: 800; line-height: 1.15; font-variant-numeric: tabular-nums; }
-        .price-tag .c { font-size: .66em; margin-top: .12em; }
 
         /* ===== NAV ===== */
         .nav { position: sticky; top: 0; z-index: 100; background: rgba(11, 11, 22, 0.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
@@ -155,15 +153,15 @@
         /* ===== ORDER SUMMARY ===== */
         .summary-col { position: sticky; top: 92px; }
         @media (max-width: 960px) { .summary-col { position: static; } }
-        .order { position: relative; border-radius: 26px; padding: 2px; background: linear-gradient(135deg, rgba(108, 60, 225, 0.9), rgba(30, 144, 255, 0.7)); box-shadow: 0 30px 90px rgba(108, 60, 225, 0.25); }
+        .order { position: relative; border-radius: 26px; padding: 2px; background: linear-gradient(150deg, #ffd34d 0%, #ffb020 22%, rgba(108, 60, 225, 0.9) 58%, rgba(30, 144, 255, 0.7)); box-shadow: 0 30px 90px rgba(108, 60, 225, 0.25), 0 0 60px rgba(255, 176, 32, 0.12); }
         .order-inner { border-radius: 24px; padding: 28px 26px 24px; background: radial-gradient(ellipse 90% 40% at 50% 0%, rgba(108, 60, 225, 0.22), transparent 70%), var(--panel); }
         .order-label { font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--purple-light); }
         .order h2 { font-size: 1.3rem; letter-spacing: -0.02em; margin: 4px 0 14px; }
         .amount { display: flex; align-items: flex-start; gap: 4px; line-height: 1; font-variant-numeric: tabular-nums; }
-        .amount .cur { font-size: 1.6rem; font-weight: 700; color: var(--text-2); margin-top: 8px; }
-        .amount .whole { font-size: 4.4rem; font-weight: 800; letter-spacing: -0.05em; background: linear-gradient(180deg, #ffffff 30%, #c9c3ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .amount .cur { font-size: 1.6rem; font-weight: 800; color: #ffd34d; margin-top: 8px; }
+        .amount .whole { font-size: 4.4rem; font-weight: 800; letter-spacing: -0.05em; background: linear-gradient(180deg, #fff6d6 8%, #ffd34d 48%, #ffa31a 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgba(255, 176, 32, 0.35)); }
         .amount .side { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; }
-        .amount .cents { font-size: 1.6rem; font-weight: 800; }
+        .amount .cents { font-size: 1.6rem; font-weight: 800; color: #ffd34d; }
         .amount .per { font-size: .66rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); }
         .order .once { font-size: .86rem; color: var(--text-3); margin: 10px 0 18px; }
         .order .once strong { color: var(--green); }

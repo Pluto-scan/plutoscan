@@ -332,28 +332,59 @@
         /* ===== PRICING ===== */
         .price-card {
             max-width: 520px; margin: 0 auto; position: relative; border-radius: 26px; padding: 2px;
-            background: linear-gradient(135deg, rgba(108, 60, 225, 0.9), rgba(30, 144, 255, 0.7));
-            box-shadow: 0 30px 90px rgba(108, 60, 225, 0.25);
+            background: linear-gradient(150deg, #ffd34d 0%, #ffb020 22%, rgba(108, 60, 225, 0.9) 58%, rgba(30, 144, 255, 0.7));
+            box-shadow: 0 30px 90px rgba(108, 60, 225, 0.25), 0 0 60px rgba(255, 176, 32, 0.12);
         }
-        .price-inner { position: relative; overflow: hidden; background: radial-gradient(ellipse 80% 45% at 50% 0%, rgba(108, 60, 225, 0.22), transparent 70%), #11112a; border-radius: 24px; padding: 44px 34px 34px; text-align: center; }
-        .price-ribbon { position: absolute; top: 18px; right: -38px; transform: rotate(35deg); width: 150px; padding: 5px 0; background: var(--gold); color: #1a1205; font-size: .66rem; font-weight: 800; letter-spacing: .1em; text-transform: uppercase; box-shadow: 0 4px 14px rgba(255, 176, 32, 0.35); }
+        .price-inner { position: relative; overflow: hidden; background: radial-gradient(ellipse 70% 40% at 50% 12%, rgba(255, 176, 32, 0.13), transparent 70%), radial-gradient(ellipse 80% 45% at 50% 0%, rgba(108, 60, 225, 0.22), transparent 70%), #11112a; border-radius: 24px; padding: 0 34px 34px; text-align: center; }
+        /* Gold deal strip across the top of the card */
+        .deal-strip { margin: 0 -34px 30px; padding: 11px 16px; background: linear-gradient(90deg, #ffb020, #ffd34d 50%, #ffb020); color: #1a1205; font-size: .76rem; font-weight: 800; letter-spacing: .12em; text-transform: uppercase; display: flex; justify-content: center; align-items: center; gap: 10px; flex-wrap: wrap; }
+        .deal-strip i { font-size: .8em; }
         .price-inner .label { font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; color: var(--purple-light); }
-        .amount { display: inline-flex; align-items: flex-start; justify-content: center; gap: 4px; margin: 18px 0 6px; font-variant-numeric: tabular-nums; line-height: 1; }
-        .amount .cur { font-size: 1.9rem; font-weight: 700; color: var(--text-2); margin-top: 10px; }
-        .amount .whole { font-size: 5.4rem; font-weight: 800; letter-spacing: -0.05em; background: linear-gradient(180deg, #ffffff 30%, #c9c3ff); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+        .price-stage { position: relative; display: flex; justify-content: center; align-items: center; gap: 18px; margin: 16px 0 8px; }
+        .amount { display: inline-flex; align-items: flex-start; justify-content: center; gap: 4px; font-variant-numeric: tabular-nums; line-height: 1; }
+        .amount .cur { font-size: 1.9rem; font-weight: 800; color: #ffd34d; margin-top: 10px; }
+        .amount .whole { font-size: 5.6rem; font-weight: 800; letter-spacing: -0.05em; background: linear-gradient(180deg, #fff6d6 8%, #ffd34d 48%, #ffa31a 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgba(255, 176, 32, 0.35)); }
         .amount .side { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; margin-top: 10px; }
-        .amount .cents { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; }
+        .amount .cents { font-size: 1.9rem; font-weight: 800; letter-spacing: -0.02em; color: #ffd34d; }
         .amount .per { font-size: .7rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); }
-        .price-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 10px 0 8px; }
+        /* Starburst seal next to the price */
+        .seal-burst { flex-shrink: 0; width: 92px; height: 92px; display: grid; place-items: center; text-align: center; transform: rotate(-12deg); background: linear-gradient(145deg, #ffe27a, #ffb020 60%, #f59e0b); color: #1a1205; clip-path: polygon(50.0% 0.0%, 57.5% 7.7%, 67.1% 3.0%, 71.5% 12.8%, 82.1% 11.7%, 82.9% 22.4%, 93.3% 25.0%, 90.4% 35.3%, 99.2% 41.3%, 93.0% 50.0%, 99.2% 58.7%, 90.4% 64.7%, 93.3% 75.0%, 82.9% 77.6%, 82.1% 88.3%, 71.5% 87.2%, 67.1% 97.0%, 57.5% 92.3%, 50.0% 100.0%, 42.5% 92.3%, 32.9% 97.0%, 28.5% 87.2%, 17.9% 88.3%, 17.1% 77.6%, 6.7% 75.0%, 9.6% 64.7%, 0.8% 58.7%, 7.0% 50.0%, 0.8% 41.3%, 9.6% 35.3%, 6.7% 25.0%, 17.1% 22.4%, 17.9% 11.7%, 28.5% 12.8%, 32.9% 3.0%, 42.5% 7.7%); font-weight: 800; line-height: 1.05; filter: drop-shadow(0 6px 16px rgba(255, 176, 32, 0.45)); animation: burst-pop 3.5s ease-in-out infinite; }
+        .seal-burst span { display: block; font-size: .58rem; letter-spacing: .08em; text-transform: uppercase; }
+        .seal-burst strong { display: block; font-size: 1.02rem; letter-spacing: -0.01em; margin: 1px 0; }
+        @media (prefers-reduced-motion: reduce) { .seal-burst { animation: none; } }
+        @keyframes burst-pop { 0%, 100% { transform: rotate(-12deg) scale(1); } 50% { transform: rotate(-8deg) scale(1.06); } }
+        .value-line { font-size: .98rem; color: var(--text-2); margin: 4px 0 14px; }
+        .value-line mark { background: linear-gradient(transparent 55%, rgba(255, 211, 77, 0.38) 55%); color: var(--text); font-weight: 800; padding: 0 2px; }
+        .price-pills { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin: 0 0 10px; }
         .price-pills span { font-size: .78rem; font-weight: 600; color: var(--text-2); padding: 5px 12px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border-strong); }
+        .price-pills i { color: #ffd34d; margin-right: 5px; }
         .price-inner .once { color: var(--text-3); font-size: .86rem; margin-bottom: 26px; }
         .price-inner .once strong { color: var(--green); font-weight: 700; }
         .price-divider { height: 1px; background: linear-gradient(90deg, transparent, var(--border-strong), transparent); margin: 0 0 24px; }
+        @media (max-width: 480px) {
+            .price-inner { padding: 0 20px 26px; }
+            .deal-strip { margin: 0 -20px 24px; font-size: .68rem; letter-spacing: .08em; }
+            .price-stage { gap: 10px; }
+            .amount .whole { font-size: 4.4rem; }
+            .amount .cur, .amount .cents { font-size: 1.5rem; }
+            .seal-burst { width: 74px; height: 74px; }
+            .seal-burst span { font-size: .5rem; }
+            .seal-burst strong { font-size: .84rem; }
+        }
+        @media (max-width: 360px) {
+            .btn-primary:not(.btn-sm) { padding: 14px 18px; font-size: .96rem; }
+            .amount .whole { font-size: 3.7rem; }
+            .amount .per { font-size: .6rem; }
+            .seal-burst { width: 64px; height: 64px; }
+            .seal-burst span { font-size: .44rem; }
+            .seal-burst strong { font-size: .74rem; }
+        }
 
-        /* Price tag inside buttons */
-        .price-tag { display: inline-flex; align-items: flex-start; margin-left: 2px; padding: 4px 11px 4px 9px; border-radius: 999px; background: rgba(255, 255, 255, 0.16); border: 1px solid rgba(255, 255, 255, 0.28); font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; }
+        /* Gold price tag inside buy buttons: a retail tag with a punched hole */
+        .price-tag { position: relative; display: inline-flex; align-items: flex-start; margin-left: 4px; padding: 4px 11px 4px 20px; background: linear-gradient(135deg, #ffe27a, #ffb020); color: #1a1205; font-weight: 800; line-height: 1.15; letter-spacing: -0.01em; font-variant-numeric: tabular-nums; border-radius: 3px 7px 7px 3px; clip-path: polygon(11px 0, 100% 0, 100% 100%, 11px 100%, 0 50%); text-shadow: none; box-shadow: inset 0 -2px 0 rgba(0, 0, 0, 0.12); }
+        .price-tag::before { content: ""; position: absolute; left: 8px; top: 50%; width: 5px; height: 5px; margin-top: -2.5px; border-radius: 50%; background: rgba(26, 18, 5, 0.55); }
         .price-tag .c { font-size: .66em; margin-top: .12em; }
-        .btn-sm .price-tag { padding: 2px 9px 2px 7px; }
+        .btn-sm .price-tag { padding: 2px 9px 2px 18px; }
         .is-paid .price-tag { display: none; }
         @media (max-width: 480px) { .nav-cta-price { display: none; } }
         .price-inner ul { list-style: none; text-align: left; display: grid; gap: 12px; margin: 0 auto 28px; max-width: 380px; }
@@ -370,7 +401,7 @@
         /* ===== MOBILE CTA BAR ===== */
         .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 390; display: none; align-items: center; gap: 12px; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(11, 11, 22, 0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid var(--border-strong); transform: translateY(110%); transition: transform .3s var(--ease); }
         .mobile-cta.show { transform: none; }
-        .mobile-cta .mc-price { display: flex; align-items: flex-start; flex-wrap: wrap; width: 74px; font-size: 1.6rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+        .mobile-cta .mc-price { color: #ffd34d; display: flex; align-items: flex-start; flex-wrap: wrap; width: 74px; font-size: 1.6rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
         .mobile-cta .mc-price .c { font-size: .55em; margin-top: .14em; letter-spacing: 0; }
         .mobile-cta .mc-price small { flex-basis: 100%; font-size: .6rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-3); margin-top: 4px; }
         .mobile-cta .mc-text { flex: 1; min-width: 0; font-size: .8rem; color: var(--text-3); line-height: 1.35; padding-left: 12px; border-left: 1px solid var(--border-strong); }
@@ -692,13 +723,17 @@
                 </div>
                 <div class="price-card reveal">
                     <div class="price-inner">
-                        <span class="price-ribbon" aria-hidden="true">Lifetime</span>
+                        <div class="deal-strip"><i class="fas fa-bolt" aria-hidden="true"></i> One-time payment · Lifetime access <i class="fas fa-bolt" aria-hidden="true"></i></div>
                         <div class="label">PlutoScan Full Access</div>
-                        <div class="amount" role="img" aria-label="$16.99 US dollars, paid once">
-                            <span class="cur" aria-hidden="true">$</span><span class="whole" aria-hidden="true">16</span>
-                            <span class="side" aria-hidden="true"><span class="cents">.99</span><span class="per">USD · once</span></span>
+                        <div class="price-stage">
+                            <div class="amount" role="img" aria-label="$16.99 US dollars, paid once">
+                                <span class="cur" aria-hidden="true">$</span><span class="whole" aria-hidden="true">16</span>
+                                <span class="side" aria-hidden="true"><span class="cents">.99</span><span class="per">USD · once</span></span>
+                            </div>
+                            <div class="seal-burst" aria-hidden="true"><div><span>Pay once</span><strong>OWN IT</strong><span>forever</span></div></div>
                         </div>
-                        <div class="price-pills"><span>No subscription</span><span>Lifetime access</span><span>About $0.94 a lesson</span></div>
+                        <p class="value-line">That's <mark>less than $1 a lesson</mark> for all 18.</p>
+                        <div class="price-pills"><span><i class="fas fa-check"></i>No subscription</span><span><i class="fas fa-check"></i>No upsells</span><span><i class="fas fa-check"></i>All future updates</span></div>
                         <div class="once">Pay once, keep it forever. <strong>14-day refund</strong> if it's not for you.</div>
                         <div class="price-divider"></div>
                         <ul>
