@@ -10,8 +10,10 @@ Beginner crypto course (18 lessons) + live 12-point Research Scanner, served at 
 | `plutoscan-modules.html` | The course app (dashboard, lessons, quizzes, data widget, Research Scanner) |
 | `plutoscan-auth.js` | Shared Firebase auth, progress/review saving and checkout helpers |
 | `og-image.png` | Social share image (1200×630) |
+| `checkout.html` | Order review page between "Get Access" and Stripe: what you get, the guarantee, account creation, then Stripe Checkout (noindex) |
 | `refunds.html`, `terms.html`, `privacy.html` | Policy pages, linked from the landing footer, pricing card, FAQ, login modal and the course account menu |
 | `404.html`, `legal.css` | Branded not-found page (GitHub Pages serves it for missing URLs) and the shared styles for the policy pages |
+| `manifest.webmanifest`, `icons/` | Logo, app icons and install manifest |
 | `robots.txt`, `sitemap.xml` | SEO; the course page is excluded from indexing |
 
 ## How the paywall works

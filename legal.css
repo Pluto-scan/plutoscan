@@ -40,8 +40,7 @@ a:hover { color: #fff; }
 .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
 .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
 .brand:hover { color: var(--text); }
-.brand-mark { width: 30px; height: 30px; border-radius: 50%; background: var(--grad); position: relative; box-shadow: 0 0 18px rgba(108, 60, 225, 0.55); }
-.brand-mark::after { content: ''; position: absolute; inset: 11px -6px; border: 2px solid rgba(255, 255, 255, 0.75); border-radius: 50%; transform: rotate(-20deg); }
+.brand-mark { width: 34px; height: 34px; flex-shrink: 0; background: url(icons/logo.svg) center / contain no-repeat; filter: drop-shadow(0 0 10px rgba(108, 60, 225, 0.55)); }
 .nav-back { font-size: .9rem; font-weight: 600; color: var(--text-2); text-decoration: none; }
 .nav-back:hover { color: var(--text); }
 
