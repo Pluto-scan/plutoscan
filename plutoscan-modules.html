@@ -97,8 +97,8 @@
         .menu { position: absolute; right: 0; top: calc(100% + 10px); min-width: 240px; background: var(--panel); border: 1px solid var(--border-strong); border-radius: 14px; box-shadow: var(--shadow); padding: 8px; display: none; }
         .menu.open { display: block; }
         .menu .menu-email { padding: 10px 12px; font-size: .82rem; color: var(--text-3); border-bottom: 1px solid var(--border); margin-bottom: 6px; word-break: break-all; }
-        .menu button { width: 100%; text-align: left; padding: 10px 12px; border-radius: 10px; font-size: .9rem; display: flex; gap: 10px; align-items: center; color: var(--text-2); }
-        .menu button:hover { background: var(--surface-2); color: var(--text); }
+        .menu button, .menu a { width: 100%; text-align: left; padding: 10px 12px; border-radius: 10px; font-size: .9rem; display: flex; gap: 10px; align-items: center; color: var(--text-2); text-decoration: none; }
+        .menu button:hover, .menu a:hover { background: var(--surface-2); color: var(--text); }
         @media (max-width: 760px) {
             .top-progress { display: none; }
             .top-actions .btn span { display: none; }
@@ -478,6 +478,10 @@
                     <div class="menu" id="userMenu" role="menu">
                         <div class="menu-email" id="menuEmail"></div>
                         <button type="button" role="menuitem" id="menuHome"><i class="fas fa-house"></i> PlutoScan home page</button>
+                        <a role="menuitem" href="mailto:support@plutoscan.com"><i class="fas fa-envelope"></i> Contact support</a>
+                        <a role="menuitem" href="refunds.html"><i class="fas fa-rotate-left"></i> Refund Policy</a>
+                        <a role="menuitem" href="terms.html"><i class="fas fa-file-contract"></i> Terms of Use</a>
+                        <a role="menuitem" href="privacy.html"><i class="fas fa-shield-halved"></i> Privacy Policy</a>
                         <button type="button" role="menuitem" id="menuLogout"><i class="fas fa-arrow-right-from-bracket"></i> Log out</button>
                     </div>
                 </div>
