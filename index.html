@@ -1,0 +1,1191 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>PlutoScan — Learn Crypto Without Getting Wrecked</title>
+    <meta name="description" content="A beginner crypto course built around one goal: don't get wrecked. 18 plain-English lessons on wallets, scams and market data, plus a live 12-point Research Scanner. One-time $16.99, lifetime access." />
+    <link rel="canonical" href="https://plutoscan.com/" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96.png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#0b0b16" />
+
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://plutoscan.com/" />
+    <meta property="og:title" content="PlutoScan — Learn Crypto Without Getting Wrecked" />
+    <meta property="og:description" content="18 plain-English lessons on wallets, scams and market data, plus a live 12-point Research Scanner. One-time $16.99, lifetime access." />
+    <meta property="og:image" content="https://plutoscan.com/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="PlutoScan — Learn Crypto Without Getting Wrecked" />
+    <meta name="twitter:description" content="18 plain-English lessons plus a live 12-point Research Scanner. One-time $16.99." />
+    <meta name="twitter:image" content="https://plutoscan.com/og-image.png" />
+
+    <script type="application/ld+json">
+    {
+        "@context": "https://schema.org",
+        "@type": "Course",
+        "name": "PlutoScan: Learn Crypto Without Getting Wrecked",
+        "description": "A beginner cryptocurrency course covering blockchain basics, wallet security, scam prevention and how to read market data, with a live 12-point Research Scanner.",
+        "provider": { "@type": "Organization", "name": "PlutoScan", "url": "https://plutoscan.com" },
+        "offers": { "@type": "Offer", "category": "Paid", "price": "16.99", "priceCurrency": "USD", "url": "https://plutoscan.com/" },
+        "hasCourseInstance": { "@type": "CourseInstance", "courseMode": "online" }
+    }
+    </script>
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        /* ===== TOKENS ===== */
+        :root {
+            --purple: #6C3CE1;
+            --purple-light: #a78bfa;
+            --blue: #1E90FF;
+            --blue-light: #7cc0ff;
+            --gold: #ffb020;
+            --green: #34d399;
+            --amber: #fbbf24;
+            --red: #f87171;
+            --bg: #0b0b16;
+            --bg-2: #10101f;
+            --surface: rgba(255, 255, 255, 0.035);
+            --surface-2: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.14);
+            --text: #f4f4fb;
+            --text-2: rgba(232, 232, 250, 0.74);
+            --text-3: rgba(232, 232, 250, 0.52);
+            --grad: linear-gradient(135deg, var(--purple), var(--blue));
+            --radius: 16px;
+            --radius-lg: 22px;
+            --shadow: 0 10px 40px rgba(0, 0, 0, 0.45);
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --font: 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
+        }
+
+        /* ===== BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: 80px; }
+        body {
+            font-family: var(--font);
+            background: var(--bg);
+            color: var(--text);
+            line-height: 1.6;
+            -webkit-font-smoothing: antialiased;
+            overflow-x: hidden;
+        }
+        a { color: var(--blue-light); text-decoration: none; }
+        a:hover { text-decoration: underline; }
+        button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+        img, svg { display: block; max-width: 100%; }
+        :focus-visible { outline: 2px solid var(--purple-light); outline-offset: 3px; border-radius: 6px; }
+        ::selection { background: rgba(108, 60, 225, 0.45); }
+        ::-webkit-scrollbar { width: 8px; }
+        ::-webkit-scrollbar-track { background: var(--bg); }
+        ::-webkit-scrollbar-thumb { background: rgba(108, 60, 225, 0.6); border-radius: 8px; }
+        .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+        .hidden { display: none !important; }
+        .sr-only { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap; }
+        .text-gradient { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+        /* ===== BUTTONS ===== */
+        .btn {
+            display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+            font-weight: 700; border-radius: 999px; transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease), border-color .2s var(--ease);
+            white-space: nowrap;
+        }
+        .btn-primary { background: var(--grad); color: #fff; padding: 15px 30px; font-size: 1.02rem; box-shadow: 0 6px 24px rgba(108, 60, 225, 0.4); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 34px rgba(108, 60, 225, 0.55); text-decoration: none; }
+        .btn-primary:disabled { opacity: .6; cursor: wait; transform: none; }
+        .btn-ghost { background: var(--surface-2); border: 1px solid var(--border-strong); color: var(--text); padding: 14px 26px; font-size: 1rem; }
+        .btn-ghost:hover { background: rgba(255, 255, 255, 0.1); text-decoration: none; }
+        .btn-sm { padding: 9px 18px; font-size: .88rem; }
+        .btn-block { width: 100%; }
+
+        /* ===== NAV ===== */
+        .nav {
+            position: sticky; top: 0; z-index: 400;
+            background: rgba(11, 11, 22, 0.72);
+            backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px);
+            border-bottom: 1px solid transparent;
+            transition: border-color .3s var(--ease), background .3s var(--ease);
+        }
+        .nav.scrolled { border-bottom-color: var(--border); background: rgba(11, 11, 22, 0.9); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+        .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--text); }
+        .brand:hover { text-decoration: none; }
+        .brand-mark { width: 34px; height: 34px; flex-shrink: 0; background: url(icons/logo.svg) center / contain no-repeat; filter: drop-shadow(0 0 10px rgba(108, 60, 225, 0.55)); }
+        .nav-links { display: flex; gap: 28px; font-size: .92rem; font-weight: 500; }
+        .nav-links a { color: var(--text-2); }
+        .nav-links a:hover { color: var(--text); text-decoration: none; }
+        .nav-actions { display: flex; align-items: center; gap: 10px; }
+        .nav-user { font-size: .82rem; color: var(--text-3); max-width: 180px; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .link-btn { color: var(--text-2); font-weight: 600; font-size: .9rem; padding: 8px 10px; }
+        .link-btn:hover { color: var(--text); }
+        @media (max-width: 880px) {
+            .nav-links { display: none; }
+            .nav-user { display: none; }
+        }
+        @media (max-width: 480px) {
+            .nav-inner { gap: 8px; }
+            .brand { font-size: 1.12rem; gap: 8px; }
+            .brand-mark { width: 30px; height: 30px; }
+            .nav-actions { gap: 4px; }
+            .link-btn { padding: 8px 6px; white-space: nowrap; }
+            .btn-sm { padding: 9px 14px; }
+        }
+
+        /* ===== NOTICE BANNER ===== */
+        .notice {
+            display: flex; align-items: flex-start; gap: 12px;
+            margin: 16px auto 0; max-width: 760px; padding: 14px 18px;
+            border-radius: 12px; border: 1px solid var(--border-strong); background: var(--surface-2);
+            font-size: .92rem; color: var(--text-2);
+        }
+        .notice i { margin-top: 3px; }
+        .notice.info i { color: var(--blue-light); }
+        .notice.warn { border-color: rgba(251, 191, 36, 0.35); background: rgba(251, 191, 36, 0.07); }
+        .notice.warn i { color: var(--amber); }
+        .notice .notice-close { margin-left: auto; color: var(--text-3); padding: 0 4px; }
+
+        /* ===== HERO ===== */
+        .hero { position: relative; overflow: hidden; padding: 64px 0 80px; }
+        .hero-bg {
+            position: absolute; inset: 0; pointer-events: none;
+            background:
+                radial-gradient(ellipse 60% 50% at 15% 30%, rgba(108, 60, 225, 0.22), transparent 70%),
+                radial-gradient(ellipse 50% 45% at 85% 60%, rgba(30, 144, 255, 0.14), transparent 70%);
+        }
+        .stars { position: absolute; inset: 0; pointer-events: none; overflow: hidden; }
+        .stars span { position: absolute; background: #fff; border-radius: 50%; animation: twinkle 4s infinite alternate; }
+        @keyframes twinkle { from { opacity: .08; } to { opacity: .55; } }
+        .hero-grid { position: relative; z-index: 1; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 56px; align-items: center; }
+        .eyebrow {
+            display: inline-flex; align-items: center; gap: 8px;
+            font-size: .78rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase;
+            color: var(--purple-light); background: rgba(108, 60, 225, 0.12); border: 1px solid rgba(108, 60, 225, 0.3);
+            padding: 6px 14px; border-radius: 999px; margin-bottom: 22px;
+        }
+        .hero h1 { font-size: clamp(2.3rem, 5.4vw, 3.9rem); line-height: 1.06; font-weight: 800; letter-spacing: -0.035em; margin-bottom: 22px; }
+        .hero-sub { font-size: clamp(1.02rem, 1.6vw, 1.18rem); color: var(--text-2); max-width: 560px; margin-bottom: 32px; }
+        .hero-ctas { display: flex; flex-wrap: wrap; gap: 14px; margin-bottom: 26px; }
+        .hero-price { display: flex; flex-direction: column; justify-content: center; margin-right: 6px; }
+        .hero-price strong { font-size: 2.3rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+        .hero-price span { font-size: .78rem; color: var(--text-3); margin-top: 5px; }
+        .is-paid .hero-price { display: none; }
+        .hero-trust { display: flex; flex-wrap: wrap; gap: 10px 22px; font-size: .86rem; color: var(--text-3); }
+        .hero-trust span { display: inline-flex; align-items: center; gap: 8px; }
+        .hero-trust i { color: var(--green); }
+
+        /* hero product preview */
+        .preview {
+            position: relative; background: linear-gradient(160deg, rgba(255, 255, 255, 0.06), rgba(255, 255, 255, 0.02));
+            border: 1px solid var(--border-strong); border-radius: var(--radius-lg); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.55), 0 0 0 1px rgba(108, 60, 225, 0.1);
+            padding: 18px; animation: float 7s ease-in-out infinite;
+        }
+        @keyframes float { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(-8px); } }
+        .preview-bar { display: flex; align-items: center; gap: 6px; margin-bottom: 16px; }
+        .preview-bar span { width: 10px; height: 10px; border-radius: 50%; background: rgba(255, 255, 255, 0.14); }
+        .preview-bar b { margin-left: 10px; font-size: .75rem; font-weight: 600; color: var(--text-3); letter-spacing: .04em; }
+        .pv-score { display: flex; align-items: center; gap: 18px; padding: 14px; border-radius: 14px; background: rgba(0, 0, 0, 0.25); border: 1px solid var(--border); margin-bottom: 12px; }
+        .ring { --p: 0; width: 84px; height: 84px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center;
+            background: conic-gradient(var(--purple-light) calc(var(--p) * 1%), rgba(255, 255, 255, 0.08) 0); position: relative; }
+        .ring::before { content: ''; position: absolute; inset: 8px; border-radius: 50%; background: #13132a; }
+        .ring strong { position: relative; font-size: 1.3rem; font-weight: 800; }
+        .pv-score .pv-label { font-size: .72rem; text-transform: uppercase; letter-spacing: .1em; color: var(--text-3); font-weight: 700; }
+        .pv-score .pv-verdict { font-weight: 700; color: var(--green); font-size: .98rem; margin: 2px 0 4px; }
+        .pv-score .pv-coin { font-size: .82rem; color: var(--text-3); }
+        .pv-rows { display: grid; gap: 6px; }
+        .pv-row { display: flex; justify-content: space-between; align-items: center; font-size: .84rem; padding: 9px 12px; border-radius: 10px; background: rgba(255, 255, 255, 0.03); }
+        .pv-row span:first-child { color: var(--text-2); }
+        .pv-ico { width: 18px; margin-right: 8px; text-align: center; color: var(--purple-light); }
+        .pillar-head h3 i { color: var(--purple-light); margin-top: 3px; }
+        .pv-row .ok { color: var(--green); font-weight: 700; }
+        .pv-row .bad { color: var(--amber); font-weight: 700; }
+        .pv-tag { position: absolute; top: -12px; right: 18px; background: var(--gold); color: #1a1205; font-size: .7rem; font-weight: 800; padding: 4px 10px; border-radius: 999px; letter-spacing: .04em; }
+
+        @media (max-width: 960px) {
+            .hero-grid { grid-template-columns: 1fr; gap: 44px; }
+            .hero { padding-top: 40px; }
+            .preview { max-width: 480px; margin: 0 auto; width: 100%; }
+        }
+
+        /* ===== STATS STRIP ===== */
+        .strip { border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-2); }
+        .strip-grid { display: grid; grid-template-columns: repeat(4, 1fr); }
+        .strip-item { padding: 26px 16px; text-align: center; border-right: 1px solid var(--border); }
+        .strip-item:last-child { border-right: none; }
+        .strip-item strong { display: block; font-size: 1.7rem; font-weight: 800; letter-spacing: -0.02em; }
+        .strip-item span { font-size: .85rem; color: var(--text-3); }
+        @media (max-width: 720px) {
+            .strip-grid { grid-template-columns: repeat(2, 1fr); }
+            .strip-item:nth-child(2) { border-right: none; }
+            .strip-item:nth-child(-n+2) { border-bottom: 1px solid var(--border); }
+        }
+
+        /* ===== SECTIONS ===== */
+        .section { padding: 96px 0; position: relative; }
+        .section.alt { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
+        .section-head { text-align: center; max-width: 700px; margin: 0 auto 52px; }
+        .section-head .eyebrow { margin-bottom: 16px; }
+        .section-head h2 { font-size: clamp(1.75rem, 3.6vw, 2.6rem); line-height: 1.15; font-weight: 800; letter-spacing: -0.025em; margin-bottom: 14px; }
+        .section-head p { color: var(--text-2); font-size: 1.05rem; }
+        @media (max-width: 640px) { .section { padding: 68px 0; } .section-head { margin-bottom: 36px; } }
+
+        .card { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 26px; transition: border-color .25s var(--ease), transform .25s var(--ease), background .25s var(--ease); }
+        .card:hover { border-color: rgba(108, 60, 225, 0.4); background: rgba(255, 255, 255, 0.05); }
+        .icon-tile { width: 46px; height: 46px; border-radius: 13px; display: grid; place-items: center; font-size: 1.15rem; margin-bottom: 18px;
+            background: linear-gradient(135deg, rgba(108, 60, 225, 0.3), rgba(30, 144, 255, 0.22)); color: #fff; }
+        .card h3 { font-size: 1.08rem; font-weight: 700; margin-bottom: 8px; letter-spacing: -0.01em; }
+        .card p { font-size: .93rem; color: var(--text-2); }
+
+        /* ===== PROBLEM ===== */
+        .stat-callout {
+            display: grid; grid-template-columns: auto 1fr; gap: 24px; align-items: center;
+            max-width: 820px; margin: 0 auto 44px; padding: 26px 30px; border-radius: var(--radius-lg);
+            background: linear-gradient(135deg, rgba(248, 113, 113, 0.09), rgba(108, 60, 225, 0.06)); border: 1px solid rgba(248, 113, 113, 0.25);
+        }
+        .stat-callout .big { font-size: clamp(2.4rem, 6vw, 3.4rem); font-weight: 800; letter-spacing: -0.03em; color: #fca5a5; line-height: 1; }
+        .stat-callout p { color: var(--text-2); font-size: .98rem; }
+        .stat-callout cite { display: block; margin-top: 6px; font-size: .78rem; font-style: normal; color: var(--text-3); }
+        @media (max-width: 600px) { .stat-callout { grid-template-columns: 1fr; text-align: center; gap: 10px; padding: 22px; } }
+        .grid-3 { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; }
+        @media (max-width: 900px) { .grid-3 { grid-template-columns: 1fr; } }
+        .threat .threat-fix { margin-top: 16px; padding-top: 14px; border-top: 1px dashed var(--border-strong); font-size: .88rem; color: var(--text-2); }
+        .threat .threat-fix strong { color: var(--green); }
+        .threat .icon-tile.red { background: linear-gradient(135deg, rgba(248, 113, 113, 0.3), rgba(108, 60, 225, 0.2)); }
+
+        /* ===== CURRICULUM ===== */
+        .phases { display: grid; gap: 14px; max-width: 900px; margin: 0 auto; }
+        .phase { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); overflow: hidden; }
+        .phase summary { list-style: none; cursor: pointer; display: flex; align-items: center; gap: 18px; padding: 20px 22px; }
+        .phase summary::-webkit-details-marker { display: none; }
+        .phase-num { width: 42px; height: 42px; flex-shrink: 0; border-radius: 12px; display: grid; place-items: center; font-weight: 800; background: var(--grad); font-size: .95rem; }
+        .phase-title { flex: 1; }
+        .phase-title strong { display: block; font-size: 1.05rem; }
+        .phase-title span { font-size: .87rem; color: var(--text-3); }
+        .phase-count { font-size: .8rem; color: var(--text-3); white-space: nowrap; }
+        .phase-chev { color: var(--text-3); transition: transform .25s var(--ease); }
+        .phase[open] .phase-chev { transform: rotate(180deg); }
+        .phase ol { list-style: none; padding: 0 22px 18px 82px; display: grid; gap: 4px; counter-reset: none; }
+        .phase li { display: grid; grid-template-columns: 34px 1fr; gap: 8px; padding: 10px 0; border-top: 1px solid var(--border); font-size: .94rem; }
+        .phase li b { color: var(--purple-light); font-weight: 700; font-size: .85rem; padding-top: 1px; }
+        .phase li em { display: block; font-style: normal; color: var(--text-3); font-size: .85rem; margin-top: 2px; }
+        @media (max-width: 600px) {
+            .phase summary { padding: 16px; gap: 12px; }
+            .phase ol { padding: 0 16px 14px 16px; }
+            .phase-count { display: none; }
+        }
+        .curr-foot { text-align: center; margin-top: 26px; font-size: .9rem; color: var(--text-3); }
+
+        /* ===== SCANNER DEMO ===== */
+        .demo { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: start; }
+        @media (max-width: 900px) { .demo { grid-template-columns: 1fr; } }
+        .demo-checks { display: grid; gap: 16px; }
+        .pillar-group { background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 18px; }
+        .pillar-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; gap: 10px; }
+        .pillar-head h3 { display: flex; gap: 8px; font-size: 1rem; font-weight: 700; line-height: 1.35; }
+        .pillar-head .w { flex-shrink: 0; white-space: nowrap; font-size: .72rem; font-weight: 800; padding: 3px 10px; border-radius: 999px; letter-spacing: .06em; text-transform: uppercase; }
+        .w.high { background: rgba(108, 60, 225, 0.22); color: #c4b5fd; }
+        .w.med { background: rgba(30, 144, 255, 0.18); color: #93c5fd; }
+        .w.low { background: rgba(255, 255, 255, 0.08); color: var(--text-3); }
+        .check { display: flex; align-items: center; gap: 12px; padding: 9px 10px; border-radius: 10px; cursor: pointer; font-size: .9rem; color: var(--text-2); transition: background .2s; }
+        .check:hover { background: rgba(255, 255, 255, 0.04); }
+        .check input { appearance: none; -webkit-appearance: none; width: 20px; height: 20px; flex-shrink: 0; border-radius: 6px; border: 2px solid var(--border-strong); display: grid; place-items: center; transition: all .15s; cursor: pointer; }
+        .check input:checked { background: var(--grad); border-color: transparent; }
+        .check input:checked::after { content: '✓'; color: #fff; font-size: .75rem; font-weight: 800; }
+        .check input:checked + span { color: var(--text); }
+        .demo-result { position: sticky; top: 92px; background: linear-gradient(160deg, rgba(108, 60, 225, 0.12), rgba(30, 144, 255, 0.05)); border: 1px solid rgba(108, 60, 225, 0.3); border-radius: var(--radius-lg); padding: 28px; text-align: center; }
+        .demo-result .ring { width: 150px; height: 150px; margin: 6px auto 16px; transition: background .4s; }
+        .demo-result .ring::before { inset: 12px; background: #15132c; }
+        .demo-result .ring strong { font-size: 2.2rem; }
+        .demo-verdict { font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; min-height: 1.6em; }
+        .demo-verdict.high { color: var(--green); } .demo-verdict.medium { color: var(--amber); } .demo-verdict.low { color: var(--red); }
+        .demo-math { font-size: .84rem; color: var(--text-3); margin-bottom: 18px; }
+        .demo-bars { display: grid; gap: 10px; text-align: left; margin-bottom: 20px; }
+        .demo-bar label { display: flex; justify-content: space-between; font-size: .8rem; color: var(--text-2); margin-bottom: 4px; }
+        .demo-bar .track { height: 7px; border-radius: 99px; background: rgba(255, 255, 255, 0.07); overflow: hidden; }
+        .demo-bar .fill { height: 100%; border-radius: 99px; background: var(--grad); transition: width .4s var(--ease); }
+        .demo-note { font-size: .78rem; color: var(--text-3); line-height: 1.5; }
+
+        /* ===== FREE LESSON ===== */
+        .rules { max-width: 860px; margin: 0 auto; display: grid; gap: 14px; counter-reset: rule; }
+        .rule { display: grid; grid-template-columns: 56px 1fr; gap: 18px; align-items: start; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); padding: 22px; }
+        .rule::before { counter-increment: rule; content: counter(rule); width: 48px; height: 48px; border-radius: 14px; display: grid; place-items: center; font-weight: 800; font-size: 1.25rem; background: rgba(52, 211, 153, 0.12); color: var(--green); border: 1px solid rgba(52, 211, 153, 0.3); }
+        .rule h3 { font-size: 1.06rem; margin-bottom: 6px; }
+        .rule p { color: var(--text-2); font-size: .94rem; }
+        .rules-cta { text-align: center; margin-top: 32px; color: var(--text-2); }
+        .rules-cta p { margin-bottom: 18px; }
+        @media (max-width: 560px) { .rule { grid-template-columns: 1fr; gap: 12px; padding: 18px; } }
+
+        /* ===== FIT ===== */
+        .fit { display: grid; grid-template-columns: 1fr 1fr; gap: 20px; max-width: 920px; margin: 0 auto; }
+        @media (max-width: 760px) { .fit { grid-template-columns: 1fr; } }
+        .fit ul { list-style: none; display: grid; gap: 12px; margin-top: 14px; }
+        .fit li { display: flex; gap: 12px; font-size: .95rem; color: var(--text-2); }
+        .fit li i { margin-top: 4px; }
+        .fit .yes i { color: var(--green); }
+        .fit .no i { color: var(--red); }
+
+        /* ===== PRICING ===== */
+        .price-card {
+            max-width: 520px; margin: 0 auto; position: relative; border-radius: 26px; padding: 2px;
+            background: linear-gradient(150deg, #ffd34d 0%, #ffb020 22%, rgba(108, 60, 225, 0.9) 58%, rgba(30, 144, 255, 0.7));
+            box-shadow: 0 30px 90px rgba(108, 60, 225, 0.25), 0 0 60px rgba(255, 176, 32, 0.12);
+        }
+        .price-inner { position: relative; overflow: hidden; background: radial-gradient(ellipse 70% 40% at 50% 12%, rgba(255, 176, 32, 0.13), transparent 70%), radial-gradient(ellipse 80% 45% at 50% 0%, rgba(108, 60, 225, 0.22), transparent 70%), #11112a; border-radius: 24px; padding: 0 34px 34px; text-align: center; }
+        /* Big number, small words, then the button (pattern from notion.com/pricing) */
+        .price-block { text-align: left; max-width: 380px; margin: 34px auto 24px; padding-bottom: 22px; border-bottom: 1px solid var(--border-strong); }
+        .price-block .label { font-size: .78rem; text-transform: uppercase; letter-spacing: .14em; font-weight: 800; color: var(--purple-light); }
+        .price-big { font-size: 3.8rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; margin-top: 10px; font-variant-numeric: tabular-nums; }
+        .price-small { font-size: .92rem; color: var(--text-3); margin-top: 8px; }
+        .gets-title { font-size: 1.2rem; font-weight: 800; letter-spacing: -0.01em; text-align: left; max-width: 380px; margin: 0 auto 16px; }
+        @media (max-width: 480px) {
+            .price-inner { padding: 0 20px 26px; }
+            .price-block { margin-top: 24px; }
+            .price-big { font-size: 3.2rem; }
+        }
+        @media (max-width: 360px) {
+            .btn-primary:not(.btn-sm) { padding: 14px 18px; font-size: .96rem; }
+        }
+
+        .price-inner ul { list-style: none; text-align: left; display: grid; gap: 12px; margin: 0 auto 28px; max-width: 380px; }
+        .price-inner li { display: flex; gap: 12px; font-size: .95rem; color: var(--text-2); }
+        .price-inner li i { color: var(--green); margin-top: 4px; }
+        .price-secure { margin-top: 16px; font-size: .8rem; color: var(--text-3); display: flex; flex-direction: column; justify-content: center; align-items: center; gap: 6px; }
+
+        /* ===== GUARANTEE ===== */
+        .guarantee { max-width: 520px; margin: 22px auto 0; display: grid; grid-template-columns: auto 1fr; gap: 16px; align-items: center; padding: 18px 22px; border-radius: var(--radius); border: 1px solid rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.06); }
+        .guarantee .seal { width: 52px; height: 52px; border-radius: 50%; display: grid; place-items: center; font-size: 1.3rem; color: var(--green); background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.35); }
+        .guarantee strong { display: block; font-size: 1rem; margin-bottom: 2px; }
+        .guarantee p { font-size: .88rem; color: var(--text-2); }
+
+        /* ===== MOBILE CTA BAR ===== */
+        .mobile-cta { position: fixed; left: 0; right: 0; bottom: 0; z-index: 390; display: none; align-items: center; gap: 12px; padding: 12px 16px calc(12px + env(safe-area-inset-bottom)); background: rgba(11, 11, 22, 0.94); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-top: 1px solid var(--border-strong); transform: translateY(110%); transition: transform .3s var(--ease); }
+        .mobile-cta.show { transform: none; }
+        .mobile-cta .mc-price { color: #ffd34d; display: flex; align-items: flex-start; flex-wrap: wrap; width: 74px; font-size: 1.6rem; font-weight: 800; letter-spacing: -0.04em; line-height: 1; font-variant-numeric: tabular-nums; }
+        .mobile-cta .mc-price .c { font-size: .55em; margin-top: .14em; letter-spacing: 0; }
+        .mobile-cta .mc-price small { flex-basis: 100%; font-size: .6rem; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--text-3); margin-top: 4px; }
+        .mobile-cta .mc-text { flex: 1; min-width: 0; font-size: .8rem; color: var(--text-3); line-height: 1.35; padding-left: 12px; border-left: 1px solid var(--border-strong); }
+        .mobile-cta .mc-text strong { display: block; color: var(--text); font-size: .95rem; }
+        .mobile-cta .btn { padding: 11px 20px; font-size: .92rem; }
+        @media (max-width: 720px) { .mobile-cta { display: flex; } footer { padding-bottom: 96px; } }
+
+        /* ===== FAQ ===== */
+        .faq { max-width: 780px; margin: 0 auto; display: grid; gap: 12px; }
+        .faq details { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; overflow: hidden; transition: border-color .2s; }
+        .faq details[open] { border-color: rgba(108, 60, 225, 0.35); }
+        .faq summary { list-style: none; cursor: pointer; padding: 18px 22px; font-weight: 600; display: flex; justify-content: space-between; align-items: center; gap: 16px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: '+'; font-size: 1.4rem; line-height: 1; color: var(--purple-light); transition: transform .25s var(--ease); flex-shrink: 0; }
+        .faq details[open] summary::after { transform: rotate(45deg); }
+        .faq .a { padding: 0 22px 20px; color: var(--text-2); font-size: .95rem; }
+
+        /* ===== FINAL CTA ===== */
+        .final { text-align: center; border-radius: 28px; padding: 64px 28px; border: 1px solid var(--border-strong);
+            background: radial-gradient(ellipse at 50% 0%, rgba(108, 60, 225, 0.28), transparent 70%), var(--bg-2); }
+        .final h2 { font-size: clamp(1.8rem, 4vw, 2.8rem); font-weight: 800; letter-spacing: -0.03em; line-height: 1.12; margin-bottom: 16px; }
+        .final p { color: var(--text-2); max-width: 540px; margin: 0 auto 30px; font-size: 1.05rem; }
+
+        /* ===== FOOTER ===== */
+        footer { border-top: 1px solid var(--border); padding: 44px 0 36px; margin-top: 40px; }
+        .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 24px; align-items: flex-start; }
+        .foot p { font-size: .8rem; color: var(--text-3); max-width: 620px; line-height: 1.65; }
+        .foot .copy { margin-top: 10px; }
+        .foot-links { display: flex; flex-wrap: wrap; gap: 12px 20px; font-size: .88rem; }
+        .foot-cols { display: flex; flex-wrap: wrap; gap: 28px 48px; }
+        .foot-col h4 { font-size: .74rem; text-transform: uppercase; letter-spacing: .1em; color: var(--text-3); margin-bottom: 10px; }
+        .foot-col .foot-links { flex-direction: column; gap: 8px; }
+        .foot-links a { color: var(--text-2); }
+
+        /* ===== MODAL (auth) ===== */
+        .modal { position: fixed; inset: 0; z-index: 9000; display: none; align-items: center; justify-content: center; padding: 20px; background: rgba(4, 4, 12, 0.72); backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); }
+        .modal.open { display: flex; }
+        .modal-card { position: relative; width: 100%; max-width: 410px; background: #12122a; border: 1px solid var(--border-strong); border-radius: 20px; padding: 32px 28px 26px; box-shadow: 0 30px 80px rgba(0, 0, 0, 0.6); animation: pop .3s cubic-bezier(.34, 1.56, .64, 1); max-height: calc(100vh - 40px); overflow-y: auto; }
+        @keyframes pop { from { transform: scale(.94); opacity: 0; } to { transform: scale(1); opacity: 1; } }
+        .modal-close { position: absolute; top: 12px; right: 12px; width: 36px; height: 36px; border-radius: 50%; color: var(--text-3); font-size: 1.1rem; }
+        .modal-close:hover { background: var(--surface-2); color: var(--text); }
+        .modal-card h3 { font-size: 1.35rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+        .modal-card .sub { color: var(--text-2); font-size: .92rem; margin-bottom: 22px; }
+        .google-btn { width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border-radius: 12px; background: #fff; color: #1f1f1f; font-weight: 600; font-size: .95rem; transition: background .15s; }
+        .google-btn:hover { background: #ececec; }
+        .google-btn:disabled { opacity: .6; cursor: wait; }
+        .google-btn svg { width: 18px; height: 18px; }
+        .divider { display: flex; align-items: center; gap: 12px; margin: 18px 0; color: var(--text-3); font-size: .75rem; text-transform: uppercase; letter-spacing: .08em; }
+        .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border-strong); }
+        .field { margin-bottom: 12px; }
+        .field label { display: block; font-size: .8rem; font-weight: 600; color: var(--text-2); margin-bottom: 6px; }
+        .field input { width: 100%; font: inherit; font-size: .95rem; color: var(--text); background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-strong); border-radius: 12px; padding: 12px 14px; transition: border-color .15s, box-shadow .15s; }
+        .field input:focus { outline: none; border-color: var(--purple-light); box-shadow: 0 0 0 3px rgba(108, 60, 225, 0.28); }
+        .auth-row { display: flex; justify-content: flex-end; margin: -2px 0 10px; }
+        .auth-row button { font-size: .82rem; color: var(--blue-light); font-weight: 600; }
+        .auth-msg { min-height: 20px; font-size: .86rem; margin-bottom: 10px; }
+        .auth-msg.error { color: #fca5a5; }
+        .auth-msg.success { color: var(--green); }
+        .auth-toggle { text-align: center; margin-top: 16px; font-size: .88rem; color: var(--text-2); }
+        .auth-toggle button { color: var(--blue-light); font-weight: 700; }
+        .auth-legal { margin-top: 14px; text-align: center; font-size: .74rem; color: var(--text-3); }
+
+        /* ===== LOADER ===== */
+        #pageLoader { position: fixed; inset: 0; z-index: 99999; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 18px; background: radial-gradient(ellipse at 30% 20%, rgba(108, 60, 225, 0.18), transparent 60%), var(--bg); opacity: 0; transition: opacity .25s; }
+        #pageLoader.active { display: flex; }
+        #pageLoader.visible { opacity: 1; }
+        .loader-ring { width: 52px; height: 52px; border-radius: 50%; border: 4px solid rgba(255, 255, 255, 0.08); border-top-color: var(--purple); border-right-color: var(--blue); animation: spin .85s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loader-text { font-size: .92rem; font-weight: 600; color: var(--text-2); }
+
+        /* ===== REVEAL ===== */
+        .reveal { opacity: 0; transform: translateY(18px); transition: opacity .7s var(--ease), transform .7s var(--ease); }
+        .reveal.in { opacity: 1; transform: none; }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+            .reveal { opacity: 1; transform: none; }
+        }
+    </style>
+
+    <!-- Firebase (Auth + Realtime Database) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+    <script src="plutoscan-auth.js?v=4"></script>
+</head>
+<body>
+
+    <div id="pageLoader" role="status" aria-live="polite">
+        <div class="loader-ring"></div>
+        <div class="loader-text" id="pageLoaderText">Loading…</div>
+    </div>
+
+    <!-- ===== NAV ===== -->
+    <header class="nav" id="nav">
+        <div class="container nav-inner">
+            <a href="#top" class="brand" aria-label="PlutoScan home"><span class="brand-mark" aria-hidden="true"></span>PlutoScan</a>
+            <nav class="nav-links" aria-label="Sections">
+                <a href="#curriculum">Curriculum</a>
+                <a href="#scanner">Scanner</a>
+                <a href="#free-lesson">Free Lesson</a>
+                <a href="#faq">FAQ</a>
+            </nav>
+            <div class="nav-actions">
+                <span class="nav-user hidden" id="navUser"></span>
+                <button type="button" class="link-btn" id="navLogin">Log in</button>
+                <button type="button" class="link-btn hidden" id="navLogout">Log out</button>
+                <button type="button" class="btn btn-primary btn-sm js-buy" id="navCta">Get started</button>
+            </div>
+        </div>
+    </header>
+
+    <div class="container" id="noticeWrap"></div>
+
+    <main id="top">
+        <!-- ===== HERO ===== -->
+        <section class="hero">
+            <div class="hero-bg"></div>
+            <div class="stars" id="stars"></div>
+            <div class="container hero-grid">
+                <div>
+                    <span class="eyebrow"><i class="fas fa-shield-halved"></i> Crypto education for beginners</span>
+                    <h1>Learn crypto <span class="text-gradient">without getting wrecked.</span></h1>
+                    <p class="hero-sub">Most beginners lose money to the same few mistakes: scams, bad sends and hype. PlutoScan teaches you to avoid every one of them, then gives you a live 12-point Research Scanner to judge any coin before you risk a dollar.</p>
+                    <div class="hero-ctas">
+                        <div class="hero-price"><strong>$16.99</strong><span>one-time · lifetime access</span></div>
+                        <button type="button" class="btn btn-primary js-buy"><span class="js-cta-label">Get started</span></button>
+                        <a href="#curriculum" class="btn btn-ghost">See what's inside</a>
+                    </div>
+                    <div class="hero-trust">
+                        <span><i class="fas fa-check-circle"></i> One-time payment</span>
+                        <span><i class="fas fa-check-circle"></i> Lifetime access</span>
+                        <span><i class="fas fa-check-circle"></i> 14-day refund</span>
+                        <span><i class="fas fa-check-circle"></i> Secure checkout by Stripe</span>
+                    </div>
+                </div>
+
+                <div class="preview" aria-label="Example of the PlutoScan Research Scanner">
+                    <span class="pv-tag">LIVE SCANNER</span>
+                    <div class="preview-bar"><span></span><span></span><span></span><b>PlutoScan Research Scanner</b></div>
+                    <div class="pv-score">
+                        <div class="ring" style="--p:82"><strong>82%</strong></div>
+                        <div>
+                            <div class="pv-label">Research readiness</div>
+                            <div class="pv-verdict">Well-Researched</div>
+                            <div class="pv-coin">Example analysis · illustrative data</div>
+                        </div>
+                    </div>
+                    <div class="pv-rows">
+                        <div class="pv-row"><span><i class="fas fa-sack-dollar pv-ico" aria-hidden="true"></i>Market cap over $1B</span><span class="ok">✓ Pass</span></div>
+                        <div class="pv-row"><span><i class="fas fa-calculator pv-ico" aria-hidden="true"></i>FDV within 3× market cap</span><span class="ok">✓ 1.4×</span></div>
+                        <div class="pv-row"><span><i class="fas fa-building-columns pv-ico" aria-hidden="true"></i>Listed on 5+ exchanges</span><span class="ok">✓ Pass</span></div>
+                        <div class="pv-row"><span><i class="fas fa-user-check pv-ico" aria-hidden="true"></i>Team verified</span><span class="bad">⚠ Research</span></div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== STRIP ===== -->
+        <div class="strip">
+            <div class="container strip-grid">
+                <div class="strip-item"><strong>18</strong><span>focused lessons</span></div>
+                <div class="strip-item"><strong>5</strong><span>step-by-step phases</span></div>
+                <div class="strip-item"><strong>12-point</strong><span>live Research Scanner</span></div>
+                <div class="strip-item"><strong>120+</strong><span>term built-in glossary</span></div>
+            </div>
+        </div>
+
+        <!-- ===== PROBLEM ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-triangle-exclamation"></i> The reality</span>
+                    <h2>Crypto doesn't forgive beginner mistakes.</h2>
+                    <p>There's no bank to call and no "undo" button. Most people who get burned make one of three mistakes. Each one is avoidable once you know what to look for.</p>
+                </div>
+                <div class="stat-callout reveal">
+                    <div class="big">$11.4B</div>
+                    <div>
+                        <p>in cryptocurrency-related losses reported to the FBI in 2025 alone, more than any other category in the report.</p>
+                        <cite>Source: <a href="https://www.ic3.gov/AnnualReport/Reports/2025_IC3Report.pdf" target="_blank" rel="noopener">FBI Internet Crime Complaint Center, 2025 Internet Crime Report</a> ($11.37 billion)</cite>
+                    </div>
+                </div>
+                <div class="grid-3">
+                    <div class="card threat reveal">
+                        <div class="icon-tile red"><i class="fas fa-user-secret"></i></div>
+                        <h3>Falling for a scam</h3>
+                        <p>Fake support DMs, cloned wallet sites, "double your crypto" giveaways and slow-burn investment scams that look like real trading platforms.</p>
+                        <div class="threat-fix"><strong>You'll learn:</strong> the exact scripts scammers use, and the red flags that expose them.</div>
+                    </div>
+                    <div class="card threat reveal">
+                        <div class="icon-tile red"><i class="fas fa-key"></i></div>
+                        <h3>Losing access or funds</h3>
+                        <p>A screenshotted seed phrase, a send on the wrong network, a look-alike address copied from history. One slip and it's gone for good.</p>
+                        <div class="threat-fix"><strong>You'll learn:</strong> bulletproof wallet setup, seed backup and a pre-send checklist.</div>
+                    </div>
+                    <div class="card threat reveal">
+                        <div class="icon-tile red"><i class="fas fa-fire"></i></div>
+                        <h3>Buying the hype</h3>
+                        <p>FOMO buys at the top, "cheap" coins with huge hidden supply, and markets so thin you can't sell when you need to.</p>
+                        <div class="threat-fix"><strong>You'll learn:</strong> to read market cap, FDV, volume and supply like a researcher.</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHAT'S INSIDE ===== -->
+        <section class="section alt">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-box-open"></i> What you get</span>
+                    <h2>A course and a research tool, <span class="text-gradient">working together</span></h2>
+                    <p>Learn a concept, prove you understand it, then apply it to real, live market data.</p>
+                </div>
+                <div class="grid-3">
+                    <div class="card reveal"><div class="icon-tile"><i class="fas fa-route"></i></div><h3>18 step-by-step lessons</h3><p>Five phases, from "what is a blockchain?" to analysing a real coin. Each lesson unlocks the next, so you build knowledge in the right order and never get lost.</p></div>
+                    <div class="card reveal"><div class="icon-tile"><i class="fas fa-film"></i></div><h3>Video + written guides</h3><p>Every lesson pairs a short video with a plain-English guide full of real-world examples, beginner mistakes to avoid and survival rules.</p></div>
+                    <div class="card reveal"><div class="icon-tile"><i class="fas fa-brain"></i></div><h3>Knowledge checks</h3><p>Short scenario quizzes after each section, with explanations, so you know you've actually got it before moving on.</p></div>
+                    <div class="card reveal"><div class="icon-tile"><i class="fas fa-satellite-dish"></i></div><h3>Live Research Scanner</h3><p>Pull live data for any coin and score it against 12 objective checks across 3 weighted pillars. Your structured second opinion before every decision.</p></div>
+                    <div class="card reveal"><div class="icon-tile"><i class="fas fa-star"></i></div><h3>Watchlist + data widget</h3><p>Search CoinGecko's coin list, check live numbers and bookmark coins you're researching, all without leaving your dashboard.</p></div>
+                    <div class="card reveal"><div class="icon-tile"><i class="fas fa-book-open"></i></div><h3>Built-in glossary</h3><p>Every technical term is tappable, right where you read it. No more nodding along to "FDV," "slippage" or "gwei."</p></div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== CURRICULUM ===== -->
+        <section class="section" id="curriculum">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-map"></i> The curriculum</span>
+                    <h2>From zero to confident, in five phases</h2>
+                    <p>Every lesson has one job: give you a skill that protects your money.</p>
+                </div>
+                <div class="phases reveal" id="phases"></div>
+                <p class="curr-foot">Complete all 18 lessons to unlock the full Research Scanner.</p>
+            </div>
+        </section>
+
+        <!-- ===== SCANNER DEMO ===== -->
+        <section class="section alt" id="scanner">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-satellite-dish"></i> Try the framework</span>
+                    <h2>The 12-point PlutoScan <span class="text-gradient">Research Framework</span></h2>
+                    <p>This is the exact scoring system inside the Scanner. Tick the checks a coin passes and watch the weighted score change. Inside the course, Auto-Fill does the data checks for you with live numbers.</p>
+                </div>
+                <div class="demo reveal">
+                    <div class="demo-checks" id="demoChecks"></div>
+                    <div class="demo-result" aria-live="polite">
+                        <div class="ring" id="demoRing" style="--p:0"><strong id="demoPct">0%</strong></div>
+                        <div class="demo-verdict" id="demoVerdict">Tick a check to start</div>
+                        <div class="demo-math" id="demoMath">0 of 14 weighted points</div>
+                        <div class="demo-bars" id="demoBars"></div>
+                        <p class="demo-note">Educational research-readiness score only. Not financial advice and never a buy or sell signal.</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FREE LESSON ===== -->
+        <section class="section" id="free-lesson">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-gift"></i> Free mini-lesson</span>
+                    <h2>5 survival rules every beginner needs</h2>
+                    <p>Before you buy anything, from anyone, learn these. They're free. The full course shows you how to apply them.</p>
+                </div>
+                <div class="rules">
+                    <div class="rule reveal"><div><h3>Your seed phrase is the money. Never share it, never digitise it.</h3><p>Whoever has your 12 or 24 recovery words controls your funds. No real support team, exchange or wallet will ever ask for them. Write them on paper, store them offline, and never type them into a website, a chat or a "wallet sync" tool.</p></div></div>
+                    <div class="rule reveal"><div><h3>Check the whole address, then send a test first.</h3><p>Scammers create look-alike addresses that match the first and last characters of ones you use, then plant them in your history ("address poisoning"). Never copy addresses from your history. Check the middle characters too, and send a small test before any large transfer.</p></div></div>
+                    <div class="rule reveal"><div><h3>"Send first, get double back" is always a scam.</h3><p>No legitimate giveaway, celebrity or exchange will ever ask you to send crypto to receive more. Urgency, secrecy and guaranteed returns together are the signature of a scam, every time.</p></div></div>
+                    <div class="rule reveal"><div><h3>Compare market caps, not prices.</h3><p>A $0.001 coin isn't cheap and a $50 coin isn't expensive. Price × supply = market cap, and that's the real size. Before believing "this coin will hit $1," multiply $1 by the supply and see if the answer is even possible.</p></div></div>
+                    <div class="rule reveal"><div><h3>Only invest what you can afford to lose, and never in the same hour as FOMO.</h3><p>Even the largest coins have fallen 75% or more from their peaks, more than once. Size your positions so a drop like that can't hurt your rent, bills or savings, and treat strong emotion as a signal to pause.</p></div></div>
+                </div>
+                <div class="rules-cta reveal">
+                    <p>That's 5 rules. The course gives you the full system: 18 lessons and a live Scanner.</p>
+                    <button type="button" class="btn btn-primary js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Get the Full Course</span></button>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FIT ===== -->
+        <section class="section alt">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-compass"></i> Is it right for you?</span>
+                    <h2>Built for careful beginners</h2>
+                </div>
+                <div class="fit">
+                    <div class="card yes reveal">
+                        <h3>PlutoScan is for you if…</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i>You're new to crypto, or you've bought some without really knowing what you own.</li>
+                            <li><i class="fas fa-check"></i>You want to set up a wallet and send funds without making a costly mistake.</li>
+                            <li><i class="fas fa-check"></i>You want to recognise scams before they reach you.</li>
+                            <li><i class="fas fa-check"></i>You want a repeatable way to research a coin instead of trusting influencers.</li>
+                        </ul>
+                    </div>
+                    <div class="card no reveal">
+                        <h3>It's not for you if…</h3>
+                        <ul>
+                            <li><i class="fas fa-xmark"></i>You want trading signals or "coins to buy." We don't give financial advice.</li>
+                            <li><i class="fas fa-xmark"></i>You're looking for get-rich-quick strategies or leverage trading.</li>
+                            <li><i class="fas fa-xmark"></i>You're already an experienced on-chain researcher.</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Real customer reviews can go here once collected (end-of-course reviews are saved to Firebase under users/{uid}/review). -->
+
+        <!-- ===== PRICING ===== -->
+        <section class="section" id="pricing">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-tag"></i> Simple pricing</span>
+                    <h2>One payment. Lifetime access.</h2>
+                    <p>No subscription, no upsells, no recurring charges.</p>
+                </div>
+                <div class="price-card reveal">
+                    <div class="price-inner">
+                        <div class="price-block">
+                            <div class="label">PlutoScan Full Access</div>
+                            <div class="price-big">$16.99</div>
+                            <div class="price-small">one-time payment · lifetime access</div>
+                        </div>
+                        <h3 class="gets-title">What $16.99 gets you</h3>
+                        <ul>
+                            <li><i class="fas fa-check"></i>All 18 lessons: video + written guides</li>
+                            <li><i class="fas fa-check"></i>Knowledge checks with explanations</li>
+                            <li><i class="fas fa-check"></i>Live 12-point Research Scanner</li>
+                            <li><i class="fas fa-check"></i>Live data widget + personal watchlist</li>
+                            <li><i class="fas fa-check"></i>Built-in glossary of 120+ terms</li>
+                            <li><i class="fas fa-check"></i>Progress saved to your account</li>
+                            <li><i class="fas fa-check"></i>All future course and Scanner updates</li>
+                        </ul>
+                        <button type="button" class="btn btn-primary btn-block js-buy"><span class="js-cta-label">Get started</span></button>
+                        <div class="price-secure"><span><i class="fas fa-lock"></i>&nbsp; Payments processed securely by Stripe. We never see your card details.</span></div>
+                    </div>
+                </div>
+                <div class="guarantee reveal">
+                    <div class="seal" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
+                    <div>
+                        <strong>Try it for 14 days, risk-free</strong>
+                        <p>Not for you? Email us within 14 days of buying. If you've completed fewer than 5 of the 18 lessons, you get a full refund. <a href="refunds.html">Refund Policy</a></p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FAQ ===== -->
+        <section class="section alt" id="faq">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="eyebrow"><i class="fas fa-circle-question"></i> Questions</span>
+                    <h2>Frequently asked questions</h2>
+                </div>
+                <div class="faq reveal">
+                    <details open><summary>Do I need any crypto experience?</summary><div class="a">None. Lesson 1 starts from zero and each lesson unlocks only after the one before it, so you learn everything in the right order.</div></details>
+                    <details><summary>Do I need to buy crypto to take the course?</summary><div class="a">No. You can complete every lesson and use the Research Scanner without owning any crypto. The course is designed so you learn the safety habits <em>before</em> you put money in.</div></details>
+                    <details><summary>Is this financial advice? Will you tell me what to buy?</summary><div class="a">No. PlutoScan is education. We never recommend coins or give buy/sell signals. The Scanner produces a research-readiness score from public data. It's a structured starting point for your own research, not a recommendation.</div></details>
+                    <details><summary>How is this different from just using CoinGecko?</summary><div class="a">CoinGecko gives you raw numbers. PlutoScan teaches you what those numbers mean, which ones are red flags, and how to check them consistently, then automates the data checks with the Scanner so your research becomes a repeatable habit.</div></details>
+                    <details><summary>How long does it take?</summary><div class="a">It's fully self-paced. Lessons are short and focused, so you can do one in a coffee break or several in an evening. Your progress is saved to your account.</div></details>
+                    <details><summary>What does "lifetime access" include?</summary><div class="a">One payment gives you permanent access to all lessons, the Research Scanner, the data widget, the glossary and any future updates to the course or Scanner. No subscriptions, no recurring charges.</div></details>
+                    <details><summary>Can I use it on my phone?</summary><div class="a">Yes. PlutoScan works in any modern browser on desktop, tablet and mobile. Log in on any device to pick up where you left off.</div></details>
+                    <details><summary>Can I get a refund?</summary><div class="a">Yes. If you've completed fewer than 25% of the course (4 or fewer of the 18 lessons), email <a href="mailto:support@plutoscan.com?subject=Refund%20request">support@plutoscan.com</a> within 14 days of purchase for a full refund. See the <a href="refunds.html">Refund Policy</a> for details.</div></details>
+                    <details><summary>Is checkout secure?</summary><div class="a">Yes. Payments are handled by Stripe's secure checkout. PlutoScan never sees or stores your card details. You'll review your order and create a free account first so your purchase is tied to you.</div></details>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== FINAL CTA ===== -->
+        <section class="section">
+            <div class="container">
+                <div class="final reveal">
+                    <h2>Stop guessing. <span class="text-gradient">Start scanning.</span></h2>
+                    <p>18 lessons, one live research tool, lifetime access, for less than the cost of one impulsive trade.</p>
+                    <button type="button" class="btn btn-primary js-buy"><i class="fas fa-rocket"></i> <span class="js-cta-label">Start Learning</span></button>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container foot">
+            <div>
+                <a href="#top" class="brand"><span class="brand-mark" aria-hidden="true"></span>PlutoScan</a>
+                <p style="margin-top:14px;">PlutoScan is an educational platform. Course content and the Research Scanner are provided for informational purposes only and do not constitute financial, investment, tax or legal advice. Cryptocurrency is highly volatile and you can lose some or all of your money. Always do your own research. Market data is provided by <a href="https://www.coingecko.com" target="_blank" rel="noopener">CoinGecko</a> and may be delayed or inaccurate.</p>
+                <p class="copy">© <span id="year"></span> PlutoScan · plutoscan.com</p>
+            </div>
+            <div class="foot-cols">
+                <nav class="foot-col" aria-label="Course">
+                    <h4>Course</h4>
+                    <div class="foot-links">
+                        <a href="#curriculum">Curriculum</a>
+                        <a href="#scanner">Scanner</a>
+                        <a href="#faq">FAQ</a>
+                        <button type="button" class="link-btn" id="footLogin" style="padding:0;font-size:.88rem;text-align:left;">Log in</button>
+                    </div>
+                </nav>
+                <nav class="foot-col" aria-label="Support and policies">
+                    <h4>Support</h4>
+                    <div class="foot-links">
+                        <a href="mailto:support@plutoscan.com">support@plutoscan.com</a>
+                        <a href="refunds.html">Refund Policy</a>
+                        <a href="terms.html">Terms of Use</a>
+                        <a href="privacy.html">Privacy Policy</a>
+                    </div>
+                </nav>
+            </div>
+        </div>
+    </footer>
+
+    <!-- ===== MOBILE CTA BAR ===== -->
+    <div class="mobile-cta" id="mobileCta" aria-hidden="true">
+        <div class="mc-price" aria-label="$16.99, paid once"><span class="c">$</span>16<span class="c">.99</span><small>once · lifetime</small></div>
+        <div class="mc-text"><strong>Full Access</strong>14-day refund</div>
+        <button type="button" class="btn btn-primary js-buy" tabindex="-1"><span class="js-cta-label">Get Access</span></button>
+    </div>
+
+    <!-- ===== AUTH MODAL ===== -->
+    <div class="modal" id="authModal" role="dialog" aria-modal="true" aria-labelledby="authTitle">
+        <div class="modal-card">
+            <button type="button" class="modal-close" id="authClose" aria-label="Close"><i class="fas fa-xmark"></i></button>
+            <h3 id="authTitle">Log in</h3>
+            <p class="sub" id="authSub">Welcome back.</p>
+
+            <button type="button" class="google-btn" id="googleAuthBtn">
+                <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+                Continue with Google
+            </button>
+            <div class="divider">or with email</div>
+
+            <form id="authForm" novalidate>
+                <div class="field"><label for="authEmail">Email</label><input type="email" id="authEmail" autocomplete="email" required /></div>
+                <div class="field" id="passwordField"><label for="authPassword">Password</label><input type="password" id="authPassword" autocomplete="current-password" minlength="6" required /></div>
+                <div class="auth-row" id="forgotRow"><button type="button" id="forgotBtn">Forgot password?</button></div>
+                <div class="auth-msg" id="authMsg" role="alert"></div>
+                <button type="submit" class="btn btn-primary btn-block" id="authSubmitBtn">Log in</button>
+            </form>
+            <div class="auth-toggle" id="authToggle"></div>
+            <p class="auth-legal">Your account keeps your purchase and progress safe across devices. By continuing you agree to our <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+        </div>
+    </div>
+
+    <script>
+        (function () {
+            'use strict';
+
+            const PRICE = '$16.99';
+            const $ = (id) => document.getElementById(id);
+
+            // Public curriculum outline (titles only — lesson content is served after purchase).
+            const CURRICULUM = [
+                { name: 'The Launchpad', desc: 'How crypto actually works', modules: [
+                    ['What is a Blockchain?', 'Why it can\'t be quietly edited, and why its mistakes are permanent.'],
+                    ['What is Cryptocurrency?', 'Coins vs. tokens, stablecoins, memecoins, and the "cheap price" trap.'],
+                    ['How Transactions Work', 'From signature to confirmation, and how to track yours.'] ] },
+                { name: 'Navigating the Nebula', desc: 'Wallets & self-custody', modules: [
+                    ['Public Keys vs. Private Keys', 'What to share, what never to share, and "not your keys, not your coins."'],
+                    ['What is a Seed Phrase?', 'Back it up properly and spot every seed-phrase scam.'],
+                    ['Hot Wallets vs. Cold Wallets', 'Exchange, hot or hardware: where your crypto should live.'],
+                    ['How to Set Up Your First Hot Wallet', 'Install safely and read approvals before you sign.'],
+                    ['How to Send and Receive Crypto', 'Networks, memos, address poisoning and the test-send habit.'] ] },
+                { name: 'Gravity Wells', desc: 'The forces that wreck beginners', modules: [
+                    ['Volatility and Market Cycles', 'Why prices swing so hard, and a plan to keep emotion out.'],
+                    ['Common Scams to Avoid', 'Phishing, wallet drainers, rug pulls, fake giveaways, pig butchering.'],
+                    ['Gas Fees and Network Congestion', 'Why fees spike, how to fix stuck transactions, and the gas-coin trap.'] ] },
+                { name: 'The Atlas', desc: 'Reading market data', modules: [
+                    ['How to Read a CoinGecko Page', 'Read a coin page like a researcher and verify the real token.'],
+                    ['Market Cap vs. Fully Diluted Valuation', 'Why low price isn\'t cheap, and how hidden supply hurts you.'],
+                    ['Trading Volume and Liquidity', 'Can you actually sell? Spotting thin and fake volume.'],
+                    ['Circulating Supply vs. Max Supply', 'Dilution, emissions, halvings and holder concentration.'] ] },
+                { name: 'Mission Control', desc: 'Your research system', modules: [
+                    ['The PlutoScan Research Framework', '3 pillars, 12 checks, and exactly how the score works.'],
+                    ['How to Pull Live Data from the Widget', 'Find, verify and bookmark coins with live data.'],
+                    ['Applying the Framework to Your First Coin', 'A complete analysis plus the pre-buy survival checklist.'] ] },
+            ];
+
+            // Same checks and weights as the Scanner inside the course.
+            const PILLARS = [
+                { key: 'safety', name: 'Security & Stability', icon: 'fa-shield-halved', weight: 1.5, tag: 'high', label: '×1.5 weight', checks: ['Market cap over $1B', '24h volume over $50M', 'Max supply known', 'Listed on more than 5 exchanges', 'FDV within 3× of market cap'] },
+                { key: 'fundamental', name: 'Fundamentals', icon: 'fa-cubes', weight: 1.0, tag: 'med', label: '×1.0 weight', checks: ['Clear, real use case', 'Active open-source development', 'Published roadmap', 'Identifiable, credible team', 'Top 250 by market cap'] },
+                { key: 'sentiment', name: 'Community & Momentum', icon: 'fa-users', weight: 0.75, tag: 'low', label: '×0.75 weight', checks: ['Active community', '30-day price move under 40%'] },
+            ];
+            const DEMO_DEFAULT = { safety: [0, 1, 2, 3], fundamental: [0, 1, 4], sentiment: [0] };
+
+            // ---------- Loader ----------
+            const pageLoader = $('pageLoader');
+            function showPageLoader(msg) {
+                $('pageLoaderText').textContent = msg || 'Loading…';
+                pageLoader.classList.add('active');
+                requestAnimationFrame(() => pageLoader.classList.add('visible'));
+            }
+            function hidePageLoader() {
+                pageLoader.classList.remove('visible');
+                setTimeout(() => pageLoader.classList.remove('active'), 250);
+            }
+            // Restore the page if the browser brings it back from the back/forward cache.
+            window.addEventListener('pageshow', (e) => { if (e.persisted) hidePageLoader(); });
+
+            // ---------- Notices from redirects ----------
+            function showNotice(type, html) {
+                const wrap = $('noticeWrap');
+                const el = document.createElement('div');
+                el.className = 'notice ' + type;
+                el.innerHTML = `<i class="fas ${type === 'warn' ? 'fa-circle-exclamation' : 'fa-circle-info'}"></i><div>${html}</div><button type="button" class="notice-close" aria-label="Dismiss"><i class="fas fa-xmark"></i></button>`;
+                el.querySelector('.notice-close').addEventListener('click', () => el.remove());
+                wrap.appendChild(el);
+            }
+
+            // ---------- Auth modal ----------
+            let authMode = 'login';   // 'login' | 'signup' | 'reset'
+            let authIntent = 'login'; // 'login' | 'checkout'
+            const authModal = $('authModal');
+            const authEmail = $('authEmail');
+            const authPassword = $('authPassword');
+            const authMsg = $('authMsg');
+            const authSubmitBtn = $('authSubmitBtn');
+            let lastFocus = null;
+
+            function setMsg(text, kind) { authMsg.textContent = text || ''; authMsg.className = 'auth-msg' + (kind ? ' ' + kind : ''); }
+
+            function setAuthMode(mode) {
+                authMode = mode;
+                setMsg('');
+                const checkout = authIntent === 'checkout';
+                $('passwordField').classList.toggle('hidden', mode === 'reset');
+                $('forgotRow').classList.toggle('hidden', mode !== 'login');
+                $('googleAuthBtn').classList.toggle('hidden', mode === 'reset');
+                document.querySelector('.divider').classList.toggle('hidden', mode === 'reset');
+                authPassword.setAttribute('autocomplete', mode === 'signup' ? 'new-password' : 'current-password');
+                const toggle = $('authToggle');
+                if (mode === 'login') {
+                    $('authTitle').textContent = 'Log in';
+                    $('authSub').textContent = checkout ? 'Log in to continue to secure checkout.' : 'Welcome back. Pick up where you left off.';
+                    authSubmitBtn.textContent = checkout ? 'Log in & continue' : 'Log in';
+                    toggle.innerHTML = 'New to PlutoScan? <button type="button" data-mode="signup">Create an account</button>';
+                } else if (mode === 'signup') {
+                    $('authTitle').textContent = 'Create your account';
+                    $('authSub').textContent = checkout ? 'One quick step, then straight to secure checkout.' : 'Create a free account to get started.';
+                    authSubmitBtn.textContent = checkout ? 'Create account & continue' : 'Create account';
+                    toggle.innerHTML = 'Already have an account? <button type="button" data-mode="login">Log in</button>';
+                } else {
+                    $('authTitle').textContent = 'Reset your password';
+                    $('authSub').textContent = 'Enter your account email and we\'ll send you a reset link.';
+                    authSubmitBtn.textContent = 'Send reset link';
+                    toggle.innerHTML = '<button type="button" data-mode="login">Back to log in</button>';
+                }
+                toggle.querySelector('button').addEventListener('click', (e) => setAuthMode(e.currentTarget.dataset.mode));
+            }
+
+            function openAuthModal(intent, mode) {
+                authIntent = intent || 'login';
+                lastFocus = document.activeElement;
+                authPassword.value = '';
+                setAuthMode(mode || (authIntent === 'checkout' ? 'signup' : 'login'));
+                authModal.classList.add('open');
+                document.body.style.overflow = 'hidden';
+                setTimeout(() => authEmail.focus(), 50);
+            }
+            function closeAuthModal() {
+                authModal.classList.remove('open');
+                document.body.style.overflow = '';
+                if (lastFocus && lastFocus.focus) lastFocus.focus();
+            }
+            $('authClose').addEventListener('click', closeAuthModal);
+            authModal.addEventListener('click', (e) => { if (e.target === authModal) closeAuthModal(); });
+            document.addEventListener('keydown', (e) => {
+                if (!authModal.classList.contains('open')) return;
+                if (e.key === 'Escape') { closeAuthModal(); return; }
+                // Keep Tab inside the dialog while it's open.
+                if (e.key !== 'Tab') return;
+                const focusable = Array.from(authModal.querySelectorAll('button, input, a[href]')).filter((el) => !el.disabled && el.offsetParent !== null);
+                if (!focusable.length) return;
+                const first = focusable[0], last = focusable[focusable.length - 1];
+                if (e.shiftKey && document.activeElement === first) { e.preventDefault(); last.focus(); }
+                else if (!e.shiftKey && document.activeElement === last) { e.preventDefault(); first.focus(); }
+            });
+            $('forgotBtn').addEventListener('click', () => setAuthMode('reset'));
+
+            function friendlyAuthError(err) {
+                const code = (err && err.code) || '';
+                if (code.includes('email-already-in-use')) return 'That email already has an account. Try logging in instead.';
+                if (code.includes('wrong-password') || code.includes('invalid-credential') || code.includes('invalid-login')) return 'Incorrect email or password.';
+                if (code.includes('user-not-found')) return 'No account found with that email.';
+                if (code.includes('weak-password')) return 'Use a password with at least 6 characters.';
+                if (code.includes('invalid-email')) return 'That email address doesn\'t look right.';
+                if (code.includes('too-many-requests')) return 'Too many attempts. Please wait a moment and try again.';
+                if (code.includes('network-request-failed')) return 'Network error. Check your connection and try again.';
+                if (code.includes('account-exists-with-different-credential')) return 'That email is registered with a password. Log in with your password instead.';
+                if (code.includes('popup-blocked')) return 'Your browser blocked the Google sign-in popup. Allow popups and try again.';
+                return 'Something went wrong. Please try again.';
+            }
+
+            $('authForm').addEventListener('submit', async (e) => {
+                e.preventDefault();
+                const email = authEmail.value.trim();
+                const password = authPassword.value;
+                setMsg('');
+                if (!email) { setMsg('Enter your email address.', 'error'); authEmail.focus(); return; }
+                if (authMode !== 'reset' && !password) { setMsg('Enter your password.', 'error'); authPassword.focus(); return; }
+                const original = authSubmitBtn.textContent;
+                authSubmitBtn.disabled = true;
+                authSubmitBtn.textContent = authMode === 'reset' ? 'Sending…' : (authMode === 'login' ? 'Logging in…' : 'Creating account…');
+                try {
+                    if (authMode === 'reset') {
+                        await window.plutoscanAuth.sendPasswordReset(email);
+                        setMsg('If an account exists for that email, a reset link is on its way. Check your inbox (and spam).', 'success');
+                    } else {
+                        if (authMode === 'login') await window.plutoscanAuth.logIn(email, password);
+                        else await window.plutoscanAuth.signUp(email, password);
+                        closeAuthModal();
+                        await afterSignIn();
+                    }
+                } catch (err) {
+                    window.plutoscanAuth.report('failed', { email: email, code: err && err.code, action: authMode, method: 'password' });
+                    // Don't reveal whether an email is registered when resetting.
+                    if (authMode === 'reset' && String(err && err.code).includes('user-not-found')) {
+                        setMsg('If an account exists for that email, a reset link is on its way. Check your inbox (and spam).', 'success');
+                    } else {
+                        setMsg(friendlyAuthError(err), 'error');
+                    }
+                } finally {
+                    authSubmitBtn.disabled = false;
+                    authSubmitBtn.textContent = original;
+                }
+            });
+
+            $('googleAuthBtn').addEventListener('click', async function () {
+                setMsg('');
+                this.disabled = true;
+                try {
+                    await window.plutoscanAuth.signInWithGoogle();
+                    closeAuthModal();
+                    await afterSignIn();
+                } catch (err) {
+                    if (err && (err.code === 'auth/popup-closed-by-user' || err.code === 'auth/cancelled-popup-request')) return;
+                    window.plutoscanAuth.report('failed', { email: err && err.customData && err.customData.email, code: err && err.code, action: 'google', method: 'google' });
+                    setMsg(friendlyAuthError(err), 'error');
+                } finally {
+                    this.disabled = false;
+                }
+            });
+
+            // ---------- Purchase flow ----------
+            let paidCache = null;
+
+            function goToCourse() {
+                showPageLoader('Opening your course…');
+                window.location.href = 'plutoscan-modules.html';
+            }
+
+            // Buyers review the order on checkout.html before going to Stripe.
+            function goToCheckoutPage() {
+                showPageLoader('Opening checkout…');
+                window.location.href = 'checkout.html';
+            }
+
+            async function afterSignIn() {
+                paidCache = await window.plutoscanAuth.isPaid();
+                updateNavForUser(window.plutoscanAuth.getCurrentUser(), paidCache);
+                if (paidCache) { goToCourse(); return; }
+                if (authIntent === 'checkout') { goToCheckoutPage(); return; }
+                showNotice('info', 'You\'re logged in. Get lifetime access to unlock all 18 lessons and the Research Scanner.');
+                window.scrollTo({ top: 0, behavior: 'smooth' });
+            }
+
+            async function handleBuyClick() {
+                const user = window.plutoscanAuth.getCurrentUser();
+                if (!user) { goToCheckoutPage(); return; }
+                if (paidCache === null) paidCache = await window.plutoscanAuth.isPaid();
+                if (paidCache) goToCourse(); else goToCheckoutPage();
+            }
+
+            function updateNavForUser(user, paid) {
+                const loggedIn = !!user;
+                $('navLogin').classList.toggle('hidden', loggedIn);
+                $('footLogin').classList.toggle('hidden', loggedIn);
+                $('navLogout').classList.toggle('hidden', !loggedIn);
+                $('navUser').classList.toggle('hidden', !loggedIn);
+                $('navUser').textContent = loggedIn && user.email ? user.email : '';
+                const navCta = $('navCta');
+                if (paid) {
+                    navCta.innerHTML = '<i class="fas fa-play"></i> My Course';
+                    document.body.classList.add('is-paid');
+                    document.querySelectorAll('.js-cta-label').forEach((el) => { el.textContent = 'Continue Learning'; });
+                    $('mobileCta').classList.add('hidden');
+                }
+            }
+
+            // ---------- Render: curriculum ----------
+            function renderCurriculum() {
+                let n = 0;
+                $('phases').innerHTML = CURRICULUM.map((phase, i) => {
+                    const items = phase.modules.map(([title, desc]) => { n++; return `<li><b>${String(n).padStart(2, '0')}</b><div>${title}<em>${desc}</em></div></li>`; }).join('');
+                    return `<details class="phase" ${i === 0 ? 'open' : ''}>
+                        <summary>
+                            <span class="phase-num">${i + 1}</span>
+                            <span class="phase-title"><strong>${phase.name}</strong><span>${phase.desc}</span></span>
+                            <span class="phase-count">${phase.modules.length} lessons</span>
+                            <i class="fas fa-chevron-down phase-chev"></i>
+                        </summary>
+                        <ol>${items}</ol>
+                    </details>`;
+                }).join('');
+            }
+
+            // ---------- Render: scanner demo ----------
+            function renderDemo() {
+                $('demoChecks').innerHTML = PILLARS.map((p) => `
+                    <div class="pillar-group">
+                        <div class="pillar-head"><h3><i class="fas ${p.icon}" aria-hidden="true"></i>${p.name}</h3><span class="w ${p.tag}">${p.label}</span></div>
+                        ${p.checks.map((c, i) => `<label class="check"><input type="checkbox" data-pillar="${p.key}" data-i="${i}" ${DEMO_DEFAULT[p.key].includes(i) ? 'checked' : ''}><span>${c}</span></label>`).join('')}
+                    </div>`).join('');
+                $('demoChecks').addEventListener('change', updateDemo);
+                updateDemo();
+            }
+            function updateDemo() {
+                let total = 0, max = 0;
+                const bars = PILLARS.map((p) => {
+                    const ticked = document.querySelectorAll(`#demoChecks input[data-pillar="${p.key}"]:checked`).length;
+                    total += ticked * p.weight;
+                    max += p.checks.length * p.weight;
+                    const pct = Math.round((ticked / p.checks.length) * 100);
+                    return `<div class="demo-bar"><label><span>${p.name}</span><span>${ticked}/${p.checks.length}</span></label><div class="track"><div class="fill" style="width:${pct}%"></div></div></div>`;
+                }).join('');
+                const pct = max ? Math.round((total / max) * 100) : 0;
+                $('demoRing').style.setProperty('--p', pct);
+                $('demoPct').textContent = pct + '%';
+                $('demoMath').textContent = `${+total.toFixed(2)} of ${max} weighted points`;
+                const v = $('demoVerdict');
+                if (total === 0) { v.textContent = 'Tick a check to start'; v.className = 'demo-verdict'; }
+                else if (pct >= 80) { v.textContent = 'Well-Researched'; v.className = 'demo-verdict high'; }
+                else if (pct >= 60) { v.textContent = 'Partially Researched'; v.className = 'demo-verdict medium'; }
+                else { v.textContent = 'Early-Stage Research'; v.className = 'demo-verdict low'; }
+                $('demoBars').innerHTML = bars;
+            }
+
+            // ---------- Decor ----------
+            function makeStars() {
+                const box = $('stars');
+                const count = window.innerWidth < 640 ? 35 : 70;
+                for (let i = 0; i < count; i++) {
+                    const s = document.createElement('span');
+                    const size = 1 + Math.random() * 2.2;
+                    s.style.cssText = `left:${Math.random() * 100}%;top:${Math.random() * 100}%;width:${size}px;height:${size}px;animation-delay:${Math.random() * 6}s`;
+                    box.appendChild(s);
+                }
+            }
+            // Phone-only buy bar: shows once the hero is scrolled past, hides again over pricing and the final CTA.
+            function setupMobileCta() {
+                const bar = $('mobileCta');
+                if (!('IntersectionObserver' in window)) return;
+                const visible = new Set();
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach((en) => { if (en.isIntersecting) visible.add(en.target); else visible.delete(en.target); });
+                    bar.classList.toggle('show', visible.size === 0);
+                });
+                document.querySelectorAll('.hero, #pricing, .final').forEach((el) => io.observe(el));
+            }
+            function setupReveal() {
+                const els = document.querySelectorAll('.reveal');
+                if (!('IntersectionObserver' in window)) { els.forEach((el) => el.classList.add('in')); return; }
+                const io = new IntersectionObserver((entries) => {
+                    entries.forEach((en) => { if (en.isIntersecting) { en.target.classList.add('in'); io.unobserve(en.target); } });
+                }, { rootMargin: '0px 0px -40px 0px' });
+                els.forEach((el) => io.observe(el));
+            }
+
+            function init() {
+                $('year').textContent = new Date().getFullYear();
+                renderCurriculum();
+                renderDemo();
+                makeStars();
+                setupReveal();
+                setupMobileCta();
+                const nav = $('nav');
+                window.addEventListener('scroll', () => nav.classList.toggle('scrolled', window.scrollY > 10), { passive: true });
+
+                document.querySelectorAll('.js-buy').forEach((b) => b.addEventListener('click', handleBuyClick));
+                $('navLogin').addEventListener('click', () => openAuthModal('login'));
+                $('footLogin').addEventListener('click', () => openAuthModal('login'));
+                $('navLogout').addEventListener('click', async () => {
+                    await window.plutoscanAuth.logOut();
+                    window.location.href = 'index.html';
+                });
+
+                // Messages from redirects (course page, Stripe cancel).
+                const params = new URLSearchParams(window.location.search);
+                if (params.get('purchase') === 'cancelled') showNotice('info', 'Checkout was cancelled and you haven\'t been charged. You can start again whenever you\'re ready.');
+                if (params.get('purchase') === 'required') showNotice('info', 'Your account doesn\'t have course access yet. Get lifetime access below to unlock everything.');
+                if (params.get('purchase') === 'pending') showNotice('info', 'We\'re still confirming your payment with Stripe. This usually takes a few seconds. <a href="plutoscan-modules.html?purchase=success">Try opening your course again</a>.');
+                if (params.get('error') === 'content_load_failed') showNotice('warn', 'We couldn\'t load your course just now. Please refresh, or try again in a minute.');
+                if (params.toString()) history.replaceState(null, '', window.location.pathname + window.location.hash);
+
+                if (!window.plutoscanAuth) { console.error('plutoscan-auth.js failed to load'); return; }
+                window.plutoscanAuth.onReady(async (user) => {
+                    window.plutoscanAuth.report('visit', { referrer: document.referrer });
+                    if (params.get('purchase') === 'cancelled' || params.get('purchase') === 'pending') {
+                        window.plutoscanAuth.report('checkout', { step: params.get('purchase') });
+                    }
+                    if (!user) {
+                        if (params.get('login') === 'required') openAuthModal('login');
+                        return;
+                    }
+                    paidCache = await window.plutoscanAuth.isPaid();
+                    updateNavForUser(user, paidCache);
+                    if (paidCache && params.get('login') === 'required') goToCourse();
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', init);
+        })();
+    </script>
+</body>
+</html>

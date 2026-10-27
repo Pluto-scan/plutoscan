@@ -1,0 +1,624 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Get Full Access — PlutoScan</title>
+    <meta name="description" content="Everything included in PlutoScan Full Access: 18 lessons, the live Research Scanner and lifetime updates for a one-time $16.99, with a 14-day refund." />
+    <meta name="robots" content="noindex" />
+    <link rel="canonical" href="https://plutoscan.com/checkout.html" />
+    <link rel="icon" type="image/x-icon" href="favicon.ico" />
+    <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
+    <link rel="icon" type="image/png" sizes="96x96" href="icons/favicon-96.png" />
+    <link rel="apple-touch-icon" href="icons/apple-touch-icon.png" />
+    <link rel="manifest" href="manifest.webmanifest" />
+    <meta name="theme-color" content="#0b0b16" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+    <style>
+        /* ===== TOKENS (same as index.html) ===== */
+        :root {
+            --purple: #6C3CE1;
+            --purple-light: #a78bfa;
+            --blue: #1E90FF;
+            --blue-light: #7cc0ff;
+            --gold: #ffb020;
+            --green: #34d399;
+            --amber: #fbbf24;
+            --red: #f87171;
+            --bg: #0b0b16;
+            --bg-2: #10101f;
+            --panel: #11112a;
+            --surface: rgba(255, 255, 255, 0.035);
+            --surface-2: rgba(255, 255, 255, 0.06);
+            --border: rgba(255, 255, 255, 0.08);
+            --border-strong: rgba(255, 255, 255, 0.14);
+            --text: #f4f4fb;
+            --text-2: rgba(232, 232, 250, 0.74);
+            --text-3: rgba(232, 232, 250, 0.52);
+            --grad: linear-gradient(135deg, var(--purple), var(--blue));
+            --radius: 16px;
+            --radius-lg: 22px;
+            --ease: cubic-bezier(0.4, 0, 0.2, 1);
+            --font: 'Inter', system-ui, -apple-system, Segoe UI, sans-serif;
+        }
+
+        /* ===== BASE ===== */
+        *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+        html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+        body { font-family: var(--font); background: var(--bg); color: var(--text); line-height: 1.6; -webkit-font-smoothing: antialiased; overflow-x: hidden; }
+        a { color: var(--blue-light); }
+        button { font: inherit; color: inherit; background: none; border: none; cursor: pointer; }
+        :focus-visible { outline: 2px solid var(--purple-light); outline-offset: 3px; border-radius: 6px; }
+        ::selection { background: rgba(108, 60, 225, 0.45); }
+        .container { width: 100%; max-width: 1160px; margin: 0 auto; padding: 0 20px; }
+        .hidden { display: none !important; }
+        .text-gradient { background: var(--grad); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; }
+
+        .btn { display: inline-flex; align-items: center; justify-content: center; gap: 10px; font-weight: 700; border-radius: 999px; transition: transform .2s var(--ease), box-shadow .2s var(--ease), background .2s var(--ease); text-decoration: none; }
+        .btn-primary { background: var(--grad); color: #fff; padding: 16px 28px; font-size: 1.02rem; box-shadow: 0 6px 24px rgba(108, 60, 225, 0.4); }
+        .btn-primary:hover { transform: translateY(-2px); box-shadow: 0 10px 34px rgba(108, 60, 225, 0.55); color: #fff; }
+        .btn-primary:disabled { opacity: .65; cursor: wait; transform: none; }
+        .btn-block { width: 100%; }
+
+        /* ===== NAV ===== */
+        .nav { position: sticky; top: 0; z-index: 100; background: rgba(11, 11, 22, 0.9); backdrop-filter: blur(14px); -webkit-backdrop-filter: blur(14px); border-bottom: 1px solid var(--border); }
+        .nav-inner { display: flex; align-items: center; justify-content: space-between; height: 68px; gap: 16px; }
+        .brand { display: flex; align-items: center; gap: 10px; font-weight: 800; font-size: 1.25rem; letter-spacing: -0.02em; color: var(--text); text-decoration: none; }
+        .brand-mark { width: 34px; height: 34px; flex-shrink: 0; background: url(icons/logo.svg) center / contain no-repeat; filter: drop-shadow(0 0 10px rgba(108, 60, 225, 0.55)); }
+        .secure-badge { display: inline-flex; align-items: center; gap: 8px; font-size: .82rem; font-weight: 600; color: var(--green); padding: 6px 12px; border-radius: 999px; background: rgba(52, 211, 153, 0.08); border: 1px solid rgba(52, 211, 153, 0.25); }
+        .nav-back { font-size: .88rem; font-weight: 600; color: var(--text-2); text-decoration: none; }
+        .nav-back:hover { color: var(--text); }
+        @media (max-width: 560px) { .nav-back span { display: none; } }
+
+        /* ===== STEPS ===== */
+        .steps { display: flex; justify-content: center; gap: 8px; padding: 26px 0 8px; flex-wrap: wrap; }
+        .step { display: inline-flex; align-items: center; gap: 10px; font-size: .84rem; font-weight: 600; color: var(--text-3); }
+        .step b { display: grid; place-items: center; width: 26px; height: 26px; border-radius: 50%; border: 1px solid var(--border-strong); font-size: .78rem; }
+        .step.on { color: var(--text); }
+        .step.on b { background: var(--grad); border-color: transparent; color: #fff; }
+        .step.done b { background: rgba(52, 211, 153, 0.15); border-color: rgba(52, 211, 153, 0.4); color: var(--green); }
+        .step-line { width: 34px; height: 1px; background: var(--border-strong); align-self: center; }
+        @media (max-width: 560px) { .step-line { width: 14px; } .step span { display: none; } .step.on span { display: inline; } }
+
+        /* ===== LAYOUT ===== */
+        .layout { display: grid; grid-template-columns: minmax(0, 1fr) 400px; gap: 40px; align-items: start; padding: 24px 0 90px; }
+        @media (max-width: 960px) { .layout { grid-template-columns: 1fr; gap: 28px; padding-bottom: 48px; } .summary-col { order: -1; } }
+
+        .hero-copy { margin-bottom: 36px; }
+        .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .76rem; font-weight: 700; letter-spacing: .12em; text-transform: uppercase; color: var(--purple-light); background: rgba(108, 60, 225, 0.12); border: 1px solid rgba(108, 60, 225, 0.3); padding: 6px 14px; border-radius: 999px; margin-bottom: 18px; }
+        h1 { font-size: clamp(2rem, 4.4vw, 3rem); line-height: 1.08; font-weight: 800; letter-spacing: -0.035em; margin-bottom: 16px; }
+        .lead { font-size: 1.08rem; color: var(--text-2); max-width: 620px; }
+
+        .block { margin-bottom: 40px; }
+        .block > h2 { font-size: 1.3rem; font-weight: 800; letter-spacing: -0.02em; margin-bottom: 6px; }
+        .block > p.sub { color: var(--text-3); font-size: .94rem; margin-bottom: 18px; }
+
+        /* what you get */
+        .gets { display: grid; gap: 14px; }
+        .get { display: grid; grid-template-columns: 52px 1fr; gap: 16px; padding: 20px; border-radius: var(--radius); background: var(--surface); border: 1px solid var(--border); }
+        .get .ico { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-size: 1.2rem; background: linear-gradient(135deg, rgba(108, 60, 225, 0.32), rgba(30, 144, 255, 0.22)); }
+        .get h3 { font-size: 1.05rem; margin-bottom: 4px; }
+        .get p { font-size: .92rem; color: var(--text-2); margin-bottom: 10px; }
+        .get ul { list-style: none; display: flex; flex-wrap: wrap; gap: 6px; }
+        .get li { font-size: .76rem; font-weight: 600; color: var(--text-2); padding: 4px 10px; border-radius: 999px; background: var(--surface-2); border: 1px solid var(--border); }
+
+        /* phases */
+        .phases { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; }
+        .ph { padding: 16px 14px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); }
+        .ph b { display: grid; place-items: center; width: 30px; height: 30px; border-radius: 9px; background: var(--grad); font-size: .85rem; margin-bottom: 10px; }
+        .ph strong { display: block; font-size: .9rem; line-height: 1.3; margin-bottom: 4px; }
+        .ph span { font-size: .78rem; color: var(--text-3); }
+        @media (max-width: 760px) { .phases { grid-template-columns: repeat(2, 1fr); } .phases > :last-child { grid-column: 1 / -1; } }
+
+        /* scanner preview */
+        .scan-preview { display: grid; grid-template-columns: 120px 1fr; gap: 22px; align-items: center; padding: 22px; border-radius: var(--radius-lg); background: linear-gradient(160deg, rgba(108, 60, 225, 0.12), rgba(30, 144, 255, 0.05)); border: 1px solid rgba(108, 60, 225, 0.3); }
+        .ring { --p: 0; width: 120px; height: 120px; border-radius: 50%; display: grid; place-items: center; position: relative; background: conic-gradient(var(--purple-light) calc(var(--p) * 1%), rgba(255, 255, 255, 0.08) 0); }
+        .ring::before { content: ''; position: absolute; inset: 10px; border-radius: 50%; background: #15132c; }
+        .ring strong { position: relative; font-size: 1.7rem; font-weight: 800; }
+        .pillars { display: grid; gap: 10px; }
+        .pillar label { display: flex; justify-content: space-between; font-size: .84rem; color: var(--text-2); margin-bottom: 4px; }
+        .pillar label i { color: var(--purple-light); margin-right: 6px; }
+        .pillar .track { height: 7px; border-radius: 99px; background: rgba(255, 255, 255, 0.07); overflow: hidden; }
+        .pillar .fill { height: 100%; border-radius: 99px; background: var(--grad); }
+        .scan-note { font-size: .78rem; color: var(--text-3); margin-top: 12px; }
+        @media (max-width: 560px) { .scan-preview { grid-template-columns: 1fr; justify-items: center; text-align: left; } .pillars { width: 100%; } }
+
+        /* after you pay */
+        .timeline { list-style: none; display: grid; gap: 0; counter-reset: t; }
+        .timeline li { position: relative; display: grid; grid-template-columns: 40px 1fr; gap: 14px; padding-bottom: 20px; }
+        .timeline li::before { counter-increment: t; content: counter(t); display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--surface-2); border: 1px solid var(--border-strong); font-weight: 800; }
+        .timeline li:not(:last-child)::after { content: ''; position: absolute; left: 19.5px; top: 44px; bottom: 4px; width: 1px; background: var(--border-strong); }
+        .timeline strong { display: block; margin: 8px 0 2px; }
+        .timeline span { font-size: .92rem; color: var(--text-2); }
+
+        /* promises */
+        .promises { display: grid; grid-template-columns: repeat(2, 1fr); gap: 12px; }
+        .promise { display: flex; gap: 12px; padding: 16px; border-radius: 14px; background: var(--surface); border: 1px solid var(--border); font-size: .9rem; color: var(--text-2); }
+        .promise i { color: var(--green); margin-top: 4px; }
+        .promise strong { display: block; color: var(--text); }
+        @media (max-width: 640px) { .promises { grid-template-columns: 1fr; } }
+
+        /* faq */
+        .faq { display: grid; gap: 10px; }
+        .faq details { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; }
+        .faq summary { list-style: none; cursor: pointer; padding: 16px 20px; font-weight: 600; display: flex; justify-content: space-between; gap: 16px; }
+        .faq summary::-webkit-details-marker { display: none; }
+        .faq summary::after { content: '+'; color: var(--purple-light); font-size: 1.3rem; line-height: 1; transition: transform .25s var(--ease); }
+        .faq details[open] summary::after { transform: rotate(45deg); }
+        .faq .a { padding: 0 20px 18px; color: var(--text-2); font-size: .93rem; }
+
+        /* ===== ORDER SUMMARY ===== */
+        .summary-col { position: sticky; top: 92px; }
+        @media (max-width: 960px) { .summary-col { position: static; } }
+        .order { position: relative; border-radius: 26px; padding: 2px; background: linear-gradient(150deg, #ffd34d 0%, #ffb020 22%, rgba(108, 60, 225, 0.9) 58%, rgba(30, 144, 255, 0.7)); box-shadow: 0 30px 90px rgba(108, 60, 225, 0.25), 0 0 60px rgba(255, 176, 32, 0.12); }
+        .order-inner { border-radius: 24px; padding: 28px 26px 24px; background: radial-gradient(ellipse 90% 40% at 50% 0%, rgba(108, 60, 225, 0.22), transparent 70%), var(--panel); }
+        .order-label { font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--purple-light); }
+        /* Price first: the total sits beside the order name (price primacy: Karmarkar, Shiv & Knutson 2015) */
+        .order-head { display: flex; justify-content: space-between; align-items: flex-start; gap: 12px; }
+        .order h2 { font-size: 1.3rem; line-height: 1.2; letter-spacing: -0.02em; margin: 4px 0 0; }
+        .order-head .amount .whole { font-size: 2.8rem; }
+        .order-head .amount { flex: none; }
+        .order-head .amount .cur, .order-head .amount .cents { font-size: 1.15rem; margin-top: 5px; }
+        .order-head .amount .side { margin-left: 0; }
+        .amount { display: flex; align-items: flex-start; gap: 4px; line-height: 1; font-variant-numeric: tabular-nums; }
+        .amount .cur { font-size: 1.6rem; font-weight: 800; color: #ffd34d; margin-top: 8px; }
+        .amount .whole { font-size: 4.4rem; font-weight: 800; letter-spacing: -0.05em; padding-right: .06em; background: linear-gradient(180deg, #fff6d6 8%, #ffd34d 48%, #ffa31a 100%); -webkit-background-clip: text; background-clip: text; -webkit-text-fill-color: transparent; filter: drop-shadow(0 4px 18px rgba(255, 176, 32, 0.35)); }
+        .amount .side { display: flex; flex-direction: column; gap: 6px; margin-top: 8px; margin-left: 4px; }
+        .amount .cents { font-size: 1.6rem; font-weight: 800; color: #ffd34d; }
+        .amount .per { font-size: .66rem; font-weight: 700; letter-spacing: .08em; text-transform: uppercase; color: var(--text-3); }
+        .order .once { font-size: .86rem; color: var(--text-3); margin: 10px 0 18px; }
+        .order .once strong { color: var(--green); white-space: nowrap; }
+        .lines { list-style: none; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); padding: 14px 0; margin-bottom: 14px; display: grid; gap: 9px; }
+        .lines li { display: flex; justify-content: space-between; gap: 12px; font-size: .9rem; color: var(--text-2); }
+        .lines li span:last-child { color: var(--text); font-weight: 600; white-space: nowrap; }
+        .lines li .incl { color: var(--green); }
+        .total { display: flex; justify-content: space-between; align-items: baseline; gap: 16px; margin-bottom: 18px; }
+        .total span { font-weight: 700; white-space: nowrap; }
+        .total strong { font-size: 1.2rem; font-variant-numeric: tabular-nums; }
+        .total small { display: block; font-size: .74rem; color: var(--text-3); font-weight: 500; text-align: right; }
+        .order .fine { margin-top: 12px; font-size: .78rem; color: var(--text-3); text-align: center; }
+        .order .fine i { color: var(--green); }
+        .guarantee { margin-top: 14px; display: grid; grid-template-columns: auto 1fr; gap: 12px; align-items: center; padding: 14px 16px; border-radius: 14px; border: 1px solid rgba(52, 211, 153, 0.3); background: rgba(52, 211, 153, 0.06); font-size: .84rem; color: var(--text-2); }
+        .guarantee .seal { width: 40px; height: 40px; border-radius: 50%; display: grid; place-items: center; color: var(--green); background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.35); }
+        .guarantee strong { display: block; color: var(--text); font-size: .9rem; }
+
+        /* account step */
+        .account { margin-top: 4px; }
+        .account h3 { font-size: 1.05rem; margin-bottom: 4px; }
+        .account .sub { font-size: .86rem; color: var(--text-2); margin-bottom: 14px; }
+        .google-btn { width: 100%; display: flex; align-items: center; justify-content: center; gap: 10px; padding: 12px; border-radius: 12px; background: #fff; color: #1f1f1f; font-weight: 600; font-size: .95rem; }
+        .google-btn:hover { background: #ececec; }
+        .google-btn:disabled { opacity: .6; cursor: wait; }
+        .google-btn svg { width: 18px; height: 18px; }
+        .divider { display: flex; align-items: center; gap: 12px; margin: 14px 0; color: var(--text-3); font-size: .72rem; text-transform: uppercase; letter-spacing: .08em; }
+        .divider::before, .divider::after { content: ''; flex: 1; height: 1px; background: var(--border-strong); }
+        .field { margin-bottom: 10px; }
+        .field label { display: block; font-size: .78rem; font-weight: 600; color: var(--text-2); margin-bottom: 5px; }
+        .field input { width: 100%; font: inherit; font-size: .95rem; color: var(--text); background: rgba(255, 255, 255, 0.05); border: 1px solid var(--border-strong); border-radius: 12px; padding: 11px 14px; }
+        .field input:focus { outline: none; border-color: var(--purple-light); box-shadow: 0 0 0 3px rgba(108, 60, 225, 0.28); }
+        .auth-msg { min-height: 18px; font-size: .84rem; margin: 2px 0 10px; }
+        .auth-msg.error { color: #fca5a5; }
+        .auth-msg.success { color: var(--green); }
+        .auth-toggle { text-align: center; margin-top: 12px; font-size: .86rem; color: var(--text-2); }
+        .auth-toggle button, .link { color: var(--blue-light); font-weight: 700; }
+        .signed-in { display: flex; align-items: center; gap: 10px; padding: 10px 12px; border-radius: 12px; background: var(--surface-2); border: 1px solid var(--border); font-size: .84rem; color: var(--text-2); margin-bottom: 14px; }
+        .signed-in i { color: var(--green); }
+        .signed-in span { flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+        .signed-in button { font-size: .8rem; color: var(--blue-light); font-weight: 600; }
+
+        footer { border-top: 1px solid var(--border); padding: 28px 0; }
+        .foot { display: flex; flex-wrap: wrap; justify-content: space-between; gap: 14px; font-size: .84rem; color: var(--text-3); }
+        .foot-links { display: flex; flex-wrap: wrap; gap: 16px; }
+        .foot-links a { color: var(--text-2); text-decoration: none; }
+        .foot-links a:hover { color: var(--text); text-decoration: underline; }
+
+        /* loader */
+        #pageLoader { position: fixed; inset: 0; z-index: 9999; display: none; flex-direction: column; align-items: center; justify-content: center; gap: 18px; background: var(--bg); }
+        #pageLoader.active { display: flex; }
+        .loader-ring { width: 52px; height: 52px; border-radius: 50%; border: 4px solid rgba(255, 255, 255, 0.08); border-top-color: var(--purple); border-right-color: var(--blue); animation: spin .85s linear infinite; }
+        @keyframes spin { to { transform: rotate(360deg); } }
+        .loader-text { font-size: .92rem; font-weight: 600; color: var(--text-2); }
+
+        @media (prefers-reduced-motion: reduce) {
+            *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
+        }
+    </style>
+
+    <!-- Firebase (Auth + Realtime Database) -->
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
+    <script src="plutoscan-auth.js?v=4"></script>
+</head>
+<body>
+    <div id="pageLoader" role="status" aria-live="polite">
+        <div class="loader-ring"></div>
+        <div class="loader-text" id="pageLoaderText">Redirecting to secure checkout…</div>
+    </div>
+
+    <header class="nav">
+        <div class="container nav-inner">
+            <a href="index.html" class="brand" aria-label="PlutoScan home"><span class="brand-mark" aria-hidden="true"></span>PlutoScan</a>
+            <span class="secure-badge"><i class="fas fa-lock"></i> Secure checkout</span>
+            <a href="index.html" class="nav-back"><i class="fas fa-arrow-left"></i><span>&nbsp; Back</span></a>
+        </div>
+    </header>
+
+    <div class="container">
+        <div class="steps" aria-label="Checkout progress">
+            <span class="step on" id="stepReview"><b>1</b><span>Review</span></span>
+            <span class="step-line"></span>
+            <span class="step" id="stepAccount"><b>2</b><span>Account</span></span>
+            <span class="step-line"></span>
+            <span class="step" id="stepPay"><b>3</b><span>Payment</span></span>
+            <span class="step-line"></span>
+            <span class="step"><b>4</b><span>Start learning</span></span>
+        </div>
+
+        <div class="layout">
+            <main>
+                <div class="hero-copy">
+                    <span class="eyebrow"><i class="fas fa-shield-halved"></i> PlutoScan Full Access</span>
+                    <h1>Everything you need to learn crypto safely, <span class="text-gradient">in one place.</span></h1>
+                    <p class="lead">One course takes you from "what is a blockchain?" to judging a real coin with live data. One payment, no subscription, and you can get your money back if it's not for you.</p>
+                </div>
+
+                <section class="block" aria-labelledby="getsTitle">
+                    <h2 id="getsTitle">What you're getting</h2>
+                    <p class="sub">Unlocked the moment your payment goes through.</p>
+                    <div class="gets">
+                        <div class="get">
+                            <div class="ico"><i class="fas fa-route"></i></div>
+                            <div>
+                                <h3>The complete beginner course</h3>
+                                <p>18 lessons in 5 phases, built around one goal: not losing money to scams, bad sends or hype. Each lesson unlocks the next, so you learn in the right order.</p>
+                                <ul><li>18 lessons</li><li>Video + written guides</li><li>Scenario knowledge checks</li><li>Progress saved to your account</li></ul>
+                            </div>
+                        </div>
+                        <div class="get">
+                            <div class="ico"><i class="fas fa-satellite-dish"></i></div>
+                            <div>
+                                <h3>The PlutoScan Research Scanner</h3>
+                                <p>Live coin analysis. Pick any coin and the Scanner pulls live market data from CoinGecko, then scores it against 12 checks across 3 weighted pillars, so you see its strengths and its red flags before you buy.</p>
+                                <ul><li>12-point framework</li><li>Auto-Fill from live data</li><li>Plain-English "research this next" prompts</li><li>Copyable summary</li></ul>
+                            </div>
+                        </div>
+                        <div class="get">
+                            <div class="ico"><i class="fas fa-toolbox"></i></div>
+                            <div>
+                                <h3>Your research toolkit</h3>
+                                <p>Look up any coin's price, market cap, supply and research flags from your dashboard, keep a watchlist, and tap any term for a plain-English definition.</p>
+                                <ul><li>Live data widget</li><li>Personal watchlist</li><li>120+ term glossary</li><li>All future updates</li></ul>
+                            </div>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="block" aria-labelledby="phasesTitle">
+                    <h2 id="phasesTitle">The path, in 5 phases</h2>
+                    <p class="sub">Each phase builds on the last. Full lesson list on the <a href="index.html#curriculum">home page</a>.</p>
+                    <div class="phases">
+                        <div class="ph"><b>1</b><strong>The Launchpad</strong><span>How crypto works · 3 lessons</span></div>
+                        <div class="ph"><b>2</b><strong>Navigating the Nebula</strong><span>Wallets &amp; self-custody · 5 lessons</span></div>
+                        <div class="ph"><b>3</b><strong>Gravity Wells</strong><span>Scams, volatility, fees · 3 lessons</span></div>
+                        <div class="ph"><b>4</b><strong>The Atlas</strong><span>Reading market data · 4 lessons</span></div>
+                        <div class="ph"><b>5</b><strong>Mission Control</strong><span>Your research system · 3 lessons</span></div>
+                    </div>
+                </section>
+
+                <section class="block" aria-labelledby="scanTitle">
+                    <h2 id="scanTitle">What a Scanner result looks like</h2>
+                    <p class="sub">An example score. Inside the course, Auto-Fill fills the data checks from live numbers.</p>
+                    <div class="scan-preview">
+                        <div class="ring" style="--p:82"><strong>82%</strong></div>
+                        <div>
+                            <div class="pillars">
+                                <div class="pillar"><label><span><i class="fas fa-shield-halved"></i>Security &amp; Stability</span><span>4/5</span></label><div class="track"><div class="fill" style="width:80%"></div></div></div>
+                                <div class="pillar"><label><span><i class="fas fa-cubes"></i>Fundamentals</span><span>4/5</span></label><div class="track"><div class="fill" style="width:80%"></div></div></div>
+                                <div class="pillar"><label><span><i class="fas fa-users"></i>Community &amp; Momentum</span><span>2/2</span></label><div class="track"><div class="fill" style="width:100%"></div></div></div>
+                            </div>
+                            <p class="scan-note">Illustrative example. The score measures how well-researched a coin is, never whether to buy it.</p>
+                        </div>
+                    </div>
+                </section>
+
+                <section class="block" aria-labelledby="afterTitle">
+                    <h2 id="afterTitle">What happens next</h2>
+                    <p class="sub">About two minutes from here to your first lesson.</p>
+                    <ol class="timeline">
+                        <li><div><strong>Create your free account</strong><span>Email or Google. It keeps your purchase and progress safe on every device.</span></div></li>
+                        <li><div><strong>Pay once on Stripe's secure page</strong><span>Stripe handles your card. PlutoScan never sees or stores your card details.</span></div></li>
+                        <li><div><strong>Land straight in your course</strong><span>You're brought back to your dashboard automatically, with Lesson 1 ready to start.</span></div></li>
+                    </ol>
+                </section>
+
+                <section class="block" aria-labelledby="promiseTitle">
+                    <h2 id="promiseTitle">Our promises</h2>
+                    <div class="promises">
+                        <div class="promise"><i class="fas fa-rotate-left"></i><div><strong>14-day refund</strong>Under 25% through the course (4 or fewer of 18 lessons)? Email us within 14 days for a full refund.</div></div>
+                        <div class="promise"><i class="fas fa-ban"></i><div><strong>No subscription</strong>One payment of $16.99. No recurring charges, ever.</div></div>
+                        <div class="promise"><i class="fas fa-scale-balanced"></i><div><strong>No hype, no signals</strong>We teach you to research. We never tell you what to buy.</div></div>
+                        <div class="promise"><i class="fas fa-envelope"></i><div><strong>Real support</strong>Questions? <a href="mailto:support@plutoscan.com">support@plutoscan.com</a></div></div>
+                    </div>
+                </section>
+
+                <section class="block" aria-labelledby="faqTitle">
+                    <h2 id="faqTitle">Before you buy</h2>
+                    <div class="faq">
+                        <details><summary>I'm a complete beginner. Is this too advanced?</summary><div class="a">No. Lesson 1 starts from zero, and each lesson only unlocks after the one before it, so you're never thrown in the deep end.</div></details>
+                        <details><summary>Do I need to own any crypto?</summary><div class="a">No. You can finish every lesson and use the Scanner without owning any crypto. The course is designed so you learn the safety habits before you put money in.</div></details>
+                        <details><summary>Is this financial advice?</summary><div class="a">No. PlutoScan is education. The Scanner produces a research-readiness score from public data. It's a structured starting point for your own research, not a buy or sell signal.</div></details>
+                        <details><summary>Can I use it on my phone?</summary><div class="a">Yes. It works in any modern browser on desktop, tablet and phone. Log in on any device to pick up your lessons where you left off.</div></details>
+                        <details><summary>What if it's not for me?</summary><div class="a">Email <a href="mailto:support@plutoscan.com?subject=Refund%20request">support@plutoscan.com</a> within 14 days of purchase. If you've completed 4 or fewer of the 18 lessons, you get a full refund. See the <a href="refunds.html">Refund Policy</a>.</div></details>
+                    </div>
+                </section>
+            </main>
+
+            <aside class="summary-col" aria-label="Order summary">
+                <div class="order">
+                    <div class="order-inner">
+                        <div class="order-head">
+                            <div>
+                                <div class="order-label">Your order</div>
+                                <h2>PlutoScan Full Access</h2>
+                            </div>
+                            <div class="amount" role="img" aria-label="$16.99 US dollars, paid once">
+                                <span class="cur" aria-hidden="true">$</span><span class="whole" aria-hidden="true">16</span>
+                                <span class="side" aria-hidden="true"><span class="cents">.99</span></span>
+                            </div>
+                        </div>
+                        <p class="once">USD · charged once · no subscription · <strong>14-day refund</strong></p>
+
+                        <ul class="lines">
+                            <li><span>18-lesson beginner course</span><span class="incl">Included</span></li>
+                            <li><span>Research Scanner</span><span class="incl">Included</span></li>
+                            <li><span>Live data widget + watchlist</span><span class="incl">Included</span></li>
+                            <li><span>120+ term glossary</span><span class="incl">Included</span></li>
+                            <li><span>All future updates</span><span class="incl">Included</span></li>
+                        </ul>
+                        <div class="total"><span>Total today</span><div><strong>$16.99 USD</strong><small>Charged once. Taxes, if any, are shown by Stripe.</small></div></div>
+
+                        <!-- Step 1: review -->
+                        <div id="reviewStep">
+                            <div class="signed-in hidden" id="signedIn"><i class="fas fa-circle-check"></i><span id="signedInEmail"></span><button type="button" id="switchAccount">Switch</button></div>
+                            <button type="button" class="btn btn-primary btn-block" id="continueBtn"><i class="fas fa-lock"></i> <span id="continueLabel">Continue to secure checkout</span></button>
+                        </div>
+
+                        <!-- Step 2: account (only when signed out) -->
+                        <div class="account hidden" id="accountStep">
+                            <h3 id="authTitle">Create your account</h3>
+                            <p class="sub" id="authSub">One quick step, then straight to secure payment.</p>
+                            <button type="button" class="google-btn" id="googleAuthBtn">
+                                <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
+                                Continue with Google
+                            </button>
+                            <div class="divider">or with email</div>
+                            <form id="authForm" novalidate>
+                                <div class="field"><label for="authEmail">Email</label><input type="email" id="authEmail" autocomplete="email" required /></div>
+                                <div class="field"><label for="authPassword">Password</label><input type="password" id="authPassword" autocomplete="new-password" minlength="6" required /></div>
+                                <div class="auth-msg" id="authMsg" role="alert"></div>
+                                <button type="submit" class="btn btn-primary btn-block" id="authSubmitBtn">Create account &amp; continue</button>
+                            </form>
+                            <div class="auth-toggle" id="authToggle"></div>
+                        </div>
+
+                        <p class="fine"><i class="fas fa-lock"></i>&nbsp; Payments processed securely by Stripe. By continuing you agree to the <a href="terms.html">Terms</a> and <a href="privacy.html">Privacy Policy</a>.</p>
+                        <div class="guarantee">
+                            <div class="seal" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
+                            <div><strong>Risk-free for 14 days</strong>Full refund if you've done 4 or fewer of the 18 lessons. <a href="refunds.html">Details</a></div>
+                        </div>
+                    </div>
+                </div>
+            </aside>
+        </div>
+    </div>
+
+    <footer>
+        <div class="container foot">
+            <span>© <span id="year">2026</span> PlutoScan · Education only, not financial advice.</span>
+            <nav class="foot-links" aria-label="Policies">
+                <a href="refunds.html">Refunds</a>
+                <a href="terms.html">Terms</a>
+                <a href="privacy.html">Privacy</a>
+                <a href="mailto:support@plutoscan.com">Contact</a>
+            </nav>
+        </div>
+    </footer>
+
+    <script>
+        (function () {
+            'use strict';
+            const $ = (id) => document.getElementById(id);
+            let authMode = 'signup'; // 'signup' | 'login' | 'reset'
+
+            function setStep(n) {
+                ['stepReview', 'stepAccount', 'stepPay'].forEach((id, i) => {
+                    $(id).classList.toggle('on', i + 1 === n);
+                    $(id).classList.toggle('done', i + 1 < n);
+                });
+            }
+            function showLoader(msg) { $('pageLoaderText').textContent = msg; $('pageLoader').classList.add('active'); }
+            function hideLoader() { $('pageLoader').classList.remove('active'); }
+            window.addEventListener('pageshow', (e) => { if (e.persisted) hideLoader(); });
+
+            function setMsg(text, kind) { $('authMsg').textContent = text || ''; $('authMsg').className = 'auth-msg' + (kind ? ' ' + kind : ''); }
+
+            function setAuthMode(mode) {
+                authMode = mode;
+                setMsg('');
+                const reset = mode === 'reset';
+                $('googleAuthBtn').classList.toggle('hidden', reset);
+                document.querySelector('.divider').classList.toggle('hidden', reset);
+                $('authPassword').closest('.field').classList.toggle('hidden', reset);
+                $('authPassword').setAttribute('autocomplete', mode === 'signup' ? 'new-password' : 'current-password');
+                const toggle = $('authToggle');
+                if (mode === 'signup') {
+                    $('authTitle').textContent = 'Create your account';
+                    $('authSub').textContent = 'One quick step, then straight to secure payment.';
+                    $('authSubmitBtn').textContent = 'Create account & continue';
+                    toggle.innerHTML = 'Already have an account? <button type="button" data-mode="login">Log in</button>';
+                } else if (mode === 'login') {
+                    $('authTitle').textContent = 'Log in to continue';
+                    $('authSub').textContent = 'Welcome back. Log in and we\'ll take you to secure payment.';
+                    $('authSubmitBtn').textContent = 'Log in & continue';
+                    toggle.innerHTML = 'New to PlutoScan? <button type="button" data-mode="signup">Create an account</button> · <button type="button" data-mode="reset">Forgot password?</button>';
+                } else {
+                    $('authTitle').textContent = 'Reset your password';
+                    $('authSub').textContent = 'Enter your account email and we\'ll send you a reset link.';
+                    $('authSubmitBtn').textContent = 'Send reset link';
+                    toggle.innerHTML = '<button type="button" data-mode="login">Back to log in</button>';
+                }
+                toggle.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => setAuthMode(b.dataset.mode)));
+            }
+
+            function friendlyAuthError(err) {
+                const code = (err && err.code) || '';
+                if (code.includes('email-already-in-use')) return 'That email already has an account. Log in instead.';
+                if (code.includes('wrong-password') || code.includes('invalid-credential') || code.includes('invalid-login')) return 'Incorrect email or password.';
+                if (code.includes('user-not-found')) return 'No account found with that email.';
+                if (code.includes('weak-password')) return 'Use a password with at least 6 characters.';
+                if (code.includes('invalid-email')) return 'That email address doesn\'t look right.';
+                if (code.includes('too-many-requests')) return 'Too many attempts. Please wait a moment and try again.';
+                if (code.includes('network-request-failed')) return 'Network error. Check your connection and try again.';
+                if (code.includes('account-exists-with-different-credential')) return 'That email is registered with a password. Log in with your password instead.';
+                if (code.includes('popup-blocked')) return 'Your browser blocked the Google sign-in popup. Allow popups and try again.';
+                return 'Something went wrong. Please try again.';
+            }
+
+            async function goToStripe() {
+                setStep(3);
+                showLoader('Redirecting to secure checkout…');
+                await window.plutoscanAuth.report('checkout', { step: 'started' });
+                try {
+                    await window.plutoscanAuth.startCheckout(); // redirects to Stripe
+                } catch (err) {
+                    console.error(err);
+                    window.plutoscanAuth.report('checkout', { step: 'failed', reason: err && err.message });
+                    hideLoader();
+                    setStep(1);
+                    $('continueLabel').textContent = 'Try again: continue to secure checkout';
+                    alertBox('We couldn\'t start checkout. Please try again in a moment.');
+                }
+            }
+            function alertBox(text) {
+                $('accountStep').classList.add('hidden');
+                $('reviewStep').classList.remove('hidden');
+                let box = $('checkoutErr');
+                if (!box) {
+                    box = document.createElement('p');
+                    box.id = 'checkoutErr'; box.className = 'auth-msg error'; box.setAttribute('role', 'alert');
+                    $('reviewStep').prepend(box);
+                }
+                box.textContent = text;
+            }
+
+            async function afterSignIn() {
+                const paid = await window.plutoscanAuth.isPaid();
+                if (paid) { showLoader('You already own PlutoScan. Opening your course…'); window.location.href = 'plutoscan-modules.html'; return; }
+                await goToStripe();
+            }
+
+            function renderUser(user, paid) {
+                $('signedIn').classList.toggle('hidden', !user);
+                $('signedInEmail').textContent = user ? 'Signed in as ' + (user.email || 'your account') : '';
+                if (paid) {
+                    $('continueLabel').textContent = 'You already own this: open your course';
+                    $('continueBtn').querySelector('i').className = 'fas fa-play';
+                }
+            }
+
+            function init() {
+                $('year').textContent = new Date().getFullYear();
+                setAuthMode('signup');
+                const params = new URLSearchParams(window.location.search);
+                if (params.get('purchase') === 'cancelled') alertBox('Checkout was cancelled and you haven\'t been charged. You can continue whenever you\'re ready.');
+
+                if (!window.plutoscanAuth) {
+                    console.error('plutoscan-auth.js failed to load');
+                    alertBox('Checkout couldn\'t load. Please refresh the page.');
+                    $('continueBtn').disabled = true;
+                    return;
+                }
+                let paid = false;
+                window.plutoscanAuth.onReady(async (user) => {
+                    window.plutoscanAuth.report('visit', { referrer: document.referrer });
+                    if (user) { paid = await window.plutoscanAuth.isPaid(); }
+                    renderUser(user, paid);
+                });
+
+                $('continueBtn').addEventListener('click', async () => {
+                    const user = window.plutoscanAuth.getCurrentUser();
+                    if (user && paid) { showLoader('Opening your course…'); window.location.href = 'plutoscan-modules.html'; return; }
+                    if (user) { await goToStripe(); return; }
+                    setStep(2);
+                    $('reviewStep').classList.add('hidden');
+                    $('accountStep').classList.remove('hidden');
+                    setTimeout(() => $('authEmail').focus(), 50);
+                });
+                $('switchAccount').addEventListener('click', async () => {
+                    await window.plutoscanAuth.logOut();
+                    paid = false;
+                    renderUser(null, false);
+                    $('continueLabel').textContent = 'Continue to secure checkout';
+                    $('continueBtn').querySelector('i').className = 'fas fa-lock';
+                });
+
+                $('authForm').addEventListener('submit', async (e) => {
+                    e.preventDefault();
+                    const email = $('authEmail').value.trim();
+                    const password = $('authPassword').value;
+                    setMsg('');
+                    if (!email) { setMsg('Enter your email address.', 'error'); $('authEmail').focus(); return; }
+                    if (authMode !== 'reset' && !password) { setMsg('Enter a password.', 'error'); $('authPassword').focus(); return; }
+                    const btn = $('authSubmitBtn');
+                    const original = btn.textContent;
+                    btn.disabled = true;
+                    btn.textContent = authMode === 'reset' ? 'Sending…' : (authMode === 'login' ? 'Logging in…' : 'Creating account…');
+                    try {
+                        if (authMode === 'reset') {
+                            await window.plutoscanAuth.sendPasswordReset(email);
+                            setMsg('If an account exists for that email, a reset link is on its way. Check your inbox (and spam).', 'success');
+                        } else {
+                            if (authMode === 'login') await window.plutoscanAuth.logIn(email, password);
+                            else await window.plutoscanAuth.signUp(email, password);
+                            await afterSignIn();
+                        }
+                    } catch (err) {
+                        window.plutoscanAuth.report('failed', { email: email, code: err && err.code, action: authMode, method: 'password' });
+                        // Don't reveal whether an email is registered when resetting.
+                        if (authMode === 'reset' && String(err && err.code).includes('user-not-found')) {
+                            setMsg('If an account exists for that email, a reset link is on its way. Check your inbox (and spam).', 'success');
+                        } else {
+                            setMsg(friendlyAuthError(err), 'error');
+                        }
+                    } finally {
+                        btn.disabled = false;
+                        btn.textContent = original;
+                    }
+                });
+
+                $('googleAuthBtn').addEventListener('click', async function () {
+                    setMsg('');
+                    this.disabled = true;
+                    try {
+                        await window.plutoscanAuth.signInWithGoogle();
+                        await afterSignIn();
+                    } catch (err) {
+                        if (err && (err.code === 'auth/popup-closed-by-user' || err.code === 'auth/cancelled-popup-request')) return;
+                        window.plutoscanAuth.report('failed', { email: err && err.customData && err.customData.email, code: err && err.code, action: 'google', method: 'google' });
+                        setMsg(friendlyAuthError(err), 'error');
+                    } finally {
+                        this.disabled = false;
+                    }
+                });
+            }
+
+            document.addEventListener('DOMContentLoaded', init);
+        })();
+    </script>
+</body>
+</html>
