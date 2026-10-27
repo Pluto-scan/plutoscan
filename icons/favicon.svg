@@ -1,0 +1,20 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 64 64" role="img" aria-label="PlutoScan">
+  <defs>
+    <radialGradient id="ps-bg" cx="0.3" cy="0.25" r="0.9">
+      <stop offset="0" stop-color="#1d1440"/>
+      <stop offset="1" stop-color="#0b0b16"/>
+    </radialGradient>
+    <linearGradient id="ps-planet" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0" stop-color="#6C3CE1"/>
+      <stop offset="1" stop-color="#1E90FF"/>
+    </linearGradient>
+    <clipPath id="ps-front"><rect x="0" y="32" width="64" height="32"/></clipPath>
+  </defs>
+  <!-- same planet as icons/logo.svg, on a dark tile so the white ring shows on light browser tabs -->
+  <rect width="64" height="64" rx="14" fill="url(#ps-bg)"/>
+  <ellipse cx="32" cy="32" rx="28" ry="8.5" fill="none" stroke="#ffffff" stroke-opacity="0.55" stroke-width="3.5" transform="rotate(-20 32 32)"/>
+  <circle cx="32" cy="32" r="18" fill="url(#ps-planet)"/>
+  <g clip-path="url(#ps-front)" transform="rotate(-20 32 32)">
+    <ellipse cx="32" cy="32" rx="28" ry="8.5" fill="none" stroke="#ffffff" stroke-opacity="0.95" stroke-width="3.5"/>
+  </g>
+</svg>
