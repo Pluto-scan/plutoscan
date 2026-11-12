@@ -206,6 +206,7 @@
         .lesson.now b { background: var(--grad); color: #fff; }
         .lesson.lock b { background: rgba(255,255,255,.06); color: var(--text-3); }
         .lesson span:last-child { margin-left: auto; font-size: .68rem; color: var(--text-3); }
+        .lesson .ghost { display: block; height: 8px; border-radius: 6px; background: linear-gradient(90deg, rgba(255,255,255,.14), rgba(255,255,255,.05)); }
         .float { position: absolute; z-index: 3; display: flex; align-items: center; gap: 10px; padding: 10px 14px; border-radius: 14px; background: rgba(20, 20, 42, 0.86); border: 1px solid var(--border-strong); backdrop-filter: blur(10px); -webkit-backdrop-filter: blur(10px); box-shadow: 0 18px 40px rgba(0, 0, 0, .5); font-size: .78rem; animation: drift 7s ease-in-out infinite; }
         .float strong { display: block; font-size: .84rem; color: var(--text); }
         .float span { color: var(--text-3); font-size: .7rem; }
@@ -317,6 +318,15 @@
         .curr-list li b { font-size: .82rem; font-weight: 800; color: var(--purple-light); padding-top: 2px; font-variant-numeric: tabular-nums; }
         .curr-list li strong { display: block; font-size: 1rem; font-weight: 600; }
         .curr-list li em { display: block; font-style: normal; color: var(--text-3); font-size: .88rem; margin-top: 2px; }
+        .curr-sub { font-size: .9rem; color: var(--text-3); margin-bottom: 10px; }
+        .outcomes { list-style: none; display: grid; gap: 10px; margin-bottom: 20px; }
+        .outcomes li { display: flex; gap: 12px; font-size: 1rem; font-weight: 600; opacity: 0; transform: translateY(8px); animation: fadeUp .5s var(--ease-out) forwards; }
+        .outcomes li i { width: 22px; height: 22px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; font-size: .62rem; color: #0b0b16; background: var(--green); margin-top: 2px; }
+        .curr-list li.locked { grid-template-columns: 42px 1fr auto; align-items: center; padding: 12px 6px; }
+        .curr-list li.locked .ghost { display: block; height: 10px; border-radius: 6px; background: linear-gradient(90deg, rgba(255,255,255,.12), rgba(255,255,255,.04)); }
+        .curr-list li.locked > i { color: var(--text-3); font-size: .78rem; }
+        .unlock-note { margin-top: 14px; font-size: .84rem; color: var(--text-3); display: flex; align-items: center; gap: 8px; }
+        .unlock-note i { color: var(--purple-light); }
         .curr-foot { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px 26px; margin-top: 30px; font-size: .88rem; color: var(--text-3); }
         .curr-foot span { display: inline-flex; align-items: center; gap: 8px; }
         .curr-foot i { color: var(--purple-light); }
@@ -552,12 +562,11 @@
             <div class="hero-grid-lines"></div>
             <div class="container hero-inner">
                 <div>
-                    <span class="pill fade-up"><b>New</b> Every lesson now has its own video</span>
                     <h1><span class="line"><span>Learn crypto</span></span><span class="line"><span class="text-gradient">the safe way.</span></span></h1>
                     <p class="hero-sub fade-up d1">A step-by-step video course that takes you from <strong>"what is a blockchain?"</strong> to researching a real coin with live data. In plain English. No hype, no coin tips, no guesswork.</p>
                     <div class="hero-ctas fade-up d2">
                         <button type="button" class="btn btn-primary btn-lg js-buy"><span class="js-cta-label">Start learning</span> <i class="fas fa-arrow-right"></i></button>
-                        <a href="#curriculum" class="btn btn-ghost">See the 18 lessons</a>
+                        <a href="#curriculum" class="btn btn-ghost">See what you'll learn</a>
                     </div>
                     <div class="hero-proof fade-up d3">
                         <div><strong>18</strong><span>video lessons</span></div>
@@ -574,15 +583,15 @@
                         <div class="player-inner">
                             <div class="player-bar"><i class="dot"></i><i class="dot"></i><i class="dot"></i><span>PlutoScan · Phase 2: Navigating the Nebula</span><em>VIDEO</em></div>
                             <div class="screen">
-                                <div class="screen-copy"><small>Lesson 05</small><b>What is a Seed Phrase?</b></div>
+                                <div class="screen-copy"><small>Phase 2 · Lesson 05</small><b>Wallets &amp; self-custody</b></div>
                                 <div class="screen-planet"></div>
                                 <div class="screen-play"><i class="fas fa-play"></i>Watch lesson</div>
                                 <div class="scrub"><span></span></div>
                             </div>
                             <div class="lessons">
-                                <div class="lesson done"><b><i class="fas fa-check"></i></b><span>04 · Public Keys vs. Private Keys</span><span>Quiz passed</span></div>
-                                <div class="lesson now"><b><i class="fas fa-play" style="font-size:.5rem;padding-left:1px"></i></b><span>05 · What is a Seed Phrase?</span><span>Now playing</span></div>
-                                <div class="lesson lock"><b><i class="fas fa-lock" style="font-size:.55rem"></i></b><span>06 · Hot Wallets vs. Cold Wallets</span><span>Up next</span></div>
+                                <div class="lesson done"><b><i class="fas fa-check"></i></b><span>Lesson 04</span><i class="ghost" style="width:38%"></i><span>Quiz passed</span></div>
+                                <div class="lesson now"><b><i class="fas fa-play" style="font-size:.5rem;padding-left:1px"></i></b><span>Lesson 05</span><i class="ghost" style="width:30%"></i><span>Now playing</span></div>
+                                <div class="lesson lock"><b><i class="fas fa-lock" style="font-size:.55rem"></i></b><span>Lesson 06</span><i class="ghost" style="width:42%"></i><span>Up next</span></div>
                             </div>
                         </div>
                     </div>
@@ -677,7 +686,7 @@
                 <div class="section-head reveal">
                     <span class="kicker">The curriculum</span>
                     <h2>From zero to confident, in five phases</h2>
-                    <p>Every lesson has one job: give you a skill that protects your money. Pick a phase to see what's inside.</p>
+                    <p>Every lesson has one job: give you a skill that protects your money. Pick a phase to see what you'll be able to do.</p>
                 </div>
                 <div class="curr reveal">
                     <div class="curr-tabs" id="currTabs" role="tablist" aria-label="Course phases"></div>
@@ -945,38 +954,32 @@
 
             const $ = (id) => document.getElementById(id);
 
-            // Public curriculum outline (titles only — lesson content is served after purchase).
+            // Public outline only: phase names, lesson counts and outcomes. Lesson titles stay behind the paywall.
             const CURRICULUM = [
-                { name: 'The Launchpad', desc: 'How crypto actually works', icon: 'fa-rocket', modules: [
-                    ['What is a Blockchain?', 'Why it can\'t be quietly edited, and why its mistakes are permanent.'],
-                    ['What is Cryptocurrency?', 'Coins vs. tokens, stablecoins, memecoins, and the "cheap price" trap.'],
-                    ['How Transactions Work', 'From signature to confirmation, and how to track yours.'] ] },
-                { name: 'Navigating the Nebula', desc: 'Wallets & self-custody', icon: 'fa-wallet', modules: [
-                    ['Public Keys vs. Private Keys', 'What to share, what never to share, and "not your keys, not your coins."'],
-                    ['What is a Seed Phrase?', 'Back it up properly and spot every seed-phrase scam.'],
-                    ['Hot Wallets vs. Cold Wallets', 'Exchange, hot or hardware: where your crypto should live.'],
-                    ['How to Set Up Your First Hot Wallet', 'Install safely and read approvals before you sign.'],
-                    ['How to Send and Receive Crypto', 'Networks, memos, address poisoning and the test-send habit.'] ] },
-                { name: 'Gravity Wells', desc: 'The forces that wreck beginners', icon: 'fa-triangle-exclamation', modules: [
-                    ['Volatility and Market Cycles', 'Why prices swing so hard, and a plan to keep emotion out.'],
-                    ['Common Scams to Avoid', 'Phishing, wallet drainers, rug pulls, fake giveaways, pig butchering.'],
-                    ['Gas Fees and Network Congestion', 'Why fees spike, how to fix stuck transactions, and the gas-coin trap.'] ] },
-                { name: 'The Atlas', desc: 'Reading market data', icon: 'fa-chart-line', modules: [
-                    ['How to Read a CoinGecko Page', 'Read a coin page like a researcher and verify the real token.'],
-                    ['Market Cap vs. Fully Diluted Valuation', 'Why low price isn\'t cheap, and how hidden supply hurts you.'],
-                    ['Trading Volume and Liquidity', 'Can you actually sell? Spotting thin and fake volume.'],
-                    ['Circulating Supply vs. Max Supply', 'Dilution, emissions, halvings and holder concentration.'] ] },
-                { name: 'Mission Control', desc: 'Your research system', icon: 'fa-satellite-dish', modules: [
-                    ['The PlutoScan Research Framework', '3 pillars, 12 checks, and exactly how the score works.'],
-                    ['How to Pull Live Data from the Widget', 'Find, verify and bookmark coins with live data.'],
-                    ['Applying the Framework to Your First Coin', 'A complete analysis plus the pre-buy survival checklist.'] ] },
+                { name: 'The Launchpad', desc: 'How crypto actually works', icon: 'fa-rocket', lessons: 3, outcomes: [
+                    'Understand what crypto really is, in plain English',
+                    'Know why a mistake on a blockchain can\'t be undone'] },
+                { name: 'Navigating the Nebula', desc: 'Wallets & self-custody', icon: 'fa-wallet', lessons: 5, outcomes: [
+                    'Set up your first wallet without a costly mistake',
+                    'Protect your recovery words from the common tricks',
+                    'Send and receive crypto with confidence'] },
+                { name: 'Gravity Wells', desc: 'The forces that wreck beginners', icon: 'fa-triangle-exclamation', lessons: 3, outcomes: [
+                    'Recognise the scams that catch beginners',
+                    'Keep emotion out of your decisions',
+                    'Understand fees before they surprise you'] },
+                { name: 'The Atlas', desc: 'Reading market data', icon: 'fa-chart-line', lessons: 4, outcomes: [
+                    'Read a coin\'s market data like a researcher',
+                    'See through "cheap" coins and hidden risks'] },
+                { name: 'Mission Control', desc: 'Your research system', icon: 'fa-satellite-dish', lessons: 3, outcomes: [
+                    'Research any coin with a repeatable 12-point framework',
+                    'Finish with your own pre-buy safety checklist'] },
             ];
 
             const TOPICS = [
-                ['fa-cube', 'Blockchain basics'], ['fa-coins', 'Coins vs. tokens'], ['fa-key', 'Private keys'], ['fa-file-shield', 'Seed phrase safety'],
-                ['fa-wallet', 'Hot vs. cold wallets'], ['fa-paper-plane', 'Sending safely'], ['fa-user-secret', 'Spotting scams'], ['fa-gas-pump', 'Gas fees'],
-                ['fa-chart-line', 'Volatility'], ['fa-magnifying-glass-chart', 'Reading CoinGecko'], ['fa-calculator', 'Market cap vs. FDV'], ['fa-water', 'Liquidity'],
-                ['fa-layer-group', 'Token supply'], ['fa-satellite-dish', 'Research Scanner'], ['fa-list-check', 'Pre-buy checklist'],
+                ['fa-shield-halved', 'Keep your money safe'], ['fa-wallet', 'Set up a wallet the right way'], ['fa-user-secret', 'Spot scams early'],
+                ['fa-paper-plane', 'Send crypto without fear'], ['fa-brain', 'Decide calmly, not on hype'], ['fa-magnifying-glass-chart', 'Read market data'],
+                ['fa-satellite-dish', 'Research any coin'], ['fa-list-check', 'Follow a pre-buy checklist'], ['fa-graduation-cap', 'Learn in the right order'],
+                ['fa-language', 'Plain English, no jargon'],
             ];
 
             // Same checks and weights as the Scanner inside the course.
@@ -1197,23 +1200,28 @@
             function renderCurriculum() {
                 const tabs = $('currTabs');
                 let start = 0;
-                const starts = CURRICULUM.map((p) => { const s = start; start += p.modules.length; return s; });
+                const starts = CURRICULUM.map((p) => { const s = start; start += p.lessons; return s; });
                 tabs.innerHTML = CURRICULUM.map((p, i) => `
                     <button type="button" class="curr-tab" role="tab" id="tab${i}" aria-controls="currPanel" aria-selected="${i === 0}" data-i="${i}">
                         <span class="pn">${i + 1}</span>
                         <span><strong>${p.name}</strong><span>${p.desc}</span></span>
-                        <em>${p.modules.length} lessons</em>
+                        <em>${p.lessons} lessons</em>
                     </button>`).join('');
+                const widths = [62, 48, 70, 55, 66];
                 function show(i) {
                     const p = CURRICULUM[i];
                     tabs.querySelectorAll('.curr-tab').forEach((t) => t.setAttribute('aria-selected', String(+t.dataset.i === i)));
                     $('currPanel').setAttribute('aria-labelledby', 'tab' + i);
+                    const locked = Array.from({ length: p.lessons }, (_, k) => `<li class="locked" style="animation-delay:${(k + 2) * 0.05}s"><b>${String(starts[i] + k + 1).padStart(2, '0')}</b><span class="ghost" style="width:${widths[(i + k) % widths.length]}%"></span><i class="fas fa-lock"></i></li>`).join('');
                     $('currPanel').innerHTML = `
                         <div class="curr-panel-head">
                             <div><small>Phase ${i + 1} of 5</small><h3><i class="fas ${p.icon}" style="color:var(--purple-light);margin-right:10px;font-size:.9em"></i>${p.name}</h3></div>
-                            <span>${p.modules.length} lessons · ${p.desc}</span>
+                            <span>${p.lessons} video lessons · ${p.desc}</span>
                         </div>
-                        <ol class="curr-list">${p.modules.map(([t, d], k) => `<li style="animation-delay:${k * 0.06}s"><b>${String(starts[i] + k + 1).padStart(2, '0')}</b><div><strong>${t}</strong><em>${d}</em></div></li>`).join('')}</ol>`;
+                        <p class="curr-sub">By the end of this phase you'll be able to:</p>
+                        <ul class="outcomes">${p.outcomes.map((o, k) => `<li style="animation-delay:${k * 0.05}s"><i class="fas fa-check"></i>${o}</li>`).join('')}</ul>
+                        <ol class="curr-list">${locked}</ol>
+                        <p class="unlock-note"><i class="fas fa-lock"></i> Lesson titles and content unlock when you join.</p>`;
                 }
                 tabs.addEventListener('click', (e) => { const t = e.target.closest('.curr-tab'); if (t) show(+t.dataset.i); });
                 tabs.addEventListener('keydown', (e) => {
