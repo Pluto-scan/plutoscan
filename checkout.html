@@ -96,8 +96,6 @@
         .eyebrow { display: inline-flex; align-items: center; gap: 8px; font-size: .76rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--purple-light); background: rgba(108, 60, 225, 0.12); border: 1px solid rgba(108, 60, 225, 0.3); padding: 6px 14px; border-radius: 999px; margin-bottom: 22px; }
         h1 { font-size: clamp(2.2rem, 5vw, 3.6rem); line-height: 1.06; font-weight: 800; letter-spacing: -0.035em; margin: 0 auto 18px; max-width: 820px; }
         .lead { font-size: 1.12rem; color: var(--text-2); max-width: 620px; margin: 0 auto; }
-        .peek { display: inline-flex; align-items: center; gap: 8px; margin-top: 26px; font-size: .9rem; font-weight: 600; color: var(--text-2); text-decoration: none; }
-        .peek i { animation: nudge 1.8s ease-in-out infinite; color: var(--purple-light); }
         @keyframes nudge { 0%, 100% { transform: translateY(0); } 50% { transform: translateY(4px); } }
 
         /* ===== VALUE STACK ===== */
@@ -114,9 +112,9 @@
         .item:hover { border-color: rgba(167, 139, 250, .35); }
         .item:hover::before { opacity: 1; }
         .item .ico { width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-size: 1.2rem; background: linear-gradient(135deg, rgba(108, 60, 225, 0.35), rgba(30, 144, 255, 0.22)); box-shadow: inset 0 1px 0 rgba(255,255,255,.12); }
-        .item h3 { font-size: 1.06rem; margin-bottom: 4px; padding-right: 86px; letter-spacing: -0.01em; }
+        .item h3 { font-size: 1.06rem; margin-bottom: 4px; letter-spacing: -0.01em; }
         .item p { font-size: .92rem; color: var(--text-2); }
-        .item .tag { position: absolute; top: 22px; right: 20px; display: inline-flex; align-items: center; gap: 6px; font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--green); padding: 4px 10px; border-radius: 999px; background: rgba(52, 211, 153, .1); border: 1px solid rgba(52, 211, 153, .3); }
+        .item .tag { display: inline-flex; margin-bottom: 10px; align-items: center; gap: 6px; font-size: .7rem; font-weight: 800; letter-spacing: .06em; text-transform: uppercase; color: var(--green); padding: 4px 10px; border-radius: 999px; background: rgba(52, 211, 153, .1); border: 1px solid rgba(52, 211, 153, .3); }
         .item .tag i { transform: scale(0); transition: transform .5s cubic-bezier(.34, 1.56, .64, 1) .35s; }
         .item.in .tag i { transform: scale(1); }
         .item.wide { grid-column: 1 / -1; }
@@ -284,8 +282,7 @@
         <section class="hero">
             <span class="eyebrow"><i class="fas fa-shield-halved"></i> PlutoScan Full Access</span>
             <h1>You're one step from learning crypto <span class="text-gradient">the right way.</span></h1>
-            <p class="lead">Here's everything that unlocks the moment you join. Take a quick look, then see your price just below.</p>
-            <a href="#offer" class="peek">See what's included and your price <i class="fas fa-arrow-down"></i></a>
+            <p class="lead">Here's everything that unlocks the moment you join.</p>
         </section>
 
         <!-- 2. The value stack -->
@@ -297,33 +294,27 @@
             <div class="stack">
                 <div class="item reveal">
                     <div class="ico"><i class="fas fa-film"></i></div>
-                    <div><h3>18 video lessons</h3><p>Five phases, from "what is a blockchain?" to analysing a real coin. Each lesson unlocks the next, so you learn in the right order.</p></div>
-                    <span class="tag"><i class="fas fa-check"></i> Included</span>
+                    <div><span class="tag"><i class="fas fa-check"></i> Included</span><h3>18 video lessons</h3><p>Five phases, from "what is a blockchain?" to analysing a real coin. Each lesson unlocks the next, so you learn in the right order.</p></div>
                 </div>
                 <div class="item reveal" style="--d:.08s">
                     <div class="ico"><i class="fas fa-book-open-reader"></i></div>
-                    <div><h3>Plain-English written guides</h3><p>Every lesson pairs its video with a written guide full of real examples, beginner mistakes to avoid and survival rules.</p></div>
-                    <span class="tag"><i class="fas fa-check"></i> Included</span>
+                    <div><span class="tag"><i class="fas fa-check"></i> Included</span><h3>Plain-English written guides</h3><p>Every lesson pairs its video with a written guide full of real examples, beginner mistakes to avoid and survival rules.</p></div>
                 </div>
                 <div class="item reveal">
                     <div class="ico"><i class="fas fa-brain"></i></div>
-                    <div><h3>Knowledge checks</h3><p>Scenario quizzes after each section, with an explanation for every answer, so you know you've got it before moving on.</p></div>
-                    <span class="tag"><i class="fas fa-check"></i> Included</span>
+                    <div><span class="tag"><i class="fas fa-check"></i> Included</span><h3>Knowledge checks</h3><p>Scenario quizzes after each section, with an explanation for every answer, so you know you've got it before moving on.</p></div>
                 </div>
                 <div class="item reveal" style="--d:.08s">
                     <div class="ico"><i class="fas fa-satellite-dish"></i></div>
-                    <div><h3>Live Research Scanner</h3><p>Pick any coin and the Scanner pulls live data from CoinGecko, then scores it against 12 checks across 3 weighted pillars.</p></div>
-                    <span class="tag"><i class="fas fa-check"></i> Included</span>
+                    <div><span class="tag"><i class="fas fa-check"></i> Included</span><h3>Live Research Scanner</h3><p>Pick any coin and the Scanner pulls live data from CoinGecko, then scores it against 12 checks across 3 weighted pillars.</p></div>
                 </div>
                 <div class="item reveal">
                     <div class="ico"><i class="fas fa-toolbox"></i></div>
-                    <div><h3>Data widget, watchlist and glossary</h3><p>Look up any coin from your dashboard, bookmark the ones you're researching, and tap any of 120+ terms for a plain-English definition.</p></div>
-                    <span class="tag"><i class="fas fa-check"></i> Included</span>
+                    <div><span class="tag"><i class="fas fa-check"></i> Included</span><h3>Data widget, watchlist and glossary</h3><p>Look up any coin from your dashboard, bookmark the ones you're researching, and tap any of 120+ terms for a plain-English definition.</p></div>
                 </div>
                 <div class="item reveal" style="--d:.08s">
                     <div class="ico"><i class="fas fa-infinity"></i></div>
-                    <div><h3>Lifetime access and updates</h3><p>Yours for good, on any device, with progress saved to your account. Every future course and Scanner update is included.</p></div>
-                    <span class="tag"><i class="fas fa-check"></i> Included</span>
+                    <div><span class="tag"><i class="fas fa-check"></i> Included</span><h3>Lifetime access and updates</h3><p>Yours for good, on any device, with progress saved to your account. Every future course and Scanner update is included.</p></div>
                 </div>
             </div>
             <div class="guarantee-strip reveal">
@@ -335,7 +326,7 @@
         <!-- 3. The price reveal + checkout -->
         <section class="offer-wrap" id="offer" aria-labelledby="offerTitle">
             <div class="block-head reveal">
-                <span class="kicker">Your price</span>
+                <span class="kicker">One price</span>
                 <h2 id="offerTitle">All of it. One payment. Yours for life.</h2>
             </div>
             <div class="offer" id="offerCard">
