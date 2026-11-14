@@ -117,10 +117,10 @@
         /* ===== OFFER (the price reveal) ===== */
         .offer-wrap { padding: 20px 0 70px; }
         .offer { position: relative; border-radius: 24px; padding: 1px; background: linear-gradient(150deg, rgba(167, 139, 250, 0.55), rgba(255, 255, 255, 0.1) 45%, rgba(30, 144, 255, 0.45)); box-shadow: 0 30px 80px rgba(0, 0, 0, 0.45); }
-        .offer-inner { border-radius: 23px; display: grid; grid-template-columns: 1fr 420px; overflow: hidden; background: radial-gradient(ellipse 70% 70% at 0% 0%, rgba(108, 60, 225, 0.14), transparent 70%), var(--panel); }
-        .offer-left { padding: 40px; border-right: 1px solid var(--border); }
-        .offer-right { padding: 40px 36px 32px; }
-        @media (max-width: 900px) { .offer-inner { grid-template-columns: 1fr; } .offer-left { border-right: none; border-top: 1px solid var(--border); order: 2; padding: 28px 22px; } .offer-right { padding: 32px 22px 26px; } }
+        .offer-inner { border-radius: 23px; display: grid; grid-template-columns: minmax(0, 1fr) 420px; overflow: hidden; background: radial-gradient(ellipse 70% 70% at 0% 0%, rgba(108, 60, 225, 0.14), transparent 70%), var(--panel); }
+        .offer-left { padding: 40px; border-right: 1px solid var(--border); min-width: 0; }
+        .offer-right { padding: 40px 36px 32px; min-width: 0; }
+        @media (max-width: 900px) { .offer-inner { grid-template-columns: minmax(0, 1fr); } .offer-left { border-right: none; border-top: 1px solid var(--border); order: 2; padding: 28px 22px; } .offer-right { padding: 32px 22px 26px; } }
         .order-label { font-size: .74rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--purple-light); }
         .offer-left h2 { font-size: 1.6rem; letter-spacing: -0.02em; line-height: 1.2; margin: 6px 0 20px; }
         .lines { list-style: none; display: grid; gap: 0; margin-bottom: 18px; }
@@ -258,7 +258,7 @@
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-app-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-auth-compat.js"></script>
     <script src="https://www.gstatic.com/firebasejs/10.12.2/firebase-database-compat.js"></script>
-    <script src="plutoscan-auth.js?v=4"></script>
+    <script src="plutoscan-auth.js?v=5"></script>
 </head>
 <body>
     <div id="pageLoader" role="status" aria-live="polite">
@@ -476,7 +476,8 @@
                     hideLoader();
                     setStep(1);
                     $('continueLabel').textContent = 'Try again: continue to secure checkout';
-                    alertBox('We couldn\'t start checkout. Please try again in a moment.');
+                    const code = err && err.status ? 'error ' + err.status : 'no answer from the server';
+                    alertBox('We couldn\'t start checkout (' + code + '). Please try again in a moment.');
                 }
             }
             function alertBox(text) {

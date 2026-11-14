@@ -124,7 +124,12 @@
         'Authorization': 'Bearer ' + token,
       },
     });
-    if (!res.ok) throw new Error('Could not start checkout');
+    if (!res.ok) {
+      // The status (401, 500, ...) is shown on the page so a failed checkout can be traced.
+      const err = new Error('Could not start checkout (' + res.status + ')');
+      err.status = res.status;
+      throw err;
+    }
     const data = await res.json();
     window.location.href = data.url;
   }
