@@ -232,23 +232,15 @@
         }
         @media (max-width: 600px) { .float.f1 { left: -2%; top: -4%; } .float.f2 { right: -2%; bottom: -6%; } }
 
-        /* ===== TOPIC MARQUEE ===== */
-        .marquee { position: relative; border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); background: var(--bg-2); padding: 18px 0; overflow: hidden; -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
-        .marquee-track { display: flex; gap: 14px; width: max-content; animation: marquee 48s linear infinite; }
-        .marquee:hover .marquee-track { animation-play-state: paused; }
-        .marquee-track span { display: inline-flex; align-items: center; gap: 9px; white-space: nowrap; font-size: .88rem; font-weight: 600; color: var(--text-2); padding: 8px 16px; border-radius: 999px; border: 1px solid var(--border); background: rgba(255,255,255,.02); }
-        .marquee-track span i { color: var(--purple-light); font-size: .8rem; }
-        @keyframes marquee { to { transform: translateX(-50%); } }
-
         /* ===== SECTIONS ===== */
-        .section { padding: 112px 0; position: relative; }
+        .section { padding: 84px 0; position: relative; }
         .section.alt { background: var(--bg-2); border-top: 1px solid var(--border); border-bottom: 1px solid var(--border); }
-        .section-head { text-align: center; max-width: 720px; margin: 0 auto 60px; }
+        .section-head { text-align: center; max-width: 720px; margin: 0 auto 44px; }
         .kicker { display: inline-flex; align-items: center; gap: 8px; font-size: .76rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--purple-light); margin-bottom: 16px; }
         .kicker::before { content: ''; width: 22px; height: 2px; border-radius: 2px; background: var(--grad); }
         .section-head h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); line-height: 1.1; font-weight: 800; letter-spacing: -0.028em; margin-bottom: 16px; }
         .section-head p { color: var(--text-2); font-size: 1.08rem; }
-        @media (max-width: 640px) { .section { padding: 76px 0; } .section-head { margin-bottom: 40px; } }
+        @media (max-width: 640px) { .section { padding: 56px 0; } .section-head { margin-bottom: 28px; } .section-head p { font-size: 1rem; } }
 
         /* spotlight card: light follows the cursor */
         .spot { position: relative; background: var(--surface); border: 1px solid var(--border); border-radius: var(--radius); transition: border-color .3s var(--ease), transform .3s var(--ease-out); isolation: isolate; }
@@ -272,36 +264,15 @@
         .threat .icon-tile { margin: 0; }
         .threat h3 { font-size: 1.06rem; margin-bottom: 4px; }
         .threat p { font-size: .92rem; color: var(--text-2); }
-        .threat .fix { margin-top: 10px; font-size: .86rem; color: var(--text-2); }
+        .threat .fix { margin-top: 2px; font-size: .86rem; color: var(--text-2); }
         .threat .fix strong { color: var(--green); }
 
-        /* compare */
-        .compare { margin-top: 70px; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border-radius: var(--radius-lg); overflow: hidden; border: 1px solid var(--border-strong); }
-        .compare > div { padding: 34px 32px; }
-        .compare .alone { background: rgba(255,255,255,.02); }
-        .compare .with { background: radial-gradient(ellipse 80% 70% at 100% 0%, rgba(108, 60, 225, 0.22), transparent 70%), var(--panel); border-left: 1px solid var(--border-strong); }
-        .compare h3 { font-size: 1.15rem; display: flex; align-items: center; gap: 10px; margin-bottom: 20px; }
-        .compare .alone h3 { color: var(--text-2); }
-        .compare ul { list-style: none; display: grid; gap: 14px; }
-        .compare li { display: flex; gap: 12px; font-size: .96rem; color: var(--text-2); }
-        .compare li i { margin-top: 5px; width: 16px; flex-shrink: 0; }
-        .compare .alone li i { color: var(--red); }
-        .compare .with li { color: var(--text); }
-        .compare .with li i { color: var(--green); }
-        .compare-brand { display: inline-flex; align-items: center; gap: 8px; }
-        .compare-brand .brand-mark { width: 26px; height: 26px; }
-        @media (max-width: 760px) { .compare { grid-template-columns: 1fr; } .compare .with { border-left: none; border-top: 1px solid var(--border-strong); } .compare > div { padding: 26px 22px; } }
-
-        /* ===== HOW IT WORKS ===== */
-        .steps3 { position: relative; display: grid; grid-template-columns: repeat(3, 1fr); gap: 22px; }
-        .steps3::before { content: ''; position: absolute; top: 42px; left: 16%; right: 16%; height: 2px; background: linear-gradient(90deg, rgba(108,60,225,.0), rgba(108,60,225,.6), rgba(30,144,255,.6), rgba(30,144,255,0)); }
-        .step3 { position: relative; padding: 30px 26px 28px; text-align: center; }
-        .step3 .n { position: relative; width: 84px; height: 84px; margin: -72px auto 18px; border-radius: 50%; display: grid; place-items: center; font-size: 1.6rem; color: #fff; background: radial-gradient(circle at 30% 25%, #8b6cff, var(--purple) 50%, #2b62d9); box-shadow: 0 0 0 8px var(--bg-2), 0 12px 40px rgba(108, 60, 225, .5); }
-        .step3 .n small { position: absolute; top: -2px; right: -2px; width: 26px; height: 26px; border-radius: 50%; background: #fff; color: var(--purple); font-size: .74rem; font-weight: 900; display: grid; place-items: center; }
-        .step3 h3 { font-size: 1.2rem; margin-bottom: 8px; letter-spacing: -0.01em; }
-        .step3 p { color: var(--text-2); font-size: .95rem; }
-        .steps3-wrap { padding-top: 46px; }
-        @media (max-width: 860px) { .steps3 { grid-template-columns: 1fr; gap: 64px; } .steps3::before { display: none; } }
+        /* trust row */
+        .trust { margin-top: 28px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+        .trust > div { display: flex; gap: 12px; align-items: flex-start; padding: 16px 18px; border-radius: 16px; background: var(--surface); border: 1px solid var(--border); font-size: .92rem; color: var(--text-2); }
+        .trust i { color: var(--purple-light); margin-top: 4px; }
+        .trust strong { color: var(--text); }
+        @media (max-width: 860px) { .trust { grid-template-columns: 1fr; gap: 10px; } .threat { padding: 16px; gap: 14px; } .stat-big { padding: 26px 22px; } }
 
         /* ===== CURRICULUM (tabs) ===== */
         .curr { display: grid; grid-template-columns: 340px 1fr; gap: 26px; align-items: start; }
@@ -349,80 +320,6 @@
             .curr-panel-head { flex-direction: column; align-items: flex-start; gap: 4px; }
         }
 
-        /* ===== SCANNER DEMO ===== */
-        .demo { display: grid; grid-template-columns: 1.15fr 0.85fr; gap: 28px; align-items: start; }
-        @media (max-width: 900px) { .demo { grid-template-columns: 1fr; } }
-        .demo-checks { display: grid; gap: 16px; }
-        .pillar-group { padding: 18px; }
-        .pillar-head { display: flex; justify-content: space-between; align-items: flex-start; margin-bottom: 10px; gap: 10px; }
-        .pillar-head h3 { display: flex; gap: 8px; font-size: 1rem; font-weight: 700; line-height: 1.35; }
-        .pillar-head h3 i { color: var(--purple-light); margin-top: 3px; }
-        .pillar-head .w { flex-shrink: 0; white-space: nowrap; font-size: .72rem; font-weight: 800; padding: 3px 10px; border-radius: 999px; letter-spacing: .06em; text-transform: uppercase; }
-        .w.high { background: rgba(108, 60, 225, 0.22); color: #c4b5fd; }
-        .w.med { background: rgba(30, 144, 255, 0.18); color: #93c5fd; }
-        .w.low { background: rgba(255, 255, 255, 0.08); color: var(--text-3); }
-        .check { display: flex; align-items: center; gap: 12px; padding: 9px 10px; border-radius: 10px; cursor: pointer; font-size: .9rem; color: var(--text-2); transition: background .2s; }
-        .check:hover { background: rgba(255, 255, 255, 0.04); }
-        .check input { appearance: none; -webkit-appearance: none; width: 20px; height: 20px; flex-shrink: 0; border-radius: 6px; border: 2px solid var(--border-strong); display: grid; place-items: center; transition: all .15s; cursor: pointer; }
-        .check input:checked { background: var(--grad); border-color: transparent; }
-        .check input:checked::after { content: '✓'; color: #fff; font-size: .75rem; font-weight: 800; }
-        .check input:checked + span { color: var(--text); }
-        .ring { --p: 0; width: 84px; height: 84px; border-radius: 50%; flex-shrink: 0; display: grid; place-items: center; background: conic-gradient(var(--purple-light) calc(var(--p) * 1%), rgba(255, 255, 255, 0.08) 0); position: relative; }
-        .ring::before { content: ''; position: absolute; inset: 8px; border-radius: 50%; background: #13132a; }
-        .ring strong { position: relative; font-size: 1.3rem; font-weight: 800; }
-        .demo-result { position: sticky; top: 96px; background: linear-gradient(160deg, rgba(108, 60, 225, 0.14), rgba(30, 144, 255, 0.05)); border: 1px solid rgba(108, 60, 225, 0.32); border-radius: var(--radius-lg); padding: 30px; text-align: center; }
-        .demo-result .ring { width: 160px; height: 160px; margin: 6px auto 16px; transition: background .4s; box-shadow: 0 0 60px rgba(124, 92, 255, .25); }
-        .demo-result .ring::before { inset: 12px; background: #15132c; }
-        .demo-result .ring strong { font-size: 2.3rem; }
-        .demo-verdict { font-weight: 700; font-size: 1.05rem; margin-bottom: 6px; min-height: 1.6em; }
-        .demo-verdict.high { color: var(--green); } .demo-verdict.medium { color: var(--amber); } .demo-verdict.low { color: var(--red); }
-        .demo-math { font-size: .84rem; color: var(--text-3); margin-bottom: 18px; }
-        .demo-bars { display: grid; gap: 10px; text-align: left; margin-bottom: 20px; }
-        .demo-bar label { display: flex; justify-content: space-between; font-size: .8rem; color: var(--text-2); margin-bottom: 4px; }
-        .demo-bar .track { height: 7px; border-radius: 99px; background: rgba(255, 255, 255, 0.07); overflow: hidden; }
-        .demo-bar .fill { height: 100%; border-radius: 99px; background: var(--grad); transition: width .4s var(--ease); }
-        .demo-note { font-size: .78rem; color: var(--text-3); line-height: 1.5; }
-
-        /* ===== FREE RULES ===== */
-        .rules { display: grid; grid-template-columns: repeat(2, 1fr); gap: 16px; counter-reset: rule; }
-        .rule { display: grid; grid-template-columns: 52px 1fr; gap: 18px; align-items: start; padding: 24px; }
-        .rule:last-child { grid-column: 1 / -1; }
-        .rule::after { counter-increment: rule; content: counter(rule, decimal-leading-zero); position: absolute; top: 22px; left: 24px; width: 52px; height: 52px; border-radius: 14px; display: grid; place-items: center; font-weight: 800; font-size: 1.05rem; background: rgba(52, 211, 153, 0.1); color: var(--green); border: 1px solid rgba(52, 211, 153, 0.28); }
-        .rule > div { grid-column: 2; }
-        .rule h3 { font-size: 1.04rem; margin-bottom: 6px; line-height: 1.35; }
-        .rule p { color: var(--text-2); font-size: .92rem; }
-        @media (max-width: 760px) { .rules { grid-template-columns: 1fr; } .rule { grid-template-columns: 1fr; padding: 82px 20px 20px; } .rule > div { grid-column: 1; } .rule::after { top: 20px; left: 20px; } }
-        .rules-cta { text-align: center; margin-top: 40px; }
-        .rules-cta p { color: var(--text-2); margin-bottom: 18px; font-size: 1.04rem; }
-
-        /* ===== WHY (bento) ===== */
-        .bento { display: grid; grid-template-columns: repeat(6, 1fr); gap: 16px; }
-        .bento .spot { padding: 28px; }
-        .bento h3 { font-size: 1.14rem; margin-bottom: 8px; letter-spacing: -0.01em; }
-        .bento p { color: var(--text-2); font-size: .94rem; }
-        .b-a { grid-column: span 4; }
-        .b-b { grid-column: span 2; }
-        .b-c, .b-d, .b-e { grid-column: span 2; }
-        .b-f { grid-column: span 6; }
-        .b-a { background: radial-gradient(ellipse 60% 80% at 100% 0%, rgba(108, 60, 225, 0.22), transparent 70%), var(--surface); }
-        .b-a .quote { margin-top: 18px; padding: 16px 18px; border-left: 3px solid var(--purple-light); border-radius: 0 12px 12px 0; background: rgba(255,255,255,.03); font-size: .95rem; color: var(--text); }
-        .b-f { display: grid; grid-template-columns: auto 1fr auto; gap: 24px; align-items: center; background: radial-gradient(ellipse 50% 120% at 0% 50%, rgba(52, 211, 153, 0.12), transparent 70%), var(--surface); border-color: rgba(52, 211, 153, .25); }
-        .seal { width: 64px; height: 64px; border-radius: 50%; display: grid; place-items: center; font-size: 1.5rem; color: var(--green); background: rgba(52, 211, 153, 0.12); border: 1px solid rgba(52, 211, 153, 0.35); box-shadow: 0 0 0 6px rgba(52, 211, 153, .05); }
-        .b-f h3 { margin-bottom: 4px; }
-        @media (max-width: 900px) { .b-a, .b-b, .b-c, .b-d, .b-e { grid-column: span 6; } .b-f { grid-template-columns: auto 1fr; } .b-f .btn { grid-column: 1 / -1; } }
-        @media (max-width: 900px) and (min-width: 600px) { .b-c, .b-d { grid-column: span 3; } }
-
-        /* ===== FIT ===== */
-        .fit { display: grid; grid-template-columns: 1fr 1fr; gap: 18px; max-width: 960px; margin: 0 auto; }
-        @media (max-width: 760px) { .fit { grid-template-columns: 1fr; } }
-        .fit .spot { padding: 28px; }
-        .fit h3 { font-size: 1.12rem; }
-        .fit ul { list-style: none; display: grid; gap: 12px; margin-top: 16px; }
-        .fit li { display: flex; gap: 12px; font-size: .95rem; color: var(--text-2); }
-        .fit li i { margin-top: 4px; }
-        .fit .yes i { color: var(--green); }
-        .fit .no i { color: var(--red); }
-
         /* ===== ENROLL (no price here: it's revealed on the next page) ===== */
         .enroll { position: relative; border-radius: 30px; padding: 2px; background: linear-gradient(var(--angle, 140deg), #ffd34d, rgba(108, 60, 225, 0.95) 35%, rgba(30, 144, 255, 0.85) 70%, #ffd34d); box-shadow: 0 40px 120px rgba(108, 60, 225, 0.25); }
         .enroll-inner { position: relative; overflow: hidden; border-radius: 28px; padding: 56px; display: grid; grid-template-columns: 1.1fr 0.9fr; gap: 48px; align-items: center; background: radial-gradient(ellipse 60% 70% at 0% 0%, rgba(108, 60, 225, 0.28), transparent 70%), radial-gradient(ellipse 50% 60% at 100% 100%, rgba(30, 144, 255, 0.18), transparent 70%), #10102a; }
@@ -454,8 +351,12 @@
 
         /* ===== FINAL ===== */
         .final { text-align: center; position: relative; overflow: hidden; }
-        .final h2 { font-size: clamp(2.2rem, 5vw, 3.6rem); font-weight: 800; letter-spacing: -0.032em; line-height: 1.05; margin-bottom: 18px; }
+        .final h2 { font-size: clamp(2rem, 4.2vw, 3.1rem); font-weight: 800; letter-spacing: -0.032em; line-height: 1.05; margin-bottom: 18px; }
         .final p { color: var(--text-2); max-width: 560px; margin: 0 auto 32px; font-size: 1.08rem; }
+        .final .kicker { justify-content: center; }
+        .scanner-copy { max-width: 640px; margin: 0 auto 30px; text-align: left; }
+        .scanner-copy p { max-width: none; margin: 0 0 14px; font-size: 1.04rem; }
+        .scanner-copy .scanner-note { font-size: .86rem; color: var(--text-3); margin-bottom: 0; }
         .final-planet { width: 120px; height: 120px; margin: 0 auto 26px; background: url(icons/logo.svg) center / contain no-repeat; filter: drop-shadow(0 0 40px rgba(108, 60, 225, .8)); animation: bob2 7s ease-in-out infinite; }
 
         /* ===== FOOTER ===== */
@@ -520,7 +421,7 @@
 
         @media (prefers-reduced-motion: reduce) {
             *, *::before, *::after { animation: none !important; transition: none !important; scroll-behavior: auto !important; }
-            .reveal, .fade-up, .curr-list li { opacity: 1; transform: none; }
+            .reveal, .fade-up, .curr-list li, .outcomes li { opacity: 1; transform: none; }
             .hero h1 .line > span { transform: none; }
         }
     </style>
@@ -544,11 +445,10 @@
         <div class="container nav-inner">
             <a href="#top" class="brand" aria-label="PlutoScan home"><span class="brand-mark" aria-hidden="true"></span>PlutoScan</a>
             <nav class="nav-links" aria-label="Sections">
-                <a href="#how">How it works</a>
-                <a href="#curriculum">Curriculum</a>
-                <a href="#scanner">Scanner</a>
-                <a href="#why">Why PlutoScan</a>
+                <a href="#curriculum">What's inside</a>
+                <a href="#why">Why it matters</a>
                 <a href="#faq">FAQ</a>
+                <a href="#scanner">Scanner</a>
             </nav>
             <div class="nav-actions">
                 <span class="nav-user hidden" id="navUser"></span>
@@ -570,7 +470,7 @@
             <div class="container hero-inner">
                 <div>
                     <h1><span class="line"><span>Learn crypto</span></span><span class="line"><span class="text-gradient">the safe way.</span></span></h1>
-                    <p class="hero-sub fade-up d1">A step-by-step video course that takes you from <strong>"what is a blockchain?"</strong> to researching a real coin with live data. In plain English. No hype, no coin tips, no guesswork.</p>
+                    <p class="hero-sub fade-up d1">A step-by-step video course that takes you from <strong>"what is a blockchain?"</strong> to researching a real coin. In plain English. No hype, no coin tips.</p>
                     <div class="hero-ctas fade-up d2">
                         <button type="button" class="btn btn-primary btn-lg js-buy"><span class="js-cta-label">Start learning</span> <i class="fas fa-arrow-right"></i></button>
                         <a href="#curriculum" class="btn-quiet">See what you'll learn <i class="fas fa-arrow-down"></i></a>
@@ -578,7 +478,7 @@
                     <div class="hero-proof fade-up d3">
                         <div><strong>18</strong><span>video lessons</span></div>
                         <div><strong>5</strong><span>guided phases</span></div>
-                        <div><strong>12-pt</strong><span>live Scanner</span></div>
+                        <div><strong>110</strong><span>quiz questions</span></div>
                         <div><strong>14-day</strong><span>refund</span></div>
                     </div>
                 </div>
@@ -603,23 +503,38 @@
                         </div>
                     </div>
                     <div class="float f1"><div class="fi"><i class="fas fa-circle-check"></i></div><div><strong>Knowledge check passed</strong><span>Explanations for every answer</span></div></div>
-                    <div class="float f2"><div class="mini-ring"><b>82%</b></div><div><strong>Research Scanner</strong><span>Example score · illustrative</span></div></div>
                 </div>
             </div>
         </section>
 
-        <!-- ===== TOPICS MARQUEE ===== -->
-        <div class="marquee" aria-label="Topics covered in the course">
-            <div class="marquee-track" id="marquee"></div>
-        </div>
-
-        <!-- ===== PROBLEM ===== -->
-        <section class="section">
+        <!-- ===== WHAT'S INSIDE (curriculum first) ===== -->
+        <section class="section" id="curriculum">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="kicker">The reality</span>
+                    <span class="kicker">What's inside</span>
+                    <h2>18 lessons. Five phases. <span class="text-gradient">Zero to confident.</span></h2>
+                    <p>Every lesson is a short video, a plain-English written guide and a quick quiz. Each one unlocks the next, so you learn in the right order.</p>
+                </div>
+                <div class="curr reveal">
+                    <div class="curr-tabs" id="currTabs" role="tablist" aria-label="Course phases"></div>
+                    <div class="curr-panel" id="currPanel" role="tabpanel"></div>
+                </div>
+                <div class="curr-foot reveal">
+                    <span><i class="fas fa-film"></i> A video in every lesson</span>
+                    <span><i class="fas fa-list-check"></i> Quizzes that explain every answer</span>
+                    <span><i class="fas fa-book-open"></i> Tap-to-define glossary</span>
+                    <span><i class="fas fa-mobile-screen"></i> Phone and desktop</span>
+                </div>
+            </div>
+        </section>
+
+        <!-- ===== WHY IT MATTERS ===== -->
+        <section class="section alt" id="why">
+            <div class="container">
+                <div class="section-head reveal">
+                    <span class="kicker">Why it matters</span>
                     <h2>Crypto has no undo button.</h2>
-                    <p>No bank to call. No chargebacks. Most beginners who lose money make one of three avoidable mistakes. PlutoScan teaches you to spot every one before it costs you.</p>
+                    <p>No bank to call. No chargebacks. PlutoScan teaches you the three mistakes that cost beginners the most, before they cost you.</p>
                 </div>
                 <div class="problem-grid">
                     <div class="stat-big reveal">
@@ -631,198 +546,22 @@
                     <div class="threats">
                         <div class="threat spot reveal" style="--d:.05s">
                             <div class="icon-tile red"><i class="fas fa-user-secret"></i></div>
-                            <div><h3>Falling for a scam</h3><p>Fake support DMs, cloned wallet sites, "double your crypto" giveaways and slow-burn investment scams.</p><div class="fix"><strong>You'll learn:</strong> the scripts scammers use and the red flags that expose them.</div></div>
+                            <div><h3>Falling for a scam</h3><div class="fix"><strong>You'll learn:</strong> the scripts scammers use and the red flags that expose them.</div></div>
                         </div>
                         <div class="threat spot reveal" style="--d:.12s">
                             <div class="icon-tile red"><i class="fas fa-key"></i></div>
-                            <div><h3>Losing access or funds</h3><p>A screenshotted seed phrase, a send on the wrong network, a look-alike address. One slip and it's gone.</p><div class="fix"><strong>You'll learn:</strong> safe wallet setup, seed backup and a pre-send checklist.</div></div>
+                            <div><h3>Losing access or funds</h3><div class="fix"><strong>You'll learn:</strong> safe wallet setup, seed backup and a pre-send checklist.</div></div>
                         </div>
                         <div class="threat spot reveal" style="--d:.19s">
                             <div class="icon-tile red"><i class="fas fa-fire"></i></div>
-                            <div><h3>Buying the hype</h3><p>FOMO buys at the top, "cheap" coins with huge hidden supply, markets too thin to sell.</p><div class="fix"><strong>You'll learn:</strong> to read market cap, FDV, volume and supply like a researcher.</div></div>
+                            <div><h3>Buying the hype</h3><div class="fix"><strong>You'll learn:</strong> to read market cap, FDV, volume and supply like a researcher.</div></div>
                         </div>
                     </div>
                 </div>
-
-                <div class="compare reveal">
-                    <div class="alone">
-                        <h3><i class="fas fa-shuffle"></i> Figuring it out alone</h3>
-                        <ul>
-                            <li><i class="fas fa-xmark"></i>Random videos and threads, in no particular order</li>
-                            <li><i class="fas fa-xmark"></i>Advice from people who may be promoting a coin</li>
-                            <li><i class="fas fa-xmark"></i>Jargon nobody stops to explain</li>
-                            <li><i class="fas fa-xmark"></i>No way to check you actually understood</li>
-                            <li><i class="fas fa-xmark"></i>Learning from your own expensive mistakes</li>
-                        </ul>
-                    </div>
-                    <div class="with">
-                        <h3><span class="compare-brand"><span class="brand-mark" aria-hidden="true"></span> Learning with PlutoScan</span></h3>
-                        <ul>
-                            <li><i class="fas fa-check"></i>18 lessons in the right order, each unlocking the next</li>
-                            <li><i class="fas fa-check"></i>Education only. We never tell you what to buy</li>
-                            <li><i class="fas fa-check"></i>Plain English, with a tap-to-define glossary</li>
-                            <li><i class="fas fa-check"></i>Knowledge checks with an explanation for every answer</li>
-                            <li><i class="fas fa-check"></i>Learn the safety habits before you risk a dollar</li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== HOW IT WORKS ===== -->
-        <section class="section alt" id="how">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="kicker">How it works</span>
-                    <h2>Watch it. Prove it. <span class="text-gradient">Use it.</span></h2>
-                    <p>Every lesson follows the same simple loop, so new ideas actually stick.</p>
-                </div>
-                <div class="steps3-wrap">
-                    <div class="steps3">
-                        <div class="step3 spot reveal" style="--d:.05s"><div class="n"><i class="fas fa-play"></i><small>1</small></div><h3>Watch a short video</h3><p>Each lesson opens with a narrated video, then a plain-English written guide with real examples and beginner mistakes to avoid.</p></div>
-                        <div class="step3 spot reveal" style="--d:.15s"><div class="n"><i class="fas fa-brain"></i><small>2</small></div><h3>Prove you've got it</h3><p>Short scenario quizzes after each section. Every answer comes with an explanation, so wrong answers still teach you something.</p></div>
-                        <div class="step3 spot reveal" style="--d:.25s"><div class="n"><i class="fas fa-satellite-dish"></i><small>3</small></div><h3>Apply it to live data</h3><p>Use the Research Scanner and live data widget to check real coins with the exact skills you just learned.</p></div>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== CURRICULUM ===== -->
-        <section class="section" id="curriculum">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="kicker">The curriculum</span>
-                    <h2>From zero to confident, in five phases</h2>
-                    <p>Every lesson has one job: give you a skill that protects your money. Pick a phase to see what you'll be able to do.</p>
-                </div>
-                <div class="curr reveal">
-                    <div class="curr-tabs" id="currTabs" role="tablist" aria-label="Course phases"></div>
-                    <div class="curr-panel" id="currPanel" role="tabpanel"></div>
-                </div>
-                <div class="curr-foot reveal">
-                    <span><i class="fas fa-film"></i> A video in every lesson</span>
-                    <span><i class="fas fa-list-check"></i> Quizzes with explanations</span>
-                    <span><i class="fas fa-mobile-screen"></i> Works on phone and desktop</span>
-                    <span><i class="fas fa-cloud"></i> Progress saved to your account</span>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== SCANNER DEMO ===== -->
-        <section class="section alt" id="scanner">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="kicker">Try it right now</span>
-                    <h2>The 12-point <span class="text-gradient">Research Framework</span></h2>
-                    <p>This is the scoring system inside the Scanner. Tick the checks a coin passes and watch the weighted score change. Inside the course, Auto-Fill does the data checks for you with live numbers.</p>
-                </div>
-                <div class="demo reveal">
-                    <div class="demo-checks" id="demoChecks"></div>
-                    <div class="demo-result" aria-live="polite">
-                        <div class="ring" id="demoRing" style="--p:0"><strong id="demoPct">0%</strong></div>
-                        <div class="demo-verdict" id="demoVerdict">Tick a check to start</div>
-                        <div class="demo-math" id="demoMath">0 of 14 weighted points</div>
-                        <div class="demo-bars" id="demoBars"></div>
-                        <p class="demo-note">Educational research-readiness score only. Not financial advice and never a buy or sell signal.</p>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== FREE LESSON ===== -->
-        <section class="section" id="free-lesson">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="kicker">Free mini-lesson</span>
-                    <h2>5 survival rules every beginner needs</h2>
-                    <p>Before you buy anything, from anyone, learn these. They're free. The full course shows you how to apply them.</p>
-                </div>
-                <div class="rules">
-                    <div class="rule spot reveal"><div><h3>Your seed phrase is the money. Never share it, never digitise it.</h3><p>Whoever has your 12 or 24 recovery words controls your funds. No real support team, exchange or wallet will ever ask for them. Write them on paper, store them offline, and never type them into a website, a chat or a "wallet sync" tool.</p></div></div>
-                    <div class="rule spot reveal" style="--d:.08s"><div><h3>Check the whole address, then send a test first.</h3><p>Scammers create look-alike addresses that match the first and last characters of ones you use, then plant them in your history ("address poisoning"). Never copy addresses from your history. Check the middle characters too, and send a small test before any large transfer.</p></div></div>
-                    <div class="rule spot reveal"><div><h3>"Send first, get double back" is always a scam.</h3><p>No legitimate giveaway, celebrity or exchange will ever ask you to send crypto to receive more. Urgency, secrecy and guaranteed returns together are the signature of a scam, every time.</p></div></div>
-                    <div class="rule spot reveal" style="--d:.08s"><div><h3>Compare market caps, not prices.</h3><p>A $0.001 coin isn't cheap and a $50 coin isn't expensive. Price × supply = market cap, and that's the real size. Before believing "this coin will hit $1," multiply $1 by the supply and see if the answer is even possible.</p></div></div>
-                    <div class="rule spot reveal"><div><h3>Only invest what you can afford to lose, and never in the same hour as FOMO.</h3><p>Even the largest coins have fallen 75% or more from their peaks, more than once. Size your positions so a drop like that can't hurt your rent, bills or savings, and treat strong emotion as a signal to pause.</p></div></div>
-                </div>
-                <div class="rules-cta reveal">
-                    <p>That's 5 rules. The full course gives you the whole system: 18 video lessons and a live Scanner.</p>
-                    <button type="button" class="btn btn-primary js-buy"><span class="js-cta-label">Get the full course</span> <i class="fas fa-arrow-right"></i></button>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== WHY PLUTOSCAN ===== -->
-        <section class="section alt" id="why">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="kicker">Why PlutoScan</span>
-                    <h2>A guide on your side, <span class="text-gradient">not a sales pitch</span></h2>
-                    <p>Most crypto "education" is trying to sell you a coin. PlutoScan only teaches you how to think for yourself.</p>
-                </div>
-                <div class="bento">
-                    <div class="spot b-a reveal">
-                        <div class="icon-tile"><i class="fas fa-scale-balanced"></i></div>
-                        <h3>No hype. No signals. No coins to buy.</h3>
-                        <p>We don't recommend coins and we don't give buy or sell calls. That means nobody here benefits from you buying anything except the course itself.</p>
-                        <div class="quote">Our goal isn't to make you rich fast. It's to help you avoid losing money to a mistake you didn't see coming.</div>
-                    </div>
-                    <div class="spot b-b reveal" style="--d:.08s">
-                        <div class="icon-tile"><i class="fas fa-route"></i></div>
-                        <h3>Built in the right order</h3>
-                        <p>Each lesson unlocks the next, so you never get lost or skip the part that keeps you safe.</p>
-                    </div>
-                    <div class="spot b-c reveal">
-                        <div class="icon-tile"><i class="fas fa-book-open"></i></div>
-                        <h3>Plain English</h3>
-                        <p>Every technical term is tappable, right where you read it. No more nodding along to "FDV" or "gwei."</p>
-                    </div>
-                    <div class="spot b-d reveal" style="--d:.08s">
-                        <div class="icon-tile"><i class="fas fa-toolbox"></i></div>
-                        <h3>Tools, not just theory</h3>
-                        <p>A live Research Scanner, data widget and watchlist, included with the course.</p>
-                    </div>
-                    <div class="spot b-e reveal" style="--d:.16s">
-                        <div class="icon-tile"><i class="fas fa-infinity"></i></div>
-                        <h3>Yours for life</h3>
-                        <p>One payment, no subscription. Every future update to the course and Scanner is included.</p>
-                    </div>
-                    <div class="spot b-f reveal">
-                        <div class="seal" aria-hidden="true"><i class="fas fa-shield-halved"></i></div>
-                        <div>
-                            <h3>Try it for 14 days, risk-free</h3>
-                            <p>Not for you? Email us within 14 days of buying. If you've completed 4 or fewer of the 18 lessons, you get a full refund. <a href="refunds.html">Refund Policy</a></p>
-                        </div>
-                        <button type="button" class="btn btn-ghost js-buy"><span class="js-cta-label">Start learning</span></button>
-                    </div>
-                </div>
-            </div>
-        </section>
-
-        <!-- ===== FIT ===== -->
-        <section class="section">
-            <div class="container">
-                <div class="section-head reveal">
-                    <span class="kicker">Is it right for you?</span>
-                    <h2>Built for careful beginners</h2>
-                </div>
-                <div class="fit">
-                    <div class="spot yes reveal">
-                        <h3>PlutoScan is for you if…</h3>
-                        <ul>
-                            <li><i class="fas fa-check"></i>You're new to crypto, or you've bought some without really knowing what you own.</li>
-                            <li><i class="fas fa-check"></i>You want to set up a wallet and send funds without making a costly mistake.</li>
-                            <li><i class="fas fa-check"></i>You want to recognise scams before they reach you.</li>
-                            <li><i class="fas fa-check"></i>You want a repeatable way to research a coin instead of trusting influencers.</li>
-                        </ul>
-                    </div>
-                    <div class="spot no reveal" style="--d:.08s">
-                        <h3>It's not for you if…</h3>
-                        <ul>
-                            <li><i class="fas fa-xmark"></i>You want trading signals or "coins to buy." We don't give financial advice.</li>
-                            <li><i class="fas fa-xmark"></i>You're looking for get-rich-quick strategies or leverage trading.</li>
-                            <li><i class="fas fa-xmark"></i>You're already an experienced on-chain researcher.</li>
-                        </ul>
-                    </div>
+                <div class="trust reveal">
+                    <div><i class="fas fa-scale-balanced"></i><span><strong>No hype, no signals.</strong> We never tell you what to buy.</span></div>
+                    <div><i class="fas fa-seedling"></i><span><strong>Made for beginners.</strong> Not for traders chasing quick wins.</span></div>
+                    <div><i class="fas fa-infinity"></i><span><strong>Pay once.</strong> No subscription, yours for life.</span></div>
                 </div>
             </div>
         </section>
@@ -830,20 +569,18 @@
         <!-- Real customer reviews can go here once collected (end-of-course reviews are saved to Firebase under users/{uid}/review). -->
 
         <!-- ===== ENROLL (price is shown on checkout.html, not here) ===== -->
-        <section class="section" id="enroll" style="padding-top:20px">
+        <section class="section" id="enroll">
             <div class="container">
                 <div class="enroll reveal" id="enrollCard">
                     <div class="enroll-inner">
                         <div>
                             <span class="kicker">Full access</span>
                             <h2>Your guide through crypto <span class="text-gradient">starts here.</span></h2>
-                            <p class="lead">Everything you need to go from total beginner to confident researcher, in one place.</p>
                             <ul>
                                 <li><i class="fas fa-check"></i>All 18 video lessons, with written guides</li>
                                 <li><i class="fas fa-check"></i>Knowledge checks with an explanation for every answer</li>
-                                <li><i class="fas fa-check"></i>Live 12-point Research Scanner with Auto-Fill</li>
-                                <li><i class="fas fa-check"></i>Live data widget and personal watchlist</li>
                                 <li><i class="fas fa-check"></i>Built-in glossary of 120+ terms</li>
+                                <li><i class="fas fa-check"></i>The Research Scanner, data widget and watchlist</li>
                                 <li><i class="fas fa-check"></i>Lifetime access, including all future updates</li>
                             </ul>
                         </div>
@@ -853,7 +590,7 @@
                             <p>See everything included and your price on the next page. Nothing is charged until you confirm on Stripe.</p>
                             <button type="button" class="btn btn-primary btn-lg btn-block js-buy"><span class="js-cta-label">Unlock full access</span> <i class="fas fa-arrow-right"></i></button>
                             <p class="micro"><i class="fas fa-shield-halved"></i>&nbsp; 14-day refund · one-time payment · no subscription</p>
-                            <div class="enroll-badges"><span><i class="fas fa-lock"></i> Secure checkout by Stripe</span><span><i class="fas fa-mobile-screen"></i> Any device</span></div>
+                            <p class="micro" style="margin-top:6px">Done 4 or fewer of the 18 lessons? Email us within 14 days for a full refund. <a href="refunds.html">Refund Policy</a></p>
                         </div>
                     </div>
                 </div>
@@ -865,28 +602,29 @@
             <div class="container">
                 <div class="section-head reveal">
                     <span class="kicker">Questions</span>
-                    <h2>Frequently asked questions</h2>
+                    <h2>Quick answers</h2>
                 </div>
                 <div class="faq reveal">
-                    <details open><summary>Do I need any crypto experience?</summary><div class="a">None. Lesson 1 starts from zero and each lesson unlocks only after the one before it, so you learn everything in the right order.</div></details>
-                    <details><summary>Do I need to buy crypto to take the course?</summary><div class="a">No. You can complete every lesson and use the Research Scanner without owning any crypto. The course is designed so you learn the safety habits <em>before</em> you put money in.</div></details>
-                    <details><summary>Is this financial advice? Will you tell me what to buy?</summary><div class="a">No. PlutoScan is education. We never recommend coins or give buy/sell signals. The Scanner produces a research-readiness score from public data. It's a structured starting point for your own research, not a recommendation.</div></details>
-                    <details><summary>How is this different from free videos or CoinGecko?</summary><div class="a">Free content is scattered and often comes from people promoting a coin. CoinGecko gives you raw numbers. PlutoScan puts the essentials in the right order, explains what the numbers mean and which ones are red flags, checks you understood, then automates the data checks with the Scanner so your research becomes a repeatable habit.</div></details>
-                    <details><summary>How long does it take?</summary><div class="a">It's fully self-paced. Lessons are short and focused, so you can do one in a coffee break or several in an evening. Your progress is saved to your account.</div></details>
-                    <details><summary>What does "lifetime access" include?</summary><div class="a">One payment gives you permanent access to all lessons, the Research Scanner, the data widget, the glossary and any future updates to the course or Scanner. No subscriptions, no recurring charges.</div></details>
-                    <details><summary>Can I use it on my phone?</summary><div class="a">Yes. PlutoScan works in any modern browser on desktop, tablet and mobile. Log in on any device to pick up where you left off.</div></details>
+                    <details><summary>Do I need any crypto experience?</summary><div class="a">None. Lesson 1 starts from zero and each lesson unlocks only after the one before it, so you learn everything in the right order.</div></details>
+                    <details><summary>Do I need to buy crypto to take the course?</summary><div class="a">No. You can complete every lesson without owning any crypto. The course is designed so you learn the safety habits <em>before</em> you put money in.</div></details>
+                    <details><summary>Is this financial advice? Will you tell me what to buy?</summary><div class="a">No. PlutoScan is education. We never recommend coins or give buy/sell signals.</div></details>
+                    <details><summary>How long does it take?</summary><div class="a">It's fully self-paced. Lessons are short and focused, so you can do one in a coffee break or several in an evening. Your progress is saved to your account, on any device.</div></details>
                     <details><summary>Can I get a refund?</summary><div class="a">Yes. If you've completed fewer than 25% of the course (4 or fewer of the 18 lessons), email <a href="mailto:support@plutoscan.com?subject=Refund%20request">support@plutoscan.com</a> within 14 days of purchase for a full refund. See the <a href="refunds.html">Refund Policy</a> for details.</div></details>
-                    <details><summary>Is checkout secure?</summary><div class="a">Yes. Payments are handled by Stripe's secure checkout. PlutoScan never sees or stores your card details. You'll review your order and create a free account first so your purchase is tied to you.</div></details>
+                    <details><summary>Is checkout secure?</summary><div class="a">Yes. Payments are handled by Stripe's secure checkout. PlutoScan never sees or stores your card details.</div></details>
                 </div>
             </div>
         </section>
 
-        <!-- ===== FINAL CTA ===== -->
-        <section class="section final">
+        <!-- ===== THE SCANNER: introduced last, text only ===== -->
+        <section class="section final" id="scanner">
             <div class="container">
-                <div class="final-planet reveal" aria-hidden="true"></div>
-                <h2 class="reveal">Stop guessing. <span class="text-gradient">Start learning.</span></h2>
-                <p class="reveal">The safest time to learn crypto is before you need it. Start Lesson 1 today.</p>
+                <span class="kicker reveal">One more thing</span>
+                <h2 class="reveal">Research any coin yourself, <span class="text-gradient">fast.</span></h2>
+                <div class="scanner-copy reveal">
+                    <p>Researching a coin usually means an evening of tabs: market cap, trading volume, supply, exchange listings, developer activity. Your PlutoScan account includes a <strong>Research Scanner</strong> that does that legwork for you.</p>
+                    <p>Pick a coin and tap <strong>Auto-Fill</strong>. It pulls live market data from CoinGecko and answers 9 of the 12 checks you learn in the course. You make the last 3 calls yourself, and the Scanner shows a simple research score plus what to look into next.</p>
+                    <p class="scanner-note">A starting point for your own research, never a buy or sell signal.</p>
+                </div>
                 <div class="reveal"><button type="button" class="btn btn-primary btn-lg js-buy"><span class="js-cta-label">Start learning</span> <i class="fas fa-arrow-right"></i></button></div>
             </div>
         </section>
@@ -982,20 +720,6 @@
                     'Finish with your own pre-buy safety checklist'] },
             ];
 
-            const TOPICS = [
-                ['fa-shield-halved', 'Keep your money safe'], ['fa-wallet', 'Set up a wallet the right way'], ['fa-user-secret', 'Spot scams early'],
-                ['fa-paper-plane', 'Send crypto without fear'], ['fa-brain', 'Decide calmly, not on hype'], ['fa-magnifying-glass-chart', 'Read market data'],
-                ['fa-satellite-dish', 'Research any coin'], ['fa-list-check', 'Follow a pre-buy checklist'], ['fa-graduation-cap', 'Learn in the right order'],
-                ['fa-language', 'Plain English, no jargon'],
-            ];
-
-            // Same checks and weights as the Scanner inside the course.
-            const PILLARS = [
-                { key: 'safety', name: 'Security & Stability', icon: 'fa-shield-halved', weight: 1.5, tag: 'high', label: '×1.5 weight', checks: ['Market cap over $1B', '24h volume over $50M', 'Max supply known', 'Listed on more than 5 exchanges', 'FDV within 3× of market cap'] },
-                { key: 'fundamental', name: 'Fundamentals', icon: 'fa-cubes', weight: 1.0, tag: 'med', label: '×1.0 weight', checks: ['Clear, real use case', 'Active open-source development', 'Published roadmap', 'Identifiable, credible team', 'Top 250 by market cap'] },
-                { key: 'sentiment', name: 'Community & Momentum', icon: 'fa-users', weight: 0.75, tag: 'low', label: '×0.75 weight', checks: ['Active community', '30-day price move under 40%'] },
-            ];
-            const DEMO_DEFAULT = { safety: [0, 1, 2, 3], fundamental: [0, 1, 4], sentiment: [0] };
             const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
 
             // ---------- Loader ----------
@@ -1240,42 +964,6 @@
                 show(0);
             }
 
-            function renderMarquee() {
-                const items = TOPICS.map(([ic, t]) => `<span><i class="fas ${ic}"></i>${t}</span>`).join('');
-                $('marquee').innerHTML = items + items.replace(/<span>/g, '<span aria-hidden="true">');
-            }
-
-            // ---------- Render: scanner demo ----------
-            function renderDemo() {
-                $('demoChecks').innerHTML = PILLARS.map((p) => `
-                    <div class="pillar-group spot">
-                        <div class="pillar-head"><h3><i class="fas ${p.icon}" aria-hidden="true"></i>${p.name}</h3><span class="w ${p.tag}">${p.label}</span></div>
-                        ${p.checks.map((c, i) => `<label class="check"><input type="checkbox" data-pillar="${p.key}" data-i="${i}" ${DEMO_DEFAULT[p.key].includes(i) ? 'checked' : ''}><span>${c}</span></label>`).join('')}
-                    </div>`).join('');
-                $('demoChecks').addEventListener('change', updateDemo);
-                updateDemo();
-            }
-            function updateDemo() {
-                let total = 0, max = 0;
-                const bars = PILLARS.map((p) => {
-                    const ticked = document.querySelectorAll(`#demoChecks input[data-pillar="${p.key}"]:checked`).length;
-                    total += ticked * p.weight;
-                    max += p.checks.length * p.weight;
-                    const pct = Math.round((ticked / p.checks.length) * 100);
-                    return `<div class="demo-bar"><label><span>${p.name}</span><span>${ticked}/${p.checks.length}</span></label><div class="track"><div class="fill" style="width:${pct}%"></div></div></div>`;
-                }).join('');
-                const pct = max ? Math.round((total / max) * 100) : 0;
-                $('demoRing').style.setProperty('--p', pct);
-                $('demoPct').textContent = pct + '%';
-                $('demoMath').textContent = `${+total.toFixed(2)} of ${max} weighted points`;
-                const v = $('demoVerdict');
-                if (total === 0) { v.textContent = 'Tick a check to start'; v.className = 'demo-verdict'; }
-                else if (pct >= 80) { v.textContent = 'Well-Researched'; v.className = 'demo-verdict high'; }
-                else if (pct >= 60) { v.textContent = 'Partially Researched'; v.className = 'demo-verdict medium'; }
-                else { v.textContent = 'Early-Stage Research'; v.className = 'demo-verdict low'; }
-                $('demoBars').innerHTML = bars;
-            }
-
             // ---------- Effects ----------
             // Starfield with gentle drift and parallax.
             function setupSpace() {
@@ -1380,9 +1068,7 @@
 
             function init() {
                 $('year').textContent = new Date().getFullYear();
-                renderMarquee();
                 renderCurriculum();
-                renderDemo();
                 setupSpace();
                 setupTilt();
                 setupSpotlight();
