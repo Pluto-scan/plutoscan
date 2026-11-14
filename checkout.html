@@ -475,7 +475,7 @@
                     window.plutoscanAuth.report('checkout', { step: 'failed', reason: err && err.message });
                     hideLoader();
                     setStep(1);
-                    $('continueLabel').textContent = 'Try again: continue to secure checkout';
+                    $('continueLabel').textContent = 'Try checkout again';
                     const code = err && err.status ? 'error ' + err.status : 'no answer from the server';
                     alertBox('We couldn\'t start checkout (' + code + '). Please try again in a moment.');
                 }
