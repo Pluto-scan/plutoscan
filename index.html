@@ -4,7 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>PlutoScan — The Beginner's Crypto Course</title>
-    <meta name="description" content="Learn crypto the safe way. 18 short video lessons take beginners from 'what is a blockchain?' to researching a real coin, plus a live 12-point Research Scanner. Lifetime access, 14-day refund." />
+    <meta name="description" content="Invest in crypto the smart way. 18 short video lessons take beginners from 'what is a blockchain?' to researching a real coin, plus a live 12-point Research Scanner. Lifetime access, 14-day refund." />
     <link rel="canonical" href="https://plutoscan.com/" />
     <link rel="icon" type="image/x-icon" href="favicon.ico" />
     <link rel="icon" type="image/svg+xml" href="icons/favicon.svg" />
@@ -186,6 +186,13 @@
         .hero-sub { font-size: clamp(1.2rem, 2vw, 1.5rem); font-weight: 600; letter-spacing: -0.01em; line-height: 1.45; color: var(--text-2); max-width: 600px; margin-bottom: 30px; }
         .hero-sub strong { color: var(--text); font-weight: 700; }
         .hl { color: var(--text); font-weight: 700; background: linear-gradient(transparent 62%, rgba(255, 166, 77, .45) 62%); padding: 0 2px; }
+        .scan-jump { display: inline-flex; align-items: center; gap: 14px; padding: 9px 20px 9px 9px; margin: -6px 0 28px; border-radius: 18px; text-align: left; color: var(--text); background: linear-gradient(135deg, rgba(255, 197, 61, .16), rgba(255, 79, 216, .1)); border: 1px solid rgba(255, 197, 61, .45); box-shadow: 0 16px 44px -18px rgba(255, 166, 77, .6); transition: transform .2s var(--ease-out), border-color .2s var(--ease), box-shadow .2s var(--ease); }
+        .scan-jump:hover { text-decoration: none; transform: translateY(-2px); border-color: rgba(255, 197, 61, .75); box-shadow: 0 20px 50px -16px rgba(255, 166, 77, .75); }
+        .sj-icon { width: 46px; height: 46px; border-radius: 13px; flex-shrink: 0; display: grid; place-items: center; font-size: 1.15rem; color: #1d0b00; background: var(--cta); box-shadow: 0 10px 22px -8px rgba(255, 122, 61, .8); }
+        .sj-text { display: block; font-size: 1.12rem; font-weight: 800; letter-spacing: -0.01em; line-height: 1.2; }
+        .sj-text small { display: block; font-size: .64rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+        .sj-arrow { color: var(--gold); font-size: .85rem; margin-left: 4px; transition: transform .2s var(--ease-out); }
+        .scan-jump:hover .sj-arrow { transform: translateY(3px); }
         .hero-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-bottom: 16px; }
         .risk { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .84rem; color: var(--text-3); }
         .risk span { display: inline-flex; align-items: center; gap: 7px; }
@@ -525,8 +532,9 @@
                 <div class="hero-inner">
                     <div>
                         <div class="eyebrow fade-up"><b>Course + Scanner</b><span class="eb-text">Includes the PlutoScan Research Scanner</span></div>
-                        <h1><span class="line"><span>Learn Crypto</span></span><span class="line"><span class="text-hot">Before It Costs You.</span></span></h1>
-                        <p class="hero-sub fade-up d1">Understand crypto. Avoid costly mistakes. <span class="hl">Scan any coin in one tap.</span></p>
+                        <h1><span class="line"><span>Invest in Crypto</span></span><span class="line"><span class="text-hot">the Smart Way.</span></span></h1>
+                        <p class="hero-sub fade-up d1">Understand the market, protect your money and invest with confidence.</p>
+                        <a href="#scanner" class="scan-jump fade-up d1"><span class="sj-icon" aria-hidden="true"><i class="fas fa-satellite-dish"></i></span><span class="sj-text"><small>PlutoScan Research Scanner</small>Scan Any Coin in One Tap</span><i class="fas fa-arrow-down sj-arrow" aria-hidden="true"></i></a>
                         <div class="hero-ctas fade-up d2">
                             <button type="button" class="btn btn-primary btn-lg js-buy"><span class="js-cta-label">Start Learning</span> <i class="fas fa-arrow-right"></i></button>
                             <a href="#curriculum" class="btn-quiet">See What You'll Learn <i class="fas fa-arrow-down"></i></a>
