@@ -193,6 +193,9 @@
         .sj-text small { display: block; font-size: .64rem; font-weight: 800; letter-spacing: .14em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
         .sj-arrow { color: var(--gold); font-size: .85rem; margin-left: 4px; transition: transform .2s var(--ease-out); }
         .scan-jump:hover .sj-arrow { transform: translateY(3px); }
+        .enroll li.li-scan { display: block; margin-bottom: 6px; }
+        .enroll li.li-scan .scan-jump { margin: 0; }
+        .enroll li.li-scan .sj-icon i { width: auto; height: auto; margin: 0; border-radius: 0; background: none; color: #1d0b00; font-size: inherit; display: inline; }
         .hero-ctas { display: flex; flex-wrap: wrap; align-items: center; gap: 10px 18px; margin-bottom: 16px; }
         .risk { display: flex; flex-wrap: wrap; gap: 6px 16px; font-size: .84rem; color: var(--text-3); }
         .risk span { display: inline-flex; align-items: center; gap: 7px; }
@@ -645,7 +648,7 @@
                             <span class="kicker">Full access</span>
                             <h2>Your Guide Through Crypto <span class="text-hot">Starts Here.</span></h2>
                             <ul>
-                                <li><i class="fas fa-check"></i><span><strong>The PlutoScan Research Scanner</strong>, data widget and watchlist</span></li>
+                                <li class="li-scan"><a href="#scanner" class="scan-jump"><span class="sj-icon" aria-hidden="true"><i class="fas fa-satellite-dish"></i></span><span class="sj-text"><small>+ Watchlist &amp; Data Widget</small>PlutoScan Research Scanner</span></a></li>
                                 <li><i class="fas fa-check"></i>All 18 video lessons, with written guides</li>
                                 <li><i class="fas fa-check"></i>Knowledge checks with an explanation for every answer</li>
                                 <li><i class="fas fa-check"></i>Built-in glossary of 120+ terms</li>
