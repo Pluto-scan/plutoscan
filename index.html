@@ -348,6 +348,16 @@
 
         /* ===== SCANNER (words only, at the bottom) ===== */
         .final { position: relative; overflow: hidden; background: radial-gradient(ellipse 60% 40% at 50% 0%, rgba(255, 166, 77, .14), transparent 70%), radial-gradient(ellipse 50% 40% at 50% 100%, rgba(124, 92, 255, .18), transparent 70%); }
+        .tool-plate { display: inline-flex; align-items: center; gap: 14px; padding: 10px 22px 10px 10px; margin-bottom: 22px; border-radius: 20px; background: linear-gradient(135deg, rgba(255, 197, 61, .16), rgba(255, 79, 216, .1)); border: 1px solid rgba(255, 197, 61, .45); box-shadow: 0 18px 50px -18px rgba(255, 166, 77, .55); text-align: left; }
+        .tool-icon { width: 52px; height: 52px; border-radius: 15px; display: grid; place-items: center; font-size: 1.35rem; color: #1d0b00; background: var(--cta); flex-shrink: 0; box-shadow: 0 10px 24px -8px rgba(255, 122, 61, .8); }
+        .tool-name { display: block; font-size: clamp(1.1rem, 2.4vw, 1.4rem); font-weight: 900; letter-spacing: -0.02em; line-height: 1.15; color: #fff; }
+        .tool-name small { display: block; font-size: .68rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--gold); margin-bottom: 3px; }
+        .section-head .tool-ref { color: #ffd98a; }
+        .section-head .tool-why { margin-top: 12px; }
+        .tool-tags { display: flex; flex-wrap: wrap; justify-content: center; gap: 8px; margin-top: 20px; }
+        .tool-tags span { display: inline-flex; align-items: center; gap: 8px; padding: 7px 14px; border-radius: 999px; font-size: .86rem; font-weight: 700; color: var(--text); background: var(--surface-2); border: 1px solid var(--border-strong); }
+        .tool-tags i { color: var(--gold); font-size: .82em; }
+        @media (max-width: 480px) { .tool-tags { gap: 6px; } .tool-tags span { font-size: .76rem; padding: 6px 10px; gap: 6px; } .tool-plate { padding: 8px 16px 8px 8px; gap: 12px; } .tool-icon { width: 44px; height: 44px; font-size: 1.1rem; } }
         .scan-label { text-align: center; font-size: .78rem; font-weight: 800; letter-spacing: .16em; text-transform: uppercase; color: var(--text-3); margin: 34px 0 14px; }
         .scan-label:first-of-type { margin-top: 0; }
         .scan-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; margin-bottom: 16px; }
@@ -376,11 +386,7 @@
         .vs li { display: flex; gap: 10px; font-size: .94rem; color: var(--text-2); line-height: 1.45; }
         .vs li i { margin-top: 4px; font-size: .78rem; flex-shrink: 0; }
         .vs .alone li i { color: var(--text-3); } .vs .with li i { color: var(--green); }
-        .speed { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 8px 20px; margin: 30px auto 8px; text-align: center; }
-        .speed b { font-size: clamp(1.5rem, 3.4vw, 2.2rem); font-weight: 900; letter-spacing: -0.03em; }
-        .speed .slow { color: var(--text-3); text-decoration: line-through; text-decoration-color: rgba(255, 92, 108, .8); text-decoration-thickness: 3px; }
-        .speed i { color: var(--gold); }
-        .scan-note { text-align: center; font-size: .86rem; color: var(--text-3); margin: 6px auto 26px; max-width: 620px; }
+        .scan-note { text-align: center; font-size: .86rem; color: var(--text-3); margin: 30px auto 26px; max-width: 620px; }
         .final-cta { text-align: center; }
         @media (max-width: 900px) { .scan-grid, .steps, .vs { grid-template-columns: 1fr; gap: 12px; } .steps li { padding: 16px 16px 16px 64px; } .steps li::before { left: 16px; top: 16px; } .scan-card, .vs > div { padding: 20px; } }
 
@@ -654,9 +660,18 @@
         <section class="section final" id="scanner">
             <div class="container">
                 <div class="section-head reveal">
-                    <span class="kicker">One more thing</span>
-                    <h2>Then check any coin <span class="text-hot">in one tap.</span></h2>
-                    <p>Finish Lesson 18 and you unlock the <strong>PlutoScan Research Scanner</strong>. It runs the same 12-point check the course teaches you, and fills most of it in for you.</p>
+                    <div class="tool-plate">
+                        <span class="tool-icon" aria-hidden="true"><i class="fas fa-satellite-dish"></i></span>
+                        <span class="tool-name"><small>Research tool</small>PlutoScan Research Scanner</span>
+                    </div>
+                    <h2>Check any coin <span class="text-hot">in one tap.</span></h2>
+                    <p>The <strong class="tool-ref">PlutoScan Research Scanner</strong> is a research tool built into the course, and it's the reward for finishing it. You can't use it before you join. It unlocks when you complete <strong>Lesson 18</strong>.</p>
+                    <p class="tool-why">Once it's yours, it puts the whole 12-point research framework from the course into one tool. Pick a coin, tap Auto-Fill, and live data answers 9 of the 12 checks for you.</p>
+                    <div class="tool-tags">
+                        <span><i class="fas fa-lock"></i>Members only</span>
+                        <span><i class="fas fa-flag-checkered"></i>Unlocks after Lesson 18</span>
+                        <span><i class="fas fa-check"></i>Included in Full Access</span>
+                    </div>
                 </div>
 
                 <p class="scan-label reveal">What it checks</p>
@@ -722,9 +737,6 @@
                     </div>
                 </div>
 
-                <div class="speed reveal" aria-label="One tap instead of tab after tab">
-                    <b class="slow">Tab after tab</b><i class="fas fa-arrow-right"></i><b class="text-hot">One tap</b>
-                </div>
                 <p class="scan-note reveal">The Scanner is a starting point for your own research, never a buy or sell signal. Market data comes from CoinGecko and can be delayed or incomplete.</p>
                 <div class="final-cta reveal"><button type="button" class="btn btn-primary btn-lg js-buy"><span class="js-cta-label">Start learning</span> <i class="fas fa-arrow-right"></i></button></div>
             </div>
