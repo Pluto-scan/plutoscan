@@ -324,7 +324,7 @@
                             <!-- Step 1: review -->
                             <div id="reviewStep">
                                 <div class="signed-in hidden" id="signedIn"><i class="fas fa-circle-check"></i><span id="signedInEmail"></span><button type="button" id="switchAccount">Switch</button></div>
-                                <button type="button" class="btn btn-primary btn-block" id="continueBtn"><i class="fas fa-lock"></i> <span id="continueLabel">Continue to secure checkout</span></button>
+                                <button type="button" class="btn btn-primary btn-block" id="continueBtn"><i class="fas fa-lock"></i> <span id="continueLabel">Continue to Secure Checkout</span></button>
                             </div>
 
                             <!-- Step 2: account (only when signed out) -->
@@ -333,14 +333,14 @@
                                 <p class="sub" id="authSub">One quick step, then straight to secure payment.</p>
                                 <button type="button" class="google-btn" id="googleAuthBtn">
                                     <svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#FFC107" d="M43.611 20.083H42V20H24v8h11.303c-1.649 4.657-6.08 8-11.303 8-6.627 0-12-5.373-12-12s5.373-12 12-12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 12.955 4 4 12.955 4 24s8.955 20 20 20 20-8.955 20-20c0-1.341-.138-2.65-.389-3.917z"/><path fill="#FF3D00" d="M6.306 14.691l6.571 4.819C14.655 15.108 18.961 12 24 12c3.059 0 5.842 1.154 7.961 3.039l5.657-5.657C34.046 6.053 29.268 4 24 4 16.318 4 9.656 8.337 6.306 14.691z"/><path fill="#4CAF50" d="M24 44c5.166 0 9.86-1.977 13.409-5.192l-6.19-5.238A11.91 11.91 0 0 1 24 36c-5.202 0-9.619-3.317-11.283-7.946l-6.522 5.025C9.505 39.556 16.227 44 24 44z"/><path fill="#1976D2" d="M43.611 20.083H42V20H24v8h11.303a12.04 12.04 0 0 1-4.087 5.571l.003-.002 6.19 5.238C36.971 39.205 44 34 44 24c0-1.341-.138-2.65-.389-3.917z"/></svg>
-                                    Continue with Google
+                                    Continue With Google
                                 </button>
                                 <div class="divider">or with email</div>
                                 <form id="authForm" novalidate>
                                     <div class="field"><label for="authEmail">Email</label><input type="email" id="authEmail" autocomplete="email" required /></div>
                                     <div class="field"><label for="authPassword">Password</label><input type="password" id="authPassword" autocomplete="new-password" minlength="6" required /></div>
                                     <div class="auth-msg" id="authMsg" role="alert"></div>
-                                    <button type="submit" class="btn btn-primary btn-block" id="authSubmitBtn">Create account &amp; continue</button>
+                                    <button type="submit" class="btn btn-primary btn-block" id="authSubmitBtn">Create Account &amp; Continue</button>
                                 </form>
                                 <div class="auth-toggle" id="authToggle"></div>
                             </div>
@@ -357,7 +357,7 @@
         <section class="block" aria-labelledby="afterTitle">
             <div class="block-head reveal">
                 <span class="kicker">What happens next</span>
-                <h2 id="afterTitle">About two minutes to your first lesson</h2>
+                <h2 id="afterTitle">About Two Minutes to Your First Lesson</h2>
             </div>
             <ol class="timeline">
                 <li class="reveal"><strong>Create your free account</strong><span>Email or Google. It keeps your purchase and progress safe on every device.</span></li>
@@ -369,7 +369,7 @@
         <section class="block" aria-labelledby="faqTitle" style="padding-top:0">
             <div class="block-head reveal">
                 <span class="kicker">Before you buy</span>
-                <h2 id="faqTitle">Quick answers</h2>
+                <h2 id="faqTitle">Quick Answers</h2>
             </div>
             <div class="faq reveal">
                 <details><summary>I'm a complete beginner. Is this too advanced?</summary><div class="a">No. Lesson 1 starts from zero, and each lesson only unlocks after the one before it, so you're never thrown in the deep end.</div></details>
@@ -378,7 +378,7 @@
                 <details><summary>Can I use it on my phone?</summary><div class="a">Yes. It works in any modern browser on desktop, tablet and phone. Log in on any device to pick up your lessons where you left off.</div></details>
                 <details><summary>What if it's not for me?</summary><div class="a">Email <a href="mailto:support@plutoscan.com?subject=Refund%20request">support@plutoscan.com</a> within 14 days of purchase. If you've completed 4 or fewer of the 18 lessons, you get a full refund. See the <a href="refunds.html">Refund Policy</a>.</div></details>
             </div>
-            <div class="back-to-offer reveal"><a href="#offer" class="btn btn-ghost" id="backToOffer"><i class="fas fa-arrow-up"></i> Back to my order</a></div>
+            <div class="back-to-offer reveal"><a href="#offer" class="btn btn-ghost" id="backToOffer"><i class="fas fa-arrow-up"></i> Back to My Order</a></div>
         </section>
     </div>
 
@@ -434,18 +434,18 @@
                 if (mode === 'signup') {
                     $('authTitle').textContent = 'Create your account';
                     $('authSub').textContent = 'One quick step, then straight to secure payment.';
-                    $('authSubmitBtn').textContent = 'Create account & continue';
-                    toggle.innerHTML = 'Already have an account? <button type="button" data-mode="login">Log in</button>';
+                    $('authSubmitBtn').textContent = 'Create Account & Continue';
+                    toggle.innerHTML = 'Already have an account? <button type="button" data-mode="login">Log In</button>';
                 } else if (mode === 'login') {
                     $('authTitle').textContent = 'Log in to continue';
                     $('authSub').textContent = 'Welcome back. Log in and we\'ll take you to secure payment.';
-                    $('authSubmitBtn').textContent = 'Log in & continue';
-                    toggle.innerHTML = 'New to PlutoScan? <button type="button" data-mode="signup">Create an account</button> · <button type="button" data-mode="reset">Forgot password?</button>';
+                    $('authSubmitBtn').textContent = 'Log In & Continue';
+                    toggle.innerHTML = 'New to PlutoScan? <button type="button" data-mode="signup">Create an Account</button> · <button type="button" data-mode="reset">Forgot Password?</button>';
                 } else {
                     $('authTitle').textContent = 'Reset your password';
                     $('authSub').textContent = 'Enter your account email and we\'ll send you a reset link.';
-                    $('authSubmitBtn').textContent = 'Send reset link';
-                    toggle.innerHTML = '<button type="button" data-mode="login">Back to log in</button>';
+                    $('authSubmitBtn').textContent = 'Send Reset Link';
+                    toggle.innerHTML = '<button type="button" data-mode="login">Back to Log In</button>';
                 }
                 toggle.querySelectorAll('button').forEach((b) => b.addEventListener('click', () => setAuthMode(b.dataset.mode)));
             }
@@ -475,7 +475,7 @@
                     window.plutoscanAuth.report('checkout', { step: 'failed', reason: err && err.message });
                     hideLoader();
                     setStep(1);
-                    $('continueLabel').textContent = 'Try again: continue to secure checkout';
+                    $('continueLabel').textContent = 'Try Again: Continue to Secure Checkout';
                     const code = err && err.status ? 'error ' + err.status : 'no answer from the server';
                     alertBox('We couldn\'t start checkout (' + code + '). Please try again in a moment.');
                 }
@@ -502,7 +502,7 @@
                 $('signedIn').classList.toggle('hidden', !user);
                 $('signedInEmail').textContent = user ? 'Signed in as ' + (user.email || 'your account') : '';
                 if (paid) {
-                    $('continueLabel').textContent = 'You already own this: open your course';
+                    $('continueLabel').textContent = 'You Already Own This: Open Your Course';
                     $('continueBtn').querySelector('i').className = 'fas fa-play';
                 }
             }
@@ -571,7 +571,7 @@
                     await window.plutoscanAuth.logOut();
                     paid = false;
                     renderUser(null, false);
-                    $('continueLabel').textContent = 'Continue to secure checkout';
+                    $('continueLabel').textContent = 'Continue to Secure Checkout';
                     $('continueBtn').querySelector('i').className = 'fas fa-lock';
                 });
 
